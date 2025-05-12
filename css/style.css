@@ -1,0 +1,485 @@
+/* === Dark Modern Portfolio CSS === */
+
+/* === Google Fonts Import === */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;700&family=Open+Sans:wght@400;600&family=Roboto+Mono:wght@400&display=swap");
+
+/* === Root Variables === */
+:root {
+  --font-primary: "Inter", sans-serif;
+  --font-secondary: "Open Sans", sans-serif;
+  --font-headings: "Space Grotesk", sans-serif;
+  --font-code: "Roboto Mono", monospace;
+
+  --color-bg-primary: #0d1117; /* Deep Dark Blue/Black (GitHub Dark-like) */
+  --color-bg-secondary: #161b22; /* Slightly Lighter Dark Blue/Gray */
+  --color-text-primary: #f0f0f0; /* Off-white for primary text */
+  --color-text-secondary: #c9d1d9; /* Lighter gray for secondary text */
+  --color-accent: #39ff14; /* Neon/Tech Green */
+  --color-accent-hover: #28b40f; /* Darker Neon Green for hover */
+  --color-border: #30363d; /* Subtle border color */
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.4);
+
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+}
+
+/* === General Body Styles === */
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-secondary);
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+  font-size: 16px;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* === Headings === */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-headings);
+  color: var(--color-text-primary);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3rem; /* 48px */
+}
+
+h2 {
+  font-size: 2.25rem; /* 36px */
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem; /* 28px */
+}
+
+h5.card-title {
+  font-family: var(--font-headings);
+  font-weight: 700;
+  font-size: 1.25rem; /* 20px */
+  color: var(--color-text-primary);
+}
+
+/* === Links === */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+  text-decoration: none; /* No underline on hover for a cleaner look */
+}
+
+/* === Buttons === */
+.btn {
+  font-family: var(--font-headings);
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius-sm);
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--color-bg-primary);
+  border-color: var(--color-accent);
+}
+
+.btn-accent:hover {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  color: var(--color-bg-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-success {
+  background-color: var(--color-accent);
+  color: var(--color-bg-primary);
+  border-color: var(--color-accent);
+}
+
+.btn-success:hover {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  color: var(--color-bg-primary);
+}
+
+/* === Header (Hero Section) === */
+.hero-header {
+  background-color: var(--color-bg-primary); /* Solid dark background */
+  padding: 6rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero-header h1 {
+  font-size: 3.5rem; /* Larger for impact */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
+}
+
+.hero-header h1 strong {
+  font-weight: 700;
+}
+
+.hero-header .highlight {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.hero-header p {
+  font-size: 1.25rem;
+  color: var(--color-text-secondary);
+  max-width: 700px;
+  margin: 1rem auto 0 auto;
+  font-family: var(--font-secondary);
+  padding-bottom: 20px;
+}
+
+/* === Navbar === */
+.navbar {
+  background-color: var(
+    --color-bg-secondary
+  ) !important; /* Darker background for navbar */
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar-brand {
+  font-family: var(--font-headings);
+  font-weight: 400;
+  font-size: 1.75rem;
+  color: var(--color-text-primary) !important;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 100px; /* Adjust as needed */
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.navbar-tech-message {
+  font-family: var(--font-code);
+  color: var(--color-accent);
+  font-size: 1rem;
+  margin-left: 1rem; /* Space from brand */
+  margin-right: 1rem; /* Space from nav links */
+  white-space: nowrap;
+}
+
+.navbar-nav .nav-link {
+  font-family: var(--font-secondary);
+  color: var(--color-text-secondary) !important;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--color-accent) !important;
+}
+
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 50%;
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28240, 240, 240, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* === Main Content & Sections === */
+main.container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+section {
+  padding: 4rem 0;
+}
+
+section#portfolio h2,
+section#sobre-nova h2, /* Updated ID */
+section#contato h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--color-text-primary);
+}
+
+section#portfolio p.text-center.text-muted {
+  color: var(--color-text-secondary) !important;
+  font-family: var(--font-secondary);
+}
+.text-muted {
+  color: rgb(250, 250, 250) !important;
+}
+/* === Project Cards === */
+.project-card-wrapper {
+  margin-bottom: 2rem; /* Add some bottom margin for spacing on smaller screens */
+}
+
+.project-card {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.project-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain; /* Alterado de cover para contain */
+  object-position: center center; /* Centraliza a imagem */
+  border-bottom: 1px solid var(--color-border);
+  transition: transform 0.3s ease;
+  background-color: var(
+    --color-bg-primary
+  ); /* Fundo para preencher espacos vazios */
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.03);
+}
+
+.project-card .card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-card .card-text {
+  color: var(--color-text-secondary);
+  font-family: var(--font-secondary);
+  font-size: 0.95rem;
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+}
+
+.project-card .btn-accent {
+  margin-top: auto; /* Pushes button to the bottom */
+}
+
+/* === About Section (New) === */
+section#sobre-nova .lead {
+  color: var(--color-text-secondary);
+  font-family: var(--font-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+section#sobre-nova img.rounded-circle {
+  border: 3px solid var(--color-border);
+}
+
+/* === Contact Section === */
+section#contato {
+  background-color: var(--color-bg-secondary);
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+section#contato .lead {
+  color: var(--color-text-secondary);
+  font-family: var(--font-secondary);
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.social-links li a {
+  font-size: 2rem; /* Larger icons */
+  color: var(--color-text-secondary);
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links li a:hover {
+  color: var(--color-accent);
+  transform: scale(1.1);
+}
+
+.whatsapp-button-container .btn-lg {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+}
+
+/* === Footer === */
+footer.bg-dark {
+  background-color: var(
+    --color-bg-primary
+  ) !important; /* Ensure it's the darkest */
+  color: var(--color-text-secondary);
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+footer p {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  font-family: var(--font-secondary);
+}
+
+/* === Bootstrap Overrides & Adjustments === */
+.sticky-top {
+  /* Ensure navbar is truly sticky if desired, or adjust as needed */
+}
+
+.shadow-sm {
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.container {
+  /* Standard Bootstrap container behavior is fine */
+}
+
+/* Remove Bootstrap's default light background from navbar if it was set via class */
+.navbar-light {
+  background-color: transparent !important; /* Override Bootstrap's light theme */
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 991.98px) {
+  /* Medium devices (tablets, less than 992px) */
+  .hero-header h1 {
+    font-size: 2.75rem;
+  }
+  .hero-header p {
+    font-size: 1.1rem;
+  }
+  .navbar-tech-message {
+    display: none; /* Hide tech message on smaller screens to save space */
+  }
+  .navbar-nav .nav-link {
+    margin-left: 0;
+    padding: 0.75rem 1rem; /* Adjust padding for collapsed menu */
+  }
+  .navbar-collapse {
+    background-color: var(--color-bg-secondary);
+    border-top: 1px solid var(--color-border);
+    margin-top: 0.5rem;
+    padding: 1rem;
+    border-radius: var(--border-radius-sm);
+  }
+  .navbar-nav {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 767.98px) {
+  /* Small devices (landscape phones, less than 768px) */
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  .hero-header {
+    padding: 4rem 1rem;
+  }
+  .hero-header h1 {
+    font-size: 2.25rem;
+  }
+  .project-card .card-body {
+    padding: 1.25rem;
+  }
+  .social-links {
+    gap: 1.5rem;
+  }
+  .social-links li a {
+    font-size: 1.8rem;
+  }
+  section#sobre-nova .row > div {
+    text-align: center; /* Center content in about section on small screens */
+  }
+  section#sobre-nova img.rounded-circle {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  /* Extra small devices (portrait phones, less than 576px) */
+  body {
+    font-size: 15px;
+  }
+  .hero-header h1 {
+    font-size: 2rem;
+  }
+  .hero-header p {
+    font-size: 1rem;
+  }
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+  .whatsapp-button-container .btn-lg {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  .navbar-brand {
+    font-size: 1.5rem; /* Slightly smaller brand text */
+  }
+  .navbar-logo {
+    height: 75px; /* Slightly smaller logo */
+  }
+}
