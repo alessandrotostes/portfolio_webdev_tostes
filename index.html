@@ -20,7 +20,7 @@
       referrerpolicy="no-referrer"
     />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
      <link rel="icon" href="img/logotostes.ico" type="image/x-icon" />
   </head>
   <body>
@@ -48,7 +48,7 @@
     <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="#">
-          <img src="img/logotostes.png" alt="Logo" class="navbar-logo me-5" />
+          <picture><source srcset="img/logotostes.webp" type="image/webp"><img src="img/logotostes.png" alt="Logo" class="navbar-logo me-5" loading="lazy" /></picture>
           Desenvolvedor Front-end
         </a>
         <span class="navbar-tech-message d-none d-lg-block mx-auto"
@@ -86,12 +86,7 @@
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-5 col-md-6 text-center mb-4 mb-md-0">
-              <img
-                src="img/sobre/tostesperfil.jpg"
-                class="img-fluid rounded-circle shadow-sm"
-                alt="Foto do Desenvolvedor"
-                style="max-width: 100%; height: auto; max-height: 350px"
-              />
+              <picture><source srcset="img/sobre/tostesperfil.webp" type="image/webp"><img src="img/sobre/tostesperfil.jpg" class="img-fluid rounded-circle shadow-sm" alt="Foto do Desenvolvedor" style="max-width: 100%; height: auto; max-height: 350px" loading="lazy" /></picture>
             </div>
             <div class="col-lg-7 col-md-6">
               <h2 class="display-5 mb-3 fw-bold">Sobre Mim</h2>
@@ -125,11 +120,7 @@
         <div class="row row-cols-1 row-cols-md-2 g-4">
           <div class="col project-card-wrapper">
             <div class="card h-100 project-card">
-              <img
-                src="img/imgarquiteta.png"
-                class="card-img-top project-image"
-                alt="Projeto Arquiteta"
-              />
+              <picture><source srcset="img/imgarquiteta.webp" type="image/webp"><img src="img/imgarquiteta.png" class="card-img-top project-image" alt="Projeto Arquiteta" loading="lazy" /></picture>
               <div class="card-body">
                 <h5 class="card-title">Espaços que Inspiram: Arquiteta</h5>
                 <p class="card-text">
@@ -149,11 +140,7 @@
           </div>
           <div class="col project-card-wrapper">
             <div class="card h-100 project-card">
-              <img
-                src="img/projeto psicanalista foto.png"
-                class="card-img-top project-image"
-                alt="Projeto Psicanalista"
-              />
+              <picture><source srcset="img/projeto psicanalista foto.webp" type="image/webp"><img src="img/projeto psicanalista foto.png" class="card-img-top project-image" alt="Projeto Psicanalista" loading="lazy" /></picture>
               <div class="card-body">
                 <h5 class="card-title">Conexão e Cuidado: Psicanalista</h5>
                 <p class="card-text">
@@ -173,11 +160,7 @@
           </div>
           <div class="col project-card-wrapper">
             <div class="card h-100 project-card">
-              <img
-                src="img/estetica-cirurgia plastica.png"
-                class="card-img-top project-image"
-                alt="Projeto Clínica"
-              />
+              <picture><source srcset="img/estetica-cirurgia plastica.webp" type="image/webp"><img src="img/estetica-cirurgia plastica.png" class="card-img-top project-image" alt="Projeto Clínica" loading="lazy" /></picture>
               <div class="card-body">
                 <h5 class="card-title">O melhor de Você: Clínica Médica</h5>
                 <p class="card-text">
@@ -196,11 +179,7 @@
           </div>
           <div class="col project-card-wrapper">
             <div class="card h-100 project-card">
-              <img
-                src="img/projeto advocacia.png"
-                class="card-img-top project-image"
-                alt="Projeto Advocacia"
-              />
+              <picture><source srcset="img/projeto advocacia.webp" type="image/webp"><img src="img/projeto advocacia.png" class="card-img-top project-image" alt="Projeto Advocacia" loading="lazy" /></picture>
               <div class="card-body">
                 <h5 class="card-title">Presença e Confiança: Advocacia</h5>
                 <p class="card-text">
@@ -216,6 +195,35 @@
                   Conhecer Estratégia
                 </a>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="frontend-dev-info" class="py-5">
+        <div class="container">
+          <h2 class="text-center mb-4">O que faz um Desenvolvedor Frontend?</h2>
+          <p class="text-center text-muted mb-4 mx-auto" style="max-width: 800px;">
+            Um desenvolvedor frontend é o profissional responsável por construir a interface com a qual o utilizador interage diretamente num site ou aplicação web. Eles traduzem o design visual em código funcional, garantindo uma experiência de utilizador fluida, intuitiva e acessível.
+          </p>
+          <div class="text-center mb-4">
+            <button class="btn btn-accent" type="button" data-bs-toggle="collapse" data-bs-target="#frontendDetails" aria-expanded="false" aria-controls="frontendDetails">
+              Saiba Mais
+            </button>
+          </div>
+          <div class="collapse" id="frontendDetails">
+            <div class="card card-body bg-dark text-light border-secondary">
+              <h5 class="card-title">Principais Funções de um Desenvolvedor Frontend:</h5>
+              <ul>
+                <li><strong>Desenvolvimento da Interface do Utilizador (UI):</strong> Criar os elementos visuais e interativos da página, como menus, botões, formulários e layouts, utilizando HTML, CSS e JavaScript.</li>
+                <li><strong>Responsividade:</strong> Garantir que o site ou aplicação se adapte e funcione corretamente em diferentes dispositivos e tamanhos de ecrã (desktops, tablets, smartphones).</li>
+                <li><strong>Otimização de Desempenho:</strong> Assegurar que o site carregue rapidamente e que as interações sejam ágeis, otimizando imagens, código e utilizando técnicas de carregamento eficiente.</li>
+                <li><strong>Acessibilidade (a11y):</strong> Implementar práticas que tornem o site acessível a todos os utilizadores, incluindo pessoas com deficiência, seguindo diretrizes como as WCAG.</li>
+                <li><strong>Colaboração com Designers e Backends:</strong> Trabalhar em conjunto com designers para implementar a visão visual e com desenvolvedores backend para integrar a interface com a lógica do servidor e bases de dados.</li>
+                <li><strong>Testes e Depuração:</strong> Realizar testes para identificar e corrigir erros (bugs) na interface e garantir a compatibilidade entre diferentes navegadores.</li>
+                <li><strong>Manutenção e Atualizações:</strong> Manter o código da interface atualizado, aplicar melhorias e corrigir problemas que surjam após o lançamento.</li>
+                <li><strong>Utilização de Frameworks e Bibliotecas:</strong> Frequentemente utilizam frameworks como React, Angular ou Vue.js, e bibliotecas como jQuery, para agilizar o desenvolvimento e criar interfaces mais robustas e interativas.</li>
+              </ul>
+              <p>Em resumo, o desenvolvedor frontend foca-se na "parte da frente" da web, tudo aquilo que o utilizador vê e com que interage, com o objetivo de criar experiências digitais envolventes e eficazes.</p>
             </div>
           </div>
         </div>
@@ -272,3 +280,6 @@
     ></script>
   </body>
 </html>
+
+
+    <script src="js/script.min.js" defer></script>
