@@ -25,6 +25,9 @@
 
   --border-radius-sm: 4px;
   --border-radius-md: 8px;
+  --navbar-height-desktop: 124px; /* Approximate height of the navbar, adjust as needed */
+  --navbar-height-tablet: 104px; /* Approximate height for tablets */
+  --navbar-height-mobile: 89px; /* Approximate height for mobile */
 }
 
 /* === General Body Styles === */
@@ -42,6 +45,9 @@ body {
   font-size: 16px;
   overflow-x: hidden; /* Prevent horizontal scroll on body */
   width: 100%; /* Ensure body takes full width without causing overflow */
+  padding-top: var(
+    --navbar-height-desktop
+  ); /* Add padding to prevent content overlap by fixed navbar */
 }
 
 /* === Headings === */
@@ -137,6 +143,7 @@ a:hover {
   padding: 6rem 1rem;
   text-align: center;
   border-bottom: 1px solid var(--color-border);
+  /* No margin-top needed here as body padding handles fixed navbar */
 }
 
 .hero-header h1 {
@@ -166,6 +173,11 @@ a:hover {
 }
 
 /* === Navbar === */
+.navbar.fixed-top {
+  /* Ensure z-index is high enough if other elements might overlap */
+  z-index: 1030; /* Default Bootstrap z-index for fixed navbar */
+}
+
 .navbar {
   background-color: var(
     --color-bg-secondary
@@ -243,7 +255,7 @@ a:hover {
 
 /* === Main Content & Sections === */
 main.container {
-  padding-top: 3rem;
+  /* padding-top: 3rem; /* This might be redundant if body has padding-top */
   padding-bottom: 3rem;
   width: 100%;
   max-width: 100%; /* Ensure container does not exceed viewport */
@@ -398,9 +410,7 @@ footer p {
 }
 
 /* === Bootstrap Overrides & Adjustments === */
-.sticky-top {
-  /* Ensure navbar is truly sticky if desired, or adjust as needed */
-}
+/* .sticky-top class is no longer used, so this section might be less relevant */
 
 .shadow-sm {
   box-shadow: var(--shadow-sm) !important;
@@ -414,6 +424,9 @@ footer p {
 /* === Responsive Adjustments === */
 @media (max-width: 991.98px) {
   /* Medium devices (tablets, less than 992px) */
+  body {
+    padding-top: var(--navbar-height-tablet);
+  }
   .hero-header h1 {
     font-size: 2.5rem; /* Adjusted */
   }
@@ -453,6 +466,9 @@ footer p {
 
 @media (max-width: 767.98px) {
   /* Small devices (landscape phones, less than 768px) */
+  body {
+    padding-top: var(--navbar-height-mobile);
+  }
   h1 {
     font-size: 2.2rem; /* Adjusted */
   }
@@ -508,6 +524,9 @@ footer p {
   body {
     font-size: 14px; /* Adjusted */
     line-height: 1.6;
+    padding-top: var(
+      --navbar-height-mobile
+    ); /* Use mobile height or a specific value if it changes again */
   }
   .hero-header h1 {
     font-size: 1.8rem; /* Adjusted */
@@ -525,7 +544,6 @@ footer p {
   }
   .navbar-brand {
     font-size: 1.2rem; /* Slightly smaller brand text */
-    /* Allow brand text to wrap if needed */
     white-space: normal;
     flex-basis: 70%; /* Allow more space for brand text */
   }
@@ -561,6 +579,11 @@ footer p {
 
 @media (max-width: 420px) {
   /* Very small devices */
+  body {
+    padding-top: var(
+      --navbar-height-mobile
+    ); /* Or a more specific value if navbar height changes again */
+  }
   .hero-header h1 {
     font-size: 1.6rem;
   }
