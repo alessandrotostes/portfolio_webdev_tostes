@@ -1,3 +1,4 @@
+/****************************************************************************/
 /* === Dark Modern Portfolio CSS === */
 
 /* === Google Fonts Import === */
@@ -27,6 +28,10 @@
 }
 
 /* === General Body Styles === */
+html {
+  overflow-x: hidden; /* Prevent horizontal scroll on html element */
+}
+
 body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
@@ -35,7 +40,8 @@ body {
   padding: 0;
   line-height: 1.7;
   font-size: 16px;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden; /* Prevent horizontal scroll on body */
+  width: 100%; /* Ensure body takes full width without causing overflow */
 }
 
 /* === Headings === */
@@ -51,6 +57,7 @@ h6 {
   letter-spacing: 0.5px;
   margin-top: 0;
   margin-bottom: 1rem;
+  overflow-wrap: break-word; /* Prevent overflow from long words */
 }
 
 h1 {
@@ -155,6 +162,7 @@ a:hover {
   margin: 1rem auto 0 auto;
   font-family: var(--font-secondary);
   padding-bottom: 20px;
+  overflow-wrap: break-word;
 }
 
 /* === Navbar === */
@@ -174,10 +182,11 @@ a:hover {
   color: var(--color-text-primary) !important;
   display: flex;
   align-items: center;
+  overflow-wrap: break-word;
 }
 
 .navbar-logo {
-  height: 100px; /* Adjust as needed */
+  height: 100px;
   width: auto;
   margin-right: 0.5rem;
 }
@@ -236,10 +245,14 @@ a:hover {
 main.container {
   padding-top: 3rem;
   padding-bottom: 3rem;
+  width: 100%;
+  max-width: 100%; /* Ensure container does not exceed viewport */
+  overflow: hidden; /* Prevent internal overflow from affecting layout */
 }
 
 section {
-  padding: 4rem 0;
+  padding: 4rem 1rem; /* Added horizontal padding for smaller screens */
+  overflow: hidden; /* Prevent section content from overflowing */
 }
 
 section#portfolio h2,
@@ -282,13 +295,11 @@ section#portfolio p.text-center.text-muted {
 .project-image {
   width: 100%;
   aspect-ratio: 16 / 9;
-  object-fit: contain; /* Alterado de cover para contain */
-  object-position: center center; /* Centraliza a imagem */
+  object-fit: contain;
+  object-position: center center;
   border-bottom: 1px solid var(--color-border);
   transition: transform 0.3s ease;
-  background-color: var(
-    --color-bg-primary
-  ); /* Fundo para preencher espacos vazios */
+  background-color: var(--color-bg-primary);
 }
 
 .project-card:hover .project-image {
@@ -308,6 +319,7 @@ section#portfolio p.text-center.text-muted {
   font-size: 0.95rem;
   flex-grow: 1;
   margin-bottom: 1.5rem;
+  overflow-wrap: break-word;
 }
 
 .project-card .btn-accent {
@@ -320,9 +332,12 @@ section#sobre-nova .lead {
   font-family: var(--font-secondary);
   font-size: 1.1rem;
   line-height: 1.8;
+  overflow-wrap: break-word;
 }
 section#sobre-nova img.rounded-circle {
   border: 3px solid var(--color-border);
+  max-width: 100%; /* Ensure image is responsive */
+  height: auto; /* Maintain aspect ratio */
 }
 
 /* === Contact Section === */
@@ -335,6 +350,7 @@ section#contato {
 section#contato .lead {
   color: var(--color-text-secondary);
   font-family: var(--font-secondary);
+  overflow-wrap: break-word;
 }
 
 .social-links {
@@ -344,6 +360,7 @@ section#contato .lead {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
 .social-links li a {
@@ -368,7 +385,7 @@ footer.bg-dark {
     --color-bg-primary
   ) !important; /* Ensure it's the darkest */
   color: var(--color-text-secondary);
-  padding: 2.5rem 0;
+  padding: 2.5rem 1rem; /* Added horizontal padding */
   border-top: 1px solid var(--color-border);
   text-align: center;
 }
@@ -377,6 +394,7 @@ footer p {
   margin-bottom: 0;
   font-size: 0.9rem;
   font-family: var(--font-secondary);
+  overflow-wrap: break-word;
 }
 
 /* === Bootstrap Overrides & Adjustments === */
@@ -388,10 +406,6 @@ footer p {
   box-shadow: var(--shadow-sm) !important;
 }
 
-.container {
-  /* Standard Bootstrap container behavior is fine */
-}
-
 /* Remove Bootstrap's default light background from navbar if it was set via class */
 .navbar-light {
   background-color: transparent !important; /* Override Bootstrap's light theme */
@@ -401,10 +415,18 @@ footer p {
 @media (max-width: 991.98px) {
   /* Medium devices (tablets, less than 992px) */
   .hero-header h1 {
-    font-size: 2.75rem;
+    font-size: 2.5rem; /* Adjusted */
   }
   .hero-header p {
-    font-size: 1.1rem;
+    font-size: 1.05rem; /* Adjusted */
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .navbar-brand {
+    font-size: 1.5rem; /* Adjusted */
+  }
+  .navbar-logo {
+    height: 80px; /* Adjusted */
   }
   .navbar-tech-message {
     display: none; /* Hide tech message on smaller screens to save space */
@@ -424,62 +446,157 @@ footer p {
     width: 100%;
     text-align: center;
   }
+  section {
+    padding: 3rem 1rem;
+  }
 }
 
 @media (max-width: 767.98px) {
   /* Small devices (landscape phones, less than 768px) */
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem; /* Adjusted */
   }
   h2 {
-    font-size: 1.8rem;
+    font-size: 1.7rem; /* Adjusted */
   }
   .hero-header {
-    padding: 4rem 1rem;
+    padding: 3.5rem 1rem;
   }
   .hero-header h1 {
-    font-size: 2.25rem;
+    font-size: 2rem; /* Adjusted */
+  }
+  .hero-header p {
+    font-size: 1rem;
+  }
+  .navbar-brand {
+    font-size: 1.3rem;
+    margin-right: 0.5rem; /* Add some space if logo is present */
+  }
+  .navbar-logo {
+    height: 65px; /* Adjusted */
+    margin-right: 0.3rem;
   }
   .project-card .card-body {
-    padding: 1.25rem;
+    padding: 1rem;
+  }
+  .project-card .card-title {
+    font-size: 1.1rem;
+  }
+  .project-card .card-text {
+    font-size: 0.9rem;
   }
   .social-links {
-    gap: 1.5rem;
+    gap: 1.2rem;
   }
   .social-links li a {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
   section#sobre-nova .row > div {
     text-align: center; /* Center content in about section on small screens */
   }
   section#sobre-nova img.rounded-circle {
     margin-bottom: 1.5rem;
+    max-width: 280px; /* Control size on small screens */
+  }
+  section {
+    padding: 2.5rem 1rem;
   }
 }
 
 @media (max-width: 575.98px) {
   /* Extra small devices (portrait phones, less than 576px) */
   body {
-    font-size: 15px;
+    font-size: 14px; /* Adjusted */
+    line-height: 1.6;
   }
   .hero-header h1 {
-    font-size: 2rem;
+    font-size: 1.8rem; /* Adjusted */
   }
   .hero-header p {
-    font-size: 1rem;
+    font-size: 0.95rem; /* Adjusted */
   }
   .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  .whatsapp-button-container .btn-lg {
     padding: 0.6rem 1.2rem;
     font-size: 0.85rem;
   }
-  .whatsapp-button-container .btn-lg {
-    padding: 0.7rem 1.5rem;
-    font-size: 0.9rem;
-  }
   .navbar-brand {
-    font-size: 1.5rem; /* Slightly smaller brand text */
+    font-size: 1.2rem; /* Slightly smaller brand text */
+    /* Allow brand text to wrap if needed */
+    white-space: normal;
+    flex-basis: 70%; /* Allow more space for brand text */
   }
   .navbar-logo {
-    height: 75px; /* Slightly smaller logo */
+    height: 50px; /* Slightly smaller logo */
+    flex-shrink: 0; /* Prevent logo from shrinking too much */
+  }
+  .navbar-toggler {
+    margin-left: auto; /* Push toggler to the right */
+  }
+  .navbar > .container {
+    flex-wrap: nowrap; /* Prevent brand and toggler from stacking weirdly */
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  h5.card-title {
+    font-size: 1rem;
+  }
+  .project-card .card-text {
+    font-size: 0.85rem;
+  }
+  section {
+    padding: 2rem 0.75rem;
+  }
+  section#sobre-nova img.rounded-circle {
+    max-width: 220px;
+  }
+  .social-links li a {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 420px) {
+  /* Very small devices */
+  .hero-header h1 {
+    font-size: 1.6rem;
+  }
+  .hero-header p {
+    font-size: 0.85rem;
+  }
+  .navbar-brand {
+    font-size: 1rem;
+  }
+  .navbar-logo {
+    height: 40px;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  h5.card-title {
+    font-size: 0.9rem;
+  }
+  .btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+  .whatsapp-button-container .btn-lg {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  .project-card .card-text {
+    font-size: 0.8rem;
+  }
+  section#sobre-nova img.rounded-circle {
+    max-width: 180px;
+  }
+  .social-links {
+    gap: 1rem;
+  }
+  .social-links li a {
+    font-size: 1.5rem;
   }
 }
