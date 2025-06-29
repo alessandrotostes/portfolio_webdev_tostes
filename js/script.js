@@ -7,11 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const typedElement = document.getElementById("typed-text");
   if (typedElement) {
     const options = {
-      strings: [
-        "Web Developer",
-        "UI Developer",
-        "Especialista em Landing Pages",
-      ],
+      strings: ["Web Developer", "UI | UX", "Especialista em Landing Pages"],
       typeSpeed: 50,
       backSpeed: 30,
       backDelay: 1500,
