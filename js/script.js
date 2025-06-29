@@ -1,158 +1,233 @@
-// Script para modal de projeto com iframe e navegação suave
 document.addEventListener("DOMContentLoaded", function () {
-  const projectModalEl = document.getElementById("projectModal");
-  const projectModalInstance = projectModalEl
-    ? new bootstrap.Modal(projectModalEl)
-    : null;
-  const modalProjectTitle = document.getElementById("modalProjectTitle");
-  const modalProjectDesc = document.getElementById("modalProjectDesc");
-  const modalProjectTech = document.getElementById("modalProjectTech");
-  const modalProjectLiveLink = document.getElementById("modalProjectLiveLink");
-  const modalProjectRepoLink = document.getElementById("modalProjectRepoLink");
-  const modalProjectIframe = document.getElementById("modalProjectIframe");
-  const iframeOverlay = projectModalEl
-    ? projectModalEl.querySelector(".iframe-overlay")
-    : null;
+  // --- INICIALIZAÇÃO DE BIBLIOTECAS ---
 
-  // --- Event Listener para MODAL DE PROJETO (clique no botão "Ver Detalhes") ---
+  // 1. Typed.js para o efeito de digitação no header
+  if (document.getElementById("typed-text")) {
+    const options = {
+      strings: [
+        "Web Developer",
+        "UI Developer",
+        "Especialista em Landing Pages",
+      ],
+      typeSpeed: 50,
+      backSpeed: 30,
+      backDelay: 1500,
+      loop: true,
+      showCursor: true,
+      cursorChar: "|",
+    };
+    new Typed("#typed-text", options);
+  }
+
+  // --- FUNCIONALIDADES DO PORTFÓLIO ---
+
+  // 2. Lógica do Alternador de Tema (Claro/Escuro)
+  const themeToggler = document.getElementById("theme-toggler");
+  const body = document.body;
+
+  if (themeToggler) {
+    const themeIcon = themeToggler.querySelector("i");
+
+    const applyTheme = (theme) => {
+      body.setAttribute("data-theme", theme);
+      if (themeIcon) {
+        themeIcon.className = theme === "light" ? "fas fa-moon" : "fas fa-sun";
+      }
+      localStorage.setItem("portfolio-theme", theme);
+    };
+
+    const savedTheme = localStorage.getItem("portfolio-theme") || "dark";
+    applyTheme(savedTheme);
+
+    themeToggler.addEventListener("click", () => {
+      const currentTheme = body.getAttribute("data-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      applyTheme(newTheme);
+    });
+  }
+
+  // 3. Lógica do Modal de Projeto
+  const projectModalEl = document.getElementById("projectModal");
   if (projectModalEl) {
+    const modalTitle = document.getElementById("modalProjectTitle");
+    const modalDesc = document.getElementById("modalProjectDesc");
+    const modalTech = document.getElementById("modalProjectTech");
+    const modalLiveLink = document.getElementById("modalProjectLiveLink");
+    const modalRepoLink = document.getElementById("modalProjectRepoLink");
+
+    const modalImage = document.getElementById("modalProjectImage");
+    const modalVideo = document.getElementById("modalProjectVideo");
+
     projectModalEl.addEventListener("show.bs.modal", function (event) {
-      const button = event.relatedTarget; // Botão que acionou o modal
+      const button = event.relatedTarget;
       if (!button) return;
+
+      // Limpa o conteúdo anterior
+      modalTitle.textContent = "";
+      modalDesc.textContent = "";
+      modalTech.innerHTML = "";
+      modalImage.src = "";
+      modalVideo.querySelector("source").src = "";
+      modalImage.style.display = "none";
+      modalVideo.style.display = "none";
 
       // Extrai informações dos atributos data-*
       const title = button.getAttribute("data-project-title");
       const desc = button.getAttribute("data-project-desc");
-      const tech = button.getAttribute("data-project-tech");
+      const techList = button.getAttribute("data-project-tech");
       const liveUrl = button.getAttribute("data-project-live-url");
       const repoUrl = button.getAttribute("data-project-repo-url");
+      const videoUrl = button.getAttribute("data-project-video-url");
+      const imageUrl = button.getAttribute("data-project-image-url");
 
-      // Atualiza o conteúdo do modal
-      if (modalProjectTitle) modalProjectTitle.textContent = title;
-      if (modalProjectDesc) modalProjectDesc.textContent = desc;
-      if (modalProjectTech)
-        modalProjectTech.textContent = tech
-          ? tech
-              .split(",")
-              .map((t) => t.trim())
-              .join(", ")
-          : "N/A"; // Formata tecnologias
+      // Preenche o conteúdo do modal
+      modalTitle.textContent = title;
+      modalDesc.textContent = desc;
 
-      // Atualiza links
-      if (modalProjectLiveLink) {
-        modalProjectLiveLink.href = liveUrl && liveUrl !== "#" ? liveUrl : "#";
-        modalProjectLiveLink.style.display =
-          liveUrl && liveUrl !== "#" ? "inline-block" : "none";
-      }
-      if (modalProjectRepoLink) {
-        modalProjectRepoLink.href = repoUrl && repoUrl !== "#" ? repoUrl : "#";
-        modalProjectRepoLink.style.display =
-          repoUrl && repoUrl !== "#" ? "inline-block" : "none";
+      // Decide se mostra imagem ou vídeo
+      if (videoUrl) {
+        modalVideo.style.display = "block";
+        modalVideo.querySelector("source").src = videoUrl;
+        modalVideo.load();
+        modalVideo
+          .play()
+          .catch((e) => console.log("Autoplay do modal bloqueado:", e));
+      } else if (imageUrl) {
+        modalImage.style.display = "block";
+        modalImage.src = imageUrl;
       }
 
-      // Tenta carregar o iframe (mantendo a lógica de fallback)
-      if (modalProjectIframe && liveUrl && liveUrl !== "#") {
-        modalProjectIframe.src = "about:blank"; // Limpa antes de carregar
-        iframeOverlay.style.display = "flex"; // Mostra overlay inicialmente
-        modalProjectIframe.style.opacity = "0"; // Esconde iframe
-
-        setTimeout(() => {
-          modalProjectIframe.src = liveUrl;
-        }, 100);
-
-        let iframeLoaded = false;
-        modalProjectIframe.onload = () => {
-          iframeLoaded = true;
-          try {
-            const iframeDoc = modalProjectIframe.contentWindow.document;
-            iframeOverlay.style.display = "none";
-            modalProjectIframe.style.opacity = "1";
-          } catch (e) {
-            console.warn(
-              "Iframe loading likely blocked by cross-origin policy for URL:",
-              liveUrl
-            );
-            iframeOverlay.style.display = "flex";
-            modalProjectIframe.style.opacity = "0";
-          }
-        };
-
-        setTimeout(() => {
-          if (!iframeLoaded) {
-            console.warn(
-              "Iframe onload event did not fire. Assuming blocked for URL:",
-              liveUrl
-            );
-            iframeOverlay.style.display = "flex";
-            modalProjectIframe.style.opacity = "0";
-          }
-        }, 3500); // Aumentado ligeiramente o timeout
-      } else if (modalProjectIframe) {
-        // Se não há URL válida, esconde o iframe e mostra overlay
-        modalProjectIframe.src = "about:blank";
-        iframeOverlay.style.display = "flex";
-        modalProjectIframe.style.opacity = "0";
+      // Cria as 'tags' de tecnologia
+      if (techList) {
+        techList.split(",").forEach((tech) => {
+          const techTag = document.createElement("span");
+          techTag.className = "badge";
+          techTag.textContent = tech.trim();
+          modalTech.appendChild(techTag);
+        });
       }
+
+      // Atualiza e exibe/oculta os botões de link
+      updateLinkButton(modalLiveLink, liveUrl);
+      updateLinkButton(modalRepoLink, repoUrl);
     });
 
-    // Limpa o iframe quando o modal é fechado
+    // Pausa o vídeo quando o modal é fechado
     projectModalEl.addEventListener("hidden.bs.modal", function () {
-      if (modalProjectIframe) {
-        modalProjectIframe.src = "about:blank";
+      if (modalVideo && typeof modalVideo.pause === "function") {
+        modalVideo.pause();
+        modalVideo.querySelector("source").src = "";
       }
     });
   }
 
-  // --- Lógica para NAVEGAÇÃO SUAVE --- (Scroll para secções)
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      const href = this.getAttribute("href");
-      if (href === "#" || this.hasAttribute("data-bs-toggle")) {
-        return;
+  function updateLinkButton(element, url) {
+    if (element) {
+      if (url && url !== "#") {
+        element.href = url;
+        element.style.display = "inline-block";
+      } else {
+        element.style.display = "none";
       }
-      const targetElement = document.querySelector(href);
-      if (targetElement) {
-        e.preventDefault();
-        // Ajuste para compensar a altura da navbar fixa
-        const navbarHeight =
-          document.querySelector(".navbar.sticky-top")?.offsetHeight || 0;
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition =
-          elementPosition + window.pageYOffset - navbarHeight - 10; // 10px de margem extra
+    }
+  }
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
+  // 4. Lógica do Filtro de Projetos
+  const filterContainer = document.querySelector("#portfolio-filters");
+  if (filterContainer) {
+    const projectCards = document.querySelectorAll(".project-card-wrapper");
+    filterContainer.addEventListener("click", (e) => {
+      const targetButton = e.target.closest("button");
+      if (!targetButton) return;
 
-        // Atualiza o link ativo na navbar (opcional)
-        document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {
-          link.classList.remove("active");
-          if (link.getAttribute("href") === href) {
-            link.classList.add("active");
-          }
-        });
-      }
+      filterContainer.querySelector(".active").classList.remove("active");
+      targetButton.classList.add("active");
+
+      const filter = targetButton.getAttribute("data-filter");
+
+      projectCards.forEach((card) => {
+        card.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+
+        if (filter === "all" || card.getAttribute("data-category") === filter) {
+          card.style.display = "block";
+          setTimeout(() => {
+            card.style.opacity = "1";
+            card.style.transform = "scale(1)";
+          }, 10);
+        } else {
+          card.style.opacity = "0";
+          card.style.transform = "scale(0.95)";
+          setTimeout(() => {
+            card.style.display = "none";
+          }, 400);
+        }
+      });
     });
+  }
+
+  // 5. Lógica para Preview de Vídeo no Hover do Card
+  const videoCards = document.querySelectorAll(".project-card.video-card");
+  videoCards.forEach((card) => {
+    const previewVideo = card.querySelector(".preview-video");
+    if (previewVideo) {
+      card.addEventListener("mouseenter", () => {
+        previewVideo
+          .play()
+          .catch((e) => console.log("Preview autoplay bloqueado:", e));
+      });
+      card.addEventListener("mouseleave", () => {
+        previewVideo.pause();
+        previewVideo.currentTime = 0;
+      });
+    }
   });
 
-  // Opcional: Atualizar link ativo ao rolar a página
+  // --- NAVEGAÇÃO E SCROLL (CÓDIGO ORIGINAL) ---
+
+  // 6. Lógica para Navegação Suave e Link Ativo
+  // ***** ESTA É A LINHA CORRIGIDA *****
+  document
+    .querySelectorAll('a[href^="#"]:not([href="#"])')
+    .forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        const href = this.getAttribute("href");
+        // A verificação abaixo se torna uma segurança extra, mas o erro principal é corrigido pelo seletor acima
+        if (href === "#" || this.hasAttribute("data-bs-toggle")) return;
+
+        const targetElement = document.querySelector(href);
+        if (targetElement) {
+          e.preventDefault();
+          const navbarHeight =
+            document.querySelector(".navbar.fixed-top")?.offsetHeight || 0;
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition =
+            elementPosition + window.pageYOffset - navbarHeight - 20;
+          window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+        }
+      });
+    });
+
   const navLinks = document.querySelectorAll(
     '.navbar-nav .nav-link[href^="#"]'
   );
   const sections = Array.from(navLinks)
-    .map((link) => document.querySelector(link.getAttribute("href")))
+    .map((link) => {
+      // Adiciona uma verificação para garantir que o href não seja apenas "#"
+      const selector = link.getAttribute("href");
+      return selector && selector.length > 1
+        ? document.querySelector(selector)
+        : null;
+    })
     .filter(Boolean);
 
   window.addEventListener("scroll", () => {
     let currentSectionId = "";
-    const scrollPosition = window.pageYOffset;
     const navbarHeight =
-      document.querySelector(".navbar.sticky-top")?.offsetHeight || 0;
+      document.querySelector(".navbar.fixed-top")?.offsetHeight || 0;
+    const scrollPosition = window.pageYOffset + navbarHeight + 50;
 
     sections.forEach((section) => {
-      const sectionTop = section.offsetTop - navbarHeight - 50; // Ajuste o offset conforme necessário
-      if (scrollPosition >= sectionTop) {
+      if (scrollPosition >= section.offsetTop) {
         currentSectionId = "#" + section.id;
       }
     });
@@ -163,11 +238,26 @@ document.addEventListener("DOMContentLoaded", function () {
         link.classList.add("active");
       }
     });
-    // Garante que o 'Sobre' fique ativo se estiver no topo
-    if (currentSectionId === "" && scrollPosition < sections[0]?.offsetTop) {
-      document
-        .querySelector('.navbar-nav .nav-link[href="#sobre"]')
-        ?.classList.add("active");
-    }
   });
+
+  // 7. Lógica para o botão "Voltar ao Topo"
+  const backToTopButton = document.getElementById("back-to-top");
+
+  if (backToTopButton) {
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add("active");
+      } else {
+        backToTopButton.classList.remove("active");
+      }
+    });
+
+    backToTopButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  }
 });

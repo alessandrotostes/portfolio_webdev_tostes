@@ -3,15 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tostes Web Developer</title>
-    <!-- Bootstrap CSS -->
+
+    <title>Tostes | Desenvolvedor Front-end e Web</title>
+    <meta
+      name="description"
+      content="Portfólio de Alessandro Tostes, desenvolvedor front-end especialista em criar websites, landing pages e aplicações web modernas e responsivas utilizando React, Node.js e mais."
+    />
+    <meta
+      name="keywords"
+      content="Desenvolvedor Front-end, Portfólio, Web Developer, React, JavaScript, Criação de Sites, Tostes"
+    />
+    <meta name="author" content="Alessandro Tostes" />
+
+    <meta property="og:title" content="Tostes | Desenvolvedor Front-end" />
+    <meta
+      property="og:description"
+      content="Explore os projetos e habilidades de Alessandro Tostes, especialista em desenvolvimento web moderno."
+    />
+    <meta property="og:image" content="https://seusite.com/img/og-image.png" />
+    <meta property="og:url" content="https://seusite.com" />
+    <meta property="og:type" content="website" />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <!-- Font Awesome (para ícones sociais) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
@@ -19,41 +37,47 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.min.css" />
-     <link rel="icon" href="img/logotostes.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/logotostes.ico" type="image/x-icon" />
   </head>
-  <body>
-    <!-- Header -->
+  <body data-theme="dark">
     <header class="hero-header">
       <div class="container">
         <h1>
-          <strong>Tostes</strong> <span class="highlight">Web Developer / UI Developer</span>
+          <strong>Tostes</strong>
+          <span class="highlight" id="typed-text"></span>
         </h1>
         <p>Desenvolvimento Web & Soluções Digitais Personalizadas</p>
       </div>
-      <div class="whatsapp-button-container">
-          <a
-            href="https://wa.me/5527997763060?text=Olá,%20visitei%20o%20seu%20portfólio%20e%20gostaria%20de%20fazer%20um%20orçamento!"
-            class="btn btn-success btn-lg"
-            target="_blank"
-          >
-            <i class="fab fa-whatsapp me-2"></i> Conversar pelo WhatsApp
-          </a>
-        </div>
+      <div
+        class="whatsapp-button-container"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        <a
+          href="https://wa.me/5527997763060?text=Olá,%20visitei%20o%20seu%20portfólio%20e%20gostaria%20de%20fazer%20um%20orçamento!"
+          class="btn btn-success btn-lg"
+          target="_blank"
+        >
+          <i class="fab fa-whatsapp me-2"></i> Conversar pelo WhatsApp
+        </a>
       </div>
     </header>
 
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="#">
-          <picture><source srcset="img/logotostes.webp" type="image/webp"><img src="img/logotostes.png" alt="Logo" class="navbar-logo me-5" loading="lazy" /></picture>
+          <picture
+            ><source srcset="img/logotostes.png" type="image/png" />
+            <img
+              src="img/logotostes.png"
+              alt="Logo"
+              class="navbar-logo me-5"
+              loading="lazy"
+          /></picture>
           Desenvolvedor Front-end
         </a>
-        <span class="navbar-tech-message d-none d-lg-block mx-auto"
-          >\\ Landing Pages para o seu <strong>negócio online! //</strong>
-        </span>
         <button
           class="navbar-toggler"
           type="button"
@@ -66,15 +90,33 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
+          <ul class="navbar-nav ms-auto align-items-center">
             <li class="nav-item">
-              <a class="nav-link active" href="#sobre-nova">Sobre</a>
+              <a class="nav-link" href="#sobre-nova">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#featured-app">App em Destaque</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#portfolio">Projetos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contato">Contato</a>
+              <a
+                class="nav-link"
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target="#contatoModal"
+                >Contato</a
+              >
+            </li>
+            <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+              <button
+                id="theme-toggler"
+                class="btn btn-outline-light btn-sm"
+                title="Alternar Tema"
+              >
+                <i class="fas fa-sun"></i>
+              </button>
             </li>
           </ul>
         </div>
@@ -82,204 +124,530 @@
     </nav>
 
     <main class="container my-5">
-      <section id="sobre-nova" class="mb-5 py-5">
+      <section id="sobre-nova" data-aos="fade-up">
+        <div class="row align-items-center">
+          <div
+            class="col-lg-5 col-md-6 text-center mb-4 mb-md-0"
+            data-aos="fade-right"
+          >
+            <picture
+              ><source srcset="img/sobre/tostesperfil.webp" type="image/webp" />
+              <img
+                src="img/sobre/tostesperfil.webp"
+                class="img-fluid rounded-circle shadow-sm"
+                alt="Foto do Desenvolvedor"
+                style="max-width: 100%; height: auto; max-height: 350px"
+                loading="lazy"
+            /></picture>
+          </div>
+          <div
+            class="col-lg-7 col-md-6"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
+            <h2 class="display-5 mb-3 fw-bold text-start">Sobre Mim</h2>
+            <p class="lead">
+              Sou um desenvolvedor web apaixonado por transformar ideias
+              criativas em soluções digitais funcionais e elegantes. Com um
+              olhar atento aos detalhes e foco na experiência do utilizador,
+              dedico-me a construir websites e aplicações que não apenas
+              atendam, mas superem as expectativas.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="featured-app" data-aos="fade-up">
         <div class="container">
+          <h2 class="text-center mb-5">Projeto em Desenvolvimento</h2>
           <div class="row align-items-center">
-            <div class="col-lg-5 col-md-6 text-center mb-4 mb-md-0">
-              <picture><source srcset="img/sobre/tostesperfil.webp" type="image/webp"><img src="img/sobre/tostesperfil.jpg" class="img-fluid rounded-circle shadow-sm" alt="Foto do Desenvolvedor" style="max-width: 100%; height: auto; max-height: 350px" loading="lazy" /></picture>
+            <div class="col-lg-7 mb-4 mb-lg-0">
+              <div class="video-wrapper shadow-lg">
+                <video
+                  class="img-fluid"
+                  controls
+                  autoplay
+                  muted
+                  loop
+                  poster="img/ERPAPP.png"
+                >
+                  <source src="video/teste-web-app-erp.mp4" type="video/mp4" />
+                  Seu navegador não suporta a tag de vídeo.
+                </video>
+              </div>
             </div>
-            <div class="col-lg-7 col-md-6">
-              <h2 class="display-5 mb-3 fw-bold">Sobre Mim</h2>
-              <p class="lead text-muted">
-                Sou um desenvolvedor web apaixonado por transformar ideias
-                criativas em soluções digitais funcionais e elegantes. Com um
-                olhar atento aos detalhes e foco na experiência do utilizador,
-                dedico-me a construir websites e aplicações que não apenas
-                atendam, mas superem as expectativas.
-              </p>
-              <p class="text-muted">
-                Minha jornada no desenvolvimento web é impulsionada pela
-                constante busca por aprendizado e pela satisfação em ver
-                projetos ganharem vida e ajudarem negócios a prosperar no
-                ambiente online. Estou sempre explorando novas tecnologias e
-                metodologias para entregar o que há de melhor em desenvolvimento
-                web.
-              </p>
+            <div class="col-lg-5">
+              <h3 class="fw-bold1">Web App, modelo ERP</h3>
+              <h5 class="fw-bold2">Tecnologias</h5>
+              <div class="tech-stack-container mb-4">
+                <div class="tech-category">
+                  <h6 class="tech-category-title">Front-end</h6>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge">React</span
+                    ><span class="badge">Tailwind CSS</span>
+                  </div>
+                </div>
+                <div class="tech-category mt-3">
+                  <h6 class="tech-category-title">Back-end</h6>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge">Firebase</span
+                    ><span class="badge">Firebase Authentication</span
+                    ><span class="badge">Firebase Cloud Functions</span>
+                  </div>
+                </div>
+                <div class="tech-category mt-3">
+                  <h6 class="tech-category-title">Bibliotecas</h6>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge">Recharts</span
+                    ><span class="badge">Lucide React</span
+                    ><span class="badge">Papa Parse</span>
+                  </div>
+                </div>
+                <div class="tech-category mt-3">
+                  <h6 class="tech-category-title">
+                    Ambiente de Desenvolvimento
+                  </h6>
+                  <div class="d-flex flex-wrap gap-2">
+                    <span class="badge">Node.js</span
+                    ><span class="badge">ESLint</span>
+                  </div>
+                </div>
+              </div>
+              <a href="#" class="btn btn-accent disabled" aria-disabled="true"
+                >Em Breve <i class="fas fa-rocket ms-2"></i
+              ></a>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="portfolio" class="mb-5">
-        <h2 class="text-center mb-5">Explorando Possibilidades Digitais</h2>
-        <p class="text-center text-muted mb-5 mx-auto" style="max-width: 800px">
-          Cada projeto é uma oportunidade única de traduzir visões em realidade
-          digital. Veja como diferentes áreas profissionais ganham vida online
-          através de soluções personalizadas.
-        </p>
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-          <div class="col project-card-wrapper">
-            <div class="card h-100 project-card">
-              <picture><source srcset="img/imgarquiteta.webp" type="image/webp"><img src="img/imgarquiteta.png" class="card-img-top project-image" alt="Projeto Arquiteta" loading="lazy" /></picture>
-              <div class="card-body">
-                <h5 class="card-title">Espaços que Inspiram: Arquiteta</h5>
-                <p class="card-text">
-                  Como um design moderno e um portfólio visual imersivo podem
-                  capturar a essência de projetos arquitetónicos únicos?
-                </p>
-                <a
-                  href="https://alessandrotostes.github.io/portfolio-arquiteta/"
-                  target="_blank"
-                  class="btn btn-accent view-project-btn"
-                  role="button"
-                >
-                  Descobrir Mais
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col project-card-wrapper">
-            <div class="card h-100 project-card">
-              <picture><source srcset="img/projeto psicanalista foto.webp" type="image/webp"><img src="img/projeto psicanalista foto.png" class="card-img-top project-image" alt="Projeto Psicanalista" loading="lazy" /></picture>
-              <div class="card-body">
-                <h5 class="card-title">Conexão e Cuidado: Psicanalista</h5>
-                <p class="card-text">
-                  De que forma um website pode transmitir segurança e
-                  acolhimento, facilitando o primeiro passo para o cuidado?
-                </p>
-                <a
-                  href="https://tauanapavanelli.com/  "
-                  target="_blank"
-                  class="btn btn-accent view-project-btn"
-                  role="button"
-                >
-                  Ver Abordagem
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col project-card-wrapper">
-            <div class="card h-100 project-card">
-              <picture><source srcset="img/estetica-cirurgia plastica.webp" type="image/webp"><img src="img/estetica-cirurgia plastica.png" class="card-img-top project-image" alt="Projeto Clínica" loading="lazy" /></picture>
-              <div class="card-body">
-                <h5 class="card-title">O melhor de Você: Clínica Médica</h5>
-                <p class="card-text">
-                  Um desing minimalista, visando demonstrar todo o potencial da sua empresa,  mostrando com excelência todos os seus serviços.
-                </p>
-                <a
-                  href="https://alessandrotostes.github.io/clinica-estetica/"
-                  target="_blank"
-                  class="btn btn-accent view-project-btn"
-                  role="button"
-                >
-                  Explorar Solução
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="col project-card-wrapper">
-            <div class="card h-100 project-card">
-              <picture><source srcset="img/projeto advocacia.webp" type="image/webp"><img src="img/projeto advocacia.png" class="card-img-top project-image" alt="Projeto Advocacia" loading="lazy" /></picture>
-              <div class="card-body">
-                <h5 class="card-title">Presença e Confiança: Advocacia</h5>
-                <p class="card-text">
-                  Qual a importância de um site institucional que reflita a
-                  seriedade e a expertise de um escritório de advocacia?
-                </p>
-                <a
-                  href="https://alessandrotostes.github.io/teste-advocacia/"
-                  target="_blank"
-                  class="btn btn-accent view-project-btn"
-                  role="button"
-                >
-                  Conhecer Estratégia
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="frontend-dev-info" class="py-5">
+      <section id="portfolio" data-aos="fade-up">
         <div class="container">
-          <h2 class="text-center mb-4">O que faz um Desenvolvedor Frontend?</h2>
-          <p class="text-center text-muted mb-4 mx-auto" style="max-width: 800px;">
-            Um desenvolvedor frontend é o profissional responsável por construir a interface com a qual o utilizador interage diretamente num site ou aplicação web. Eles traduzem o design visual em código funcional, garantindo uma experiência de utilizador fluida, intuitiva e acessível.
-          </p>
-          <div class="text-center mb-4">
-            <button class="btn btn-accent" type="button" data-bs-toggle="collapse" data-bs-target="#frontendDetails" aria-expanded="false" aria-controls="frontendDetails">
-              Saiba Mais
+          <h2 class="text-center mb-5">Outros Projetos</h2>
+          <div
+            class="text-center mb-5"
+            id="portfolio-filters"
+            data-aos="fade-up"
+          >
+            <button class="btn btn-outline-light active" data-filter="all">
+              Todos
+            </button>
+            <button class="btn btn-outline-light" data-filter="webapp">
+              Web Apps
+            </button>
+            <button class="btn btn-outline-light" data-filter="website">
+              Websites
+            </button>
+            <button class="btn btn-outline-light" data-filter="landing-page">
+              Landing Pages
             </button>
           </div>
-          <div class="collapse" id="frontendDetails">
-            <div class="card card-body bg-dark text-light border-secondary">
-              <h5 class="card-title">Principais Funções de um Desenvolvedor Frontend:</h5>
-              <ul>
-                <li><strong>Desenvolvimento da Interface do Utilizador (UI):</strong> Criar os elementos visuais e interativos da página, como menus, botões, formulários e layouts, utilizando HTML, CSS e JavaScript.</li>
-                <li><strong>Responsividade:</strong> Garantir que o site ou aplicação se adapte e funcione corretamente em diferentes dispositivos e tamanhos de ecrã (desktops, tablets, smartphones).</li>
-                <li><strong>Otimização de Desempenho:</strong> Assegurar que o site carregue rapidamente e que as interações sejam ágeis, otimizando imagens, código e utilizando técnicas de carregamento eficiente.</li>
-                <li><strong>Acessibilidade (a11y):</strong> Implementar práticas que tornem o site acessível a todos os utilizadores, incluindo pessoas com deficiência, seguindo diretrizes como as WCAG.</li>
-                <li><strong>Colaboração com Designers e Backends:</strong> Trabalhar em conjunto com designers para implementar a visão visual e com desenvolvedores backend para integrar a interface com a lógica do servidor e bases de dados.</li>
-                <li><strong>Testes e Depuração:</strong> Realizar testes para identificar e corrigir erros (bugs) na interface e garantir a compatibilidade entre diferentes navegadores.</li>
-                <li><strong>Manutenção e Atualizações:</strong> Manter o código da interface atualizado, aplicar melhorias e corrigir problemas que surjam após o lançamento.</li>
-                <li><strong>Utilização de Frameworks e Bibliotecas:</strong> Frequentemente utilizam frameworks como React, Angular ou Vue.js, e bibliotecas como jQuery, para agilizar o desenvolvimento e criar interfaces mais robustas e interativas.</li>
-              </ul>
-              <p>Em resumo, o desenvolvedor frontend foca-se na "parte da frente" da web, tudo aquilo que o utilizador vê e com que interage, com o objetivo de criar experiências digitais envolventes e eficazes.</p>
+
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div
+              class="col project-card-wrapper project-card--featured"
+              data-aos="fade-up"
+              data-category="webapp"
+            >
+              <div class="card h-100 project-card video-card">
+                <div class="project-image-container">
+                  <img
+                    src="img/ERPAPP.png"
+                    class="card-img-top project-image"
+                    alt="Thumbnail do Web App"
+                    loading="lazy"
+                  />
+                  <video class="preview-video" muted loop playsinline>
+                    <source
+                      src="video/teste-web-app-erp.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Meu Web App (ERP)</h5>
+                  <p class="card-text">
+                    Passe o mouse para ver um preview. Clique para ver a
+                    demonstração completa do desenvolvimento deste app.
+                  </p>
+                  <button
+                    type="button"
+                    class="btn btn-accent"
+                    data-bs-toggle="modal"
+                    data-bs-target="#projectModal"
+                    data-project-title="Demonstração do Web App (ERP)"
+                    data-project-video-url="video/teste-web-app-erp.mp4"
+                    data-project-desc="Este vídeo mostra o processo de desenvolvimento e as principais funcionalidades do meu novo web app."
+                    data-project-tech="React, Tailwind CSS, Firebase, Firebase Authentication, Firebase Cloud Functions, Recharts, Lucide React, Papa Parse, Node.js, ESLint"
+                    data-project-live-url="#"
+                    data-project-repo-url="#"
+                  >
+                    Ver Demonstração
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col project-card-wrapper project-card--featured"
+              data-aos="fade-up"
+              data-category="website"
+            >
+              <div class="card h-100 project-card">
+                <div class="project-image-container">
+                  <img
+                    src="img/projeto psicanalista foto.png"
+                    class="card-img-top project-image"
+                    alt="Projeto Psicanalista"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Conexão e Cuidado: Psicanalista</h5>
+                  <p class="card-text">
+                    De que forma um website pode transmitir segurança e
+                    acolhimento, facilitando o primeiro passo para o cuidado?
+                  </p>
+                  <button
+                    type="button"
+                    class="btn btn-accent"
+                    data-bs-toggle="modal"
+                    data-bs-target="#projectModal"
+                    data-project-title="Website para Psicanalista"
+                    data-project-image-url="img/projeto psicanalista foto.png"
+                    data-project-desc="O desafio era criar uma presença online que transmitisse confiança e serenidade. A paleta de cores suaves, a tipografia clara e as seções bem definidas sobre a abordagem terapêutica ajudam a construir uma ponte de confiança com o visitante."
+                    data-project-tech="HTML, CSS, JavaScript, WhatsApp API, SEO"
+                    data-project-live-url="https://tauanapavanelli.com/"
+                    data-project-repo-url="#"
+                  >
+                    Ver Detalhes
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col project-card-wrapper project-card--featured"
+              data-aos="fade-up"
+              data-category="landing-page"
+            >
+              <div class="card h-100 project-card">
+                <div class="project-image-container">
+                  <img
+                    src="img/imgarquiteta.png"
+                    class="card-img-top project-image"
+                    alt="Projeto Arquiteta"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Espaços que Inspiram: Arquiteta</h5>
+                  <p class="card-text">
+                    Como um design moderno e um portfólio visual imersivo podem
+                    capturar a essência de projetos arquitetónicos únicos?
+                  </p>
+                  <button
+                    type="button"
+                    class="btn btn-accent"
+                    data-bs-toggle="modal"
+                    data-bs-target="#projectModal"
+                    data-project-title="Landing Page para Arquiteta"
+                    data-project-image-url="img/imgarquiteta.png"
+                    data-project-desc="Este projeto foca em um design minimalista e uma galeria de imagens imersiva para destacar o trabalho de uma arquiteta. A navegação é intuitiva, permitindo que potenciais clientes explorem os projetos com facilidade e entrem em contato."
+                    data-project-tech="HTML, CSS, JavaScript, Bootstrap"
+                    data-project-live-url="https://alessandrotostes.github.io/portfolio-arquiteta/"
+                    data-project-repo-url="#"
+                  >
+                    Ver Detalhes
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col project-card-wrapper"
+              data-aos="fade-up"
+              data-category="landing-page"
+            >
+              <div class="card h-100 project-card">
+                <div class="project-image-container">
+                  <img
+                    src="img/estetica-cirurgia plastica.png"
+                    class="card-img-top project-image"
+                    alt="Projeto Clínica"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">O melhor de Você: Clínica Médica</h5>
+                  <p class="card-text">
+                    Um design minimalista, visando demonstrar todo o potencial
+                    da sua empresa, mostrando com excelência todos os seus
+                    serviços.
+                  </p>
+                  <button
+                    type="button"
+                    class="btn btn-accent"
+                    data-bs-toggle="modal"
+                    data-bs-target="#projectModal"
+                    data-project-title="Landing Page para Clínica Médica"
+                    data-project-image-url="img/estetica-cirurgia plastica.png"
+                    data-project-desc="Landing page para uma clínica de estética, focada na conversão. Apresenta os procedimentos de forma clara, com botões de chamada para ação (CTA) bem posicionados para agendamento de consultas."
+                    data-project-tech="HTML, CSS, JavaScript"
+                    data-project-live-url="https://alessandrotostes.github.io/clinica-estetica/"
+                    data-project-repo-url="#"
+                  >
+                    Ver Detalhes
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col project-card-wrapper"
+              data-aos="fade-up"
+              data-category="website"
+            >
+              <div class="card h-100 project-card">
+                <div class="project-image-container">
+                  <img
+                    src="img/projeto advocacia.png"
+                    class="card-img-top project-image"
+                    alt="Projeto Advocacia"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Presença e Confiança: Advocacia</h5>
+                  <p class="card-text">
+                    Qual a importância de um site institucional que reflita a
+                    seriedade e a expertise de um escritório de advocacia?
+                  </p>
+                  <button
+                    type="button"
+                    class="btn btn-accent"
+                    data-bs-toggle="modal"
+                    data-bs-target="#projectModal"
+                    data-project-title="Website Institucional para Advocacia"
+                    data-project-image-url="img/projeto advocacia.png"
+                    data-project-desc="Um site institucional sóbrio e profissional, que serve como um cartão de visitas digital. As áreas de atuação, o perfil dos advogados e as formas de contato são apresentadas de maneira direta e eficiente, transmitindo credibilidade."
+                    data-project-tech="HTML, CSS, Bootstrap"
+                    data-project-live-url="https://alessandrotostes.github.io/teste-advocacia/"
+                    data-project-repo-url="#"
+                  >
+                    Ver Detalhes
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <section id="contato" class="py-5">
-      <div class="container text-center">
-        <h2 class="mb-4">Conecte-se Comigo</h2>
-        <p class="lead mx-auto mb-5" style="max-width: 600px">
-          Vamos conversar sobre o seu próximo projeto ou tirar as suas dúvidas.
-          Encontre-me nas redes sociais ou envie uma mensagem direta pelo
-          WhatsApp.
-        </p>
-        <ul class="social-links mb-4">
-          <li>
-            <a href="https://github.com/alessandrotostes" target="_blank" title="GitHub"
-              ><i class="fab fa-github"></i
+    <footer class="site-footer" data-aos="fade-up">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-brand">
+            <a class="navbar-brand" href="#"
+              ><picture
+                ><source srcset="img/logotostes.png" type="image/png" />
+                <img
+                  src="img/logotostes.png"
+                  alt="Logo"
+                  class="footer-logo"
+                  loading="lazy" /></picture
             ></a>
-          </li>
-          <li>
-            <a href="linkedin.com/in/alessandro-tostes-940972242" target="_blank" title="LinkedIn"
-              ><i class="fab fa-linkedin-in"></i
-            ></a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/alessandrotostes/" target="_blank" title="Instagram"
-              ><i class="fab fa-instagram"></i
-            ></a>
-          </li>
-        </ul>
-        <div class="whatsapp-button-container">
-          <a
-            href="https://wa.me/5527997763060?text=Olá,%20visitei%20o%20seu%20portfólio%20e%20gostaria%20de%20fazer%20um%20orçamento!"
-            class="btn btn-success btn-lg"
-            target="_blank"
-          >
-            <i class="fab fa-whatsapp me-2"></i> Conversar pelo WhatsApp
-          </a>
+            <p>Desenvolvedor Web</p>
+          </div>
+          <div class="footer-social">
+            <h6 class="footer-heading">Conecte-se</h6>
+            <ul class="social-links">
+              <li>
+                <a
+                  href="https://github.com/alessandrotostes"
+                  target="_blank"
+                  title="GitHub"
+                  ><i class="fab fa-github"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://linkedin.com/in/alessandro-tostes-940972242"
+                  target="_blank"
+                  title="LinkedIn"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </li>
+              <li>
+                <a
+                  href="https://www.instagram.com/alessandrotostes/"
+                  target="_blank"
+                  title="Instagram"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h6 class="footer-heading">Vamos Conversar</h6>
+            <a
+              href="https://wa.me/5527997763060?text=Olá,%20visitei%20o%20seu%20portfólio%20e%20gostaria%20de%20fazer%20um%20orçamento!"
+              class="btn btn-accent"
+              target="_blank"
+              ><i class="fab fa-whatsapp me-2"></i> WhatsApp</a
+            >
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <p>&copy; 2025 Tostes. Todos os direitos reservados.</p>
         </div>
       </div>
-    </section>
-
-    <footer class="bg-dark text-center py-3">
-      <div class="container">
-        <p>&copy; 2025 Tostes. Todos os direitos reservados.</p>
-      </div>
     </footer>
+
+    <a href="#" id="back-to-top" class="back-to-top-btn" title="Voltar ao topo"
+      ><i class="fas fa-arrow-up"></i
+    ></a>
+
+    <div
+      class="modal fade"
+      id="projectModal"
+      tabindex="-1"
+      aria-labelledby="projectModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modalProjectTitle"></h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div id="modal-media-container" class="mb-4">
+              <img
+                id="modalProjectImage"
+                src=""
+                alt="Imagem do Projeto"
+                class="img-fluid rounded"
+                style="display: none"
+              />
+              <video
+                id="modalProjectVideo"
+                class="img-fluid rounded"
+                controls
+                autoplay
+                muted
+                loop
+                playsinline
+                style="display: none"
+              >
+                <source src="" type="video/mp4" />
+                Seu navegador não suporta a tag de vídeo.
+              </video>
+            </div>
+            <p id="modalProjectDesc"></p>
+            <h6 class="mt-4">Tecnologias Utilizadas:</h6>
+            <div id="modalProjectTech" class="d-flex flex-wrap gap-2"></div>
+          </div>
+          <div class="modal-footer">
+            <a
+              id="modalProjectRepoLink"
+              href="#"
+              class="btn btn-outline-secondary"
+              target="_blank"
+              role="button"
+              ><i class="fab fa-github me-2"></i> Repositório</a
+            >
+            <a
+              id="modalProjectLiveLink"
+              href="#"
+              class="btn btn-accent"
+              target="_blank"
+              role="button"
+              >Ver Site Ao Vivo <i class="fas fa-external-link-alt ms-2"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="contatoModal"
+      tabindex="-1"
+      aria-labelledby="contatoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="contatoModalLabel">Vamos Conversar</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <p class="lead">
+              Estou disponível para novos projetos e colaborações. Conecte-se
+              comigo através das redes sociais ou envie uma mensagem direta.
+            </p>
+            <div class="footer-social my-4">
+              <ul class="social-links">
+                <li>
+                  <a
+                    href="https://github.com/alessandrotostes"
+                    target="_blank"
+                    title="GitHub"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://linkedin.com/in/alessandro-tostes-940972242"
+                    target="_blank"
+                    title="LinkedIn"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/alessandrotostes/"
+                    target="_blank"
+                    title="Instagram"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+            <a
+              href="https://wa.me/5527997763060?text=Olá,%20visitei%20o%20seu%20portfólio%20e%20gostaria%20de%20fazer%20um%20orçamento!"
+              class="btn btn-success btn-lg"
+              target="_blank"
+              ><i class="fab fa-whatsapp me-2"></i> Enviar Mensagem</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, once: true, offset: 50 });
+    </script>
+    <script src="js/script.js" defer></script>
   </body>
 </html>
-
-
-    <script src="js/script.min.js" defer></script>

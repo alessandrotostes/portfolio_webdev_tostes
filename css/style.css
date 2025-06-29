@@ -1,23 +1,24 @@
-/****************************************************************************/
-/* === Dark Modern Portfolio CSS === */
+/* ==========================================================================
+   1. Imports e Variáveis
+   ========================================================================== */
 
 /* === Google Fonts Import === */
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;700&family=Open+Sans:wght@400;600&family=Roboto+Mono:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;700&family=Roboto+Mono:wght@400&display=swap");
 
-/* === Root Variables === */
+/* === Root Variables (Dark Theme Default) === */
 :root {
   --font-primary: "Inter", sans-serif;
-  --font-secondary: "Open Sans", sans-serif;
+  --font-secondary: "Inter", sans-serif;
   --font-headings: "Space Grotesk", sans-serif;
   --font-code: "Roboto Mono", monospace;
 
-  --color-bg-primary: #0d1117; /* Deep Dark Blue/Black (GitHub Dark-like) */
-  --color-bg-secondary: #161b22; /* Slightly Lighter Dark Blue/Gray */
-  --color-text-primary: #f0f0f0; /* Off-white for primary text */
-  --color-text-secondary: #c9d1d9; /* Lighter gray for secondary text */
-  --color-accent: #39ff14; /* Neon/Tech Green */
-  --color-accent-hover: #28b40f; /* Darker Neon Green for hover */
-  --color-border: #30363d; /* Subtle border color */
+  --color-bg-primary: #0d1117;
+  --color-bg-secondary: #161b22;
+  --color-text-primary: #f0f0f0;
+  --color-text-secondary: #c9d1d9;
+  --color-accent: #39ff14;
+  --color-accent-hover: #28b40f;
+  --color-border: #30363d;
 
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
   --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -25,32 +26,45 @@
 
   --border-radius-sm: 4px;
   --border-radius-md: 8px;
-  --navbar-height-desktop: 124px; /* Approximate height of the navbar, adjust as needed */
-  --navbar-height-tablet: 104px; /* Approximate height for tablets */
-  --navbar-height-mobile: 89px; /* Approximate height for mobile */
+  --navbar-height-desktop: 124px;
+}
+:root {
+  /* ...todas as suas outras variáveis... */
+  --color-border: #30363d;
+
+  /* --- ADICIONE ESTA LINHA --- */
+  --color-card-title: var(--color-text-primary);
+
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* ...resto das variáveis... */
+}
+/* === Variáveis para o Tema Claro === */
+body[data-theme="light"] {
+  --color-bg-primary: #f0f2f5;
+  --color-bg-secondary: #ffffff;
+  --color-text-primary: #1c1e21;
+  --color-text-secondary: #606770;
+  --color-border: #dce1e6;
+  --color-card-title: rgba(13, 39, 79, 0.79);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-/* === General Body Styles === */
-html {
-  overflow-x: hidden; /* Prevent horizontal scroll on html element */
-}
-
+/* ==========================================================================
+   2. Estilos Gerais (Base e Tipografia)
+   ========================================================================== */
 body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
   font-family: var(--font-secondary);
   margin: 0;
-  padding: 0;
+  padding-top: var(--navbar-height-desktop);
   line-height: 1.7;
-  font-size: 16px;
-  overflow-x: hidden; /* Prevent horizontal scroll on body */
-  width: 100%; /* Ensure body takes full width without causing overflow */
-  padding-top: var(
-    --navbar-height-desktop
-  ); /* Add padding to prevent content overlap by fixed navbar */
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* === Headings === */
 h1,
 h2,
 h3,
@@ -60,174 +74,85 @@ h6 {
   font-family: var(--font-headings);
   color: var(--color-text-primary);
   font-weight: 700;
-  letter-spacing: 0.5px;
-  margin-top: 0;
   margin-bottom: 1rem;
-  overflow-wrap: break-word; /* Prevent overflow from long words */
 }
-
 h1 {
-  font-size: 3rem; /* 48px */
+  font-size: 3rem;
 }
-
 h2 {
-  font-size: 2.25rem; /* 36px */
-  margin-bottom: 2rem;
+  font-size: 2.25rem;
+  margin-bottom: 3rem;
+  text-align: center;
 }
-
-h3 {
-  font-size: 1.75rem; /* 28px */
-}
-
 h5.card-title {
-  font-family: var(--font-headings);
-  font-weight: 700;
-  font-size: 1.25rem; /* 20px */
-  color: var(--color-text-primary);
+  font-size: 1.25rem;
+  color: var(--color-card-title); /* Usa nossa nova variável */
+}
+p.lead {
+  color: var(--color-text-secondary);
 }
 
-/* === Links === */
 a {
   color: var(--color-accent);
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
 a:hover {
   color: var(--color-accent-hover);
-  text-decoration: none; /* No underline on hover for a cleaner look */
 }
 
-/* === Buttons === */
-.btn {
-  font-family: var(--font-headings);
-  font-weight: 500;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--border-radius-sm);
-  transition: all 0.3s ease;
-  border: 1px solid transparent;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-}
-
-.btn-accent {
-  background-color: var(--color-accent);
-  color: var(--color-bg-primary);
-  border-color: var(--color-accent);
-}
-
-.btn-accent:hover {
-  background-color: var(--color-accent-hover);
-  border-color: var(--color-accent-hover);
-  color: var(--color-bg-primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.btn-success {
-  background-color: var(--color-accent);
-  color: var(--color-bg-primary);
-  border-color: var(--color-accent);
-}
-
-.btn-success:hover {
-  background-color: var(--color-accent-hover);
-  border-color: var(--color-accent-hover);
-  color: var(--color-bg-primary);
-}
+/* ==========================================================================
+   3. Componentes Principais (Header, Nav, Footer)
+   ========================================================================== */
 
 /* === Header (Hero Section) === */
 .hero-header {
-  background-color: var(--color-bg-primary); /* Solid dark background */
+  background-color: var(--color-bg-secondary);
   padding: 6rem 1rem;
   text-align: center;
   border-bottom: 1px solid var(--color-border);
-  /* No margin-top needed here as body padding handles fixed navbar */
 }
-
 .hero-header h1 {
-  font-size: 3.5rem; /* Larger for impact */
-  font-weight: 700;
   margin-bottom: 0.5rem;
-  color: var(--color-text-primary);
 }
-
-.hero-header h1 strong {
-  font-weight: 700;
-}
-
 .hero-header .highlight {
   color: var(--color-accent);
-  font-weight: 700;
 }
-
 .hero-header p {
   font-size: 1.25rem;
   color: var(--color-text-secondary);
   max-width: 700px;
-  margin: 1rem auto 0 auto;
-  font-family: var(--font-secondary);
-  padding-bottom: 20px;
-  overflow-wrap: break-word;
+  margin: 1rem auto 2rem auto;
 }
 
 /* === Navbar === */
-.navbar.fixed-top {
-  /* Ensure z-index is high enough if other elements might overlap */
-  z-index: 1030; /* Default Bootstrap z-index for fixed navbar */
-}
-
 .navbar {
-  background-color: var(
-    --color-bg-secondary
-  ) !important; /* Darker background for navbar */
+  background-color: var(--color-bg-secondary) !important;
   padding: 1rem 0;
   border-bottom: 1px solid var(--color-border);
   box-shadow: var(--shadow-sm);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
-
 .navbar-brand {
   font-family: var(--font-headings);
-  font-weight: 400;
   font-size: 1.75rem;
   color: var(--color-text-primary) !important;
-  display: flex;
-  align-items: center;
-  overflow-wrap: break-word;
 }
-
 .navbar-logo {
   height: 100px;
-  width: auto;
   margin-right: 0.5rem;
 }
-
-.navbar-tech-message {
-  font-family: var(--font-code);
-  color: var(--color-accent);
-  font-size: 1rem;
-  margin-left: 1rem; /* Space from brand */
-  margin-right: 1rem; /* Space from nav links */
-  white-space: nowrap;
-}
-
 .navbar-nav .nav-link {
-  font-family: var(--font-secondary);
   color: var(--color-text-secondary) !important;
   font-size: 1rem;
   font-weight: 500;
-  padding: 0.5rem 1rem;
-  margin-left: 0.5rem;
-  transition: color 0.3s ease;
+  margin: 0 0.25rem;
   position: relative;
 }
-
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
   color: var(--color-accent) !important;
 }
-
 .navbar-nav .nav-link::after {
   content: "";
   position: absolute;
@@ -239,52 +164,155 @@ a:hover {
   background-color: var(--color-accent);
   transition: width 0.3s ease;
 }
-
 .navbar-nav .nav-link:hover::after,
 .navbar-nav .nav-link.active::after {
   width: 50%;
 }
-
 .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(128, 128, 128, 0.1);
 }
-
-.navbar-toggler-icon {
+body[data-theme="dark"] .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28240, 240, 240, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
-
-/* === Main Content & Sections === */
-main.container {
-  /* padding-top: 3rem; /* This might be redundant if body has padding-top */
-  padding-bottom: 3rem;
-  width: 100%;
-  max-width: 100%; /* Ensure container does not exceed viewport */
-  overflow: hidden; /* Prevent internal overflow from affecting layout */
+body[data-theme="light"] .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2828, 30, 33, 0.7%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-section {
-  padding: 4rem 1rem; /* Added horizontal padding for smaller screens */
-  overflow: hidden; /* Prevent section content from overflowing */
+/* === Rodapé (Footer) === */
+.site-footer {
+  background-color: var(--color-bg-secondary);
+  padding: 4rem 1rem 2rem 1rem;
+  border-top: 1px solid var(--color-border);
 }
-
-section#portfolio h2,
-section#sobre-nova h2, /* Updated ID */
-section#contato h2 {
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
+  gap: 2rem;
   margin-bottom: 3rem;
+}
+.footer-brand,
+.footer-social,
+.footer-contact {
+  flex: 1;
+  min-width: 200px;
+}
+.footer-logo {
+  height: 100px;
+  margin-bottom: 0.5rem;
+}
+.footer-brand p {
+  color: var(--color-text-secondary);
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: bold;
+}
+.footer-heading {
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+.social-links {
+  list-style: none; /* Remove as "bolinhas" */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.site-footer .social-links a {
+  font-size: 1.5rem;
+}
+.footer-copyright {
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  padding-top: 2rem;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+}
+.footer-copyright p {
+  margin: 0;
+}
+
+/* ==========================================================================
+   4. Estilos de Seções e Componentes Específicos
+   ========================================================================== */
+
+/* === Seções Genéricas === */
+section {
+  padding: 4rem 0;
+}
+
+/* === App em Destaque Section === */
+/* Centralização da Seção do App em Destaque */
+#featured-app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - var(--navbar-height-desktop));
+  padding: 2rem 1rem;
+  background-color: var(--color-bg-primary);
+}
+
+/* Garante que o container interno se comporte corretamente */
+#featured-app > .container {
+  width: 100%;
+}
+
+#featured-app .video-wrapper {
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  line-height: 0;
+}
+#featured-app .badge {
+  background-color: var(--color-border);
+  color: var(--color-text-secondary);
+  font-family: var(--font-code);
+  font-weight: 500;
+  padding: 0.5em 0.9em;
+  font-size: 0.9rem;
+}
+.tech-category-title {
+  color: var(--color-text-secondary);
+  font-family: var(--font-code);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+.fw-bold {
+  font-weight: 700 !important;
+}
+.fw-bold1 {
+  padding-top: 2.5rem;
+  color: #1d65abeb;
+}
+.fw-bold2 {
+}
+#contatoModal .social-links a {
+  font-size: 2.5rem;
+}
+/* === Portfolio Section & Cards === */
+#portfolio-filters .btn {
+  margin: 0 5px;
+  border-color: var(--color-border);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+#portfolio-filters .btn.active {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-bg-primary) !important;
+}
+#portfolio-filters .btn:hover {
   color: var(--color-text-primary);
 }
-
-section#portfolio p.text-center.text-muted {
-  color: var(--color-text-secondary) !important;
-  font-family: var(--font-secondary);
-}
-.text-muted {
-  color: rgb(250, 250, 250) !important;
-}
-/* === Project Cards === */
-.project-card-wrapper {
-  margin-bottom: 2rem; /* Add some bottom margin for spacing on smaller screens */
+#portfolio-filters .btn.active:hover {
+  color: var(--color-bg-primary) !important;
 }
 
 .project-card {
@@ -292,161 +320,221 @@ section#portfolio p.text-center.text-muted {
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius-md);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
   height: 100%;
   display: flex;
   flex-direction: column;
   box-shadow: var(--shadow-sm);
 }
-
 .project-card:hover {
   transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 25px rgba(57, 255, 20, 0.2), var(--shadow-lg);
 }
-
-.project-image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: contain;
-  object-position: center center;
-  border-bottom: 1px solid var(--color-border);
-  transition: transform 0.3s ease;
-  background-color: var(--color-bg-primary);
-}
-
-.project-card:hover .project-image {
-  transform: scale(1.03);
-}
-
 .project-card .card-body {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
-
 .project-card .card-text {
   color: var(--color-text-secondary);
-  font-family: var(--font-secondary);
-  font-size: 0.95rem;
   flex-grow: 1;
   margin-bottom: 1.5rem;
-  overflow-wrap: break-word;
+}
+.project-card .btn {
+  margin-top: auto;
 }
 
-.project-card .btn-accent {
-  margin-top: auto; /* Pushes button to the bottom */
+/* Container de Mídia e Preview de Vídeo */
+.project-image-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-bg-primary);
+  border-bottom: 1px solid var(--color-border);
+}
+.project-image,
+.preview-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.4s ease;
+}
+.preview-video {
+  opacity: 0;
+}
+.project-card.video-card:hover .project-image {
+  opacity: 0;
+}
+.project-card.video-card:hover .preview-video {
+  opacity: 1;
 }
 
-/* === About Section (New) === */
-section#sobre-nova .lead {
-  color: var(--color-text-secondary);
-  font-family: var(--font-secondary);
-  font-size: 1.1rem;
-  line-height: 1.8;
-  overflow-wrap: break-word;
-}
-section#sobre-nova img.rounded-circle {
-  border: 3px solid var(--color-border);
-  max-width: 100%; /* Ensure image is responsive */
-  height: auto; /* Maintain aspect ratio */
-}
-
-/* === Contact Section === */
-section#contato {
+/* === Modal === */
+.modal-content {
   background-color: var(--color-bg-secondary);
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  border: 1px solid var(--color-border);
 }
-
-section#contato .lead {
+.modal-header,
+.modal-footer {
+  border-color: var(--color-border);
+}
+.modal-title {
+  color: var(--color-text-primary);
+  font-family: var(--font-headings);
+}
+.modal-body p {
   color: var(--color-text-secondary);
-  font-family: var(--font-secondary);
-  overflow-wrap: break-word;
 }
-
-.social-links {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 2.5rem 0;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap; /* Allow wrapping on small screens */
+.modal-body h6 {
+  color: var(--color-text-primary);
 }
-
-.social-links li a {
-  font-size: 2rem; /* Larger icons */
+#modalProjectTech .badge {
+  background-color: var(--color-border);
   color: var(--color-text-secondary);
-  transition: color 0.3s ease, transform 0.3s ease;
+  font-family: var(--font-code);
+  padding: 0.4em 0.8em;
+  font-size: 0.85rem;
+}
+.modal-footer .btn-outline-secondary {
+  color: var(--color-text-secondary);
+  border-color: var(--color-border);
+}
+.modal-footer .btn-outline-secondary:hover {
+  background-color: var(--color-border);
+  color: var(--color-text-primary);
+}
+.modal-footer .btn-accent i {
+  transition: transform 0.3s ease;
+}
+.modal-footer .btn-accent:hover i {
+  transform: translateX(4px);
 }
 
-.social-links li a:hover {
+/* ==========================================================================
+   5. Componentes Utilitários (Botões, Cursor, etc)
+   ========================================================================== */
+.btn-accent,
+.btn-success {
+  background-color: var(--color-accent);
+  color: var(--color-bg-primary) !important;
+  border-color: var(--color-accent);
+}
+.btn-accent:hover,
+.btn-success:hover {
+  background-color: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.typed-cursor {
   color: var(--color-accent);
-  transform: scale(1.1);
+  animation: typed-blink 0.7s infinite;
+}
+@keyframes typed-blink {
+  50% {
+    opacity: 0;
+  }
 }
 
-.whatsapp-button-container .btn-lg {
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
-}
-
-/* === Footer === */
-footer.bg-dark {
-  background-color: var(
-    --color-bg-primary
-  ) !important; /* Ensure it's the darkest */
+#theme-toggler {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border-color: var(--color-border);
   color: var(--color-text-secondary);
-  padding: 2.5rem 1rem; /* Added horizontal padding */
-  border-top: 1px solid var(--color-border);
-  text-align: center;
+}
+#theme-toggler:hover {
+  color: var(--color-text-primary);
+  border-color: var(--color-text-secondary);
 }
 
-footer p {
-  margin-bottom: 0;
-  font-size: 0.9rem;
-  font-family: var(--font-secondary);
-  overflow-wrap: break-word;
+.back-to-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--color-accent);
+  color: var(--color-bg-primary) !important;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+.back-to-top-btn:hover {
+  transform: translateY(-3px);
+  color: var(--color-bg-primary) !important;
+}
+.back-to-top-btn.active {
+  opacity: 1;
+  visibility: visible;
 }
 
-/* === Bootstrap Overrides & Adjustments === */
-/* .sticky-top class is no longer used, so this section might be less relevant */
+/* ==========================================================================
+   6. Media Queries (Responsividade)
+   ========================================================================== */
 
-.shadow-sm {
-  box-shadow: var(--shadow-sm) !important;
+@media (min-width: 768px) {
+  /* Estilo para Projetos em Destaque */
+  .project-card-wrapper.project-card--featured {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .project-card-wrapper.project-card--featured .project-card {
+    flex-direction: row;
+    align-items: center;
+  }
+  .project-card-wrapper.project-card--featured .project-image-container {
+    width: 60%;
+    aspect-ratio: 16/10;
+    border-right: 1px solid var(--color-border);
+    border-bottom: none;
+  }
+  .project-card-wrapper.project-card--featured .card-body {
+    justify-content: center;
+    padding: 2.5rem;
+  }
+  .project-card-wrapper.project-card--featured .card-text {
+    flex-grow: 0;
+  }
+  .project-card-wrapper.project-card--featured .btn {
+    margin-top: 1.5rem;
+  }
+}
+@media (min-width: 992px) {
+  #featured-app .row {
+    margin-left: 7rem; /* Este é o valor do seu ajuste. Mude se desejar. */
+  }
+}
+@media (max-width: 1199.98px) {
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
 }
 
-/* Remove Bootstrap's default light background from navbar if it was set via class */
-.navbar-light {
-  background-color: transparent !important; /* Override Bootstrap's light theme */
-}
-
-/* === Responsive Adjustments === */
 @media (max-width: 991.98px) {
-  /* Medium devices (tablets, less than 992px) */
   body {
-    padding-top: var(--navbar-height-tablet);
-  }
-  .hero-header h1 {
-    font-size: 2.5rem; /* Adjusted */
-  }
-  .hero-header p {
-    font-size: 1.05rem; /* Adjusted */
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding-top: 104px;
   }
   .navbar-brand {
-    font-size: 1.5rem; /* Adjusted */
+    font-size: 1.3rem;
   }
   .navbar-logo {
-    height: 80px; /* Adjusted */
-  }
-  .navbar-tech-message {
-    display: none; /* Hide tech message on smaller screens to save space */
-  }
-  .navbar-nav .nav-link {
-    margin-left: 0;
-    padding: 0.75rem 1rem; /* Adjust padding for collapsed menu */
+    height: 80px;
   }
   .navbar-collapse {
     background-color: var(--color-bg-secondary);
@@ -455,171 +543,44 @@ footer p {
     padding: 1rem;
     border-radius: var(--border-radius-sm);
   }
-  .navbar-nav {
-    width: 100%;
-    text-align: center;
-  }
-  section {
-    padding: 3rem 1rem;
-  }
 }
 
 @media (max-width: 767.98px) {
-  /* Small devices (landscape phones, less than 768px) */
   body {
-    padding-top: var(--navbar-height-mobile);
+    padding-top: 89px;
   }
   h1 {
-    font-size: 2.2rem; /* Adjusted */
+    font-size: 2.2rem;
   }
   h2 {
-    font-size: 1.7rem; /* Adjusted */
+    font-size: 1.7rem;
   }
   .hero-header {
     padding: 3.5rem 1rem;
   }
-  .hero-header h1 {
-    font-size: 2rem; /* Adjusted */
-  }
-  .hero-header p {
-    font-size: 1rem;
-  }
-  .navbar-brand {
-    font-size: 1.3rem;
-    margin-right: 0.5rem; /* Add some space if logo is present */
-  }
   .navbar-logo {
-    height: 65px; /* Adjusted */
-    margin-right: 0.3rem;
+    height: 65px;
   }
-  .project-card .card-body {
-    padding: 1rem;
+  /* Desfaz o layout em linha dos cards em destaque no mobile */
+  .project-card-wrapper.project-card--featured .project-card {
+    flex-direction: column;
   }
-  .project-card .card-title {
-    font-size: 1.1rem;
+  .project-card-wrapper.project-card--featured .project-image-container {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
   }
-  .project-card .card-text {
-    font-size: 0.9rem;
-  }
-  .social-links {
-    gap: 1.2rem;
-  }
-  .social-links li a {
-    font-size: 1.7rem;
-  }
-  section#sobre-nova .row > div {
-    text-align: center; /* Center content in about section on small screens */
-  }
-  section#sobre-nova img.rounded-circle {
-    margin-bottom: 1.5rem;
-    max-width: 280px; /* Control size on small screens */
-  }
-  section {
-    padding: 2.5rem 1rem;
+  /* Ajuste no rodapé */
+  .footer-content {
+    flex-direction: column;
   }
 }
 
 @media (max-width: 575.98px) {
-  /* Extra small devices (portrait phones, less than 576px) */
-  body {
-    font-size: 14px; /* Adjusted */
-    line-height: 1.6;
-    padding-top: var(
-      --navbar-height-mobile
-    ); /* Use mobile height or a specific value if it changes again */
-  }
-  .hero-header h1 {
-    font-size: 1.8rem; /* Adjusted */
-  }
-  .hero-header p {
-    font-size: 0.95rem; /* Adjusted */
-  }
-  .btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-  }
-  .whatsapp-button-container .btn-lg {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.85rem;
-  }
   .navbar-brand {
-    font-size: 1.2rem; /* Slightly smaller brand text */
-    white-space: normal;
-    flex-basis: 70%; /* Allow more space for brand text */
+    font-size: 1.2rem;
   }
   .navbar-logo {
-    height: 50px; /* Slightly smaller logo */
-    flex-shrink: 0; /* Prevent logo from shrinking too much */
-  }
-  .navbar-toggler {
-    margin-left: auto; /* Push toggler to the right */
-  }
-  .navbar > .container {
-    flex-wrap: nowrap; /* Prevent brand and toggler from stacking weirdly */
-  }
-  h2 {
-    font-size: 1.6rem;
-  }
-  h5.card-title {
-    font-size: 1rem;
-  }
-  .project-card .card-text {
-    font-size: 0.85rem;
-  }
-  section {
-    padding: 2rem 0.75rem;
-  }
-  section#sobre-nova img.rounded-circle {
-    max-width: 220px;
-  }
-  .social-links li a {
-    font-size: 1.6rem;
-  }
-}
-
-@media (max-width: 420px) {
-  /* Very small devices */
-  body {
-    padding-top: var(
-      --navbar-height-mobile
-    ); /* Or a more specific value if navbar height changes again */
-  }
-  .hero-header h1 {
-    font-size: 1.6rem;
-  }
-  .hero-header p {
-    font-size: 0.85rem;
-  }
-  .navbar-brand {
-    font-size: 1rem;
-  }
-  .navbar-logo {
-    height: 40px;
-  }
-  h2 {
-    font-size: 1.4rem;
-  }
-  h5.card-title {
-    font-size: 0.9rem;
-  }
-  .btn {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.75rem;
-  }
-  .whatsapp-button-container .btn-lg {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-  }
-  .project-card .card-text {
-    font-size: 0.8rem;
-  }
-  section#sobre-nova img.rounded-circle {
-    max-width: 180px;
-  }
-  .social-links {
-    gap: 1rem;
-  }
-  .social-links li a {
-    font-size: 1.5rem;
+    height: 50px;
   }
 }
