@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const observerOptions = {
       root: null, // Observa em relação à viewport do navegador
       rootMargin: "0px",
-      threshold: 0.1, // Ativa quando pelo menos 10% do elemento está visível
+      threshold: 0.05, // Ativa quando pelo menos 10% do elemento está visível
     };
 
     const observer = new IntersectionObserver(function (entries, observer) {
@@ -49,10 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Inicia a observação do elemento hero-header
     observer.observe(heroHeader);
   }
-
-  // --- FUNCIONALIDADES DO PORTFÓLIO (EXISTENTES) ---
-
-  // ... (Todo o resto do seu código: Alternador de Tema, Modal, Filtros, etc., permanece o mesmo) ...
 
   // Lógica do Alternador de Tema (Claro/Escuro)
   const themeToggler = document.getElementById("theme-toggler");
@@ -79,31 +75,24 @@ document.addEventListener("DOMContentLoaded", function () {
   // Lógica do Modal de Projeto
   const projectModalEl = document.getElementById("projectModal");
   if (projectModalEl) {
-    // ... (código do modal sem alterações) ...
   }
 
   // Lógica do Filtro de Projetos
   const filterContainer = document.querySelector("#portfolio-filters");
   if (filterContainer) {
-    // ... (código dos filtros sem alterações) ...
   }
 
   // Lógica para Preview de Vídeo no Hover do Card
   const videoCards = document.querySelectorAll(".project-card.video-card");
-  videoCards.forEach((card) => {
-    // ... (código do preview sem alterações) ...
-  });
+  videoCards.forEach((card) => {});
 
   // Lógica para Navegação Suave e Link Ativo
   document
     .querySelectorAll('a[href^="#"]:not([href="#"])')
-    .forEach((anchor) => {
-      // ... (código da navegação suave sem alterações) ...
-    });
+    .forEach((anchor) => {});
 
   // Lógica para o botão "Voltar ao Topo"
   const backToTopButton = document.getElementById("back-to-top");
   if (backToTopButton) {
-    // ... (código do botão sem alterações) ...
   }
 });
