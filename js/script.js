@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (typedElement) {
     const options = {
       strings: [
-        "Web Developer",
+        "Desenvolvedor Web",
         "UI | UX",
-        "Especialista em Sites Institucionais",
+        "Especialista em Landing Pages",
       ],
       typeSpeed: 50,
       backSpeed: 30,
@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
       showCursor: true,
       cursorChar: "|",
     };
-    // Guardamos a instância na variável que declaramos antes
     typed = new Typed("#typed-text", options);
   }
 
