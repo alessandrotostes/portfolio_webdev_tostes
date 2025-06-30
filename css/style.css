@@ -108,7 +108,7 @@ a:hover {
 /* === Header (Hero Section) === */
 .hero-header {
   background-color: var(--color-bg-secondary);
-  padding: 6rem 1rem;
+  padding: 3.5rem 1rem;
   text-align: center;
   border-bottom: 1px solid var(--color-border);
 }
@@ -289,7 +289,7 @@ section {
 }
 .fw-bold1 {
   padding-top: 2.5rem;
-  color: #1d65abeb;
+  color: #28b40f;
 }
 .fw-bold2 {
 }
@@ -297,6 +297,9 @@ section {
   font-size: 2.5rem;
 }
 /* === Portfolio Section & Cards === */
+#portfolio {
+  padding-top: 0; /* Você pode ajustar este valor (ex: 1rem, 2rem) se quiser um pouco de espaço */
+}
 #portfolio-filters {
   display: flex;
   flex-wrap: wrap; /* Permite que os botões quebrem para a próxima linha */
@@ -319,6 +322,9 @@ section {
 }
 #portfolio-filters .btn.active:hover {
   color: var(--color-bg-primary) !important;
+}
+.mb-5 {
+  margin-bottom: 1rem !important;
 }
 
 .project-card {
