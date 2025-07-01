@@ -620,3 +620,26 @@ body[data-theme="light"] .btn-soon:hover {
   margin-right: auto;
   display: block; /* Garante que se comporte como um bloco para as margens funcionarem */
 }
+.btn.btn-multiline {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.2;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+/* Estilo para o texto principal do botão */
+.btn.btn-multiline .btn-main-text {
+  font-weight: 500;
+}
+
+/* Estilo para o subtexto, menor e mais sutil */
+.btn.btn-multiline .btn-sub-text {
+  font-size: 0.7rem; /* <<< CORRIGIDO */
+  font-weight: 400;
+  text-transform: none;
+  opacity: 0.9;
+  margin-top: 2px;
+}
