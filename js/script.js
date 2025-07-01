@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (typedElement) {
     const options = {
       strings: [
-        "Desenvolvedor Web",
+        "Desenvolvimento de Sites",
+        "Desenvolvimento de Aplicações",
         "UI | UX",
-        "Especialista em Landing Pages",
       ],
       typeSpeed: 50,
       backSpeed: 30,
