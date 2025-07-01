@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;700&family=Open+Sans:wght@400;600&family=Roboto+Mono:wght@400&display=swap);
 :root {
   --font-primary: "Inter", sans-serif;
-  --font-secondary: "Open Sans", sans-serif;
+  --font-secondary: "Inter", sans-serif;
   --font-headings: "Space Grotesk", sans-serif;
   --font-code: "Roboto Mono", monospace;
   --color-bg-primary: #0d1117;

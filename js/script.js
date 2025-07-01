@@ -227,26 +227,41 @@ document.addEventListener("DOMContentLoaded", function () {
         : null;
     })
     .filter(Boolean);
-
-  window.addEventListener("scroll", () => {
-    let currentSectionId = "";
-    const navbarHeight =
-      document.querySelector(".navbar.fixed-top")?.offsetHeight || 0;
-    const scrollPosition = window.pageYOffset + navbarHeight + 50;
-
-    sections.forEach((section) => {
-      if (scrollPosition >= section.offsetTop) {
-        currentSectionId = "#" + section.id;
+  function throttle(func, limit) {
+    let inThrottle;
+    return function () {
+      const args = arguments;
+      const context = this;
+      if (!inThrottle) {
+        func.apply(context, args);
+        inThrottle = true;
+        setTimeout(() => (inThrottle = false), limit);
       }
-    });
+    };
+  }
 
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === currentSectionId) {
-        link.classList.add("active");
-      }
-    });
-  });
+  window.addEventListener(
+    "scroll",
+    throttle(() => {
+      let currentSectionId = "";
+      const navbarHeight =
+        document.querySelector(".navbar.fixed-top")?.offsetHeight || 0;
+      const scrollPosition = window.pageYOffset + navbarHeight + 50;
+
+      sections.forEach((section) => {
+        if (scrollPosition >= section.offsetTop) {
+          currentSectionId = "#" + section.id;
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === currentSectionId) {
+          link.classList.add("active");
+        }
+      });
+    }, 150)
+  );
 
   // Lógica para o botão "Voltar ao Topo"
   const backToTopButton = document.getElementById("back-to-top");
