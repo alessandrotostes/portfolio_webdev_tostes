@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (typedElement) {
     const options = {
       strings: [
-        "Desenvolvimento de Sites",
-        "Desenvolvimento de Aplicações",
-        "UI | UX",
+        "Desenvolvimento de Aplicações Web",
+        "Sites institucionais e Landing Pages",
+        "Experiência UI | UX",
       ],
       typeSpeed: 50,
       backSpeed: 30,
