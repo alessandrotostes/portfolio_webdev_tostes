@@ -1,173 +1,367 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PXTSJXQV');</script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FE776TDHFR"></script>
+    <!-- Google Tag Manager -->
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-FE776TDHFR');
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-PXTSJXQV");
     </script>
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-FE776TDHFR"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-FE776TDHFR");
+    </script>
+
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0"
+    />
+    <meta name="theme-color" content="#21808d" />
+    <meta name="color-scheme" content="light dark" />
 
-    <link rel="preconnect" href="https://cdn.jsdelivr.net">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://unpkg.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-
-    <title>Tostes | Desenvolvedor Web</title>
+    <title>Tostes | Desenvolvedor Web Moderno</title>
     <meta
       name="description"
-      content="Portfólio de Alessandro Tostes, desenvolvedor web especialista em criar websites, aplicações web modernas e responsivas utilizando React, Node.js e mais."
+      content="Alessandro Tostes, desenvolvedor web especialista em criar experiências digitais inovadoras e responsivas utilizando tecnologias de ponta."
     />
     <meta
       name="keywords"
-      content="Desenvolvedor Web, Criação de Sites, React, JavaScript, Firebase, Alessandro Tostes, Desenvolvedor Front-end, Aplicações WEB, HTML, CSS, Bootstrap, Tailwind CSS."
+      content="Desenvolvedor Web, Criação de Sites, React, JavaScript, Firebase, Alessandro Tostes, Desenvolvedor Front-end, Desenvolvedor Full-Stack Aplicações WEB, HTML, CSS, Bootstrap, Tailwind CSS, Mobile First, Responsivo"
     />
     <meta name="author" content="Alessandro Tostes" />
 
-    <meta
-      property="og:title"
-      content="Tostes | Desenvolvedor Web"
-    />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tostes | Desenvolvedor Web Moderno" />
     <meta
       property="og:description"
-      content="Explore os projetos e habilidades de Alessandro Tostes, especialista em desenvolvimento web moderno."
+      content="Explore os projetos e habilidades modernizadas de Alessandro Tostes, especialista em desenvolvimento web inovador."
     />
-    <link rel="canonical" href="https://www.tostesdev.com/" />
-    <meta property="og:image" content="https://tostesdev.com/img/og-image.webp" />
+    <meta
+      property="og:image"
+      content="https://tostesdev.com/img/tostescontent.webp"
+    />
     <meta property="og:url" content="https://tostesdev.com/" />
     <meta property="og:type" content="website" />
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="css/style.css?v=1" />
-    <link rel="icon" href="img/iconetostes.ico" type="image/x-icon" />
-  </head>
-  <body data-theme="dark">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PXTSJXQV"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <header class="hero-header">
-      <div class="container">
-        <h1>
-          <strong>Tostes</strong>
-          <span class="highlight" id="typed-text"></span>
-        </h1>
-        <p>Desenvolvimento Web & Soluções Digitais Personalizadas</p>
-      </div>
-      <div
-        class="whatsapp-button-container"
-        data-aos="fade-up"
-        data-aos-delay="300"
-      >
-        <a
-          href="https://wa.me/5527997763060?text=Olá,%20visitei%20o%20seu%20portfólio%20e%20gostaria%20de%20fazer%20um%20orçamento!"
-          class="btn btn-success btn-lg"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i class="fab fa-whatsapp me-2"></i> Conversar pelo WhatsApp
-        </a>
-      </div>
-    </header>
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.tostesdev.com/" />
 
-    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-          <picture
-            ><source srcset="img/logotostes.webp" type="image/png" />
-            <img
-              src="img/logotostes.webp"
-              alt="Logo"
-              class="navbar-logo me-5"
-              loading="lazy"
-          /></picture>
-          Desenvolvedor WEB
+    <!-- Favicon -->
+    <link rel="icon" href="img/iconetostes.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="img/logo.webp" />
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="img/hero-tech.jpg" as="image" />
+    <link rel="preload" href="js/script.js" as="script" />
+  </head>
+
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PXTSJXQV"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="cursor">
+      <div class="cursor-dot"></div>
+      <div class="cursor-outline"></div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+      <div class="loading-content">
+        <div class="loading-logo">
+        <img src="img/logo.webp" alt="Logo Tostes" class="loading-logo-image">
+  
+          <div class="loading-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+          </div>
+        </div>
+        <div class="loading-text">Criando experiência...</div>
+        <div class="loading-progress">
+          <div class="progress-bar"></div>
+          <div class="progress-glow"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <div class="nav__data">
+         <a href="/" class="nav__logo">
+           <img src="img/logo.webp" alt="Logo Tostes - Página Inicial">
         </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto align-items-center">
-            <li class="nav-item">
-              <a class="nav-link" href="#featured-app">App em Destaque</a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li>
+              <a href="#home" class="nav__link active-link">
+                <span class="link-text">Início</span>
+                <span class="link-bg"></span>
+              </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#portfolio">Projetos</a>
+            <li>
+              <a href="#projects" class="nav__link">
+                <span class="link-text">Projetos</span>
+                <span class="link-bg"></span>
+              </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#sobre-nova">Sobre</a>
+            <li>
+              <a href="#about" class="nav__link">
+                <span class="link-text">Sobre</span>
+                <span class="link-bg"></span>
+              </a>
             </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="#"
-                data-bs-toggle="modal"
-                data-bs-target="#contatoModal"
-                >Contato</a
-              >
-            </li>
-            <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-              <button
-                id="theme-toggler"
-                class="btn btn-outline-light btn-sm"
-                title="Alternar Tema"
-              >
-                <i class="fas fa-sun"></i>
-                <span class="visually-hidden"
-                  >Alternar para tema claro/escuro</span
-                >
-              </button>
+            <li>
+              <a href="#contact" class="nav__link">
+                <span class="link-text">Contato</span>
+                <span class="link-bg"></span>
+              </a>
             </li>
           </ul>
         </div>
-      </div>
-    </nav>
 
-    <main class="container my-5">
-      <section id="featured-app" data-aos="fade-up">
+        <div class="nav__actions">
+          <button class="theme-toggle" id="theme-toggle" title="Alternar tema">
+            <div class="theme-icon">
+              <i class="fas fa-sun sun-icon"></i>
+              <i class="fas fa-moon moon-icon"></i>
+            </div>
+          </button>
+          <a
+            href="https://wa.me/5516997643604?text=Olá,%20visitei%20o%20seu%20portfólio%20e%20gostaria%20de%20mais%20informações!"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary nav__cta"
+          >
+            <span class="cta-text">Falar Conosco</span>
+            <i class="fab fa-whatsapp"></i>
+            <div class="btn-ripple"></div>
+          </a>
+        </div>
+      </nav>
+
+      <!-- Navigation Progress Bar -->
+      <div class="nav-progress" id="navProgress"></div>
+    </header>
+    <div class="nav__toggle" id="nav-toggle">
+            <div class="hamburger">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Hero Section -->
+      <section class="hero section" id="home">
+        <div class="hero__container container">
+          <div
+            class="hero__content"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          >
+            <div class="hero__badge">
+              <div class="badge-pulse"></div>
+              <span>Desenvolvedor Web Moderno</span>
+              <div class="badge-glow"></div>
+            </div>
+
+            <h1 class="hero__title">
+              <span class="title-line">Tostes</span>
+              <span class="title-line gradient-text">Desenvolvedor</span>
+              <span class="title-line typed-container">
+                <span id="typed-text" class="typed-text"></span>
+              </span>
+            </h1>
+
+            <p class="hero__description">
+              Desenvolvimento Web & Soluções Digitais Inovadoras. Transformo
+              ideias criativas em experiências digitais funcionais e elegantes,
+              com foco na experiência do usuário e performance excepcional.
+            </p>
+            <div class="hero__actions" data-aos="fade-up" data-aos-delay="600">
+              <a href="#projects" class="btn btn-primary btn-large">
+                <i class="fas fa-rocket"></i>
+                <span>Explorar Projetos</span>
+                <div class="btn-ripple"></div>
+              </a>
+              <a
+                href="https://wa.me/5516997643604?text=Olá,%20visitei%20o%20seu%20portfólio%20e%20gostaria%20de%20mais%20informações!"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-outline btn-large"
+              >
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+                <div class="btn-ripple"></div>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="hero__visual"
+            data-aos="fade-left"
+            data-aos-delay="300"
+            data-aos-duration="1000"
+          >
+            <div class="hero__graphics">
+              <div class="hero__media">
+                <img
+                  src="img/hero-tech.jpg"
+                  alt="Tecnologia moderna"
+                  class="hero__image"
+                  loading="lazy"
+                />
+                <div class="image-overlay"></div>
+              </div>
+
+              <!-- Floating Tech Cards -->
+              <div class="floating-card tech-1" data-tech="react">
+                <i class="fab fa-react"></i>
+                <span>React</span>
+                <div class="card-glow"></div>
+              </div>
+              <div class="floating-card tech-2" data-tech="nextjs">
+                <i class="fab fa-js-square"></i>
+                <span>Next.js</span>
+                <div class="card-glow"></div>
+              </div>
+              <div class="floating-card tech-3" data-tech="typescript">
+                <i class="fas fa-code"></i>
+                <span>TypeScript</span>
+                <div class="card-glow"></div>
+              </div>
+              <div class="floating-card tech-4" data-tech="firebase">
+                <i class="fas fa-database"></i>
+                <span>Firebase</span>
+                <div class="card-glow"></div>
+              </div>
+
+              <!-- Central Graphic -->
+              <div class="hero__main-graphic">
+                <i class="fas fa-laptop-code"></i>
+                <div class="graphic-rings">
+                  <div class="ring ring-1"></div>
+                  <div class="ring ring-2"></div>
+                  <div class="ring ring-3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1000">
+          <span>Descubra mais</span>
+          <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+          </div>
+        </div>
+
+        <!-- Background Elements -->
+        <div class="hero__bg-elements">
+          <div class="bg-gradient bg-gradient-1"></div>
+          <div class="bg-gradient bg-gradient-2"></div>
+          <div class="bg-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="projects section" id="projects">
         <div class="container">
-          <h2 class="text-center mb-5">Projeto em Desenvolvimento</h2>
-          <div class="row">
-            <div class="col-lg-8 mx-auto mb-5">
-              <div class="video-wrapper shadow-lg">
+          <div class="section__header" data-aos="fade-up">
+            <span class="section__badge">Portfólio</span>
+            <h2 class="section__title">
+              Projetos que
+              <span class="gradient-text">transformam negócios</span>
+            </h2>
+            <p class="section__description">
+              Conheça alguns dos projetos que desenvolvi, demonstrando minha
+              expertise em diferentes tecnologias e soluções inovadoras com
+              design moderno e responsivo.
+            </p>
+          </div>
+
+          <!-- Featured Project -->
+          <div class="featured-project" data-aos="fade-up" data-aos-delay="100">
+            <div class="featured-project__header">
+              <h3 class="featured-project__title">
+                <span class="project-status">Em Desenvolvimento</span>
+                ERP Web App Moderno
+              </h3>
+              <div class="project-tech-preview">
+                <span class="tech-pill">React</span>
+                <span class="tech-pill">Firebase</span>
+                <span class="tech-pill">Tailwind</span>
+              </div>
+            </div>
+
+            <div class="featured-project__content">
+              <div class="video-wrapper">
                 <video
-                  class="img-fluid"
-                  controls
-                  autoplay
+                  class="project-video"
                   muted
                   loop
                   poster="img/petroleowebapp.webp"
+                  id="featuredVideo"
                 >
                   <source
                     src="video/ERP_PETROLEO_DEMONSTRACAO.mp4"
@@ -175,452 +369,320 @@
                   />
                   Seu navegador não suporta a tag de vídeo.
                 </video>
+                <div class="video-overlay">
+                  <button
+                    class="play-btn"
+                    id="featuredPlayBtn"
+                    aria-label="Reproduzir/Pausar vídeo"
+                  >
+                    <i class="fas fa-play"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="featured-project__details">
+                <h4 class="details__title">Tecnologias Utilizadas</h4>
+                <div class="tech-stack-container">
+                  <div class="tech-category">
+                    <h6>Front-end</h6>
+                    <div class="tech-tags">
+                      <span class="tech-tag react">React</span>
+                      <span class="tech-tag tailwind">Tailwind CSS</span>
+                    </div>
+                  </div>
+                  <div class="tech-category">
+                    <h6>Back-end</h6>
+                    <div class="tech-tags">
+                      <span class="tech-tag firebase">Firebase</span>
+                      <span class="tech-tag">Auth</span>
+                      <span class="tech-tag">Functions</span>
+                      <span class="tech-tag node">Node.js</span>
+                    </div>
+                  </div>
+                  <div class="tech-category">
+                    <h6>Bibliotecas</h6>
+                    <div class="tech-tags">
+                      <span class="tech-tag">Recharts</span>
+                      <span class="tech-tag">Lucide React</span>
+                      <span class="tech-tag">Papa Parse</span>
+                    </div>
+                  </div>
+                </div>
+                <button class="btn btn-primary disabled" aria-disabled="true">
+                  Em Breve <i class="fas fa-rocket"></i>
+                  <div class="btn-ripple"></div>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Other Projects Title -->
+          <h3 class="other-projects-title" data-aos="fade-up">
+            Outros Projetos
+          </h3>
+
+          <!-- Project Filters -->
+          <div class="project-filters" data-aos="fade-up" data-aos-delay="200">
+            <button class="filter-btn active" data-filter="all">
+              <span>Todos</span>
+              <div class="filter-bg"></div>
+            </button>
+            <button class="filter-btn" data-filter="webapp">
+              <span>Web Apps</span>
+              <div class="filter-bg"></div>
+            </button>
+            <button class="filter-btn" data-filter="website">
+              <span>Websites</span>
+              <div class="filter-bg"></div>
+            </button>
+          </div>
+
+          <!-- Projects Grid -->
+          <div class="projects__grid">
+            <!-- Project Card 1 -->
+            <div class="project-card" data-category="webapp" data-aos="fade-up">
+              <div class="project-card__image">
+                <img
+                  src="img/gestaomensal.webp"
+                  alt="Controle Financeiro"
+                  loading="lazy"
+                />
+                <div class="project-overlay">
+                  <div class="project-info">
+                    <h4>Controle Financeiro</h4>
+                    <p>Dashboard interativo e responsivo</p>
+                  </div>
+                  <button class="project-btn" data-project="financeiro">
+                    <i class="fas fa-external-link-alt"></i>
+                  </button>
+                </div>
+                <div class="image-glow"></div>
+              </div>
+              <div class="project-card__content">
+                <div class="project-tech">
+                  <span class="tech-tag react">React</span>
+                  <span class="tech-tag firebase">Firebase</span>
+                  <span class="tech-tag">Chakra UI</span>
+                </div>
+                <h3 class="project-title">Controle Financeiro</h3>
+                <p class="project-description">
+                  Webapp completo para gestão financeira pessoal com dashboard
+                  interativo, autenticação segura e design totalmente
+                  responsivo.
+                </p>
+                <button
+                  class="btn btn-outline project-modal-trigger"
+                  data-project-title="Demonstração do Web App Controle Financeiro"
+                  data-project-video-url="video/gestaomensal.mp4"
+                  data-project-desc="Desenvolvimento de uma aplicação web completa para gestão financeira pessoal, com autenticação de usuários, um painel de controle (dashboard) interativo e design totalmente responsivo (Mobile First). A aplicação é construída sobre a plataforma Firebase, utilizando Firestore como banco de dados NoSQL em tempo real, Firebase Authentication para a gestão de acesso, e Firestore Security Rules para garantir a privacidade e segurança dos dados de cada usuário."
+                  data-project-tech="React.js,Chakra UI,Firebase,Firestore,Chart.js,Framer Motion"
+                  data-project-live-url="#"
+                  data-project-repo-url="https://github.com/alessandrotostes/controle-de-gastos"
+                >
+                  Ver Demonstração
+                  <div class="btn-ripple"></div>
+                </button>
               </div>
             </div>
 
-            <div class="col-lg-8 mx-auto text-center">
-              <h3 class="fw-bold1">ERP WEB APP</h3>
-              <h5 class="fw-bold2">Tecnologias</h5>
-              <div class="tech-stack-container mb-4">
-                <div class="tech-category">
-                  <h6 class="tech-category-title">Front-end</h6>
-                  <div class="d-flex flex-wrap gap-2 justify-content-center">
-                    <span class="badge">React</span
-                    ><span class="badge">Tailwind CSS</span>
+            <!-- Project Card 2 -->
+            <div
+              class="project-card"
+              data-category="webapp"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="project-card__image">
+                <img
+                  src="img/gestaowebapp.webp"
+                  alt="Gestão de Consultas/Aulas"
+                  loading="lazy"
+                />
+                <div class="project-overlay">
+                  <div class="project-info">
+                    <h4>Gestão Consultas/Aulas</h4>
+                    <p>Sistema completo de agendamento</p>
                   </div>
+                  <button
+                    class="project-btn project-modal-trigger"
+                    data-project="gestao"
+                  >
+                    <i class="fas fa-external-link-alt"></i>
+                  </button>
                 </div>
-                <div class="tech-category mt-3">
-                  <h6 class="tech-category-title">Back-end</h6>
-                  <div class="d-flex flex-wrap gap-2 justify-content-center">
-                    <span class="badge">Firebase</span
-                    ><span class="badge">Firebase Authentication</span
-                    ><span class="badge">Firebase Cloud Functions</span>
-                  </div>
-                </div>
-                <div class="tech-category mt-3">
-                  <h6 class="tech-category-title">Bibliotecas</h6>
-                  <div class="d-flex flex-wrap gap-2 justify-content-center">
-                    <span class="badge">Recharts</span
-                    ><span class="badge">Lucide React</span
-                    ><span class="badge">Papa Parse</span>
-                  </div>
-                </div>
-                <div class="tech-category mt-3">
-                  <h6 class="tech-category-title">
-                    Ambiente de Desenvolvimento
-                  </h6>
-                  <div class="d-flex flex-wrap gap-2 justify-content-center">
-                    <span class="badge">Node.js</span
-                    ><span class="badge">ESLint</span>
-                  </div>
-                </div>
+                <div class="image-glow"></div>
               </div>
-              <a
-                href="#"
-                class="btn btn-accent btn-soon disabled"
-                aria-disabled="true"
-                >Em Breve <i class="fas fa-rocket ms-2"></i
-              ></a>
+              <div class="project-card__content">
+                <div class="project-tech">
+                  <span class="tech-tag nextjs">Next.js</span>
+                  <span class="tech-tag">Supabase</span>
+                  <span class="tech-tag tailwind">Tailwind</span>
+                </div>
+                <h3 class="project-title">Gestão Consultas/Aulas</h3>
+                <p class="project-description">
+                  Aplicação full-stack para gestão de pacientes e sessões com
+                  backend robusto no Supabase e interface moderna.
+                </p>
+                <button
+                  class="btn btn-outline project-modal-trigger"
+                  data-project-title="Demonstração do Web App Gestão Consultas/Aulas"
+                  data-project-video-url="video/gestaoapp.mp4"
+                  data-project-desc="Desenvolvimento de uma aplicação web completa (Full-stack) para gestão de pacientes e sessões, com autenticação de usuários, painel de controle financeiro e design responsivo. A aplicação utiliza Next.js e TypeScript no frontend, com um backend robusto na plataforma Supabase."
+                  data-project-tech="Next.js,TypeScript,Tailwind CSS,Supabase,PostgreSQL,Recharts,Radix UI"
+                  data-project-live-url="#"
+                  data-project-repo-url="https://github.com/alessandrotostes/"
+                >
+                  Ver Demonstração
+                  <div class="btn-ripple"></div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div
+              class="project-card"
+              data-category="website"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="project-card__image">
+                <img
+                  src="img/sitepsicanalista.webp"
+                  alt="Site Psicanalista"
+                  loading="lazy"
+                />
+                <div class="project-overlay">
+                  <div class="project-info">
+                    <h4>Website Psicanalista</h4>
+                    <p>Design elegante e confiável</p>
+                  </div>
+                  <button class="project-btn" data-project="psicanalista">
+                    <i class="fas fa-external-link-alt"></i>
+                  </button>
+                </div>
+                <div class="image-glow"></div>
+              </div>
+              <div class="project-card__content">
+                <div class="project-tech">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">JavaScript</span>
+                </div>
+                <h3 class="project-title">Website para Psicanalista</h3>
+                <p class="project-description">
+                  Presença online que transmite confiança e serenidade,
+                  facilitando o primeiro passo para o cuidado com design
+                  responsivo.
+                </p>
+                <button
+                  class="btn btn-outline project-modal-trigger"
+                  data-project-title="Website para Psicanalista"
+                  data-project-image-url="img/sitepsicanalista.webp"
+                  data-project-desc="O desafio era criar uma presença online que transmitisse confiança e serenidade. A paleta de cores suaves, a tipografia clara e as seções bem definidas sobre a abordagem terapêutica ajudam a construir uma ponte de confiança com o visitante."
+                  data-project-tech="HTML,CSS,JavaScript,WhatsApp API,SEO"
+                  data-project-live-url="https://tauanapavanelli.com/"
+                  data-project-repo-url="https://github.com/alessandrotostes/"
+                >
+                  Ver Detalhes
+                  <div class="btn-ripple"></div>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      
-
-      <section id="portfolio" data-aos="fade-up">
+      <!-- About Section -->
+      <section class="about section" id="about">
         <div class="container">
-          <h2 class="text-center mb-5">Outros Projetos</h2>
-          <div
-            class="text-center mb-5"
-            id="portfolio-filters"
-            data-aos="fade-up"
-          >
-            <button class="btn btn-outline-light active" data-filter="all">
-              Todos
-            </button>
-            <button class="btn btn-outline-light" data-filter="webapp">
-              Web Apps
-            </button>
-            <button class="btn btn-outline-light" data-filter="website">
-              Websites
-            </button>
+          <div class="section__header" data-aos="fade-up">
+            <span class="section__badge">Quem Sou Eu</span>
+            <h2 class="section__title">
+              Inovação e excelência em
+              <span class="gradient-text">desenvolvimento</span>
+            </h2>
           </div>
 
-          <div class="row mb-4 justify-content-center">
-            <div
-              class="col-12 project-card-wrapper project-card--featured"
-              data-aos="fade-up"
-              data-category="webapp"
-            >
-              <div class="card h-100 project-card video-card">
-                <div class="project-image-container">
-                  <img
-                    src="img/gestaomensal.webp"
-                    class="card-img-top project-image"
-                    alt="Thumbnail do Web App"
-                    loading="lazy"
-                  />
-                  <video class="preview-video" muted loop playsinline>
-                    <source
-                      src="video/gestaomensal.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Controle Financeiro</h5>
-                  <p class="card-text">
-                    Passe o mouse para ver um preview. Clique para ver a
-                    demonstração completa deste Webapp Controle Financeiro.
-                  </p>
-                  <button
-                    type="button"
-                    class="btn btn-accent"
-                    data-bs-toggle="modal"
-                    data-bs-target="#projectModal"
-                    data-project-title="Demonstração do Web App Controle Financeiro"
-                    data-project-video-url="video/gestaomensal.mp4"
-                    data-project-desc="Desenvolvimento de uma aplicação web completa para gestão financeira pessoal, com autenticação de usuários, um painel de controle (dashboard) interativo e design totalmente responsivo (Mobile First). A aplicação é construída sobre a plataforma Firebase, utilizando Firestore como banco de dados NoSQL em tempo real, Firebase Authentication para a gestão de acesso, e Firestore Security Rules para garantir a privacidade e segurança dos dados de cada usuário. O frontend foi desenvolvido em React.js, e a interface foi estilizada com a biblioteca de componentes Chakra UI, sendo aprimorada com bibliotecas modernas como Chart.js (para os gráficos), React Datepicker (para a navegação de datas) e Framer Motion para animações."
-                    data-project-tech="JavaScript, React.js, Chakra UI, Firebase (BaaS), Cloud Firestore (NoSQL em tempo real), Firebase Authentication, Firestore Security Rules, Firebase Hosting, React Router DOM,  Chart.js, react-datepicker, date-fns, @chakra-ui/icons, Framer Motion (dependência do Chakra UI)"
-                    data-project-live-url="#"
-                    data-project-repo-url="#"
-                  >
-                    Ver Demonstração
-                  </button>
-                </div>
+          <div class="about__content">
+            <div class="about__mission" data-aos="fade-right">
+              <div class="about-image-container">
+                <img
+                  src="img/sobre/tostesperfil.webp"
+                  alt="Alessandro Tostes"
+                  class="about-image"
+                />
+                <div class="image-frame"></div>
+                <div class="image-glow"></div>
               </div>
-            </div>
-          </div>
-
-          <div class="row mb-4 justify-content-center">
-            <div
-              class="col-12 project-card-wrapper project-card--featured"
-              data-aos="fade-up"
-              data-category="webapp"
-            >
-              <div class="card h-100 project-card video-card">
-                <div class="project-image-container">
-                  <img
-                    src="img/gestaowebapp.webp"
-                    class="card-img-top project-image"
-                    alt="Thumbnail do Web App"
-                    loading="lazy"
-                  />
-                  <video class="preview-video" muted loop playsinline>
-                    <source
-                      src="video/gestaoapp.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">GESTÃO CONSULTAS/AULAS</h5>
-                  <p class="card-text">
-                    Passe o mouse para ver um preview. Clique para ver a
-                    demonstração completa deste app de GESTÃO CONSULTAS/AULAS.
-                  </p>
-                  <button
-                    type="button"
-                    class="btn btn-accent"
-                    data-bs-toggle="modal"
-                    data-bs-target="#projectModal"
-                    data-project-title="Demonstração do Web App Gestão Consultas/Aulas"
-                    data-project-video-url="video/gestaoapp.mp4"
-                    data-project-desc="Desenvolvimento de uma aplicação web completa (Full-stack) para gestão de pacientes e sessões, com autenticação de usuários, painel de controle financeiro e design responsivo. A aplicação utiliza Next.js e TypeScript no frontend, com um backend robusto na plataforma Supabase, implementando um banco de dados relacional PostgreSQL, autenticação de usuários e políticas de segurança RLS. A interface foi estilizada com Tailwind CSS e aprimorada com bibliotecas modernas como Radix UI, Recharts e Heroicons."
-                    data-project-tech="Next.js (React), TypeScript, Tailwind CSS, Supabase (PostgreSQL/Auth/RLS), Recharts, Radix UI, Heroicons, Vercel"
-                    data-project-live-url="#"
-                    data-project-repo-url="#"
-                  >
-                    Ver Demonstração
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row mb-4 justify-content-center">
-            <div
-              class="col-12 project-card-wrapper project-card--featured"
-              data-aos="fade-up"
-              data-category="webapp"
-            >
-              <div class="card h-100 project-card video-card">
-                <div class="project-image-container">
-                  <img
-                    src="img/petroleowebapp.webp"
-                    class="card-img-top project-image"
-                    alt="Thumbnail do Web App"
-                    loading="lazy"
-                  />
-                  <video class="preview-video" muted loop playsinline>
-                    <source
-                      src="video/ERP_PETROLEO_DEMONSTRACAO.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">ERP Petróleo</h5>
-                  <p class="card-text">
-                    Passe o mouse para ver um preview. Clique para ver a
-                    demonstração completa do desenvolvimento deste app - ERP Petróleo.
-                  </p>
-                  <button
-                    type="button"
-                    class="btn btn-accent"
-                    data-bs-toggle="modal"
-                    data-bs-target="#projectModal"
-                    data-project-title="Demonstração do Web App (ERP)"
-                    data-project-video-url="video/ERP_PETROLEO_DEMONSTRACAO.mp4"
-                    data-project-desc="Uma plataforma web completa e integrada para a gestão de operações de produção de petróleo. Monitore seus campos e tanques em tempo real, gerencie boletins diários de produção com precisão, controle seu inventário de ativos e gere relatórios gerenciais para uma tomada de decisão mais rápida e assertiva."
-                    data-project-tech="React, Tailwind CSS, Firebase, Firebase Authentication, Firebase Cloud Functions, Recharts, Lucide React, Papa Parse, Node.js, ESLint"
-                    data-project-live-url="#"
-                    data-project-repo-url="#"
-                  >
-                    Ver Demonstração
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-            <div
-              class="col project-card-wrapper"
-              data-aos="fade-up"
-              data-category="website"
-            >
-              <div class="card h-100 project-card">
-                <div class="project-image-container">
-                  <img
-                    src="img/sitepsicanalista.webp"
-                    class="card-img-top project-image"
-                    alt="Projeto Psicanalista"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Conexão e Cuidado: Psicanalista</h5>
-                  <p class="card-text">
-                    De que forma um website pode transmitir segurança e
-                    acolhimento, facilitando o primeiro passo para o cuidado?
-                  </p>
-                  <button
-                    type="button"
-                    class="btn btn-accent btn-multiline"
-                    data-bs-toggle="modal"
-                    data-bs-target="#projectModal"
-                    data-project-title="Website para Psicanalista"
-                    data-project-image-url="img/sitepsicanalista.webp"
-                    data-project-desc="O desafio era criar uma presença online que transmitisse confiança e serenidade. A paleta de cores suaves, a tipografia clara e as seções bem definidas sobre a abordagem terapêutica ajudam a construir uma ponte de confiança com o visitante."
-                    data-project-tech="HTML, CSS, JavaScript, WhatsApp API, SEO"
-                    data-project-live-url="https://tauanapavanelli.com/"
-                    data-project-repo-url="#"
-                  >
-                    <span class="btn-main-text">Ver Detalhes</span>
-                  </button>
-                </div>
+              <div class="about-text">
+                <p>
+                  Sou Alessandro Tostes, desenvolvedor web apaixonado por criar
+                  experiências digitais que fazem a diferença. Com mais de 3
+                  anos de experiência, venho me especializando em transformar ideias
+                  complexas em soluções elegantes e funcionais.
+                </p>
+                <p>
+                  Minha abordagem combina design moderno, código limpo e foco na
+                  experiência do usuário, sempre priorizando performance e
+                  acessibilidade em todos os dispositivos.
+                </p>
               </div>
             </div>
 
             <div
-              class="col project-card-wrapper"
-              data-aos="fade-up"
-              data-category="website"
+              class="tech-showcase"
+              data-aos="fade-left"
+              data-aos-delay="200"
             >
-              <div class="card h-100 project-card">
-                <div class="project-image-container">
-                  <img
-                    src="img/sitearquiteta.webp"
-                    class="card-img-top project-image"
-                    alt="Projeto Arquiteta"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Espaços que Inspiram: Arquiteta</h5>
-                  <p class="card-text">
-                    Como um design moderno e um portfólio visual imersivo podem
-                    capturar a essência de projetos arquitetónicos únicos?
-                  </p>
-                  <button
-                    type="button"
-                    class="btn btn-accent btn-multiline"
-                    data-bs-toggle="modal"
-                    data-bs-target="#projectModal"
-                    data-project-title="Website para Arquiteta(o)"
-                    data-project-image-url="img/sitearquiteta.webp"
-                    data-project-desc="Este projeto foca em um design minimalista e uma galeria de imagens imersiva para destacar o trabalho de uma arquiteta. A navegação é intuitiva, permitindo que potenciais clientes explorem os projetos com facilidade e entrem em contato."
-                    data-project-tech="HTML, CSS, JavaScript, Bootstrap"
-                    data-project-live-url="https://alessandrotostes.github.io/portfolio-arquiteta/"
-                    data-project-repo-url="https://github.com/alessandrotostes/portfolio-arquiteta.git"
-                  >
-                    <span class="btn-main-text">Ver Detalhes</span>
-                    <span class="btn-sub-text">(Em desenvolvimento)</span>
-                  </button>
-                </div>
-              </div>
-            </div>
+              <h3>Tecnologias & Expertise</h3>
+              <p class="tech-description">
+                Trabalho com as mais modernas tecnologias do mercado, sempre
+                mantendo-me atualizado com as últimas tendências e melhores
+                práticas.
+              </p>
 
-            <div
-              class="col project-card-wrapper"
-              data-aos="fade-up"
-              data-category="website"
-            >
-              <div class="card h-100 project-card">
-                <div class="project-image-container">
-                  <img
-                    src="img/sitenovasolucoes.webp"
-                    class="card-img-top project-image"
-                    alt="Nova Soluções"
-                    loading="lazy"
-                  />
+              <div class="tech-categories">
+                <div class="tech-category">
+                  <h4><i class="fas fa-code"></i> Frontend</h4>
+                  <div class="tech-tags">
+                    <span class="tech-tag react">React</span>
+                    <span class="tech-tag nextjs">Next.js</span>
+                    <span class="tech-tag typescript">TypeScript</span>
+                    <span class="tech-tag tailwind">Tailwind CSS</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                  </div>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">
-                    Design e Durabilidade: Nova Soluções em ACM
-                  </h5>
-                  <p class="card-text">
-                    Como destacar a versatilidade e a modernidade do ACM em um
-                    site que inspira arquitetos e construtores?
-                  </p>
-                  <button
-                    type="button"
-                    class="btn btn-accent btn-multiline"
-                    data-bs-toggle="modal"
-                    data-bs-target="#projectModal"
-                    data-project-title="Website para Nova Soluções em ACM"
-                    data-project-image-url="img/sitenovasolucoes.webp"
-                    data-project-desc="Desenvolvimento de uma landing page focada em apresentar o portfólio de projetos da Nova Soluções. O site utiliza um design limpo para valorizar as imagens das fachadas e revestimentos em ACM, com informações claras sobre os benefícios do material."
-                    data-project-tech="HTML, CSS, JavaScript, Bootstrap, AOS"
-                    data-project-live-url="https://alessandrotostes.github.io/nova_solucoes/"
-                    data-project-repo-url="https://github.com/alessandrotostes/nova_solucoes.git"
-                  >
-                    <span class="btn-main-text">Ver Detalhes</span>
-                    <span class="btn-sub-text">(Em desenvolvimento)</span>
-                  </button>
-                </div>
-              </div>
-            </div>
 
-            <div
-              class="col project-card-wrapper"
-              data-aos="fade-up"
-              data-category="website"
-            >
-              <div class="card h-100 project-card">
-                <div class="project-image-container">
-                  <img
-                    src="img/siteclinicaestetica.webp"
-                    class="card-img-top project-image"
-                    alt="Projeto Clínica"
-                    loading="lazy"
-                  />
+                <div class="tech-category">
+                  <h4><i class="fas fa-server"></i> Backend</h4>
+                  <div class="tech-tags">
+                    <span class="tech-tag node">Node.js</span>
+                    <span class="tech-tag firebase">Firebase(Authentication, Firestore, 
+                      Cloud Functions V2)</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag postgresql">Supabase (PostgreSQL, Auth, RLS)</span>
+                  </div>
                 </div>
-                <div class="card-body">
-                  <h5 class="card-title">O melhor de Você: Clínica Estética</h5>
-                  <p class="card-text">
-                    Um design minimalista, visando demonstrar todo o potencial
-                    da sua empresa, mostrando com excelência todos os seus
-                    serviços.
-                  </p>
-                  <button
-                    type="button"
-                    class="btn btn-accent btn-multiline"
-                    data-bs-toggle="modal"
-                    data-bs-target="#projectModal"
-                    data-project-title="Website Page para Clínica Médica"
-                    data-project-image-url="img/siteclinicaestetica.webp"
-                    data-project-desc="Website para uma clínica de estética, focada na conversão. Apresenta os procedimentos de forma clara, com botões de chamada para ação (CTA) bem posicionados para agendamento de consultas."
-                    data-project-tech="HTML, CSS, JavaScript"
-                    data-project-live-url="https://alessandrotostes.github.io/clinica-estetica/"
-                    data-project-repo-url="https://github.com/alessandrotostes/clinica-estetica.git"
-                  >
-                    <span class="btn-main-text">Ver Detalhes</span>
-                    <span class="btn-sub-text">(Em desenvolvimento)</span>
-                  </button>
-                </div>
-              </div>
-            </div>
 
-            <div
-              class="col project-card-wrapper"
-              data-aos="fade-up"
-              data-category="website"
-            >
-              <div class="card h-100 project-card">
-                <div class="project-image-container">
-                  <img
-                    src="img/sitecervejariafratelli.webp"
-                    class="card-img-top project-image"
-                    alt="Projeto Cervejaria"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">
-                    Sabor Artesanal e Tradição: Cervejaria Fratelli
-                  </h5>
-                  <p class="card-text">
-                    Como a Cervejaria Fratelli combina o sabor de chopps
-                    artesanais com espaços perfeitos para seus eventos?
-                  </p>
-                  <button
-                    type="button"
-                    class="btn btn-accent btn-multiline" 
-                    data-bs-toggle="modal"
-                    data-bs-target="#projectModal"
-                    data-project-title="Website para Cervejaria Fratelli"
-                    data-project-image-url="img/sitecervejariafratelli.webp"
-                    data-project-desc="Criação de um website para a Cervejaria Fratelli, com o objetivo de apresentar seu cardápio de cervejas artesanais e divulgar o espaço para eventos. O layout busca transmitir a identidade rústica e acolhedora da marca."
-                    data-project-tech="HTML, CSS, JavaScript, Galeria de Imagens"
-                    data-project-live-url="https://alessandrotostes.github.io/cervejaria_fratelli/"
-                    data-project-repo-url="https://github.com/alessandrotostes/cervejaria_fratelli.git"
-                  >
-                    <span class="btn-main-text">Ver Detalhes</span>
-                    <span class="btn-sub-text">(Em desenvolvimento)</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="col project-card-wrapper"
-              data-aos="fade-up"
-              data-category="website"
-            >
-              <div class="card h-100 project-card">
-                <div class="project-image-container">
-                  <img
-                    src="img/sitesaveadvocacia.webp"
-                    class="card-img-top project-image"
-                    alt="Projeto Advocacia"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title">Presença e Confiança: Escritório de Advocacia</h5>
-                  <p class="card-text">
-                    Qual a importância de um site institucional que reflita a
-                    seriedade e a expertise de um escritório de advocacia?
-                  </p>
-                  <button
-                    type="button"
-                    class="btn btn-accent btn-multiline"
-"
-                    data-bs-toggle="modal"
-                    data-bs-target="#projectModal"
-                    data-project-title="Website Institucional para Advocacia"
-                    data-project-image-url="img/sitesaveadvocacia.webp"
-                    data-project-desc="Um site institucional sóbrio e profissional, que serve como um cartão de visitas digital. As áreas de atuação, o perfil dos advogados e as formas de contato são apresentadas de maneira direta e eficiente, transmitindo credibilidade."
-                    data-project-tech="HTML, CSS, Bootstrap"
-                    data-project-live-url="https://alessandrotostes.github.io/teste-advocacia/"
-                    data-project-repo-url="#"
-                  >
-                    <span class="btn-main-text">Ver Detalhes</span>
-                    <span class="btn-sub-text">(Em desenvolvimento)</span>
-                  </button>
+                <div class="tech-category">
+                  <h4><i class="fas fa-tools"></i> Ferramentas</h4>
+                  <div class="tech-tags">
+                    <span class="tech-tag">Git</span>
+                     <span class="tech-tag">GitHub</span>
+                     <span class="tech-tag">Google Cloud</span>
+                    <span class="tech-tag ">API Mercado Pago</span>
+                    <span class="tech-tag ">APIs Google</span>
+                    <span class="tech-tag">Vercel</span>
+                    <span class="tech-tag">Firebase Hosting</span>
+                    <span class="tech-tag">Lucide React</span>
+                    <span class="tech-tag">Papa Parse</span>
+                    <span class="tech-tag">AOS.js</span>
+                    <span class="tech-tag">Radix UI</span>
+                    <span class="tech-tag">Typed.js</span>
+                    <span class="tech-tag">+</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -628,256 +690,220 @@
         </div>
       </section>
 
-      <section id="sobre-nova" data-aos="fade-up">
-        <div class="row align-items-center">
-          <div
-            class="col-lg-5 col-md-6 text-center mb-4 mb-md-0"
-            data-aos="fade-right"
-          >
-            <picture
-              ><source srcset="img/sobre/tostesperfil.webp" type="image/webp" />
-              <img
-                src="img/sobre/tostesperfil.webp"
-                class="img-fluid rounded-circle shadow-sm"
-                alt="Foto do Desenvolvedor"
-                style="max-width: 100%; height: auto; max-height: 350px"
-                loading="lazy"
-            /></picture>
-          </div>
-          <div
-            class="col-lg-7 col-md-6"
-            data-aos="fade-left"
-            data-aos-delay="200"
-          >
-            <h2 class="display-5 mb-3 fw-bold text-start">Sobre Mim</h2>
-            <p class="lead">
-              Sou um desenvolvedor web apaixonado por transformar ideias
-              criativas em soluções digitais funcionais e elegantes. Com um
-              olhar atento aos detalhes e foco na experiência do utilizador,
-              dedico-me a construir websites e aplicações que não apenas
-              atendam, mas superem as expectativas.
+      <!-- Contact Section -->
+      <section class="contact section" id="contact">
+        <div class="container">
+          <div class="section__header" data-aos="fade-up">
+            <span class="section__badge">Contato</span>
+            <h2 class="section__title">
+              Vamos criar algo
+              <span class="gradient-text">incrível juntos</span>
+            </h2>
+            <p class="section__description">
+              Estou sempre aberto a novos projetos e oportunidades. Entre em
+              contato e vamos discutir como posso ajudar a transformar sua ideia
+              em realidade.
             </p>
+          </div>
+
+          <div class="contact__grid">
+            <div class="contact-info-card" data-aos="fade-right">
+              <div class="contact-card whatsapp-card">
+                <div class="contact-card__icon whatsapp">
+                  <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="contact-card__content">
+                  <h4>WhatsApp</h4>
+                  <p>
+                    Resposta rápida e atendimento personalizado para seu
+                    projeto.
+                  </p>
+                  <a
+                    href="https://wa.me/5516997643604?text=Olá,%20visitei%20o%20seu%20portfólio%20e%20gostaria%20de%20mais%20informações!"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-action"
+                  >
+                    <i class="fab fa-whatsapp"></i>
+                    Conversar Agora
+                  </a>
+                </div>
+                <div class="card-glow"></div>
+              </div>
+
+              <div class="contact-card email-card">
+                <div class="contact-card__icon email">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-card__content">
+                  <h4>Email</h4>
+                  <p>Para propostas mais detalhadas e discussões técnicas.</p>
+                  <a
+                    href="mailto:alessandrotostesarruda@gmail.com?subject=Proposta%20de%20Projeto%20"
+                    class="contact-action"
+                  >
+                    <i class="fas fa-envelope"></i>
+                    <span>Enviar Email</span>
+                  </a>
+                </div>
+                <div class="card-glow"></div>
+              </div>
+            </div>
+
+            <div
+              class="contact-cta-card"
+              data-aos="fade-left"
+              data-aos-delay="200"
+            >
+              <div class="cta-content">
+                <h3>Vamos conversar sobre seu projeto?</h3>
+                <p>
+                  Estou ansioso para conhecer sua ideia e ajudar a transformá-la
+                  em uma solução digital incrível e moderna.
+                </p>
+                <div class="cta-features">
+                  <div class="cta-feature">
+                    <i class="fas fa-comments"></i>
+                    <span>Consultoria disponível</span>
+                  </div>
+                  <div class="cta-feature">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Orçamento personalizado</span>
+                  </div>
+                  <div class="cta-feature">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>Design responsivo</span>
+                  </div>
+                  <div class="cta-feature">
+                    <i class="fas fa-rocket"></i>
+                    <span>Performance otimizada</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="social-section">
+                <h4>Siga-me nas redes sociais</h4>
+                <div class="social-grid">
+                  <a
+                    href="https://www.linkedin.com/in/alessandro-tostes-940972242/"
+                    class="social-link linkedin"
+                    target="_blank"
+                  >
+                    <i class="fab fa-linkedin-in"></i>
+                    <span>LinkedIn</span>
+                    <div class="link-glow"></div>
+                  </a>
+                  <a
+                    href="https://github.com/alessandrotostes"
+                    class="social-link github"
+                    target="_blank"
+                  >
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                    <div class="link-glow"></div>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer" data-aos="fade-up">
+    <!-- Footer -->
+    <footer class="footer">
       <div class="container">
-        <div class="footer-content">
-          <div class="footer-brand">
-            <a class="navbar-brand" href="#"
-              ><picture
-                ><source srcset="img/logotostes.webp" type="image/png" />
-                <img
-                  src="img/logotostes.webp"
-                  alt="Logo"
-                  class="footer-logo"
-                  loading="lazy" /></picture
-            ></a>
-            <p>Desenvolvedor Web</p>
+        <div class="footer__bottom">
+          <div class="footer__copy">
+            <p>&copy; 2025 Tostes. Todos os direitos reservados.</p>
           </div>
-          <div class="footer-social">
-            <h6 class="footer-heading">Conecte-se</h6>
-            <ul class="social-links">
-              <li>
-                <a
-                  href="https://github.com/alessandrotostes"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="GitHub"
-                  ><i class="fab fa-github"></i
-                ></a>
-              </li>
-              <li>
-                <a
-                  href="https://linkedin.com/in/alessandro-tostes-940972242"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="LinkedIn"
-                  ><i class="fab fa-linkedin-in"></i
-                ></a>
-              </li>
-              <li>
-                <a
-                  href="https://www.instagram.com/alessandrotostes/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="Instagram"
-                  ><i class="fab fa-instagram"></i
-                ></a>
-              </li>
-            </ul>
-          </div>
-          <div class="footer-contact">
-            <h6 class="footer-heading">
-              Quer saber mais?<br />
-              Entre em contato!
-            </h6>
+          <div class="footer__social">
             <a
-              href="https://wa.me/5527997763060?text=Olá,%20visitei%20o%20seu%20portfólio%20e%20gostaria%20de%20fazer%20um%20orçamento!"
-              class="btn btn-accent"
+              href="https://github.com/alessandrotostes"
+              class="social-link"
               target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fab fa-whatsapp me-2"></i> WhatsApp</a
             >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/alessandro-tostes-940972242/"
+              class="social-link"
+              target="_blank"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
           </div>
-        </div>
-        <div class="footer-copyright">
-          <p>&copy; 2025 Tostes. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>
 
-    <a href="#" id="back-to-top" class="back-to-top-btn" title="Voltar ao topo"
-      ><i class="fas fa-arrow-up"></i
-    ></a>
-
-    <div
-      class="modal fade"
-      id="projectModal"
-      tabindex="-1"
-      aria-labelledby="projectModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalProjectTitle"></h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div id="modal-media-container" class="mb-4">
-              <img
-                id="modalProjectImage"
-                src=""
-                alt="Imagem do Projeto"
-                class="img-fluid rounded"
-                style="display: none"
-              />
-              <video
-                id="modalProjectVideo"
-                class="img-fluid rounded"
-                controls
-                autoplay
-                muted
-                loop
-                playsinline
-                style="display: none"
-              >
-                <source src="" type="video/mp4" />
-                Seu navegador não suporta a tag de vídeo.
-              </video>
-            </div>
-            <p id="modalProjectDesc"></p>
-            <h6 class="mt-4">Tecnologias Utilizadas:</h6>
-            <div id="modalProjectTech" class="d-flex flex-wrap gap-2"></div>
-          </div>
-          <div class="modal-footer">
-            <a
-              id="modalProjectRepoLink"
-              href="#"
-              class="btn btn-outline-secondary"
-              target="_blank"
-              rel="noopener noreferrer"
-              role="button"
-              ><i class="fab fa-github me-2"></i> Repositório</a
+    <!-- Project Modal -->
+    <div class="modal-overlay" id="projectModal">
+      <div class="modal-content">
+        <button class="modal-close" id="modalCloseBtn">
+          <i class="fas fa-times"></i>
+        </button>
+        <h3 class="modal-title" id="modalProjectTitle"></h3>
+        <div class="modal-body">
+          <div id="modal-media-container">
+            <img
+              id="modalProjectImage"
+              src=""
+              alt="Imagem do Projeto"
+              class="modal-media"
+              style="display: none"
+            />
+            <video
+              id="modalProjectVideo"
+              class="modal-media"
+              controls
+              autoplay
+              muted
+              loop
+              playsinline
+              style="display: none"
             >
-            <a
-              id="modalProjectLiveLink"
-              href="#"
-              class="btn btn-accent"
-              target="_blank"
-              rel="noopener noreferrer"
-              role="button"
-              >Ver Site Ao Vivo <i class="fas fa-external-link-alt ms-2"></i
-            ></a>
+              <source src="" type="video/mp4" />
+              Seu navegador não suporta a tag de vídeo.
+            </video>
           </div>
+          <p id="modalProjectDesc"></p>
+          <h6>Principais Tecnologias:</h6>
+          <div id="modalProjectTech" class="tech-tags"></div>
+        </div>
+        <div class="modal-footer">
+          <a
+            id="modalProjectRepoLink"
+            href="#"
+            class="btn btn-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fab fa-github"></i> Repositório
+          </a>
+          <a
+            id="modalProjectLiveLink"
+            href="#"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver Site Ao Vivo <i class="fas fa-external-link-alt"></i>
+          </a>
         </div>
       </div>
     </div>
 
-    <div
-      class="modal fade"
-      id="contatoModal"
-      tabindex="-1"
-      aria-labelledby="contatoModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="contatoModalLabel">Vamos Conversar</h5>
-            <button
-              type="button"
-              class="btn-close btn-close-white"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body text-center">
-            <p class="lead">
-              Estou disponível para novos projetos e colaborações. Conecte-se
-              comigo através das redes sociais ou envie uma mensagem direta.
-            </p>
-            <div class="footer-social my-4">
-              <ul class="social-links">
-                <li>
-                  <a
-                    href="https://github.com/alessandrotostes"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="GitHub"
-                    ><i class="fab fa-github"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="https://linkedin.com/in/alessandro-tostes-940972242"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="LinkedIn"
-                    ><i class="fab fa-linkedin-in"></i
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.instagram.com/alessandrotostes/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title="Instagram"
-                    ><i class="fab fa-instagram"></i
-                  ></a>
-                </li>
-              </ul>
-            </div>
-            <a
-              href="https://wa.me/5527997763060?text=Olá,%20visitei%20o%20seu%20portfólio%20e%20gostaria%20de%20fazer%20um%20orçamento!"
-              class="btn btn-success btn-lg"
-              target="_blank"
-              rel="noopener noreferrer"
-              ><i class="fab fa-whatsapp me-2"></i> Enviar Mensagem</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- Scroll to Top -->
+    <button class="scroll-to-top" id="scrollToTop" title="Voltar ao topo">
+      <i class="fas fa-arrow-up"></i>
+      <div class="btn-glow"></div>
+    </button>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({ duration: 800, once: true, offset: 50 });
-    </script>
-    <script src="js/script.js?v=v1" defer></script>
+    <!-- Scripts -->
+    <script src="https://unpkg.com/typed.js@2.0.16"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+    <script src="sw.js"></script>
   </body>
 </html>
