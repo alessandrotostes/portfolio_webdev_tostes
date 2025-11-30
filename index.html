@@ -1,8 +1,6 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <!-- Google Tag Manager -->
     <script>
       (function (w, d, s, l, i) {
         w[l] = w[l] || [];
@@ -15,8 +13,6 @@
         f.parentNode.insertBefore(j, f);
       })(window, document, "script", "dataLayer", "GTM-PXTSJXQV");
     </script>
-
-    <!-- Google Analytics -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-FE776TDHFR"
@@ -29,7 +25,6 @@
       gtag("js", new Date());
       gtag("config", "G-FE776TDHFR");
     </script>
-
     <meta charset="UTF-8" />
     <meta
       name="viewport"
@@ -38,22 +33,23 @@
     <meta name="theme-color" content="#21808d" />
     <meta name="color-scheme" content="light dark" />
 
-    <title>Tostes | Desenvolvedor Web Moderno</title>
+    <title>
+      Desenvolvedor Web em Ribeirão Preto - Tostes | React & Next.js
+    </title>
     <meta
       name="description"
-      content="Alessandro Tostes, desenvolvedor web especialista em criar experiências digitais inovadoras e responsivas utilizando tecnologias de ponta."
+      content="Alessandro Tostes, desenvolvedor web em Ribeirão Preto (SP). Especialista em React, Next.js, Node.js e Firebase para sites e Web Apps de alta performance."
     />
-    <meta
-      name="keywords"
-      content="Desenvolvedor Web, Criação de Sites, React, JavaScript, Firebase, Alessandro Tostes, Desenvolvedor Front-end, Desenvolvedor Full-Stack Aplicações WEB, HTML, CSS, Bootstrap, Tailwind CSS, Mobile First, Responsivo"
-    />
+
     <meta name="author" content="Alessandro Tostes" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="Tostes | Desenvolvedor Web Moderno" />
+    <meta
+      property="og:title"
+      content="Desenvolvedor Web em Ribeirão Preto - Tostes | React & Next.js"
+    />
     <meta
       property="og:description"
-      content="Explore os projetos e habilidades modernizadas de Alessandro Tostes, especialista em desenvolvimento web inovador."
+      content="Alessandro Tostes, desenvolvedor web em Ribeirão Preto (SP). Especialista em React, Next.js, Node.js e Firebase para sites e Web Apps de alta performance."
     />
     <meta
       property="og:image"
@@ -62,42 +58,65 @@
     <meta property="og:url" content="https://tostesdev.com/" />
     <meta property="og:type" content="website" />
 
-    <!-- Canonical -->
     <link rel="canonical" href="https://www.tostesdev.com/" />
 
-    <!-- Favicon -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Alessandro Tostes",
+        "url": "https://www.tostesdev.com/",
+        "image": "https://www.tostesdev.com/img/sobre/tostesperfil.webp",
+        "sameAs": [
+          "https://www.linkedin.com/in/alessandro-tostes-940972242/",
+          "https://github.com/alessandrotostes"
+        ],
+        "jobTitle": "Desenvolvedor Web Full-Stack",
+        "description": "Especialista em React, Next.js e Firebase.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ribeirão Preto",
+          "addressRegion": "SP",
+          "addressCountry": "BR"
+        },
+        "knowsAbout": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "Firebase",
+          "Node.js",
+          "Tailwind CSS",
+          "Supabase",
+          "JavaScript",
+          "HTML5",
+          "CSS3"
+        ]
+      }
+    </script>
+
     <link rel="icon" href="img/iconetostes.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="img/logo.webp" />
 
-    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
-    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
 
-    <!-- Preload critical resources -->
     <link rel="preload" href="img/hero-tech.jpg" as="image" />
     <link rel="preload" href="js/script.js" as="script" />
   </head>
 
   <body>
-    <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-PXTSJXQV"
@@ -106,105 +125,101 @@
         style="display: none; visibility: hidden"
       ></iframe
     ></noscript>
-
-    <!-- Custom Cursor -->
     <div class="custom-cursor" id="cursor">
       <div class="cursor-dot"></div>
       <div class="cursor-outline"></div>
     </div>
 
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-      <div class="loading-content">
-        <div class="loading-logo">
-        <img src="img/logo.webp" alt="Logo Tostes" class="loading-logo-image">
-  
-          <div class="loading-particles">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-          </div>
-        </div>
-        <div class="loading-text">Criando experiência...</div>
-        <div class="loading-progress">
-          <div class="progress-bar"></div>
-          <div class="progress-glow"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Header -->
     <header class="header" id="header">
       <nav class="nav container">
         <div class="nav__data">
-         <a href="/" class="nav__logo">
-           <img src="img/logo.webp" alt="Logo Tostes - Página Inicial">
-        </a>
-        <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
-            <li>
-              <a href="#home" class="nav__link active-link">
-                <span class="link-text">Início</span>
-                <span class="link-bg"></span>
-              </a>
-            </li>
-            <li>
-              <a href="#projects" class="nav__link">
-                <span class="link-text">Projetos</span>
-                <span class="link-bg"></span>
-              </a>
-            </li>
-            <li>
-              <a href="#about" class="nav__link">
-                <span class="link-text">Sobre</span>
-                <span class="link-bg"></span>
-              </a>
-            </li>
-            <li>
-              <a href="#contact" class="nav__link">
-                <span class="link-text">Contato</span>
-                <span class="link-bg"></span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="nav__actions">
-          <button class="theme-toggle" id="theme-toggle" title="Alternar tema">
-            <div class="theme-icon">
-              <i class="fas fa-sun sun-icon"></i>
-              <i class="fas fa-moon moon-icon"></i>
-            </div>
-          </button>
           <a
-            href="https://wa.me/5516997643604?text=Olá,%20visitei%20o%20seu%20portfólio%20e%20gostaria%20de%20mais%20informações!"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary nav__cta"
+            href="index.html"
+            class="nav__logo"
+            aria-label="Tostes - Página Inicial"
           >
-            <span class="cta-text">Falar Conosco</span>
-            <i class="fab fa-whatsapp"></i>
-            <div class="btn-ripple"></div>
+            <img src="img/logo.webp" alt="Logo Tostes - Página Inicial" />
           </a>
-        </div>
-      </nav>
 
-      <!-- Navigation Progress Bar -->
-      <div class="nav-progress" id="navProgress"></div>
-    </header>
-    <div class="nav__toggle" id="nav-toggle">
-            <div class="hamburger">
-              <span></span>
-              <span></span>
-              <span></span>
-            </div>
+          <div class="nav__menu" id="nav-menu" aria-hidden="true">
+            <ul class="nav__list">
+              <li>
+                <a href="#home" class="nav__link active-link">
+                  <span class="link-text">Início</span>
+                  <span class="link-bg"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#pwa-showcase" class="nav__link">
+                  <span class="link-text">Destaque</span>
+                  <span class="link-bg"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#projects" class="nav__link">
+                  <span class="link-text">Projetos</span>
+                  <span class="link-bg"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#about" class="nav__link">
+                  <span class="link-text">Sobre</span>
+                  <span class="link-bg"></span>
+                </a>
+              </li>
+              <li>
+                <a href="#contact" class="nav__link">
+                  <span class="link-text">Contato</span>
+                  <span class="link-bg"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="nav__actions">
+            <button
+              class="theme-toggle"
+              id="theme-toggle"
+              aria-label="Alternar tema entre claro e escuro"
+              title="Alternar tema"
+            >
+              <div class="theme-icon">
+                <i class="fas fa-sun sun-icon" aria-hidden="true"></i>
+                <i class="fas fa-moon moon-icon" aria-hidden="true"></i>
+              </div>
+            </button>
+            <a
+              href="https://wa.me/5516997643604?text=Olá,%20visitei%20o%20seu%20portfólio%20e%20gostaria%20de%20mais%20informações!"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary nav__cta"
+            >
+              <span class="cta-text">Falar Conosco</span>
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+              <div class="btn-ripple"></div>
+            </a>
           </div>
         </div>
 
+        <div class="nav-progress" id="navProgress"></div>
+      </nav>
 
-    <!-- Main Content -->
+      <button
+        class="nav__toggle"
+        id="nav-toggle"
+        aria-label="Abrir menu de navegação"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+    </header>
+
     <main class="main">
-      <!-- Hero Section -->
       <section class="hero section" id="home">
         <div class="hero__container container">
           <div
@@ -213,38 +228,36 @@
             data-aos-duration="1000"
           >
             <div class="hero__badge">
-              <div class="badge-pulse"></div>
-              <span>Desenvolvedor Web Moderno</span>
+              <span class="badge-pulse"></span>
+              <span>Disponível para Projetos</span>
               <div class="badge-glow"></div>
             </div>
 
             <h1 class="hero__title">
-              <span class="title-line">Tostes</span>
-              <span class="title-line gradient-text">Desenvolvedor</span>
-              <span class="title-line typed-container">
-                <span id="typed-text" class="typed-text"></span>
-              </span>
+              <span class="title-line">Desenvolvendo</span>
+              <span class="title-line gradient-text">Soluções Digitais</span>
             </h1>
 
             <p class="hero__description">
-              Desenvolvimento Web & Soluções Digitais Inovadoras. Transformo
-              ideias criativas em experiências digitais funcionais e elegantes,
-              com foco na experiência do usuário e performance excepcional.
+              De Sites e Landing Pages a Aplicações Web completas. <br />Toda
+              ideia merece virar <strong>Realidade</strong>
+              <i class="fa-solid fa-ranking-star"></i>
             </p>
-            <div class="hero__actions" data-aos="fade-up" data-aos-delay="600">
-              <a href="#projects" class="btn btn-primary btn-large">
-                <i class="fas fa-rocket"></i>
-                <span>Explorar Projetos</span>
-                <div class="btn-ripple"></div>
-              </a>
+
+            <div class="hero__actions">
               <a
                 href="https://wa.me/5516997643604?text=Olá,%20visitei%20o%20seu%20portfólio%20e%20gostaria%20de%20mais%20informações!"
+                class="btn btn-primary btn-large"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="btn btn-outline btn-large"
               >
-                <i class="fab fa-whatsapp"></i>
-                <span>WhatsApp</span>
+                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                <span>Falar Conosco</span>
+                <div class="btn-ripple"></div>
+              </a>
+              <a href="#projects" class="btn btn-outline btn-large">
+                <i class="fas fa-briefcase" aria-hidden="true"></i>
+                <span>Ver Projetos</span>
                 <div class="btn-ripple"></div>
               </a>
             </div>
@@ -256,75 +269,233 @@
             data-aos-delay="300"
             data-aos-duration="1000"
           >
-            <div class="hero__graphics">
-              <div class="hero__media">
-                <img
-                  src="img/hero-tech.jpg"
-                  alt="Tecnologia moderna"
-                  class="hero__image"
-                  loading="lazy"
-                />
-                <div class="image-overlay"></div>
-              </div>
-
-              <!-- Floating Tech Cards -->
-              <div class="floating-card tech-1" data-tech="react">
-                <i class="fab fa-react"></i>
+            <div class="hero__tech-grid">
+              <div class="floating-card" data-tech="react">
+                <i class="fab fa-react" aria-hidden="true"></i>
                 <span>React</span>
                 <div class="card-glow"></div>
               </div>
-              <div class="floating-card tech-2" data-tech="nextjs">
-                <i class="fab fa-js-square"></i>
+              <div class="floating-card" data-tech="nextjs">
+                <i class="fab fa-js-square" aria-hidden="true"></i>
                 <span>Next.js</span>
                 <div class="card-glow"></div>
               </div>
-              <div class="floating-card tech-3" data-tech="typescript">
-                <i class="fas fa-code"></i>
-                <span>TypeScript</span>
-                <div class="card-glow"></div>
-              </div>
-              <div class="floating-card tech-4" data-tech="firebase">
-                <i class="fas fa-database"></i>
-                <span>Firebase</span>
+              <div class="floating-card" data-tech="node">
+                <i class="fab fa-node-js" aria-hidden="true"></i>
+                <span>Node.js</span>
                 <div class="card-glow"></div>
               </div>
 
-              <!-- Central Graphic -->
-              <div class="hero__main-graphic">
-                <i class="fas fa-laptop-code"></i>
-                <div class="graphic-rings">
-                  <div class="ring ring-1"></div>
-                  <div class="ring ring-2"></div>
-                  <div class="ring ring-3"></div>
+              <div class="floating-card" data-tech="typescript">
+                <i class="fas fa-code" aria-hidden="true"></i>
+                <span>TypeScript</span>
+                <div class="card-glow"></div>
+              </div>
+              <div class="floating-card" data-tech="firebase">
+                <i class="fas fa-database" aria-hidden="true"></i>
+                <span>Firebase</span>
+                <div class="card-glow"></div>
+              </div>
+              <div class="floating-card" data-tech="google-cloud">
+                <i class="fab fa-google" aria-hidden="true"></i>
+                <span>GCP</span>
+                <div class="card-glow"></div>
+              </div>
+
+              <div class="floating-card" data-tech="tailwind">
+                <i class="fas fa-palette" aria-hidden="true"></i>
+                <span>Tailwind</span>
+                <div class="card-glow"></div>
+              </div>
+              <div class="floating-card" data-tech="supabase">
+                <i class="fas fa-bolt" aria-hidden="true"></i>
+                <span>Supabase</span>
+                <div class="card-glow"></div>
+              </div>
+              <div class="floating-card" data-tech="git">
+                <i class="fab fa-git-alt" aria-hidden="true"></i>
+                <span>Git/GitHub</span>
+                <div class="card-glow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1000">
+          <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+          </div>
+          <span>Role para baixo</span>
+        </div>
+
+        <div class="hero__bg-elements">
+          <div class="bg-gradient bg-gradient-1"></div>
+          <div class="bg-gradient bg-gradient-2"></div>
+        </div>
+      </section>
+
+      <section class="pwa-showcase" id="pwa-showcase" data-aos="fade-up">
+        <div class="container">
+          <div class="section__header" data-aos="fade-up">
+            <h2 class="section__title">
+              Aplicação <span class="gradient-text">em Destaque</span>
+            </h2>
+            <p class="section__description">
+              Confira, na prática, a arquitetura SaaS da A&N Agendamentos: uma
+              solução moderna que conecta clientes, profissionais e
+              estabelecimentos em um sistema integrado e seguro de agendamentos
+              com pagamento integrado via Mercado Pago.
+            </p>
+          </div>
+          <div class="pwa-showcase__grid">
+            <div class="pwa-showcase__slider-wrapper">
+              <div class="phone-mockup">
+                <div class="phone-mockup__island"></div>
+                <div class="phone-mockup__screen">
+                  <div class="pwa-slide active" id="slide-cliente">
+                    <video
+                      class="phone-mockup__video"
+                      src="video/cliente.mp4"
+                      autoplay
+                      controls
+                      muted
+                      playsinline
+                    >
+                      Seu navegador não suporta o vídeo.
+                    </video>
+                  </div>
+
+                  <div class="pwa-slide" id="slide-estabelecimento">
+                    <video
+                      class="phone-mockup__video"
+                      src="video/estabelecimento.mp4"
+                      autoplay
+                      controls
+                      muted
+                      playsinline
+                    >
+                      Seu navegador não suporta o vídeo.
+                    </video>
+                  </div>
+
+                  <div class="pwa-slide" id="slide-profissional">
+                    <video
+                      class="phone-mockup__video"
+                      src="video/profissional.mp4"
+                      autoplay
+                      controls
+                      muted
+                      playsinline
+                    >
+                      Seu navegador não suporta o vídeo.
+                    </video>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="pwa-showcase__text-content"
+              data-aos="fade-left"
+              data-aos-delay="200"
+            >
+              <div class="pwa-showcase__badge">
+                <i class="fas fa-rocket" aria-hidden="true"></i>
+                <span>A&N Agendamentos</span>
+              </div>
+
+              <h2
+                class="section__title"
+                style="
+                  text-align: left;
+                  font-size: var(--font-size-3xl);
+                  margin-bottom: var(--space-6);
+                "
+              >
+                Soluções Completas de Ponta a Ponta
+              </h2>
+              <p
+                class="section__description"
+                style="text-align: left; max-width: 100%"
+              >
+                Além de construir aplicações robustas como o
+                <strong>A&N Agendamentos</strong>, eu as entrego com tecnologia
+                PWA (Progressive Web App).
+              </p>
+              <p
+                class="section__description"
+                style="text-align: left; max-width: 100%; margin-top: -1rem"
+              >
+                Explore as diferentes visões do sistema:
+              </p>
+
+              <div class="pwa-showcase__tabs">
+                <button
+                  class="pwa-showcase__tab-btn active"
+                  data-target="slide-cliente"
+                >
+                  <i class="fas fa-user" aria-hidden="true"></i>
+                  Cliente
+                </button>
+                <button
+                  class="pwa-showcase__tab-btn"
+                  data-target="slide-estabelecimento"
+                >
+                  <i class="fas fa-store" aria-hidden="true"></i>
+                  Estabelecimento
+                </button>
+                <button
+                  class="pwa-showcase__tab-btn"
+                  data-target="slide-profissional"
+                >
+                  <i class="fa-solid fa-briefcase"></i>
+                  Profissional
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="pwa-showcase__steps-content"
+              data-aos="fade-left"
+              data-aos-delay="300"
+            >
+              <h4 class="pwa-showcase__steps-title">O que é o recurso PWA?</h4>
+              <div class="pwa-showcase__steps">
+                <div class="pwa-showcase__step">
+                  <div class="step__number">1</div>
+                  <div class="step__text">
+                    <h4>Acesso Rápido</h4>
+                    <p>
+                      O usuário pode instalar seu app na tela inicial do
+                      celular, como um app nativo.
+                    </p>
+                  </div>
+                </div>
+                <div class="pwa-showcase__step">
+                  <div class="step__number">2</div>
+                  <div class="step__text">
+                    <h4>Sem Lojas de Apps</h4>
+                    <p>
+                      Tudo direto pelo navegador (Safari ou Chrome), sem
+                      precisar publicar na App Store ou Play Store.
+                    </p>
+                  </div>
+                </div>
+                <div class="pwa-showcase__step">
+                  <div class="step__number">3</div>
+                  <div class="step__text">
+                    <h4>Experiência Nativa</h4>
+                    <p>
+                      O app abre em tela cheia, sem a barra do navegador,
+                      oferecendo uma experiência de uso fluida.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1000">
-          <span>Descubra mais</span>
-          <div class="scroll-mouse">
-            <div class="scroll-wheel"></div>
-          </div>
-        </div>
-
-        <!-- Background Elements -->
-        <div class="hero__bg-elements">
-          <div class="bg-gradient bg-gradient-1"></div>
-          <div class="bg-gradient bg-gradient-2"></div>
-          <div class="bg-particles">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-          </div>
-        </div>
       </section>
 
-      <!-- Projects Section -->
       <section class="projects section" id="projects">
         <div class="container">
           <div class="section__header" data-aos="fade-up">
@@ -340,88 +511,10 @@
             </p>
           </div>
 
-          <!-- Featured Project -->
-          <div class="featured-project" data-aos="fade-up" data-aos-delay="100">
-            <div class="featured-project__header">
-              <h3 class="featured-project__title">
-                <span class="project-status">Em Desenvolvimento</span>
-                ERP Web App Moderno
-              </h3>
-              <div class="project-tech-preview">
-                <span class="tech-pill">React</span>
-                <span class="tech-pill">Firebase</span>
-                <span class="tech-pill">Tailwind</span>
-              </div>
-            </div>
-
-            <div class="featured-project__content">
-              <div class="video-wrapper">
-                <video
-                  class="project-video"
-                  muted
-                  loop
-                  poster="img/petroleowebapp.webp"
-                  id="featuredVideo"
-                >
-                  <source
-                    src="video/ERP_PETROLEO_DEMONSTRACAO.mp4"
-                    type="video/mp4"
-                  />
-                  Seu navegador não suporta a tag de vídeo.
-                </video>
-                <div class="video-overlay">
-                  <button
-                    class="play-btn"
-                    id="featuredPlayBtn"
-                    aria-label="Reproduzir/Pausar vídeo"
-                  >
-                    <i class="fas fa-play"></i>
-                  </button>
-                </div>
-              </div>
-
-              <div class="featured-project__details">
-                <h4 class="details__title">Tecnologias Utilizadas</h4>
-                <div class="tech-stack-container">
-                  <div class="tech-category">
-                    <h6>Front-end</h6>
-                    <div class="tech-tags">
-                      <span class="tech-tag react">React</span>
-                      <span class="tech-tag tailwind">Tailwind CSS</span>
-                    </div>
-                  </div>
-                  <div class="tech-category">
-                    <h6>Back-end</h6>
-                    <div class="tech-tags">
-                      <span class="tech-tag firebase">Firebase</span>
-                      <span class="tech-tag">Auth</span>
-                      <span class="tech-tag">Functions</span>
-                      <span class="tech-tag node">Node.js</span>
-                    </div>
-                  </div>
-                  <div class="tech-category">
-                    <h6>Bibliotecas</h6>
-                    <div class="tech-tags">
-                      <span class="tech-tag">Recharts</span>
-                      <span class="tech-tag">Lucide React</span>
-                      <span class="tech-tag">Papa Parse</span>
-                    </div>
-                  </div>
-                </div>
-                <button class="btn btn-primary disabled" aria-disabled="true">
-                  Em Breve <i class="fas fa-rocket"></i>
-                  <div class="btn-ripple"></div>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Other Projects Title -->
           <h3 class="other-projects-title" data-aos="fade-up">
             Outros Projetos
           </h3>
 
-          <!-- Project Filters -->
           <div class="project-filters" data-aos="fade-up" data-aos-delay="200">
             <button class="filter-btn active" data-filter="all">
               <span>Todos</span>
@@ -437,9 +530,54 @@
             </button>
           </div>
 
-          <!-- Projects Grid -->
           <div class="projects__grid">
-            <!-- Project Card 1 -->
+            <div class="project-card" data-category="webapp" data-aos="fade-up">
+              <div class="project-card__image">
+                <img
+                  src="img/petroleowebapp.webp"
+                  alt="ERP Web App Moderno"
+                  loading="lazy"
+                />
+                <div class="project-overlay">
+                  <div class="project-info">
+                    <h4>ERP Web App Moderno</h4>
+                    <p>Dashboard de gestão completo</p>
+                  </div>
+                  <button
+                    class="project-btn project-modal-trigger"
+                    data-project="erp-webapp"
+                    aria-label="Ver detalhes do projeto ERP Web App"
+                  >
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="image-glow"></div>
+              </div>
+              <div class="project-card__content">
+                <div class="project-tech">
+                  <span class="tech-tag react">React</span>
+                  <span class="tech-tag firebase">Firebase</span>
+                  <span class="tech-tag tailwind">Tailwind</span>
+                </div>
+                <h3 class="project-title">ERP Web App Moderno</h3>
+                <p class="project-description">
+                  Sistema de gestão (ERP) focado na indústria de petróleo,
+                  construído com React, Firebase e Tailwind.
+                </p>
+                <button
+                  class="btn btn-outline project-modal-trigger"
+                  data-project-title="Demonstração ERP Web App"
+                  data-project-video-url="video/ERP_PETROLEO_DEMONSTRACAO.mp4"
+                  data-project-desc="Sistema de gestão (ERP) focado na indústria de petróleo, construído com React, Firebase e Tailwind. Inclui dashboard interativo, autenticação, gerenciamento de dados e relatórios."
+                  data-project-tech="React,Firebase,Tailwind CSS,Node.js,Recharts,Lucide React"
+                  data-project-live-url="#"
+                  data-project-repo-url="#"
+                >
+                  Ver Demonstração
+                  <div class="btn-ripple"></div>
+                </button>
+              </div>
+            </div>
             <div class="project-card" data-category="webapp" data-aos="fade-up">
               <div class="project-card__image">
                 <img
@@ -452,8 +590,12 @@
                     <h4>Controle Financeiro</h4>
                     <p>Dashboard interativo e responsivo</p>
                   </div>
-                  <button class="project-btn" data-project="financeiro">
-                    <i class="fas fa-external-link-alt"></i>
+                  <button
+                    class="project-btn project-modal-trigger"
+                    data-project="financeiro"
+                    aria-label="Ver detalhes do projeto Controle Financeiro"
+                  >
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                   </button>
                 </div>
                 <div class="image-glow"></div>
@@ -485,7 +627,6 @@
               </div>
             </div>
 
-            <!-- Project Card 2 -->
             <div
               class="project-card"
               data-category="webapp"
@@ -506,8 +647,9 @@
                   <button
                     class="project-btn project-modal-trigger"
                     data-project="gestao"
+                    aria-label="Ver detalhes do projeto Gestão Consultas/Aulas"
                   >
-                    <i class="fas fa-external-link-alt"></i>
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                   </button>
                 </div>
                 <div class="image-glow"></div>
@@ -538,7 +680,6 @@
               </div>
             </div>
 
-            <!-- Project Card 3 -->
             <div
               class="project-card"
               data-category="website"
@@ -556,8 +697,12 @@
                     <h4>Website Psicanalista</h4>
                     <p>Design elegante e confiável</p>
                   </div>
-                  <button class="project-btn" data-project="psicanalista">
-                    <i class="fas fa-external-link-alt"></i>
+                  <button
+                    class="project-btn project-modal-trigger"
+                    data-project="psicanalista"
+                    aria-label="Ver detalhes do projeto Website Psicanalista"
+                  >
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                   </button>
                 </div>
                 <div class="image-glow"></div>
@@ -567,6 +712,7 @@
                   <span class="tech-tag">HTML5</span>
                   <span class="tech-tag">CSS3</span>
                   <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">SEO</span>
                 </div>
                 <h3 class="project-title">Website para Psicanalista</h3>
                 <p class="project-description">
@@ -588,11 +734,64 @@
                 </button>
               </div>
             </div>
+            <div
+              class="project-card"
+              data-category="website"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="project-card__image">
+                <img
+                  src="img/sitecervejariafratelli.webp"
+                  alt="Site Cervejaria Fratelli"
+                  loading="lazy"
+                />
+                <div class="project-overlay">
+                  <div class="project-info">
+                    <h4>Website Cervejaria Fratelli</h4>
+                    <p>Moderno, responsivo e com toque Artesanal</p>
+                  </div>
+                  <button
+                    class="project-btn project-modal-trigger"
+                    data-project="Cervekaria Fratelli"
+                    aria-label="Ver detalhes do projeto Website Cervejaria Fratelli"
+                  >
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  </button>
+                </div>
+                <div class="image-glow"></div>
+              </div>
+              <div class="project-card__content">
+                <div class="project-tech">
+                  <span class="tech-tag">HTML5</span>
+                  <span class="tech-tag">CSS3</span>
+                  <span class="tech-tag">JavaScript</span>
+                  <span class="tech-tag">SEO</span>
+                </div>
+                <h3 class="project-title">Website para Cervejaria Fratelli</h3>
+                <p class="project-description">
+                  Visando mostrar todo o toque de delicadesa do ambiente, e o
+                  punch/leveza incorporados as suas cervejas artesanais, o site
+                  trás uma presença online para a cervejaria nº 1 de Vitória-ES.
+                </p>
+                <button
+                  class="btn btn-outline project-modal-trigger"
+                  data-project-title="Website para Psicanalista"
+                  data-project-image-url="img/sitecervejariafratelli.webp"
+                  data-project-desc="O desafio aqui foi aplicar todos os princípios de conhecimento em tecnologia para trazer a responsividade, modernidade e performance que o site precisava, ao mesmo tempo que mantinha o toque artesanal e acolhedor que a Cervejaria Fratelli oferece em seu ambiente físico."
+                  data-project-tech="HTML,CSS,JavaScript,WhatsApp API,SEO"
+                  data-project-live-url="https://alessandrotostes.github.io/cervejaria_fratelli/"
+                  data-project-repo-url="https://github.com/alessandrotostes/"
+                >
+                  Ver Detalhes
+                  <div class="btn-ripple"></div>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- About Section -->
       <section class="about section" id="about">
         <div class="container">
           <div class="section__header" data-aos="fade-up">
@@ -618,8 +817,8 @@
                 <p>
                   Sou Alessandro Tostes, desenvolvedor web apaixonado por criar
                   experiências digitais que fazem a diferença. Com mais de 3
-                  anos de experiência, venho me especializando em transformar ideias
-                  complexas em soluções elegantes e funcionais.
+                  anos de experiência, venho me especializando em transformar
+                  ideias complexas em soluções elegantes e funcionais.
                 </p>
                 <p>
                   Minha abordagem combina design moderno, código limpo e foco na
@@ -643,7 +842,9 @@
 
               <div class="tech-categories">
                 <div class="tech-category">
-                  <h4><i class="fas fa-code"></i> Frontend</h4>
+                  <h4>
+                    <i class="fas fa-code" aria-hidden="true"></i> Frontend
+                  </h4>
                   <div class="tech-tags">
                     <span class="tech-tag react">React</span>
                     <span class="tech-tag nextjs">Next.js</span>
@@ -656,24 +857,32 @@
                 </div>
 
                 <div class="tech-category">
-                  <h4><i class="fas fa-server"></i> Backend</h4>
+                  <h4>
+                    <i class="fas fa-server" aria-hidden="true"></i> Backend
+                  </h4>
                   <div class="tech-tags">
                     <span class="tech-tag node">Node.js</span>
-                    <span class="tech-tag firebase">Firebase(Authentication, Firestore, 
-                      Cloud Functions V2)</span>
+                    <span class="tech-tag firebase"
+                      >Firebase(Authentication, Firestore, Cloud Functions
+                      V2)</span
+                    >
                     <span class="tech-tag">TypeScript</span>
-                    <span class="tech-tag postgresql">Supabase (PostgreSQL, Auth, RLS)</span>
+                    <span class="tech-tag postgresql"
+                      >Supabase (PostgreSQL, Auth, RLS)</span
+                    >
                   </div>
                 </div>
 
                 <div class="tech-category">
-                  <h4><i class="fas fa-tools"></i> Ferramentas</h4>
+                  <h4>
+                    <i class="fas fa-tools" aria-hidden="true"></i> Ferramentas
+                  </h4>
                   <div class="tech-tags">
                     <span class="tech-tag">Git</span>
-                     <span class="tech-tag">GitHub</span>
-                     <span class="tech-tag">Google Cloud</span>
-                    <span class="tech-tag ">API Mercado Pago</span>
-                    <span class="tech-tag ">APIs Google</span>
+                    <span class="tech-tag">GitHub</span>
+                    <span class="tech-tag">Google Cloud Plataform</span>
+                    <span class="tech-tag">API Mercado Pago</span>
+                    <span class="tech-tag">APIs Google</span>
                     <span class="tech-tag">Vercel</span>
                     <span class="tech-tag">Firebase Hosting</span>
                     <span class="tech-tag">Lucide React</span>
@@ -690,7 +899,6 @@
         </div>
       </section>
 
-      <!-- Contact Section -->
       <section class="contact section" id="contact">
         <div class="container">
           <div class="section__header" data-aos="fade-up">
@@ -710,7 +918,7 @@
             <div class="contact-info-card" data-aos="fade-right">
               <div class="contact-card whatsapp-card">
                 <div class="contact-card__icon whatsapp">
-                  <i class="fab fa-whatsapp"></i>
+                  <i class="fab fa-whatsapp" aria-hidden="true"></i>
                 </div>
                 <div class="contact-card__content">
                   <h4>WhatsApp</h4>
@@ -724,7 +932,7 @@
                     rel="noopener noreferrer"
                     class="contact-action"
                   >
-                    <i class="fab fa-whatsapp"></i>
+                    <i class="fab fa-whatsapp" aria-hidden="true"></i>
                     Conversar Agora
                   </a>
                 </div>
@@ -733,7 +941,7 @@
 
               <div class="contact-card email-card">
                 <div class="contact-card__icon email">
-                  <i class="fas fa-envelope"></i>
+                  <i class="fas fa-envelope" aria-hidden="true"></i>
                 </div>
                 <div class="contact-card__content">
                   <h4>Email</h4>
@@ -742,7 +950,7 @@
                     href="mailto:alessandrotostesarruda@gmail.com?subject=Proposta%20de%20Projeto%20"
                     class="contact-action"
                   >
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
                     <span>Enviar Email</span>
                   </a>
                 </div>
@@ -763,19 +971,19 @@
                 </p>
                 <div class="cta-features">
                   <div class="cta-feature">
-                    <i class="fas fa-comments"></i>
-                    <span>Consultoria disponível</span>
+                    <i class="fas fa-comments" aria-hidden="true"></i>
+                    <span>Consultoria gratuita disponível</span>
                   </div>
                   <div class="cta-feature">
-                    <i class="fas fa-chart-line"></i>
+                    <i class="fas fa-chart-line" aria-hidden="true"></i>
                     <span>Orçamento personalizado</span>
                   </div>
                   <div class="cta-feature">
-                    <i class="fas fa-mobile-alt"></i>
+                    <i class="fas fa-mobile-alt" aria-hidden="true"></i>
                     <span>Design responsivo</span>
                   </div>
                   <div class="cta-feature">
-                    <i class="fas fa-rocket"></i>
+                    <i class="fas fa-rocket" aria-hidden="true"></i>
                     <span>Performance otimizada</span>
                   </div>
                 </div>
@@ -788,8 +996,10 @@
                     href="https://www.linkedin.com/in/alessandro-tostes-940972242/"
                     class="social-link linkedin"
                     target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Meu perfil no LinkedIn"
                   >
-                    <i class="fab fa-linkedin-in"></i>
+                    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
                     <span>LinkedIn</span>
                     <div class="link-glow"></div>
                   </a>
@@ -797,8 +1007,10 @@
                     href="https://github.com/alessandrotostes"
                     class="social-link github"
                     target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Meu perfil no GitHub"
                   >
-                    <i class="fab fa-github"></i>
+                    <i class="fab fa-github" aria-hidden="true"></i>
                     <span>GitHub</span>
                     <div class="link-glow"></div>
                   </a>
@@ -810,7 +1022,6 @@
       </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
       <div class="container">
         <div class="footer__bottom">
@@ -822,26 +1033,39 @@
               href="https://github.com/alessandrotostes"
               class="social-link"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Meu perfil no GitHub"
             >
-              <i class="fab fa-github"></i>
+              <i class="fab fa-github" aria-hidden="true"></i>
             </a>
             <a
               href="https://www.linkedin.com/in/alessandro-tostes-940972242/"
               class="social-link"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Meu perfil no LinkedIn"
             >
-              <i class="fab fa-linkedin-in"></i>
+              <i class="fab fa-linkedin-in" aria-hidden="true"></i>
             </a>
           </div>
         </div>
       </div>
     </footer>
 
-    <!-- Project Modal -->
-    <div class="modal-overlay" id="projectModal">
+    <div
+      class="modal-overlay"
+      id="projectModal"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+    >
       <div class="modal-content">
-        <button class="modal-close" id="modalCloseBtn">
-          <i class="fas fa-times"></i>
+        <button
+          class="modal-close"
+          id="modalCloseBtn"
+          aria-label="Fechar modal"
+        >
+          <i class="fas fa-times" aria-hidden="true"></i>
         </button>
         <h3 class="modal-title" id="modalProjectTitle"></h3>
         <div class="modal-body">
@@ -879,7 +1103,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            <i class="fab fa-github"></i> Repositório
+            <i class="fab fa-github" aria-hidden="true"></i> Repositório
           </a>
           <a
             id="modalProjectLiveLink"
@@ -888,22 +1112,24 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            Ver Site Ao Vivo <i class="fas fa-external-link-alt"></i>
+            Ver Site Ao Vivo
+            <i class="fas fa-external-link-alt" aria-hidden="true"></i>
           </a>
         </div>
       </div>
     </div>
 
-    <!-- Scroll to Top -->
-    <button class="scroll-to-top" id="scrollToTop" title="Voltar ao topo">
-      <i class="fas fa-arrow-up"></i>
+    <button
+      class="scroll-to-top"
+      id="scrollToTop"
+      title="Voltar ao topo"
+      aria-label="Voltar ao topo"
+    >
+      <i class="fas fa-arrow-up" aria-hidden="true"></i>
       <div class="btn-glow"></div>
     </button>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/typed.js@2.0.16"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/script.js"></script>
-    <script src="sw.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="js/script.js" defer></script>
   </body>
 </html>
