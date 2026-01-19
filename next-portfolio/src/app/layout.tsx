@@ -77,6 +77,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: [
+      { url: '/img/iconetostes.ico' },
+      { url: '/img/iconetostes.webp', type: 'image/webp' },
+    ],
+    shortcut: '/img/iconetostes.webp',
+    apple: '/img/iconetostes.webp',
+  },
 };
 
 export default function RootLayout({
