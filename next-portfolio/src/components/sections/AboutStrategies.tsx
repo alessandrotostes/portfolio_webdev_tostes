@@ -73,11 +73,13 @@ export function AboutStrategies() {
 
       <div className="max-w-[1920px] mx-auto px-4 md:px-8">
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
+        <div className="flex flex-col items-center justify-center text-center mb-16 gap-8">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex flex-col items-center"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider mb-4">
               <BadgeCheck className="w-4 h-4" />
@@ -92,7 +94,7 @@ export function AboutStrategies() {
             </p>
           </motion.div>
           
-          <div className="flex flex-col items-center md:items-end gap-6">
+          <div className="flex flex-col items-center gap-6">
             {/* Redes Sociais */}
             <div className="flex items-center gap-3 md:gap-4">
               <Link 
@@ -157,9 +159,10 @@ export function AboutStrategies() {
           {/* Column 1 (5/12) - Experience Timeline */}
           <div className="lg:col-span-5 flex flex-col gap-8">
             <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               className="p-8 md:p-10 rounded-[2.5rem] bg-secondary/30 border border-primary/10 dark:border-primary/10 dark:border-white/5 backdrop-blur-sm relative overflow-hidden group h-full"
             >
               <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
@@ -193,15 +196,34 @@ export function AboutStrategies() {
             </motion.div>
           </div>
 
-          {/* Column 2 (7/12) - The Tech Arsenal Grid */}
-          <div className="lg:col-span-7 flex flex-col gap-6">
+          <motion.div 
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.12,
+                  delayChildren: 0.2
+                }
+              }
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="lg:col-span-7 flex flex-col gap-6"
+          >
              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                {/* Frontend Arsenal */}
                <motion.div 
-                 initial={{ opacity: 0, y: 20 }}
-                 whileInView={{ opacity: 1, y: 0 }}
-                 transition={{ duration: 0.5, delay: 0.1 }}
-                 className="p-6 rounded-3xl bg-secondary/20 dark:bg-secondary/10 border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/20 transition-all"
+                 variants={{
+                   hidden: { opacity: 0, y: 20 },
+                   visible: { 
+                     opacity: 1, 
+                     y: 0,
+                     transition: { duration: 0.8, ease: "easeOut" }
+                   }
+                 }}
+                 className="p-6 rounded-3xl bg-secondary/20 dark:bg-secondary/10 border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/20 transition-colors"
                >
                  <div className="flex items-center gap-2 mb-4">
                    <Code2 className="text-primary w-5 h-5" />
@@ -216,10 +238,15 @@ export function AboutStrategies() {
 
                {/* Backend & Cloud */}
                <motion.div 
-                 initial={{ opacity: 0, y: 20 }}
-                 whileInView={{ opacity: 1, y: 0 }}
-                 transition={{ duration: 0.5, delay: 0.2 }}
-                 className="p-6 rounded-3xl bg-secondary/20 dark:bg-secondary/10 border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/20 transition-all"
+                 variants={{
+                   hidden: { opacity: 0, y: 20 },
+                   visible: { 
+                     opacity: 1, 
+                     y: 0,
+                     transition: { duration: 0.8, ease: "easeOut" }
+                   }
+                 }}
+                 className="p-6 rounded-3xl bg-secondary/20 dark:bg-secondary/10 border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/20 transition-colors"
                >
                  <div className="flex items-center gap-2 mb-4">
                    <Database className="text-primary w-5 h-5" />
@@ -234,10 +261,15 @@ export function AboutStrategies() {
 
                {/* Quality & DevOps */}
                <motion.div 
-                 initial={{ opacity: 0, y: 20 }}
-                 whileInView={{ opacity: 1, y: 0 }}
-                 transition={{ duration: 0.5, delay: 0.3 }}
-                 className="p-6 rounded-3xl bg-secondary/20 dark:bg-secondary/10 border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/20 transition-all"
+                 variants={{
+                   hidden: { opacity: 0, y: 20 },
+                   visible: { 
+                     opacity: 1, 
+                     y: 0,
+                     transition: { duration: 0.8, ease: "easeOut" }
+                   }
+                 }}
+                 className="p-6 rounded-3xl bg-secondary/20 dark:bg-secondary/10 border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/20 transition-colors"
                >
                  <div className="flex items-center gap-2 mb-4">
                    <Settings className="text-primary w-5 h-5" />
@@ -252,10 +284,15 @@ export function AboutStrategies() {
 
                {/* Architecture & Security */}
                <motion.div 
-                 initial={{ opacity: 0, y: 20 }}
-                 whileInView={{ opacity: 1, y: 0 }}
-                 transition={{ duration: 0.5, delay: 0.4 }}
-                 className="p-6 rounded-3xl bg-secondary/20 dark:bg-secondary/10 border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/20 transition-all"
+                 variants={{
+                   hidden: { opacity: 0, y: 20 },
+                   visible: { 
+                     opacity: 1, 
+                     y: 0,
+                     transition: { duration: 0.8, ease: "easeOut" }
+                   }
+                 }}
+                 className="p-6 rounded-3xl bg-secondary/20 dark:bg-secondary/10 border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/20 transition-colors"
                >
                  <div className="flex items-center gap-2 mb-4">
                    <ShieldCheck className="text-primary w-5 h-5" />
@@ -270,10 +307,15 @@ export function AboutStrategies() {
 
                {/* AI & Productivity */}
                <motion.div 
-                 initial={{ opacity: 0, y: 20 }}
-                 whileInView={{ opacity: 1, y: 0 }}
-                 transition={{ duration: 0.5, delay: 0.5 }}
-                 className="p-6 rounded-3xl bg-secondary/20 dark:bg-secondary/10 border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/20 transition-all sm:col-span-2 relative overflow-hidden group"
+                 variants={{
+                   hidden: { opacity: 0, y: 20 },
+                   visible: { 
+                     opacity: 1, 
+                     y: 0,
+                     transition: { duration: 0.8, ease: "easeOut" }
+                   }
+                 }}
+                 className="p-6 rounded-3xl bg-secondary/20 dark:bg-secondary/10 border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/20 transition-colors sm:col-span-2 relative overflow-hidden group"
                >
                  <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
                     <BrainCircuit className="w-24 h-24" />
@@ -296,9 +338,14 @@ export function AboutStrategies() {
 
              {/* Education Card - Wide */}
              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { 
+                    opacity: 1, 
+                    y: 0,
+                    transition: { duration: 0.8, ease: "easeOut" }
+                  }
+                }}
                 className="p-8 rounded-3xl bg-primary/10 dark:bg-primary/5 border border-primary/20 dark:border-primary/10 relative group"
              >
                 <div className="flex items-start justify-between">
@@ -315,7 +362,7 @@ export function AboutStrategies() {
                    </div>
                 </div>
              </motion.div>
-          </div>
+          </motion.div>
 
       </div>
       </div>

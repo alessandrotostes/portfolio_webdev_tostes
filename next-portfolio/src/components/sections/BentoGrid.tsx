@@ -55,7 +55,7 @@ export function BentoGrid() {
             </p>
           </motion.div>
           <div className="flex gap-4">
-             <Link href="https://linkedin.com" target="_blank" className="p-4 rounded-2xl bg-secondary/30 border border-primary/10 hover:border-primary/50 transition-all">
+             <Link href="https://linkedin.com/in/alessandro-tostes" target="_blank" className="p-4 rounded-2xl bg-secondary/30 border border-primary/10 hover:border-primary/50 transition-all">
                 <Linkedin className="w-6 h-6" />
              </Link>
              <Link href="https://github.com/alessandrotostes" target="_blank" className="p-4 rounded-2xl bg-secondary/30 border border-primary/10 hover:border-primary/50 transition-all">
