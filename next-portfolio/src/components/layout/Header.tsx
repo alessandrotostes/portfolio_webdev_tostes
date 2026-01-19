@@ -7,6 +7,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Rocket } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/utils/cn";
+import { useTheme } from "next-themes";
+import { useLenis } from "lenis/react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 const navItems = [
@@ -21,6 +23,17 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const lenis = useLenis();
+
+  const scrollToSection = (e: React.MouseEvent, selector: string) => {
+    e.preventDefault();
+    if (selector === "#home") {
+      lenis?.scrollTo(0);
+    } else {
+      lenis?.scrollTo(selector);
+    }
+    setIsOpen(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,7 +63,11 @@ export function Header() {
     >
       <div className="max-w-[1920px] mx-auto px-4 md:px-8 h-full flex items-center justify-between">
         {/* Logo */}
-        <Link href="#home" className="relative z-50 flex items-center gap-2 group" onClick={() => setIsOpen(false)}>
+        <Link 
+          href="#home" 
+          className="relative z-50 flex items-center gap-2 group" 
+          onClick={(e) => scrollToSection(e, "#home")}
+        >
           <div className="relative w-32 h-10 group-hover:scale-105 transition-transform">
              <Image 
               src="/img/logo.webp" 
@@ -68,6 +85,7 @@ export function Header() {
             <Link
               key={item.path}
               href={item.path}
+              onClick={(e) => scrollToSection(e, item.path)}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary relative group",
                 pathname === item.path ? "text-primary" : "text-muted-foreground"
@@ -124,7 +142,7 @@ export function Header() {
                   >
                     <Link
                       href={item.path}
-                      onClick={() => setIsOpen(false)}
+                      onClick={(e) => scrollToSection(e, item.path)}
                       className={cn(
                         "text-3xl font-display font-bold hover:text-primary transition-colors",
                         pathname === item.path ? "text-primary" : "text-muted-foreground"
