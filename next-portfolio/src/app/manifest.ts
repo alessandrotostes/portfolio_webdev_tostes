@@ -11,7 +11,7 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: '#21808d',
     icons: [
       {
-        src: '/img/iconetostes.webp',
+        src: '/img/logo.webp',
         sizes: 'any',
         type: 'image/webp',
       },
