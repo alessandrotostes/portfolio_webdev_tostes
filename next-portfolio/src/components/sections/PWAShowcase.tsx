@@ -111,7 +111,7 @@ export function PWAShowcase() {
                     "flex items-center gap-4 p-4 rounded-2xl border transition-all text-left group",
                     activeSlide.id === slide.id 
                       ? "bg-primary/10 border-primary shadow-lg shadow-primary/5" 
-                      : "bg-secondary/20 border-white/5 hover:border-white/10"
+                      : "bg-secondary/80 dark:bg-secondary/20 border-primary/10 dark:border-white/5 hover:border-primary/20"
                   )}
                 >
                   <div className={cn(

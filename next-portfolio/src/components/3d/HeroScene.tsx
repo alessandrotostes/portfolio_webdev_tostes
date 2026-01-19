@@ -42,13 +42,13 @@ function FloatingElement() {
 
 export function HeroScene() {
   return (
-    <div className="absolute inset-0 z-0 h-full w-full opacity-60">
+    <div className="absolute inset-0 z-0 h-full w-full opacity-60 dark:opacity-40">
       <Canvas>
         <PerspectiveCamera makeDefault position={[0, 0, 8]} />
         <Environment preset="city" />
         <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} intensity={1.5} color="#21808d" />
-        <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+        <pointLight position={[10, 10, 10]} intensity={2} color="#21808d" />
+        <Stars radius={100} depth={50} count={3000} factor={4} saturation={0} fade speed={1} />
         <FloatingElement />
       </Canvas>
     </div>

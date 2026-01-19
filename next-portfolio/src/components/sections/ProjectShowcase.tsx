@@ -28,7 +28,7 @@ const projects: Project[] = [
     image: "/img/petroleowebapp.webp",
     video: "/video/ERP_PETROLEO_DEMONSTRACAO.mp4",
     tech: ["React", "Firebase", "Tailwind", "Recharts"],
-    liveUrl: "#",
+    repoUrl: "https://github.com/alessandrotostes",
   },
   {
     id: "controle-financeiro",
@@ -39,7 +39,7 @@ const projects: Project[] = [
     video: "/video/gestaomensal.mp4",
     tech: ["React", "Chakra UI", "Firebase", "Chart.js"],
     repoUrl: "https://github.com/alessandrotostes/controle-de-gastos",
-    liveUrl: "#",
+    liveUrl: "https://app-gastos-react-ff2fc.web.app/login",
   },
   {
     id: "gestao-consultas",
@@ -49,17 +49,17 @@ const projects: Project[] = [
     image: "/img/gestaowebapp.webp",
     video: "/video/gestaoapp.mp4",
     tech: ["Next.js", "Supabase", "Tailwind", "TypeScript"],
-    repoUrl: "https://github.com/alessandrotostes/",
-    liveUrl: "#",
+    repoUrl: "https://github.com/alessandrotostes/controle-consultas",
   },
   {
     id: "site-psicanalista",
-    title: "Website Psicanalista",
+    title: "Psicanalista",
     category: "website",
     description: "Presença online elegante e confiável para profissional de saúde mental.",
     image: "/img/sitepsicanalista.webp",
     tech: ["HTML5", "CSS3", "JavaScript", "SEO"],
-    liveUrl: "#",
+    liveUrl: "https://tauanapavanelli.com/",
+    repoUrl: "https://github.com/alessandrotostes/portfolio-psicanalitico",
   },
   {
     id: "nova-solucoes",
@@ -68,11 +68,11 @@ const projects: Project[] = [
     description: "Design sofisticado e tecnologia de ponta para projetos exclusivos em Alumínio Composto (ACM).",
     image: "/img/sitenovasolucoes.webp",
     tech: ["HTML5", "CSS3", "JavaScript", "AOS"],
-    liveUrl: "#",
+    repoUrl: "https://github.com/alessandrotostes/nova_solucoes",
   },
   {
     id: "cervejaria-fratelli",
-    title: "Website Cervejaria Fratelli",
+    title: "Cervejaria Fratelli",
     category: "website",
     description: "Website moderno e responsivo para a Cervejaria Fratelli, unindo tradição artesanal e tecnologia.",
     image: "/img/sitecervejariafratelli.webp",
@@ -107,7 +107,7 @@ const ProjectCard = ({ project, onOpen }: { project: Project; onOpen: (p: Projec
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}
-      className="group relative rounded-3xl overflow-hidden bg-secondary/30 border border-primary/10 dark:border-white/5"
+      className="group relative rounded-3xl overflow-hidden bg-secondary/30 border border-primary/10 dark:border-primary/10 dark:border-white/5"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -158,7 +158,7 @@ const ProjectCard = ({ project, onOpen }: { project: Project; onOpen: (p: Projec
           
           <div className="flex flex-wrap gap-2">
             {project.tech.slice(0, 3).map((t) => (
-              <span key={t} className="text-[10px] px-2 py-0.5 rounded-md bg-white/10 border border-white/5 text-gray-300">
+              <span key={t} className="text-[10px] px-2 py-0.5 rounded-md bg-white/10 border border-primary/10 dark:border-white/5 text-gray-300">
                 {t}
               </span>
             ))}
@@ -194,7 +194,7 @@ export function ProjectShowcase() {
           </motion.div>
 
           {/* Filters */}
-          <div className="flex gap-2 bg-secondary/20 p-1.5 rounded-2xl border border-primary/10 dark:border-white/5 backdrop-blur-sm self-start">
+          <div className="flex gap-2 bg-secondary/20 p-1.5 rounded-2xl border border-primary/10 dark:border-primary/10 dark:border-white/5 backdrop-blur-sm self-start">
             {["all", "webapp", "website"].map((f) => (
               <button
                 key={f}
@@ -236,10 +236,10 @@ export function ProjectShowcase() {
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-secondary/80 border border-white/10 shadow-2xl p-6 md:p-10 no-scrollbar"
+                className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-secondary/95 dark:bg-secondary/80 border border-primary/10 dark:border-primary/20 dark:border-white/10 shadow-2xl p-6 md:p-10 no-scrollbar backdrop-blur-md"
               >
                 <div className="flex flex-col gap-8">
-                   <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/5 bg-black">
+                   <div className="relative aspect-video rounded-3xl overflow-hidden border border-primary/10 dark:border-primary/10 dark:border-white/5 bg-black">
                       {selectedProject.video ? (
                         <video src={selectedProject.video} controls autoPlay className="w-full h-full object-cover" />
                       ) : (
@@ -249,7 +249,7 @@ export function ProjectShowcase() {
 
                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                       <div className="md:col-span-2">
-                        <h3 className="text-3xl font-bold mb-4">{selectedProject.title}</h3>
+                        <h3 className="text-3xl font-bold mb-4 text-foreground dark:text-white">{selectedProject.title}</h3>
                         <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
                           {selectedProject.description}
                         </p>
@@ -263,7 +263,7 @@ export function ProjectShowcase() {
                       </div>
 
                       <div className="flex flex-col gap-4">
-                         <div className="p-6 rounded-3xl bg-white/5 border border-white/5">
+                         <div className="p-6 rounded-3xl bg-background/50 dark:bg-white/5 border border-primary/10 dark:border-primary/10 dark:border-white/5">
                             <h4 className="text-sm font-bold uppercase tracking-widest text-primary mb-4">Ações</h4>
                             <div className="flex flex-col gap-3">
                               {selectedProject.liveUrl && (
@@ -279,7 +279,7 @@ export function ProjectShowcase() {
                                 <Link 
                                   href={selectedProject.repoUrl} 
                                   target="_blank"
-                                  className="flex items-center justify-center gap-2 w-full py-3 bg-white/5 hover:bg-white/10 text-white rounded-2xl font-bold transition-all border border-white/5"
+                                  className="flex items-center justify-center gap-2 w-full py-3 bg-white/50 dark:bg-white/5 hover:bg-black/5 dark:hover:bg-white/10 text-foreground dark:text-white rounded-2xl font-bold transition-all border border-primary/10 dark:border-primary/10 dark:border-white/5"
                                 >
                                   Ver GitHub <Github className="w-4 h-4" />
                                 </Link>
@@ -292,7 +292,7 @@ export function ProjectShowcase() {
 
                 <button 
                   onClick={() => setSelectedProject(null)}
-                  className="absolute top-6 right-6 p-2 rounded-full bg-white/5 hover:bg-white/10 text-white transition-all"
+                  className="absolute top-6 right-6 p-2 rounded-full bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-foreground dark:text-white transition-all"
                 >
                   <X />
                 </button>
@@ -302,7 +302,7 @@ export function ProjectShowcase() {
         </AnimatePresence>
 
         <div className="mt-16 text-center">
-           <Link href="https://github.com/alessandrotostes" target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-secondary/50 rounded-full border border-primary/10 dark:border-white/5 hover:border-primary/50 text-foreground transition-all group">
+           <Link href="https://github.com/alessandrotostes" target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-secondary/50 rounded-full border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/50 text-foreground transition-all group">
             Ver Ecossistema Completo no GitHub 
             <Github className="w-5 h-5 group-hover:text-primary transition-colors" />
           </Link>

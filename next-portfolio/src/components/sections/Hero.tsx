@@ -36,20 +36,21 @@ export function Hero() {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/contact"
+                href="https://wa.me/5516997643604?text=Ol%C3%A1%20visitei%20seu%20site%2C%20poderia%20me%20tirar%20d%C3%BAvidas%3F"
+                target="_blank"
                 className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-full bg-primary px-8 font-medium text-primary-foreground transition-all duration-300 hover:w-56 hover:bg-primary/90 hover:scale-105"
               >
                 <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-12deg)_translateX(-100%)] group-hover:duration-1000 group-hover:[transform:skew(-12deg)_translateX(100%)]">
                   <div className="relative h-full w-8 bg-white/20" />
                 </div>
                 <span className="flex items-center gap-2">
-                  Falar Conosco <Rocket className="w-4 h-4" />
+                  Entrar em contato <Rocket className="w-4 h-4" />
                 </span>
               </Link>
 
               <Link
                 href="#projects"
-                className="group inline-flex h-12 items-center justify-center gap-2 rounded-full border border-primary/30 bg-background/50 px-8 font-medium text-foreground backdrop-blur-sm transition-all hover:bg-primary/10 hover:border-primary "
+                className="group inline-flex h-12 items-center justify-center gap-2 rounded-full border border-primary/50 bg-background/50 px-8 font-medium text-foreground backdrop-blur-sm transition-all hover:bg-primary/10 hover:border-primary "
               >
                 Ver Projetos
                 <ChevronRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

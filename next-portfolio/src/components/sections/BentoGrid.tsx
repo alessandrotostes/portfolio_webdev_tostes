@@ -29,7 +29,7 @@ const BentoCard = ({
     transition={{ duration: 0.5, delay }}
     viewport={{ once: true }}
     className={cn(
-      "group relative overflow-hidden rounded-3xl bg-secondary/30 border border-white/5 p-6 backdrop-blur-sm transition-colors hover:bg-secondary/50",
+      "group relative overflow-hidden rounded-3xl bg-secondary/30 border border-primary/10 p-6 backdrop-blur-sm transition-colors hover:bg-secondary/50",
       className
     )}
   >
@@ -55,10 +55,10 @@ export function BentoGrid() {
             </p>
           </motion.div>
           <div className="flex gap-4">
-             <Link href="https://linkedin.com" target="_blank" className="p-4 rounded-2xl bg-secondary/30 border border-white/5 hover:border-primary/50 transition-all">
+             <Link href="https://linkedin.com" target="_blank" className="p-4 rounded-2xl bg-secondary/30 border border-primary/10 hover:border-primary/50 transition-all">
                 <Linkedin className="w-6 h-6" />
              </Link>
-             <Link href="https://github.com/alessandrotostes" target="_blank" className="p-4 rounded-2xl bg-secondary/30 border border-white/5 hover:border-primary/50 transition-all">
+             <Link href="https://github.com/alessandrotostes" target="_blank" className="p-4 rounded-2xl bg-secondary/30 border border-primary/10 hover:border-primary/50 transition-all">
                 <Github className="w-6 h-6" />
              </Link>
           </div>
@@ -121,12 +121,12 @@ export function BentoGrid() {
                 <span className="text-primary font-bold">01. Performance</span>
                 <p className="text-sm text-muted-foreground">Sites rápidos que convertem.</p>
              </div>
-             <div className="w-px h-12 bg-white/5 md:block hidden" />
+             <div className="w-px h-12 bg-primary/10 md:block hidden" />
              <div className="flex-1 flex flex-col gap-1">
                 <span className="text-primary font-bold">02. Experiência</span>
                 <p className="text-sm text-muted-foreground">UI intuitiva e moderna.</p>
              </div>
-             <div className="w-px h-12 bg-white/5 md:block hidden" />
+             <div className="w-px h-12 bg-primary/10 md:block hidden" />
              <div className="flex-1 flex flex-col gap-1">
                 <span className="text-primary font-bold">03. Resultados</span>
                 <p className="text-sm text-muted-foreground">FOCO em ROI e satisfação.</p>

@@ -7,8 +7,8 @@ import { cn } from "@/utils/cn";
 const services = [
   {
     icon: Layers,
-    title: "Web Apps SaaS",
-    description: "Sistemas robustos com autenticação, pagamentos e dashboards complexos para escalar seu negócio.",
+    title: "Web Apps SaaS | SPA | CRMs",
+    description: "Sistemas robustos com autenticação, pagamentos, dashboards. Tudo que sua empresa precisa para escalar seu negócio.",
     features: ["React & Next.js", "Firebase/Supabase", "PWA"]
   },
   {
@@ -20,7 +20,7 @@ const services = [
   {
     icon: Smartphone,
     title: "Soluções PWA",
-    description: "Experiência de aplicativo nativo no navegador, sem a necessidade de lojas de apps.",
+    description: "Experiência de aplicativo nativo, sem a necessidade de lojas de apps.",
     features: ["Offline Access", "Push Notifications", "Instalação simples"]
   }
 ];
@@ -60,7 +60,7 @@ export function Services() {
                 <service.icon className="w-7 h-7" />
               </div>
               
-              <h3 className="text-2xl font-bold mb-4 text-foreground dark:text-white">{service.title}</h3>
+              <h3 className="text-2xl font-bold mb-4 text-foreground">{service.title}</h3>
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 {service.description}
               </p>

@@ -43,14 +43,14 @@ export function Header() {
     <header
       className={cn(
         "fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b",
-        scrolled
-          ? "bg-background/80 backdrop-blur-md border-border/50 py-3"
+        scrolled || isOpen
+          ? "bg-background/95 backdrop-blur-md border-border/50 py-3"
           : "bg-transparent border-transparent py-5"
       )}
     >
       <div className="max-w-[1920px] mx-auto px-4 md:px-8 h-full flex items-center justify-between">
         {/* Logo */}
-        <Link href="#home" className="relative z-50 flex items-center gap-2 group">
+        <Link href="#home" className="relative z-50 flex items-center gap-2 group" onClick={() => setIsOpen(false)}>
           <div className="relative w-32 h-10 group-hover:scale-105 transition-transform">
              <Image 
               src="/img/logo.webp" 
@@ -86,7 +86,7 @@ export function Header() {
         <div className="hidden md:flex items-center gap-4">
           <ThemeToggle />
           <Link
-            href="https://wa.me/5516997643604"
+            href="https://wa.me/5516997643604?text=Ol%C3%A1%20visitei%20seu%20site%2C%20poderia%20me%20tirar%20d%C3%BAvidas%3F"
             target="_blank"
             className="flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground rounded-full text-sm font-medium hover:bg-primary/90 transition-transform hover:scale-105 active:scale-95 shadow-lg shadow-primary/20"
           >
@@ -112,7 +112,7 @@ export function Header() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 top-0 bg-background/98 backdrop-blur-xl z-40 flex flex-col items-center justify-center pt-20"
+              className="fixed inset-0 top-0 h-[100dvh] bg-background/98 backdrop-blur-xl z-40 flex flex-col items-center justify-start pt-24 overflow-y-auto"
             >
               <div className="flex flex-col items-center gap-8 w-full px-8">
                 {navItems.map((item, idx) => (

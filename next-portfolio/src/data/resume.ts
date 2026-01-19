@@ -38,13 +38,6 @@ export const RESUME_DATA: { pt: ResumeData; en: ResumeData } = {
         techs: ["React", "Firebase Functions", "Node.js", "Cron Jobs", "Recharts", "PapaParse"]
       },
       {
-        company: "SaaS Financeiro",
-        role: "Full Stack Developer",
-        period: "2024",
-        description: "Controle financeiro pessoal com Metas de Poupança e orçamentação. Dashboard interativo com gráficos dinâmicos.",
-        techs: ["Chakra UI", "Chart.js", "Firestore", "React Router", "React Icons"]
-      },
-      {
         company: "Autônomo",
         role: "Consultor Front-End",
         period: "2019 - Atual",

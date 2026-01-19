@@ -39,14 +39,14 @@
   Futuristic Theme Variables
 */
 :root {
-  --background: #fdfdfd;
-  --foreground: #0a0a0a;
+  --background: #ffffff;
+  --foreground: #0f172a;
   --primary: #21808d;
   --primary-foreground: #ffffff;
   --secondary: #f1f5f9;
   --accent: #32a4b3;
   --muted: #f1f5f9;
-  --muted-foreground: #64748b;
+  --muted-foreground: #334155;
   --border: #e2e8f0;
   --font-inter: 'Inter', sans-serif;
   --font-space-grotesk: 'Space Grotesk', sans-serif;
@@ -54,14 +54,14 @@
 }
 
 .light {
-  --background: #fdfdfd;
-  --foreground: #0a0a0a;
+  --background: #ffffff;
+  --foreground: #0f172a;
   --primary: #21808d;
   --primary-foreground: #ffffff;
   --secondary: #f1f5f9;
   --accent: #32a4b3;
   --muted: #f1f5f9;
-  --muted-foreground: #64748b;
+  --muted-foreground: #334155;
   --border: #e2e8f0;
   color-scheme: light;
 }
@@ -77,6 +77,10 @@
   --muted-foreground: #a1a1aa;
   --border: #27272a;
   color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {

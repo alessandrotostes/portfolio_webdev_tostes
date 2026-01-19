@@ -23,11 +23,11 @@ const StrategyCard = ({
   icon: any; 
   className?: string;
 }) => (
-  <div className={cn("flex flex-col gap-3 p-6 rounded-3xl bg-secondary/20 border border-primary/10 dark:border-white/5 hover:border-primary/30 transition-all group h-full", className)}>
+  <div className={cn("flex flex-col gap-3 p-6 rounded-3xl bg-secondary/30 dark:bg-secondary/20 border border-primary/10 dark:border-white/5 hover:border-primary/30 transition-all group h-full", className)}>
     <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
       <Icon className="w-6 h-6" />
     </div>
-    <h4 className="text-lg font-bold text-foreground dark:text-white">{title}</h4>
+    <h4 className="text-lg font-bold text-foreground">{title}</h4>
     <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
   </div>
 );
@@ -76,12 +76,12 @@ export function Methodology() {
               </motion.div>
 
                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }}>
-                <div className="p-6 rounded-3xl bg-secondary/20 border border-primary/10 dark:border-white/5 relative overflow-hidden flex-1 group h-full flex flex-col justify-between">
+                <div className="p-6 rounded-3xl bg-secondary/30 dark:bg-secondary/20 border border-primary/10 dark:border-white/5 relative overflow-hidden flex-1 group h-full flex flex-col justify-between">
                   <div className="relative z-10">
                     <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
                        <Lightbulb className="w-6 h-6" />
                     </div>
-                    <h4 className="text-lg font-bold text-foreground dark:text-white mb-2">Filosofia de Valor</h4>
+                    <h4 className="text-lg font-bold text-foreground mb-2">Filosofia de Valor</h4>
                     <p className="text-sm text-muted-foreground leading-relaxed">
                       Software é investimento. Meu foco é em ROI, arquiteturas sustentáveis que não "envelhecem" e UX que retém usuários.
                     </p>

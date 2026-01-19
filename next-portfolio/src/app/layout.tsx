@@ -80,10 +80,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/img/iconetostes.ico' },
-      { url: '/img/iconetostes.webp', type: 'image/webp' },
+      { url: '/img/logo.webp', type: 'image/webp' },
     ],
-    shortcut: '/img/iconetostes.webp',
-    apple: '/img/iconetostes.webp',
+    shortcut: '/img/logo.webp',
+    apple: '/img/logo.webp',
   },
 };
 
