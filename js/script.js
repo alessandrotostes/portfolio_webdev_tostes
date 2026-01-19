@@ -42,10 +42,11 @@ class ModernPortfolio {
     this.setupNavigation();
     this.setupThemeToggle();
     this.setupScrollEffects();
-    this.setupPwaTabs(); // <--- Lógica das abas PWA
-    this.setupProjectFilters();
+    this.setupPwaTabs();
     this.setupProjectModal();
-    this.setupCustomCursor(); // Mantido (embora desabilitado no seu CSS)
+    this.setupMagneticElements();
+    this.setupDynamicYear();
+    this.setupTextReveal();
     this.setupIntersectionObserver();
     this.initializeAOS();
 
@@ -71,8 +72,13 @@ class ModernPortfolio {
           this.ticking = true;
         }
       },
-      { passive: true } // Melhora a performance de scroll
+      { passive: true }
     );
+
+    // Mouse Move for Spotlight and Cursor
+    window.addEventListener("mousemove", (e) => {
+      this.handleMouseMove(e);
+    });
 
     // Otimização de Resize com Debounce
     window.addEventListener(
@@ -338,29 +344,91 @@ class ModernPortfolio {
   }
 
   /**
-   * Configura o cursor customizado (se ativado).
+   * Lida com o movimento do mouse para atualizar o spotlight e parallax.
    */
-  setupCustomCursor() {
-    const cursor = document.getElementById("cursor");
-    // O seu CSS está com 'display: none'. Se quiser usar, remova essa regra no CSS.
-    if (cursor) {
-      // cursor.style.display = "block"; // Descomente para ativar
+  handleMouseMove(e) {
+    const { clientX: x, clientY: y } = e;
+
+    // Atualiza Spotlight
+    const spotlight = document.querySelector(".spotlight");
+    if (spotlight) {
+      spotlight.style.setProperty("--x", `${x}px`);
+      spotlight.style.setProperty("--y", `${y}px`);
     }
 
-    // Lógica para esconder o cursor em telas touch (já feito no seu CSS, mas é bom garantir)
-    this.updateCursorVisibility();
+    // Parallax nos Blobs do Hero
+    const blobs = document.querySelectorAll(".hero__blob");
+    blobs.forEach((blob, index) => {
+      const speed = (index + 1) * 0.03;
+      const xPos = (window.innerWidth / 2 - x) * speed;
+      const yPos = (window.innerHeight / 2 - y) * speed;
+      blob.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
+    });
+
+    // Parallax no Grid Background
+    const grid = document.querySelector(".hero__grid");
+    if (grid) {
+      const xPos = (window.innerWidth / 2 - x) * 0.01;
+      const yPos = (window.innerHeight / 2 - y) * 0.01;
+      grid.style.transform = `translate3d(${xPos}px, ${yPos}px, 0)`;
+    }
+
+    // Glow Border nos Cards
+    const cards = document.querySelectorAll(".floating-card");
+    cards.forEach((card) => {
+      const rect = card.getBoundingClientRect();
+      const cardX = x - rect.left;
+      const cardY = y - rect.top;
+      card.style.setProperty("--mouse-x", `${cardX}px`);
+      card.style.setProperty("--mouse-y", `${cardY}px`);
+    });
   }
 
   /**
-   * Atualiza a visibilidade do cursor (esconde em touch).
+   * Configura o efeito magnético para elementos específicos.
    */
-  updateCursorVisibility() {
-    const cursor = document.getElementById("cursor");
-    if (cursor) {
-      // O seu CSS já faz isso com @media (hover: none),
-      // mas esta é uma garantia extra.
-      cursor.style.display = this.isTouch ? "none" : "none"; // 'none' para manter desativado
+  setupMagneticElements() {
+    const magneticElements = document.querySelectorAll(
+      ".floating-card, .btn, .nav__logo, .theme-toggle"
+    );
+
+    magneticElements.forEach((el) => {
+      el.addEventListener("mousemove", (e) => {
+        const rect = el.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        // Move o elemento levemente em direção ao mouse
+        el.style.transform = `translate3d(${x * 0.3}px, ${y * 0.3}px, 0)`;
+      });
+
+      el.addEventListener("mouseleave", () => {
+        el.style.transform = "translate3d(0, 0, 0)";
+      });
+    });
+  }
+
+  /**
+   * Define o ano atual no rodapé.
+   */
+  setupDynamicYear() {
+    const yearElement = document.getElementById("current-year");
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
     }
+  }
+
+  /**
+   * Configura a revelação escalonada do texto do Hero.
+   */
+  setupTextReveal() {
+    const revealLines = document.querySelectorAll("[data-reveal]");
+    revealLines.forEach((line) => {
+      const delay = parseInt(line.dataset.reveal) * 200;
+      setTimeout(() => {
+        line.classList.add("reveal");
+      }, delay);
+    });
   }
 
   /**
