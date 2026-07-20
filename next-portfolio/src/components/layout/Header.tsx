@@ -6,8 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Rocket } from "lucide-react";
 import Image from "next/image";
-import { cn } from "@/utils/cn";
-import { useTheme } from "next-themes";
+import { cn } from "@/lib/utils";
 import { useLenis } from "lenis/react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 
@@ -15,8 +14,10 @@ const navItems = [
   { name: "Início", path: "#home" },
   { name: "Serviços", path: "#services" },
   { name: "Destaque", path: "#pwa-showcase" },
+  { name: "Analytics", path: "#analytics" },
   { name: "Projetos", path: "#projects" },
   { name: "Sobre", path: "#about" },
+  { name: "GitHub", path: "#github" },
 ];
 
 export function Header() {
@@ -24,6 +25,11 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const lenis = useLenis();
+
+  // Track scroll using Lenis (since root smooth scroll intercepts standard window events)
+  useLenis((lenisInstance) => {
+    setScrolled(lenisInstance.scroll > 20);
+  });
 
   const scrollToSection = (e: React.MouseEvent, selector: string) => {
     e.preventDefault();

@@ -12,18 +12,30 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
 
+  /* Geometric Theme Colors */
+  --color-geo-indigo: #6366f1;
+  --color-geo-rose: #f43f5e;
+  --color-geo-violet: #8b5cf6;
+  --color-geo-amber: #f59e0b;
+  --color-geo-cyan: #06b6d4;
+
   /* Fonts */
   --font-sans: var(--font-inter);
   --font-display: var(--font-space-grotesk);
 
   /* Animations */
   --animate-float: float 6s ease-in-out infinite;
+  --animate-float-slow: float-slow 12s ease-in-out infinite;
   --animate-fade-in: fade-in 0.5s ease-out forwards;
   --animate-slide-up: slide-up 0.5s ease-out forwards;
 
   @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
+  }
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
   }
   @keyframes fade-in {
     from { opacity: 0; }
@@ -39,43 +51,68 @@
   Futuristic Theme Variables
 */
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --primary: #21808d;
+  --background: #f8fafc;
+  --foreground: #090d16;
+  --primary: #4f46e5;
   --primary-foreground: #ffffff;
   --secondary: #f1f5f9;
-  --accent: #32a4b3;
-  --muted: #f1f5f9;
-  --muted-foreground: #334155;
+  --accent: #10b981;
+  --muted: #f8fafc;
+  --muted-foreground: #475569;
   --border: #e2e8f0;
   --font-inter: 'Inter', sans-serif;
   --font-space-grotesk: 'Space Grotesk', sans-serif;
+  
+  /* Theme-aware decorative variables */
+  --hero-gradient-text-primary: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+  --hero-gradient-text-accent: linear-gradient(135deg, #4f46e5 0%, #10b981 100%);
+  --shape-border: rgba(79, 70, 229, 0.12);
+  --shape-glass-bg: rgba(255, 255, 255, 0.45);
+  --shape-glow: rgba(79, 70, 229, 0.05);
+  --shape-radial: radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.05), transparent 70%);
+
   color-scheme: light;
 }
 
 .light {
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --primary: #21808d;
+  --background: #f8fafc;
+  --foreground: #090d16;
+  --primary: #4f46e5;
   --primary-foreground: #ffffff;
   --secondary: #f1f5f9;
-  --accent: #32a4b3;
-  --muted: #f1f5f9;
-  --muted-foreground: #334155;
+  --accent: #10b981;
+  --muted: #f8fafc;
+  --muted-foreground: #475569;
   --border: #e2e8f0;
+  
+  --hero-gradient-text-primary: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
+  --hero-gradient-text-accent: linear-gradient(135deg, #4f46e5 0%, #10b981 100%);
+  --shape-border: rgba(79, 70, 229, 0.12);
+  --shape-glass-bg: rgba(255, 255, 255, 0.45);
+  --shape-glow: rgba(79, 70, 229, 0.05);
+  --shape-radial: radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.05), transparent 70%);
+
   color-scheme: light;
 }
 
 .dark {
-  --background: #050505;
-  --foreground: #fafafa;
-  --primary: #21808d;
+  --background: #0c0e1a;
+  --foreground: #f8fafc;
+  --primary: #8b5cf6;
   --primary-foreground: #ffffff;
-  --secondary: #1e293b;
-  --accent: #32a4b3;
-  --muted: #27272a;
-  --muted-foreground: #a1a1aa;
-  --border: #27272a;
+  --secondary: #13172a;
+  --accent: #10b981;
+  --muted: #181d33;
+  --muted-foreground: #94a3b8;
+  --border: rgba(139, 92, 246, 0.22);
+
+  --hero-gradient-text-primary: linear-gradient(to bottom, #ffffff 0%, #cbd5e1 100%);
+  --hero-gradient-text-accent: linear-gradient(135deg, #a78bfa 0%, #34d399 50%, #60a5fa 100%);
+  --shape-border: rgba(255, 255, 255, 0.08);
+  --shape-glass-bg: rgba(19, 23, 42, 0.45);
+  --shape-glow: rgba(139, 92, 246, 0.15);
+  --shape-radial: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.15), transparent 70%);
+
   color-scheme: dark;
 }
 
@@ -105,4 +142,53 @@ body {
 ::selection {
   background-color: var(--primary);
   color: white;
+}
+
+/* Geometric Theme Utilities */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(2px);
+}
+
+.glass-border {
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.glass-bg {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* Gradient Utilities */
+.gradient-indigo {
+  background: linear-gradient(to right, rgba(99, 102, 241, 0.15), transparent);
+}
+
+.gradient-rose {
+  background: linear-gradient(to right, rgba(244, 63, 94, 0.15), transparent);
+}
+
+.gradient-violet {
+  background: linear-gradient(to right, rgba(139, 92, 246, 0.15), transparent);
+}
+
+.gradient-amber {
+  background: linear-gradient(to right, rgba(245, 158, 11, 0.15), transparent);
+}
+
+.gradient-cyan {
+  background: linear-gradient(to right, rgba(6, 182, 212, 0.15), transparent);
+}
+
+/* Geometric Background Glow */
+.geo-glow-indigo {
+  box-shadow: 0 8px 32px 0 rgba(99, 102, 241, 0.1);
+}
+
+.geo-glow-rose {
+  box-shadow: 0 8px 32px 0 rgba(244, 63, 94, 0.1);
+}
+
+.geo-glow-violet {
+  box-shadow: 0 8px 32px 0 rgba(139, 92, 246, 0.1);
 }

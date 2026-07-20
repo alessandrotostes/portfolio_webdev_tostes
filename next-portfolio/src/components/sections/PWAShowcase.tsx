@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Smartphone, Store, User, Briefcase, Rocket } from "lucide-react";
-import { cn } from "@/utils/cn";
+import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { Store, User, Briefcase, Rocket } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { FloatingShapes } from "@/components/ui/floating-shapes";
+import { SectionBadge } from "@/components/ui/section-badge";
 
 const slides = [
   {
@@ -32,15 +34,54 @@ const slides = [
 export function PWAShowcase() {
   const [activeSlide, setActiveSlide] = useState(slides[0]);
 
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const [isDesktop, setIsDesktop] = useState(false);
+  useEffect(() => {
+    const checkSize = () => setIsDesktop(window.innerWidth >= 1024);
+    checkSize();
+    window.addEventListener("resize", checkSize);
+    return () => window.removeEventListener("resize", checkSize);
+  }, []);
+
+  const yMockup = useTransform(scrollYProgress, [0, 1], isDesktop ? [-50, 50] : [0, 0]);
+  const rotateMockup = useTransform(scrollYProgress, [0, 1], isDesktop ? [-6, 6] : [0, 0]);
+
   return (
-    <section className="py-24 bg-background overflow-hidden" id="pwa-showcase">
-      <div className="max-w-[1920px] mx-auto px-4 md:px-8">
+    <section ref={containerRef} className="relative py-24 bg-background overflow-hidden" id="pwa-showcase">
+      {/* Floating Shapes */}
+      <FloatingShapes
+        shapes={[
+          {
+            size: "sm",
+            color: "amber",
+            position: { top: "15%", right: "10%" },
+            delay: 0.3,
+            rotate: -15,
+          },
+          {
+            size: "md",
+            color: "cyan",
+            position: { bottom: "20%", left: "5%" },
+            delay: 0.5,
+            rotate: 10,
+          },
+        ]}
+      />
+
+      <div className="max-w-[1920px] mx-auto px-4 md:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           {/* iPhone 15 Pro Mockup */}
           <motion.div 
+            style={{ y: yMockup, rotate: rotateMockup }}
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             className="relative mx-auto w-full max-w-[300px]"
           >
@@ -86,15 +127,23 @@ export function PWAShowcase() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-4">
-                <Rocket className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-primary">A&N Agendamentos</span>
+              <div className="mb-4">
+                <SectionBadge 
+                  icon={<Rocket className="w-4 h-4 text-primary" />}
+                  text="A&N Agendamentos"
+                />
               </div>
+              
               <h2 className="text-3xl md:text-5xl font-display font-bold mb-6">
-                Aplicação em <span className="text-primary">Destaque</span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/80">
+                  Aplicação em{" "}
+                </span>
+                <span className="text-primary">Destaque</span>
               </h2>
+              
               <p className="text-muted-foreground text-lg mb-8">
                 Confira a arquitetura SaaS da A&N Agendamentos: uma solução moderna com tecnologia PWA 
                 que oferece experiência de app nativo, sem necessidade de lojas de apps.
@@ -110,8 +159,8 @@ export function PWAShowcase() {
                   className={cn(
                     "flex items-center gap-4 p-4 rounded-2xl border transition-all text-left group",
                     activeSlide.id === slide.id 
-                      ? "bg-primary/10 border-primary shadow-lg shadow-primary/5" 
-                      : "bg-secondary/80 dark:bg-secondary/20 border-primary/10 dark:border-white/5 hover:border-primary/20"
+                      ? "bg-[var(--shape-glass-bg)] border-[var(--shape-border)] backdrop-blur-sm shadow-lg" 
+                      : "bg-secondary/30 border-[var(--shape-border)]/50 hover:border-[var(--shape-border)] hover:bg-[var(--shape-glass-bg)]/50"
                   )}
                 >
                   <div className={cn(
@@ -139,8 +188,8 @@ export function PWAShowcase() {
                  { title: "Sem Lojas", desc: "Instalação direta via Safari ou Chrome." },
                  { title: "Navegue com fluidez", desc: "Elevando a experiência de usuário para o nível de um app nativo." }
                ].map((benefit) => (
-                 <div key={benefit.title} className="p-4 rounded-2xl bg-secondary/10 border border-primary/10 dark:border-white/5">
-                   <h5 className="font-bold text-sm mb-1 text-foreground dark:text-white">{benefit.title}</h5>
+                 <div key={benefit.title} className="p-4 rounded-2xl bg-[var(--shape-glass-bg)] border border-[var(--shape-border)] backdrop-blur-sm">
+                   <h5 className="font-bold text-sm mb-1 text-foreground">{benefit.title}</h5>
                    <p className="text-xs text-muted-foreground">{benefit.desc}</p>
                  </div>
                ))}

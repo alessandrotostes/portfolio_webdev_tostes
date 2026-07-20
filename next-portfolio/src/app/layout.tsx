@@ -4,8 +4,7 @@ import "./globals.css";
 import { SmoothScroll } from "@/components/ui/smooth-scroll";
 import { Header } from "@/components/layout/Header";
 import { ThemeProvider } from "@/components/ui/theme-provider";
-import { CustomCursor } from "@/components/ui/custom-cursor";
-import { cn } from "@/utils/cn";
+import { cn } from "@/lib/utils";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -101,7 +100,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <CustomCursor />
           <SmoothScroll>
             <Header />
             {children}

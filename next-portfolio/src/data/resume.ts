@@ -53,11 +53,11 @@ export const RESUME_DATA: { pt: ResumeData; en: ResumeData } = {
       }
     ],
     techArsenal: {
-      frontend: ["React 18", "Next.js 16", "TypeScript 5", "Server Actions", "RSC", "Tailwind v4", "Framer Motion", "HTML5", "CSS3", "JS", "Git", "GitHub", "GitLab", "Figma"],
-      backend: ["Node.js", "Firebase", "Cloud Functions", "Edge Runtime", "PostgreSQL", "Supabase", "Redis", "GCP"],
+      frontend: ["React 18", "Next.js 16", "TypeScript 5", "Vite", "TanStack Query", "Redux Toolkit", "Server Actions", "RSC", "Tailwind v4", "Framer Motion", "HTML5", "CSS3", "JS", "Git", "GitHub", "GitLab", "Figma"],
+      backend: ["Node.js", "NestJS", "Express", "Firebase", "Cloud Messaging", "Cloud Functions", "Edge Runtime", "PostgreSQL", "Supabase", "Redis", "AWS", "GCP"],
       quality: ["Jest", "Vitest", "Playwright", "GitHub Actions", "Docker", "Sentry", "ESLint", "Husky", "Commitlint"],
-      architecture: ["Clean Arch", "SOLID", "RBAC", "OAuth 2.0", "JWT", "Zod", "Webhooks", "Microservices"],
-      ai: ["GitHub Copilot", "Antigravity", "Gemini", "Prompt Engineering", "LLM Integration", "RAG"]
+      architecture: ["Clean Arch", "SOLID", "RBAC", "OAuth 2.0", "JWT", "Zod", "Webhooks", "Microservices", "n8n", "WhatsApp API"],
+      ai: ["Claude Code", "AGY CLI", "AI-Driven Dev", "IA Assistida", "Context Engineering", "GitHub Copilot", "Antigravity", "Gemini", "Prompt Engineering", "LLM Integration", "RAG"]
     }
   },
   en: {
@@ -99,11 +99,11 @@ export const RESUME_DATA: { pt: ResumeData; en: ResumeData } = {
       }
     ],
     techArsenal: {
-      frontend: ["React 18", "Next.js 16", "TypeScript 5", "Server Actions", "RSC", "Tailwind v4", "Framer Motion", "HTML5", "CSS3", "JS", "Git", "GitHub", "GitLab", "Figma"],
-      backend: ["Node.js", "Firebase", "Cloud Functions", "Edge Runtime", "PostgreSQL", "Supabase", "Redis", "GCP"],
+      frontend: ["React 18", "Next.js 16", "TypeScript 5", "Vite", "TanStack Query", "Redux Toolkit", "Server Actions", "RSC", "Tailwind v4", "Framer Motion", "HTML5", "CSS3", "JS", "Git", "GitHub", "GitLab", "Figma"],
+      backend: ["Node.js", "NestJS", "Express", "Firebase", "Cloud Messaging", "Cloud Functions", "Edge Runtime", "PostgreSQL", "Supabase", "Redis", "AWS", "GCP"],
       quality: ["Jest", "Vitest", "Playwright", "GitHub Actions", "Docker", "Sentry", "ESLint", "Husky", "Commitlint"],
-      architecture: ["Clean Arch", "SOLID", "RBAC", "OAuth 2.0", "JWT", "Zod", "Webhooks", "Microservices"],
-      ai: ["GitHub Copilot", "Antigravity", "Gemini", "Prompt Engineering", "LLM Integration", "RAG"]
+      architecture: ["Clean Arch", "SOLID", "RBAC", "OAuth 2.0", "JWT", "Zod", "Webhooks", "Microservices", "n8n", "WhatsApp API"],
+      ai: ["Claude Code", "AGY CLI", "AI-Driven Dev", "IA Assistida", "Context Engineering", "GitHub Copilot", "Antigravity", "Gemini", "Prompt Engineering", "LLM Integration", "RAG"]
     }
   }
 };

@@ -1,9 +1,8 @@
 "use client";
 
-import { Document, Page, Text, View, StyleSheet, Font, Link } from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet, Link } from '@react-pdf/renderer';
 import { RESUME_DATA } from '@/data/resume';
 
-// ... (Font registration and Styles remain the same) 
 
 // Create styles
 const styles = StyleSheet.create({

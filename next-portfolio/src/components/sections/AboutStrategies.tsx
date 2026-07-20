@@ -1,62 +1,25 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { 
   Linkedin,
   Github,
   Code2,
   Database,
-  Zap,
   BadgeCheck,
   Trophy,
   History,
-  Accessibility,
   Settings,
   ShieldCheck,
-  Search,
-  CheckCircle2,
-  FileText,
-  Check,
   GraduationCap,
-  Lightbulb,
-  Scale,
   Sparkles,
   BrainCircuit,
   Instagram
 } from "lucide-react";
 import Link from "next/link";
-import { cn } from "@/utils/cn";
-import { EXPERIENCE, TECH_ARSENAL, EDUCATION } from "@/data/resume";
-import dynamic from "next/dynamic";
-import { ResumePDF } from "@/components/pdf/ResumePDF";
-
-const PDFDownloadLink = dynamic(
-  () => import("@react-pdf/renderer").then((mod) => mod.PDFDownloadLink),
-  {
-    ssr: false,
-    loading: () => <span className="opacity-50">Loading PDF...</span>,
-  }
-);
-
-const StrategyCard = ({ 
-  title, 
-  description, 
-  icon: Icon, 
-  className 
-}: { 
-  title: string; 
-  description: string; 
-  icon: any; 
-  className?: string;
-}) => (
-  <div className={cn("flex flex-col gap-3 p-6 rounded-3xl bg-secondary/20 dark:bg-white/5 border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/30 transition-all group", className)}>
-    <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-      <Icon className="w-6 h-6" />
-    </div>
-    <h4 className="text-lg font-bold text-foreground">{title}</h4>
-    <p className="text-sm text-muted-foreground leading-relaxed">{description}</p>
-  </div>
-);
+import { EXPERIENCE } from "@/data/resume";
+import { FloatingShapes } from "@/components/ui/floating-shapes";
 
 const TechBadge = ({ children }: { children: React.ReactNode }) => (
   <span className="px-3 py-1 rounded-full bg-secondary/50 border border-primary/10 dark:border-primary/10 dark:border-white/5 text-xs font-medium text-foreground dark:text-foreground/80 hover:border-primary/50 transition-all">
@@ -65,13 +28,63 @@ const TechBadge = ({ children }: { children: React.ReactNode }) => (
 );
 
 export function AboutStrategies() {
-  return (
-    <section className="py-24 relative overflow-hidden" id="about">
-      {/* Decorative Blobs */}
-      <div className="absolute top-1/2 left-0 -translate-y-1/2 -ml-32 w-96 h-96 bg-primary/10 rounded-full blur-[120px] -z-10" />
-      <div className="absolute bottom-0 right-0 -mr-32 w-96 h-96 bg-primary/5 rounded-full blur-[120px] -z-10" />
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
 
-      <div className="max-w-[1920px] mx-auto px-4 md:px-8">
+  const [isDesktop, setIsDesktop] = useState(false);
+  useEffect(() => {
+    const checkSize = () => setIsDesktop(window.innerWidth >= 1024);
+    checkSize();
+    window.addEventListener("resize", checkSize);
+    return () => window.removeEventListener("resize", checkSize);
+  }, []);
+
+  const yLeft = useTransform(scrollYProgress, [0, 1], isDesktop ? [90, -90] : [0, 0]);
+  const yRight = useTransform(scrollYProgress, [0, 1], isDesktop ? [-90, 90] : [0, 0]);
+
+  return (
+    <section ref={containerRef} className="relative py-24 overflow-hidden bg-background" id="about">
+      {/* Floating Geometric Shapes */}
+      <FloatingShapes
+        shapes={[
+          {
+            size: "lg",
+            color: "indigo",
+            position: { top: "10%", left: "-10%" },
+            delay: 0.2,
+            rotate: 25,
+          },
+          {
+            size: "md",
+            color: "rose",
+            position: { top: "50%", right: "-5%" },
+            delay: 0.4,
+            rotate: -18,
+          },
+          {
+            size: "sm",
+            color: "violet",
+            position: { bottom: "20%", left: "10%" },
+            delay: 0.6,
+            rotate: 12,
+          },
+          {
+            size: "md",
+            color: "amber",
+            position: { bottom: "10%", right: "15%" },
+            delay: 0.8,
+            rotate: -22,
+          },
+        ]}
+      />
+
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.03] via-transparent to-rose-500/[0.03]" />
+
+      <div className="max-w-[1920px] mx-auto px-4 md:px-8 relative z-10">
         {/* Header Section */}
         <div className="flex flex-col items-center justify-center text-center mb-16 gap-8">
           <motion.div 
@@ -86,7 +99,12 @@ export function AboutStrategies() {
               Especialista Full Stack
             </div>
             <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">
-              Experiência & <span className="text-primary italic">Tecnologias</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/80">
+                Experiência &{" "}
+              </span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-primary to-rose-500">
+                Tecnologias
+              </span>
             </h2>
             <p className="text-muted-foreground text-lg max-w-3xl leading-relaxed">
               Desenvolvedor Full Stack com 3+ anos de experiência em arquitetura escalável, 
@@ -94,76 +112,44 @@ export function AboutStrategies() {
             </p>
           </motion.div>
           
-          <div className="flex flex-col items-center gap-6">
-            {/* Redes Sociais */}
-            <div className="flex items-center gap-3 md:gap-4">
-              <Link 
-                href="https://linkedin.com/in/alessandro-tostes/" 
-                target="_blank" 
-                className="group relative flex items-center justify-center w-14 h-14 rounded-2xl bg-secondary/30 border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/50 transition-all font-bold"
-              >
-                <Linkedin className="w-6 h-6 transition-transform group-hover:scale-110" />
-              </Link>
-              <Link 
-                href="https://github.com/alessandrotostes" 
-                target="_blank" 
-                className="group relative flex items-center justify-center w-14 h-14 rounded-2xl bg-secondary/30 border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/50 transition-all font-bold"
-              >
-                <Github className="w-6 h-6 transition-transform group-hover:scale-110" />
-              </Link>
-              <Link 
-                href="https://www.instagram.com/alessandrotostes/" 
-                target="_blank" 
-                className="group relative flex items-center justify-center w-14 h-14 rounded-2xl bg-secondary/30 border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/50 transition-all font-bold"
-              >
-                <Instagram className="w-6 h-6 transition-transform group-hover:scale-110" />
-              </Link>
-            </div>
-
-            {/* Downloads */}
-            <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
-              <PDFDownloadLink
-                document={<ResumePDF lang="pt" />}
-                fileName="Alessandro_Tostes_CV_PT.pdf"
-              >
-                {({ blob, url, loading, error }) => (
-                  <button 
-                    disabled={loading}
-                    className="h-14 px-6 rounded-2xl bg-primary text-white font-bold flex items-center gap-2 hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    <FileText className="w-5 h-5" />
-                    CV (PT)
-                  </button>
-                )}
-              </PDFDownloadLink>
-
-              <PDFDownloadLink
-                document={<ResumePDF lang="en" />}
-                fileName="Alessandro_Tostes_CV_EN.pdf"
-              >
-                {({ blob, url, loading, error }) => (
-                  <button 
-                    disabled={loading}
-                    className="h-14 px-6 rounded-2xl bg-secondary/30 border border-primary/10 dark:border-primary/20 dark:border-white/10 text-foreground font-bold flex items-center gap-2 hover:bg-secondary/50 hover:border-primary/30 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    <FileText className="w-5 h-5" />
-                    CV (EN)
-                  </button>
-                )}
-              </PDFDownloadLink>
-            </div>
+          {/* Redes Sociais */}
+          <div className="flex items-center gap-3 md:gap-4">
+            <Link 
+              href="https://linkedin.com/in/alessandro-tostes/" 
+              target="_blank" 
+              className="group relative flex items-center justify-center w-14 h-14 rounded-2xl bg-secondary/30 border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/50 transition-all font-bold"
+            >
+              <Linkedin className="w-6 h-6 transition-transform group-hover:scale-110" />
+            </Link>
+            <Link 
+              href="https://github.com/alessandrotostes" 
+              target="_blank" 
+              className="group relative flex items-center justify-center w-14 h-14 rounded-2xl bg-secondary/30 border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/50 transition-all font-bold"
+            >
+              <Github className="w-6 h-6 transition-transform group-hover:scale-110" />
+            </Link>
+            <Link 
+              href="https://www.instagram.com/alessandrotostes/" 
+              target="_blank" 
+              className="group relative flex items-center justify-center w-14 h-14 rounded-2xl bg-secondary/30 border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/50 transition-all font-bold"
+            >
+              <Instagram className="w-6 h-6 transition-transform group-hover:scale-110" />
+            </Link>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Column 1 (5/12) - Experience Timeline */}
-          <div className="lg:col-span-5 flex flex-col gap-8">
+          <motion.div 
+            style={{ y: yLeft }}
+            className="lg:col-span-5 flex flex-col gap-8"
+          >
             <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
-              className="p-8 md:p-10 rounded-[2.5rem] bg-secondary/30 border border-primary/10 dark:border-primary/10 dark:border-white/5 backdrop-blur-sm relative overflow-hidden group h-full"
+              className="p-8 md:p-10 rounded-[2.5rem] bg-secondary/30 border border-[var(--shape-border)] backdrop-blur-sm relative overflow-hidden group h-full"
             >
               <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
                 <History className="w-32 h-32" />
@@ -194,9 +180,10 @@ export function AboutStrategies() {
                 ))}
               </div>
             </motion.div>
-          </div>
+          </motion.div>
 
           <motion.div 
+            style={{ y: yRight }}
             variants={{
               hidden: { opacity: 0 },
               visible: {
@@ -230,7 +217,7 @@ export function AboutStrategies() {
                    <h4 className="font-bold text-sm uppercase tracking-wider">Frontend Core</h4>
                  </div>
                  <div className="flex flex-wrap gap-2">
-                   {["React 18", "Next.js 16", "TypeScript 5", "Server Actions", "RSC", "Tailwind v4", "Framer Motion", "HTML5", "CSS3", "JS", "Git", "GitHub", "GitLab", "Figma", ].map(tech => (
+                   {["React 18", "Next.js 16", "TypeScript 5", "Vite", "TanStack Query", "Redux Toolkit", "Server Actions", "RSC", "Tailwind v4", "Framer Motion", "HTML5", "CSS3", "JS", "Git", "GitHub", "GitLab", "Figma"].map(tech => (
                      <TechBadge key={tech}>{tech}</TechBadge>
                    ))}
                  </div>
@@ -253,7 +240,7 @@ export function AboutStrategies() {
                    <h4 className="font-bold text-sm uppercase tracking-wider">Backend & Cloud</h4>
                  </div>
                  <div className="flex flex-wrap gap-2">
-                   {["Node.js", "Firebase", "Cloud Functions", "Edge Runtime", "PostgreSQL", "Supabase", "Redis", "GCP"].map(tech => (
+                   {["Node.js", "NestJS", "Express", "Firebase", "Cloud Messaging", "Cloud Functions", "Edge Runtime", "PostgreSQL", "Supabase", "Redis", "AWS", "GCP"].map(tech => (
                      <TechBadge key={tech}>{tech}</TechBadge>
                    ))}
                  </div>
@@ -322,14 +309,14 @@ export function AboutStrategies() {
                  </div>
                  <div className="flex items-center gap-2 mb-4">
                    <Sparkles className="text-primary w-5 h-5" />
-                   <h4 className="font-bold text-sm uppercase tracking-wider">Inteligência Artificial & Produtividade</h4>
+                   <h4 className="font-bold text-sm uppercase tracking-wider">Inteligência Artificial, Automação & Produtividade</h4>
                  </div>
                  <p className="text-xs text-muted-foreground mb-4 leading-relaxed max-w-lg">
-                    Aceleração de desenvolvimento e qualidade de código através de ferramentas de IA de ponta. 
-                    Adaptação contínua para entregar mais valor em menos tempo.
+                    Aceleração de desenvolvimento, workflows automatizados e qualidade de código. 
+                    Integração com LLMs e sistemas de mensageria para otimizar processos.
                  </p>
                  <div className="flex flex-wrap gap-2 relative z-10">
-                   {["GitHub Copilot", "Antigravity", "Gemini", "Prompt Engineering", "LLM Integration", "RAG"].map(tech => (
+                   {["Claude Code", "AGY CLI", "AI-Driven Dev", "IA Assistida", "Context Engineering", "GitHub Copilot", "Antigravity", "Gemini", "n8n", "WhatsApp API", "Prompt Engineering", "LLM Integration", "RAG"].map(tech => (
                      <TechBadge key={tech}>{tech}</TechBadge>
                    ))}
                  </div>
