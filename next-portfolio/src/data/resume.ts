@@ -6,11 +6,6 @@ export interface ResumeData {
     description: string;
     techs: string[];
   }[];
-  education: {
-    institution: string;
-    degree: string;
-    status: string;
-  }[];
   techArsenal: {
     frontend: string[];
     backend: string[];
@@ -23,6 +18,13 @@ export interface ResumeData {
 export const RESUME_DATA: { pt: ResumeData; en: ResumeData } = {
   pt: {
     experience: [
+      {
+        company: "GCB Investimentos",
+        role: "Full Stack Developer",
+        period: "2024 - Atual",
+        description: "Desenvolvimento e manutenção de sistemas Full Stack",
+        techs: ["React", "Vite", "PostgreSQL", "EventBridge", "S3", "Amplify", "ECS", "NestJS", "Prisma"]
+      },
       {
         company: "A&N Agendamentos",
         role: "Founder & Full Stack Lead",
@@ -45,13 +47,6 @@ export const RESUME_DATA: { pt: ResumeData; en: ResumeData } = {
         techs: ["Otimização", "Framer Motion", "SEO Técnico", "Schema.org", "Core Web Vitals"]
       }
     ],
-    education: [
-      {
-        institution: "Universidade Estácio de Sá - UNESA",
-        degree: "Ciência da Computação",
-        status: "Graduando"
-      }
-    ],
     techArsenal: {
       frontend: ["React 18", "Next.js 16", "TypeScript 5", "Vite", "TanStack Query", "Redux Toolkit", "Server Actions", "RSC", "Tailwind v4", "Framer Motion", "HTML5", "CSS3", "JS", "Git", "GitHub", "GitLab", "Figma"],
       backend: ["Node.js", "NestJS", "Express", "Firebase", "Cloud Messaging", "Cloud Functions", "Edge Runtime", "PostgreSQL", "Supabase", "Redis", "AWS", "GCP"],
@@ -62,6 +57,13 @@ export const RESUME_DATA: { pt: ResumeData; en: ResumeData } = {
   },
   en: {
     experience: [
+      {
+        company: "GCB Investimentos",
+        role: "Full Stack Developer",
+        period: "2024 - Present",
+        description: "Full Stack systems development and maintenance.",
+        techs: ["React", "Vite", "PostgreSQL", "EventBridge", "S3", "Amplify", "ECS", "NestJS", "Prisma"]
+      },
       {
         company: "A&N Agendamentos",
         role: "Founder & Full Stack Lead",
@@ -77,25 +79,11 @@ export const RESUME_DATA: { pt: ResumeData; en: ResumeData } = {
         techs: ["React", "Firebase Functions", "Node.js", "Cron Jobs", "Recharts", "PapaParse"]
       },
       {
-        company: "Financial SaaS",
-        role: "Full Stack Developer",
-        period: "2024",
-        description: "Personal finance management system featuring Savings Goals and budgeting tools. Interactive dashboard with dynamic charting.",
-        techs: ["Chakra UI", "Chart.js", "Firestore", "React Router", "React Icons"]
-      },
-      {
         company: "Freelance",
         role: "Front-End Consultant",
         period: "2019 - Present",
         description: "Interface modernization and performance optimization expert. Delivering consistent top-tier Lighthouse / Core Web Vitals scores.",
         techs: ["Optimization", "Framer Motion", "Technical SEO", "Schema.org", "Core Web Vitals"]
-      }
-    ],
-    education: [
-      {
-        institution: "Estácio de Sá University - UNESA",
-        degree: "Bachelor of Computer Science",
-        status: "Undergraduate"
       }
     ],
     techArsenal: {
@@ -110,5 +98,4 @@ export const RESUME_DATA: { pt: ResumeData; en: ResumeData } = {
 
 // Backward compatibility for existing components
 export const EXPERIENCE = RESUME_DATA.pt.experience;
-export const EDUCATION = RESUME_DATA.pt.education;
 export const TECH_ARSENAL = RESUME_DATA.pt.techArsenal;

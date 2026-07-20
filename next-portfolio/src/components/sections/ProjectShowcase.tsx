@@ -6,6 +6,8 @@ import { ArrowUpRight, Github, ExternalLink, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { ProjectModal, ProjectModalData } from "@/components/ui/ProjectModal";
+
 
 interface Project {
   id: string;
@@ -104,23 +106,20 @@ const ProjectCard = ({ project, onOpen }: { project: Project; onOpen: (p: Projec
 
   return (
     <motion.div
-      layout
-      initial={{ opacity: 0, scale: 0.9 }}
+      initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.9 }}
-      className="group relative rounded-3xl overflow-hidden bg-secondary/30 border border-primary/10 dark:border-white/5"
+      exit={{ opacity: 0, scale: 0.95 }}
+      transition={{ duration: 0.3 }}
+      className="group relative rounded-3xl overflow-hidden bg-secondary/30 border border-primary/10 dark:border-white/5 transform-gpu [backface-visibility:hidden] [transform:translateZ(0)]"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="relative aspect-video w-full overflow-hidden">
+      <div className="relative aspect-video w-full overflow-hidden bg-black/40">
         <Image
           src={project.image}
           alt={project.title}
           fill
-          className={cn(
-            "object-cover transition-opacity duration-500",
-            isHovered && project.video ? "opacity-0" : "opacity-100"
-          )}
+          className="object-cover"
         />
         {project.video && (
           <video
@@ -130,12 +129,12 @@ const ProjectCard = ({ project, onOpen }: { project: Project; onOpen: (p: Projec
             loop
             playsInline
             className={cn(
-              "absolute inset-0 w-full h-full object-cover transition-opacity duration-500",
+              "absolute inset-0 w-full h-full object-cover transition-opacity duration-300 pointer-events-none",
               isHovered ? "opacity-100" : "opacity-0"
             )}
           />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-80 pointer-events-none" />
       </div>
 
       <div className="absolute inset-0 p-6 flex flex-col justify-end">
@@ -368,89 +367,33 @@ export function ProjectShowcase() {
         </motion.div>
       </div>
 
-      {/* Project Modal (Common) */}
-      <AnimatePresence>
-        {selectedProject && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setSelectedProject(null)}
-              className="absolute inset-0 bg-background/80 backdrop-blur-md"
-            />
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-[2.5rem] bg-secondary/95 dark:bg-secondary/80 border border-primary/10 dark:border-primary/20 dark:border-white/10 shadow-2xl p-6 md:p-10 no-scrollbar backdrop-blur-md"
-            >
-              <div className="flex flex-col gap-8">
-                 <div className="relative aspect-video rounded-3xl overflow-hidden border border-primary/10 dark:border-primary/10 dark:border-white/5 bg-black">
-                    {selectedProject.video ? (
-                      <video src={selectedProject.video} controls autoPlay className="w-full h-full object-cover" />
-                    ) : (
-                      <Image src={selectedProject.image} alt={selectedProject.title} fill className="object-cover" />
-                    )}
-                 </div>
+      {/* Project Modal */}
+      <ProjectModal
+        project={
+          selectedProject
+            ? {
+                id: selectedProject.id,
+                title: selectedProject.title,
+                category: selectedProject.category === "webapp" ? "Web Application" : "Website",
+                description: selectedProject.description,
+                tech: selectedProject.tech,
+                imageUrl: selectedProject.image,
+                videoUrl: selectedProject.video,
+                demoUrl: selectedProject.liveUrl,
+                githubUrl: selectedProject.repoUrl,
+              }
+            : null
+        }
+        onClose={() => setSelectedProject(null)}
+      />
 
-                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div className="md:col-span-2">
-                      <h3 className="text-3xl font-bold mb-4 text-foreground dark:text-white">{selectedProject.title}</h3>
-                      <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-                        {selectedProject.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {selectedProject.tech.map(t => (
-                          <span key={t} className="px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-medium">
-                            {t}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col gap-4">
-                       <div className="p-6 rounded-3xl bg-background/50 dark:bg-white/5 border border-primary/10 dark:border-primary/10 dark:border-white/5">
-                          <h4 className="text-sm font-bold uppercase tracking-widest text-primary mb-4">Ações</h4>
-                          <div className="flex flex-col gap-3">
-                            {selectedProject.liveUrl && (
-                              <Link 
-                                href={selectedProject.liveUrl} 
-                                target="_blank"
-                                className="flex items-center justify-center gap-2 w-full py-3 bg-primary text-white rounded-2xl font-bold hover:bg-primary/90 transition-all"
-                              >
-                                Ver Online <ExternalLink className="w-4 h-4" />
-                              </Link>
-                            )}
-                            {selectedProject.repoUrl && (
-                              <Link 
-                                href={selectedProject.repoUrl} 
-                                target="_blank"
-                                className="flex items-center justify-center gap-2 w-full py-3 bg-white/50 dark:bg-white/5 hover:bg-black/5 dark:hover:bg-white/10 text-foreground dark:text-white rounded-2xl font-bold transition-all border border-primary/10 dark:border-primary/10 dark:border-white/5"
-                              >
-                                Ver GitHub <Github className="w-4 h-4" />
-                              </Link>
-                            )}
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </div>
-
-              <button 
-                onClick={() => setSelectedProject(null)}
-                className="absolute top-6 right-6 p-2 rounded-full bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 text-foreground dark:text-white transition-all"
-              >
-                <X />
-              </button>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
-
-      <div className="py-12 text-center bg-background">
-         <Link href="https://github.com/alessandrotostes" target="_blank" className="inline-flex items-center gap-3 px-8 py-4 bg-secondary/50 rounded-full border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/50 text-foreground transition-all group">
-          Ver Ecossistema Completo no GitHub 
+      <div className="py-12 text-center bg-transparent relative z-10">
+        <Link
+          href="https://github.com/alessandrotostes"
+          target="_blank"
+          className="inline-flex items-center gap-3 px-8 py-4 bg-white/5 rounded-full border border-white/10 hover:border-primary/50 text-foreground transition-all group backdrop-blur-md"
+        >
+          Ver Ecossistema Completo no GitHub
           <Github className="w-5 h-5 group-hover:text-primary transition-colors" />
         </Link>
       </div>

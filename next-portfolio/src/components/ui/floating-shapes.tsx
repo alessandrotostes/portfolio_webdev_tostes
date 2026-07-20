@@ -60,7 +60,7 @@ function FloatingShape({ shape }: { shape: Shape }) {
         ease: [0.23, 0.86, 0.39, 0.96],
         opacity: { duration: 1.2 },
       }}
-      className="absolute"
+      className="absolute pointer-events-none transform-gpu"
       style={{
         top: shape.position.top,
         bottom: shape.position.bottom,
@@ -88,10 +88,8 @@ function FloatingShape({ shape }: { shape: Shape }) {
             "absolute inset-0 rounded-full",
             "bg-gradient-to-r to-transparent",
             gradient,
-            "backdrop-blur-[2px] border-2 border-[var(--shape-border)]",
-            "shadow-[var(--shape-glow)]",
-            "after:absolute after:inset-0 after:rounded-full",
-            "after:bg-[var(--shape-radial)]"
+            "border border-[var(--shape-border)]",
+            "shadow-[var(--shape-glow)]"
           )}
         />
       </motion.div>
@@ -101,7 +99,7 @@ function FloatingShape({ shape }: { shape: Shape }) {
 
 export function FloatingShapes({ shapes, className }: FloatingShapesProps) {
   return (
-    <div className={cn("absolute inset-0 overflow-hidden pointer-events-none", className)}>
+    <div className={cn("absolute inset-0 pointer-events-none overflow-hidden z-0", className)}>
       {shapes.map((shape, index) => (
         <FloatingShape key={index} shape={shape} />
       ))}

@@ -42,9 +42,6 @@ export function Hero() {
             <div className="absolute bottom-[10%] right-[-10%] w-[350px] sm:w-[600px] h-[350px] sm:h-[600px] rounded-full bg-violet-600/10 dark:bg-violet-600/10 blur-[90px] sm:blur-[130px] mix-blend-screen animate-pulse pointer-events-none" style={{ animationDuration: '12s' }} />
             <div className="absolute top-[40%] left-[30%] w-[250px] sm:w-[400px] h-[250px] sm:h-[400px] rounded-full bg-indigo-500/5 dark:bg-indigo-500/5 blur-[70px] sm:blur-[100px] mix-blend-screen animate-pulse pointer-events-none" style={{ animationDuration: '10s' }} />
 
-            {/* 3D Background Scene */}
-            <HeroScene />
-
             <motion.div style={{ y: textY, opacity: textOpacity }} className="relative z-10 container mx-auto px-4 md:px-6">
                 <div className="max-w-3xl mx-auto text-center">
                     <motion.div

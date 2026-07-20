@@ -24,8 +24,8 @@ export default function Home() {
         <Hero />
       </section>
 
-      {/* Zoom Parallax Experience Tunnel */}
-      <section className="relative z-20 bg-background border-t border-primary/5">
+      {/* Zoom Parallax Experience Tunnel (Desktop Only) */}
+      <section className="hidden md:block relative z-20 bg-background/40 backdrop-blur-sm border-t border-primary/5">
         <div className="text-center pt-24 pb-12 max-w-3xl mx-auto px-4">
           <span className="text-primary font-mono text-xs uppercase tracking-widest block mb-4">Portfólio Interativo</span>
           <h2 className="text-3xl md:text-5xl font-display font-black text-foreground">

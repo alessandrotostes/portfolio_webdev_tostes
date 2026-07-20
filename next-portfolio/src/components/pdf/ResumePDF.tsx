@@ -218,18 +218,6 @@ export const ResumePDF = ({ lang = 'pt' }: ResumePDFProps) => {
           </View>
         </View>
 
-        {/* Education */}
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>{t.education}</Text>
-          {data.education.map((edu, index) => (
-            <View key={index} style={styles.expItem}>
-              <Text style={styles.role}>{edu.degree}</Text>
-              <Text style={styles.company}>{edu.institution}</Text>
-              <Text style={{ ...styles.period, marginTop: 2 }}>{edu.status}</Text>
-            </View>
-          ))}
-        </View>
-
         <Text style={styles.footer}>
           {t.generated} • {new Date().getFullYear()} • Alessandro Tostes
         </Text>

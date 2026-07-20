@@ -5,6 +5,7 @@ import { SmoothScroll } from "@/components/ui/smooth-scroll";
 import { Header } from "@/components/layout/Header";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { cn } from "@/lib/utils";
+import { BackgroundWrapper } from "@/components/3d/BackgroundWrapper";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
     siteName: "Portfolio Alessandro Tostes",
     images: [
       {
-        url: "/img/og-image.webp", // We need to ensure this image exists or use a generic one, but outlining it here is good practice
+        url: "/img/og-image.webp",
         width: 1200,
         height: 630,
         alt: "Alessandro Tostes Portfolio",
@@ -70,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Alessandro Tostes | Desenvolvedor Full Stack",
     description: "Desenvolvimento web de alto nível em Ribeirão Preto. Next.js, React e IA.",
-    creator: "@alessandrotostes", // Placeholder if no specific twitter handle is preferred
+    creator: "@alessandrotostes",
   },
   metadataBase: new URL("https://www.tostesdev.com"),
   alternates: {
@@ -91,18 +92,44 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alessandro Tostes",
+    "url": "https://www.tostesdev.com",
+    "jobTitle": "Desenvolvedor Full Stack & AI Engineer",
+    "sameAs": [
+      "https://github.com/alessandrotostes",
+      "https://www.linkedin.com/in/alessandro-tostes/",
+      "https://www.instagram.com/alessandrotostes/"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ribeirão Preto",
+      "addressRegion": "SP",
+      "addressCountry": "BR"
+    }
+  };
+
   return (
     <html lang="pt-BR" className={cn(inter.variable, spaceGrotesk.variable)} suppressHydrationWarning>
-      <body className="antialiased bg-background text-foreground selection:bg-primary selection:text-white">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className="antialiased bg-background text-foreground selection:bg-primary selection:text-black relative">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
+          <BackgroundWrapper />
           <SmoothScroll>
             <Header />
-            {children}
+            <div className="relative z-10">{children}</div>
           </SmoothScroll>
         </ThemeProvider>
       </body>

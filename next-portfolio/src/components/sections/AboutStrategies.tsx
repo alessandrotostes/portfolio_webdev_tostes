@@ -12,7 +12,6 @@ import {
   History,
   Settings,
   ShieldCheck,
-  GraduationCap,
   Sparkles,
   BrainCircuit,
   Instagram
@@ -22,7 +21,7 @@ import { EXPERIENCE } from "@/data/resume";
 import { FloatingShapes } from "@/components/ui/floating-shapes";
 
 const TechBadge = ({ children }: { children: React.ReactNode }) => (
-  <span className="px-3 py-1 rounded-full bg-secondary/50 border border-primary/10 dark:border-primary/10 dark:border-white/5 text-xs font-medium text-foreground dark:text-foreground/80 hover:border-primary/50 transition-all">
+  <span className="px-3 py-1 rounded-full bg-secondary/50 border border-primary/10 dark:border-white/5 text-xs font-medium text-foreground dark:text-foreground/80 hover:border-primary/50 transition-colors">
     {children}
   </span>
 );
@@ -98,40 +97,33 @@ export function AboutStrategies() {
               <BadgeCheck className="w-4 h-4" />
               Especialista Full Stack
             </div>
-            <h2 className="text-4xl md:text-6xl font-display font-bold mb-6">
-              <span className="bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/80">
-                Experiência &{" "}
-              </span>
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-primary to-rose-500">
-                Tecnologias
-              </span>
+            <h2 className="text-3xl md:text-5xl font-display font-black text-foreground max-w-3xl leading-tight">
+              Estratégias & <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Metodologia de Engenharia</span>
             </h2>
-            <p className="text-muted-foreground text-lg max-w-3xl leading-relaxed">
-              Desenvolvedor Full Stack com 3+ anos de experiência em arquitetura escalável, 
-              focado na construção de produtos  e design orientado à conversão.
+            <p className="text-muted-foreground mt-4 font-light text-sm sm:text-base max-w-2xl">
+              Desenvolvimento orientado a arquiteturas modernas, escalabilidade limpa e máxima velocidade de entrega.
             </p>
           </motion.div>
-          
-          {/* Redes Sociais */}
-          <div className="flex items-center gap-3 md:gap-4">
+
+          <div className="flex items-center gap-4">
             <Link 
-              href="https://linkedin.com/in/alessandro-tostes/" 
+              href="https://www.linkedin.com/in/alessandro-tostes/" 
               target="_blank" 
-              className="group relative flex items-center justify-center w-14 h-14 rounded-2xl bg-secondary/30 border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/50 transition-all font-bold"
+              className="group relative flex items-center justify-center w-14 h-14 rounded-2xl bg-secondary/30 border border-primary/10 dark:border-white/5 hover:border-primary/50 transition-colors font-bold"
             >
               <Linkedin className="w-6 h-6 transition-transform group-hover:scale-110" />
             </Link>
             <Link 
               href="https://github.com/alessandrotostes" 
               target="_blank" 
-              className="group relative flex items-center justify-center w-14 h-14 rounded-2xl bg-secondary/30 border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/50 transition-all font-bold"
+              className="group relative flex items-center justify-center w-14 h-14 rounded-2xl bg-secondary/30 border border-primary/10 dark:border-white/5 hover:border-primary/50 transition-colors font-bold"
             >
               <Github className="w-6 h-6 transition-transform group-hover:scale-110" />
             </Link>
             <Link 
               href="https://www.instagram.com/alessandrotostes/" 
               target="_blank" 
-              className="group relative flex items-center justify-center w-14 h-14 rounded-2xl bg-secondary/30 border border-primary/10 dark:border-primary/10 dark:border-white/5 hover:border-primary/50 transition-all font-bold"
+              className="group relative flex items-center justify-center w-14 h-14 rounded-2xl bg-secondary/30 border border-primary/10 dark:border-white/5 hover:border-primary/50 transition-colors font-bold"
             >
               <Instagram className="w-6 h-6 transition-transform group-hover:scale-110" />
             </Link>
@@ -142,7 +134,7 @@ export function AboutStrategies() {
           {/* Column 1 (5/12) - Experience Timeline */}
           <motion.div 
             style={{ y: yLeft }}
-            className="lg:col-span-5 flex flex-col gap-8"
+            className="lg:col-span-5 flex flex-col gap-8 transform-gpu [backface-visibility:hidden]"
           >
             <motion.div 
               initial={{ opacity: 0 }}
@@ -197,7 +189,7 @@ export function AboutStrategies() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="lg:col-span-7 flex flex-col gap-6"
+            className="lg:col-span-7 flex flex-col gap-6 transform-gpu [backface-visibility:hidden]"
           >
              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                {/* Frontend Arsenal */}
@@ -321,37 +313,9 @@ export function AboutStrategies() {
                    ))}
                  </div>
                </motion.div>
-             </div>
-
-             {/* Education Card - Wide */}
-             <motion.div 
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: { 
-                    opacity: 1, 
-                    y: 0,
-                    transition: { duration: 0.8, ease: "easeOut" }
-                  }
-                }}
-                className="p-8 rounded-3xl bg-primary/10 dark:bg-primary/5 border border-primary/20 dark:border-primary/10 relative group"
-             >
-                <div className="flex items-start justify-between">
-                   <div>
-                      <h4 className="text-lg font-bold mb-2 flex items-center gap-2 text-foreground">
-                        <GraduationCap className="text-primary w-6 h-6" />
-                        Formação Acadêmica
-                      </h4>
-                      <h5 className="text-xl font-display font-bold text-primary">Ciência da Computação</h5>
-                      <span className="text-sm text-muted-foreground uppercase tracking-wider block mt-1">Universidade Estácio de Sá - UNESA</span>
-                   </div>
-                   <div className="hidden md:block text-right">
-                      <div className="text-sm font-bold text-foreground dark:text-white bg-primary/5 dark:bg-white/5 px-3 py-1 rounded-full border border-primary/10 dark:border-primary/20 dark:border-white/10">Graduando</div>
-                   </div>
-                </div>
-             </motion.div>
+              </div>
           </motion.div>
-
-      </div>
+        </div>
       </div>
     </section>
   );

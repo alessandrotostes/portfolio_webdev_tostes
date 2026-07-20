@@ -83,7 +83,7 @@ export function PWAShowcase() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative mx-auto w-full max-w-[300px]"
+            className="relative mx-auto w-full max-w-[300px] transform-gpu [backface-visibility:hidden]"
           >
             {/* Outer Frame (Titanium look) */}
             <div className="relative aspect-[9/19.5] w-full bg-zinc-900 rounded-[3.5rem] p-1.5 border-[6px] border-zinc-800 shadow-2xl overflow-hidden ring-1 ring-white/10">
@@ -157,9 +157,9 @@ export function PWAShowcase() {
                   key={slide.id}
                   onClick={() => setActiveSlide(slide)}
                   className={cn(
-                    "flex items-center gap-4 p-4 rounded-2xl border transition-all text-left group",
+                    "flex items-center gap-4 p-4 rounded-2xl border transition-[border-color,background-color] duration-300 text-left group transform-gpu",
                     activeSlide.id === slide.id 
-                      ? "bg-[var(--shape-glass-bg)] border-[var(--shape-border)] backdrop-blur-sm shadow-lg" 
+                      ? "bg-[var(--shape-glass-bg)] border-[var(--shape-border)] backdrop-blur-md shadow-lg" 
                       : "bg-secondary/30 border-[var(--shape-border)]/50 hover:border-[var(--shape-border)] hover:bg-[var(--shape-glass-bg)]/50"
                   )}
                 >

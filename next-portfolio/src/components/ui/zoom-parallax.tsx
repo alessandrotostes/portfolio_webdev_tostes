@@ -39,7 +39,7 @@ export function ZoomParallax({ images }: ZoomParallaxProps) {
 						<motion.div
 							key={index}
 							style={{ scale }}
-							className={`absolute top-0 flex h-full w-full items-center justify-center ${
+							className={`absolute top-0 flex h-full w-full items-center justify-center transform-gpu [backface-visibility:hidden] ${
 								index === 1
 									? '[&>div]:!top-[-15vh] md:[&>div]:!-top-[30vh] [&>div]:!left-[2vw] md:[&>div]:!left-[5vw] [&>div]:!h-[20vh] md:[&>div]:!h-[30vh] [&>div]:!w-[40vw] md:[&>div]:!w-[35vw]'
 									: ''

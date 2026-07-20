@@ -235,7 +235,7 @@ export function MarketingIntegrations() {
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 whileHover={{ y: -8, scale: 1.015, transition: { duration: 0.2 } }}
-                className="group relative rounded-[2.5rem] bg-secondary/20 border border-primary/10 dark:border-white/5 p-6 sm:p-8 backdrop-blur-sm hover:border-primary/30 transition-all flex flex-col justify-between hover:shadow-xl hover:shadow-primary/5 cursor-pointer"
+                className="group relative rounded-[2.5rem] bg-secondary/20 border border-primary/10 dark:border-white/5 p-6 sm:p-8 backdrop-blur-md hover:border-primary/40 transition-[border-color,box-shadow] duration-300 flex flex-col justify-between hover:shadow-xl hover:shadow-primary/5 cursor-pointer transform-gpu [backface-visibility:hidden]"
               >
                 <div>
                   <div className="flex items-start justify-between mb-6">
