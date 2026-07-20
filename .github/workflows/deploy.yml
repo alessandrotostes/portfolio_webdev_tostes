@@ -37,4 +37,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
           local-dir: ./next-portfolio/out/
-          server-dir: public_html/
+          server-dir: ./
+          dangerous-clean-slate: true
