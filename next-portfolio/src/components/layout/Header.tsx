@@ -36,7 +36,7 @@ export function Header() {
     if (selector === "#home") {
       lenis?.scrollTo(0);
     } else {
-      lenis?.scrollTo(selector);
+      lenis?.scrollTo(selector, { offset: -80 });
     }
     setIsOpen(false);
   };

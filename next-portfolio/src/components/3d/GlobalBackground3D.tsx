@@ -5,12 +5,12 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { MeshDistortMaterial, Float } from '@react-three/drei';
 import * as THREE from 'three';
 
-// 1. Camera & Mouse Parallax Scene Controller
+const SECTION_IDS = ['home', 'services', 'pwa-showcase', 'analytics', 'projects', 'about', 'github'];
+
 function SceneController() {
   const { size } = useThree();
   const mousePos = useRef({ x: 0, y: 0 });
-  const targetScrollY = useRef(0);
-  const currentScrollY = useRef(0);
+  const elementsRef = useRef<(HTMLElement | null)[]>([]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -20,47 +20,82 @@ function SceneController() {
       };
     };
 
-    const handleScroll = () => {
-      const maxScroll = document.body.scrollHeight - window.innerHeight;
-      targetScrollY.current = maxScroll > 0 ? window.scrollY / maxScroll : 0;
-    };
-
     window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   useFrame((state) => {
-    // Smooth lerp for scroll offset
-    currentScrollY.current = THREE.MathUtils.lerp(
-      currentScrollY.current,
-      targetScrollY.current,
-      0.08
-    );
+    // Locate visible DOM sections dynamically
+    if (elementsRef.current.length === 0) {
+      const found = SECTION_IDS.map(id => document.getElementById(id));
+      if (found.some(el => el !== null)) {
+        elementsRef.current = found;
+      }
+    }
 
-    const scrollFraction = currentScrollY.current;
-    
-    // Keyframes matching page depth (y from 0 down to -8)
-    const targetY = -scrollFraction * 8.5;
+    const elements = elementsRef.current.filter((el): el is HTMLElement => el !== null);
+    const scrollTop = window.scrollY;
+    const maxScroll = Math.max(document.body.scrollHeight - window.innerHeight, 1);
+
+    const keyframes = [
+      { pos: [0, 0, 5.5], rot: [0, 0, 0] },             // Home (y=0)
+      { pos: [1.2, -1.8, 4.2], rot: [0, -0.3, 0] },       // Services (y=-1.8)
+      { pos: [-1.2, -3.2, 4.0], rot: [0, 0.3, 0] },       // PWA Showcase (y=-3.2)
+      { pos: [1.5, -4.5, 4.0], rot: [0, -0.4, 0] },       // Analytics (y=-4.5)
+      { pos: [-1.5, -5.8, 4.2], rot: [0, 0.3, 0] },       // Projects (y=-5.8)
+      { pos: [1.2, -7.2, 4.0], rot: [0, -0.3, 0] },       // About (y=-7.2)
+      { pos: [0, -8.5, 5.5], rot: [0, 0, 0] }             // Github (y=-8.5)
+    ];
+
+    let pageIndex = 0;
+    let pageProgress = 0;
+
+    if (elements.length < 2) {
+      const p = (scrollTop / maxScroll) * (keyframes.length - 1);
+      pageIndex = Math.max(0, Math.min(Math.floor(p), keyframes.length - 2));
+      pageProgress = p - pageIndex;
+    } else {
+      for (let i = 0; i < elements.length - 1; i++) {
+        const start = elements[i].offsetTop - 100;
+        const end = elements[i + 1].offsetTop - 100;
+
+        if (scrollTop >= start && scrollTop < end) {
+          pageIndex = i;
+          pageProgress = Math.max(0, Math.min((scrollTop - start) / Math.max(end - start, 1), 1));
+          break;
+        }
+        if (i === elements.length - 2 && scrollTop >= end) {
+          pageIndex = elements.length - 2;
+          pageProgress = Math.min((scrollTop - end) / 500, 1.0);
+        }
+      }
+    }
+
+    const current = keyframes[pageIndex] || keyframes[0];
+    const next = keyframes[pageIndex + 1] || current;
+
+    const targetX = THREE.MathUtils.lerp(current.pos[0], next.pos[0], pageProgress);
+    const targetY = THREE.MathUtils.lerp(current.pos[1], next.pos[1], pageProgress);
+    const targetZ = THREE.MathUtils.lerp(current.pos[2], next.pos[2], pageProgress);
+
+    const targetRotX = THREE.MathUtils.lerp(current.rot[0], next.rot[0], pageProgress);
+    const targetRotY = THREE.MathUtils.lerp(current.rot[1], next.rot[1], pageProgress);
+    const targetRotZ = THREE.MathUtils.lerp(current.rot[2], next.rot[2], pageProgress);
 
     // Mouse parallax factor
     const aspectFactor = Math.min(size.width / 1200, 1);
     const mouseX = mousePos.current.x * 0.4 * aspectFactor;
     const mouseY = mousePos.current.y * 0.4 * aspectFactor;
 
-    // Camera positional lerp
-    state.camera.position.x = THREE.MathUtils.lerp(state.camera.position.x, mouseX, 0.05);
-    state.camera.position.y = THREE.MathUtils.lerp(state.camera.position.y, targetY + mouseY, 0.05);
-    state.camera.position.z = THREE.MathUtils.lerp(state.camera.position.z, 5.5, 0.05);
+    // Smooth camera positional lerp
+    state.camera.position.x = THREE.MathUtils.lerp(state.camera.position.x, targetX + mouseX, 0.06);
+    state.camera.position.y = THREE.MathUtils.lerp(state.camera.position.y, targetY + mouseY, 0.06);
+    state.camera.position.z = THREE.MathUtils.lerp(state.camera.position.z, targetZ, 0.06);
 
-    // Camera rotational lerp
-    state.camera.rotation.x = THREE.MathUtils.lerp(state.camera.rotation.x, -mouseY * 0.06, 0.05);
-    state.camera.rotation.y = THREE.MathUtils.lerp(state.camera.rotation.y, mouseX * 0.06, 0.05);
+    // Smooth camera rotational lerp
+    state.camera.rotation.x = THREE.MathUtils.lerp(state.camera.rotation.x, targetRotX - mouseY * 0.06, 0.06);
+    state.camera.rotation.y = THREE.MathUtils.lerp(state.camera.rotation.y, targetRotY + mouseX * 0.06, 0.06);
+    state.camera.rotation.z = THREE.MathUtils.lerp(state.camera.rotation.z, targetRotZ, 0.06);
   });
 
   return null;
