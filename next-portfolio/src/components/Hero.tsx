@@ -94,10 +94,10 @@ export const Hero: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="font-bold text-slate-100 text-base">Alessandro Tostes</h3>
-                    <p className="text-xs text-slate-400">Full-Stack Lead & SaaS Architect</p>
+                    <p className="text-xs text-slate-400">Full Stack Developer</p>
                   </div>
                 </div>
-                <div className="px-2.5 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-[11px] font-mono text-cyan-300">
+                <div className="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-[11px] font-mono text-cyan-300 text-center flex items-center justify-center">
                   TOP CODE
                 </div>
               </div>
