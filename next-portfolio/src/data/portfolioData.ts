@@ -239,7 +239,7 @@ export const EXPERIENCES: Experience[] = [
   {
     company: "GCB Investimentos",
     role: "Full Stack Developer",
-    period: "2025 - Atual",
+    period: "2026 - Atual",
     description: "Desenvolvimento e evolução de sistemas financeiros de alta disponibilidade e microserviços.",
     achievements: [
       "Arquitetura de microsserviços com NestJS, Prisma e PostgreSQL",
