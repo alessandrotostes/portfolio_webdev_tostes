@@ -1,0 +1,7 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Host & Sitemap Location for Google Search Console
+Host: https://www.tostesdev.com
+Sitemap: https://www.tostesdev.com/sitemap.xml
