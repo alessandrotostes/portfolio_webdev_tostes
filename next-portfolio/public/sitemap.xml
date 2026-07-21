@@ -1,10 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage & Core Portfolio -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  
+  <!-- Main Page with Image & Video Indexing Extensions -->
   <url>
     <loc>https://www.tostesdev.com/</loc>
     <lastmod>2026-07-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+
+    <!-- Images for Google Images Indexer -->
+    <image:image>
+      <image:loc>https://www.tostesdev.com/img/saas-dashboard.jpg</image:loc>
+      <image:title>Plataforma SaaS ERP & CRM - Alessandro Tostes</image:title>
+      <image:caption>Dashboard em tempo real para gestão de vendas e relatórios em Web App SaaS</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tostesdev.com/img/landing-page.jpg</image:loc>
+      <image:title>Landing Page Ultra Rápida - Alessandro Tostes</image:title>
+      <image:caption>Landing Page de alta conversão para serviços premium e produtos digitais</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tostesdev.com/img/pwa-app.jpg</image:loc>
+      <image:title>Aplicação PWA Nativa - Alessandro Tostes</image:title>
+      <image:caption>Web App PWA instalável no celular sem loja de aplicativos</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tostesdev.com/img/ia-automation.jpg</image:loc>
+      <image:title>Plataforma de Automação com IA - Alessandro Tostes</image:title>
+      <image:caption>Sistema inteligente de agendamentos e IA integrada para empresas</image:caption>
+    </image:image>
+
+    <!-- Videos for Google Search Video Indexer -->
+    <video:video>
+      <video:thumbnail_loc>https://www.tostesdev.com/img/pwa-app.jpg</video:thumbnail_loc>
+      <video:title>Demonstração PWA - Visão do Cliente</video:title>
+      <video:description>Interface em tela cheia do aplicativo PWA para clientes realizarem agendamentos e compras instantâneas.</video:description>
+      <video:content_loc>https://www.tostesdev.com/video/cliente.mp4</video:content_loc>
+      <video:publication_date>2026-07-21T12:00:00-03:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://www.tostesdev.com/img/saas-dashboard.jpg</video:thumbnail_loc>
+      <video:title>Demonstração PWA - Visão do Estabelecimento</video:title>
+      <video:description>Painel gestor PWA para controle de comandas, caixa e relatórios financeiros do estabelecimento.</video:description>
+      <video:content_loc>https://www.tostesdev.com/video/estabelecimento.mp4</video:content_loc>
+      <video:publication_date>2026-07-21T12:00:00-03:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+
+    <video:video>
+      <video:thumbnail_loc>https://www.tostesdev.com/img/ia-automation.jpg</video:thumbnail_loc>
+      <video:title>Demonstração PWA - Visão do Profissional</video:title>
+      <video:description>Interface do profissional para gestão de agenda, atendimentos e serviços com notificações PWA.</video:description>
+      <video:content_loc>https://www.tostesdev.com/video/profissional.mp4</video:content_loc>
+      <video:publication_date>2026-07-21T12:00:00-03:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
 </urlset>
