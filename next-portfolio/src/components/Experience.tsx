@@ -6,8 +6,8 @@ export const Experience: React.FC = () => {
   return (
     <section id="experience" className="py-12 sm:py-20 lg:py-24 scroll-mt-20 relative bg-slate-950 border-t border-slate-800/50 overflow-hidden w-full max-w-full">
       
-      {/* Decorative Glow */}
-      <div className="absolute top-1/4 left-0 sm:left-10 w-72 sm:w-96 h-72 sm:h-96 max-w-full bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
+      {/* Decorative Glow (Desktop Only) */}
+      <div className="hidden md:block absolute top-1/4 left-10 w-96 h-96 max-w-full bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

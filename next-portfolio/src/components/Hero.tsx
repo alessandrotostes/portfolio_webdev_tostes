@@ -5,9 +5,9 @@ import { ArrowRight, MessageCircle, ShieldCheck, Code2, Sparkles, CheckCircle2, 
 export const Hero: React.FC = () => {
   return (
     <section id="home" className="relative min-h-[90vh] lg:min-h-screen pt-24 sm:pt-32 pb-12 sm:pb-20 flex items-center overflow-hidden scroll-mt-20">
-      {/* Background Decorative Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] max-w-full bg-gradient-to-tr from-cyan-500/15 via-indigo-500/10 to-transparent rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-10 right-0 sm:right-10 max-w-full w-72 sm:w-96 h-72 sm:h-96 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none" />
+      {/* Background Decorative Glows (Desktop Only) */}
+      <div className="hidden md:block absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] max-w-full bg-gradient-to-tr from-cyan-500/15 via-indigo-500/10 to-transparent rounded-full blur-[120px] pointer-events-none" />
+      <div className="hidden md:block absolute bottom-10 right-10 max-w-full w-96 h-96 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

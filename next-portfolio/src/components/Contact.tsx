@@ -6,8 +6,8 @@ export const Contact: React.FC = () => {
   return (
     <section id="contact" className="py-12 sm:py-20 lg:py-24 scroll-mt-20 relative bg-slate-950/90 border-t border-slate-800/50 overflow-hidden w-full max-w-full">
       
-      {/* Background Decorative Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] max-w-full bg-cyan-500/10 rounded-full blur-[160px] pointer-events-none" />
+      {/* Background Decorative Glow (Desktop Only) */}
+      <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] max-w-full bg-cyan-500/10 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

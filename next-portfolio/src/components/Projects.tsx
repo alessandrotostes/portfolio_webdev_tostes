@@ -22,8 +22,8 @@ export const Projects: React.FC = () => {
   return (
     <section id="projects" className="py-12 sm:py-20 lg:py-24 scroll-mt-20 relative bg-slate-950/90 border-t border-slate-800/50 overflow-hidden w-full max-w-full">
       
-      {/* Decorative Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[700px] h-[300px] sm:h-[700px] max-w-full bg-indigo-500/5 rounded-full blur-[150px] pointer-events-none" />
+      {/* Decorative Glow (Desktop Only) */}
+      <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] max-w-full bg-indigo-500/5 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
