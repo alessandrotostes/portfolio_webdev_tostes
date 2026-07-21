@@ -12,7 +12,7 @@ export const TechArsenal: React.FC = () => {
   ];
 
   return (
-    <section className="py-24 relative bg-slate-950/80 border-t border-slate-800/50">
+    <section className="py-24 relative bg-slate-950/80 border-t border-slate-800/50 overflow-hidden w-full max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}

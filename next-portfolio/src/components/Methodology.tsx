@@ -34,10 +34,10 @@ export const Methodology: React.FC = () => {
   ];
 
   return (
-    <section id="methodology" className="py-24 relative bg-slate-950 border-t border-slate-800/50">
+    <section id="methodology" className="py-24 relative bg-slate-950 border-t border-slate-800/50 overflow-hidden w-full max-w-full">
       
       {/* Glow */}
-      <div className="absolute top-1/2 right-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 right-0 sm:right-1/4 w-72 sm:w-96 h-72 sm:h-96 max-w-full bg-cyan-500/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

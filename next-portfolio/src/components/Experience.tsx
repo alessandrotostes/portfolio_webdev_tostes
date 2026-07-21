@@ -4,10 +4,10 @@ import { Briefcase, Calendar, CheckCircle2, Sparkles } from 'lucide-react';
 
 export const Experience: React.FC = () => {
   return (
-    <section id="experience" className="py-24 relative bg-slate-950 border-t border-slate-800/50">
+    <section id="experience" className="py-24 relative bg-slate-950 border-t border-slate-800/50 overflow-hidden w-full max-w-full">
       
       {/* Decorative Glow */}
-      <div className="absolute top-1/4 left-10 w-96 h-96 bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 left-0 sm:left-10 w-72 sm:w-96 h-72 sm:h-96 max-w-full bg-cyan-500/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         

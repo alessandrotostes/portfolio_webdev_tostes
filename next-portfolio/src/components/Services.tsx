@@ -11,11 +11,11 @@ const iconMap = {
 
 export const Services: React.FC = () => {
   return (
-    <section id="services" className="py-24 relative bg-slate-950/80 border-t border-slate-800/50">
+    <section id="services" className="py-24 relative bg-slate-950/80 border-t border-slate-800/50 overflow-hidden w-full max-w-full">
       
       {/* Background Decorative Blur */}
-      <div className="absolute top-1/2 left-0 w-80 h-80 bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-72 sm:w-80 h-72 sm:h-80 max-w-full bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-72 sm:w-96 h-72 sm:h-96 max-w-full bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
