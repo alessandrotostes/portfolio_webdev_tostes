@@ -4,7 +4,7 @@ import { MessageCircle, Mail, Github, Linkedin, MapPin, Send, ArrowUpRight, Spar
 
 export const Contact: React.FC = () => {
   return (
-    <section id="contact" className="py-24 relative bg-slate-950/90 border-t border-slate-800/50 overflow-hidden w-full max-w-full">
+    <section id="contact" className="py-12 sm:py-20 lg:py-24 scroll-mt-20 relative bg-slate-950/90 border-t border-slate-800/50 overflow-hidden w-full max-w-full">
       
       {/* Background Decorative Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] max-w-full bg-cyan-500/10 rounded-full blur-[160px] pointer-events-none" />
@@ -40,18 +40,18 @@ export const Contact: React.FC = () => {
                   href={PERSONAL_INFO.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-emerald-500/10 via-cyan-500/10 to-transparent border border-emerald-500/30 hover:border-emerald-400 group transition-all"
+                  className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-4 rounded-2xl bg-gradient-to-r from-emerald-500/10 via-cyan-500/10 to-transparent border border-emerald-500/30 hover:border-emerald-400 group transition-all"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400">
-                      <MessageCircle className="w-6 h-6 fill-emerald-400/20" />
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+                      <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 fill-emerald-400/20" />
                     </div>
-                    <div>
+                    <div className="min-w-0">
                       <h4 className="font-bold text-sm text-slate-100">Conversar no WhatsApp</h4>
-                      <p className="text-xs text-emerald-300 font-mono">{PERSONAL_INFO.whatsappNumber}</p>
+                      <p className="text-xs text-emerald-300 font-mono truncate">{PERSONAL_INFO.whatsappNumber}</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-1 text-xs font-bold text-emerald-400 group-hover:translate-x-1 transition-transform">
+                  <div className="flex items-center gap-1 text-xs font-bold text-emerald-400 group-hover:translate-x-1 transition-transform shrink-0 self-end sm:self-center">
                     <span>Falar Agora</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </div>
@@ -60,18 +60,18 @@ export const Contact: React.FC = () => {
                 {/* Email Action Card */}
                 <a
                   href={`mailto:${PERSONAL_INFO.email}?subject=Proposta%20de%20Projeto`}
-                  className="flex items-center justify-between p-4 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 group transition-all"
+                  className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 p-4 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 group transition-all"
                 >
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400">
-                      <Mail className="w-6 h-6" />
+                  <div className="flex items-center gap-3 min-w-0 w-full sm:w-auto">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 shrink-0">
+                      <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
-                    <div>
+                    <div className="min-w-0 flex-1">
                       <h4 className="font-bold text-sm text-slate-100">Enviar E-mail</h4>
-                      <p className="text-xs text-slate-400 font-mono">{PERSONAL_INFO.email}</p>
+                      <p className="text-xs text-slate-400 font-mono break-all sm:break-normal">{PERSONAL_INFO.email}</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-1 text-xs font-semibold text-slate-400 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all">
+                  <div className="flex items-center gap-1 text-xs font-semibold text-slate-400 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all shrink-0 self-end sm:self-center">
                     <span>Enviar mensagem</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </div>

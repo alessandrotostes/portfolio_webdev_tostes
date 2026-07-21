@@ -34,7 +34,7 @@ export const Methodology: React.FC = () => {
   ];
 
   return (
-    <section id="methodology" className="py-24 relative bg-slate-950 border-t border-slate-800/50 overflow-hidden w-full max-w-full">
+    <section id="methodology" className="py-12 sm:py-20 lg:py-24 scroll-mt-20 relative bg-slate-950 border-t border-slate-800/50 overflow-hidden w-full max-w-full">
       
       {/* Glow */}
       <div className="absolute top-1/2 right-0 sm:right-1/4 w-72 sm:w-96 h-72 sm:h-96 max-w-full bg-cyan-500/5 rounded-full blur-[140px] pointer-events-none" />

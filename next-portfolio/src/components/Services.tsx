@@ -11,7 +11,7 @@ const iconMap = {
 
 export const Services: React.FC = () => {
   return (
-    <section id="services" className="py-24 relative bg-slate-950/80 border-t border-slate-800/50 overflow-hidden w-full max-w-full">
+    <section id="services" className="py-12 sm:py-20 lg:py-24 scroll-mt-20 relative bg-slate-950/80 border-t border-slate-800/50 overflow-hidden w-full max-w-full">
       
       {/* Background Decorative Blur */}
       <div className="absolute top-1/2 left-0 w-72 sm:w-80 h-72 sm:h-80 max-w-full bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />

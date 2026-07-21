@@ -12,7 +12,7 @@ export const PWAShowcase: React.FC = () => {
   const [activeTab, setActiveTab] = useState(PWA_VIDEOS[0]);
 
   return (
-    <section id="pwa" className="py-24 relative bg-slate-950 overflow-hidden w-full max-w-full">
+    <section id="pwa" className="py-12 sm:py-20 lg:py-24 scroll-mt-20 relative bg-slate-950 overflow-hidden w-full max-w-full">
       
       {/* Glow Effects */}
       <div className="absolute top-1/3 right-0 sm:right-10 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] max-w-full bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
