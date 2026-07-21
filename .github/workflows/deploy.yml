@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: 'npm'
           cache-dependency-path: './next-portfolio/package-lock.json'
 
@@ -36,6 +36,9 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
+          protocol: ftps
+          security: loose
+          timeout: 60000
           local-dir: ./next-portfolio/dist/
           server-dir: ./
           dangerous-clean-slate: true
