@@ -62,6 +62,7 @@ export const PWAShowcase: React.FC = () => {
                     loop
                     muted
                     playsInline
+                    preload="metadata"
                     className="w-full h-full object-cover"
                   />
                   
