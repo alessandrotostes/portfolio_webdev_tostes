@@ -1,4 +1,4 @@
-name: Deploy Next.js to Hostinger
+name: Deploy Vite Portfolio to Hostinger
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
         run: npm ci
         working-directory: ./next-portfolio
 
-      - name: Build Next.js Static Export
+      - name: Build Vite Production
         run: npm run build
         working-directory: ./next-portfolio
 
@@ -36,6 +36,6 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
-          local-dir: ./next-portfolio/out/
+          local-dir: ./next-portfolio/dist/
           server-dir: ./
           dangerous-clean-slate: true

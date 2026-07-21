@@ -1,4 +1,4 @@
-# 🚀 Deploy Automatizado no Hostinger (Next.js Static Export)
+# 🚀 Deploy Automatizado na Hostinger (Vite + React Static Build)
 
 Este documento descreve como o deploy automatizado do portfólio está estruturado para a hospedagem **Hostinger** via **GitHub Actions** e **FTP**.
 
@@ -6,40 +6,27 @@ Este documento descreve como o deploy automatizado do portfólio está estrutura
 
 ## 🏗️ 1. Arquitetura da Aplicação
 
-O projeto utiliza **Next.js 15+** localizado no diretório `./next-portfolio`.
-Como a Hostinger em planos de hospedagem compartilhada executa primariamente servidores web estáticos (LiteSpeed / Apache / Nginx) sem Node.js contínuo no backend, configuramos o Next.js para **Exportação Estática (Static HTML Export)**.
-
-### Configuração no `next.config.ts`:
-```typescript
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  output: 'export',
-  images: {
-    unoptimized: true,
-  },
-};
-
-export default nextConfig;
-```
+O projeto utiliza **Vite + React 19 + TypeScript** localizado no diretório `./next-portfolio`.
+Como a Hostinger em planos de hospedagem compartilhada executa servidores web estáticos de alta performance (LiteSpeed / Apache / Nginx), o Vite compila a aplicação diretamente para arquivos estáticos HTML, CSS e JavaScript otimizados no diretório `dist/`.
 
 ---
 
 ## 📦 2. Processo de Build Estático
 
 Quando o comando `npm run build` é executado na pasta `next-portfolio`:
-1. O Next.js compila todas as páginas, CSS, assets e componentes.
-2. Gera uma pasta de saída chamada **`next-portfolio/out/`** contendo os arquivos HTML, JS, CSS e recursos estáticos.
-3. É o conteúdo dessa pasta `out/` que é enviado para o servidor da Hostinger.
+1. O TypeScript compila e valida os tipos (`tsc`).
+2. O Vite empacota e otimiza todas as mídias, componentes e arquivos CSS com minificação e Gzip em menos de 2 segundos.
+3. Gera a pasta de saída **`next-portfolio/dist/`** contendo `index.html`, pasta `assets/`, `.htaccess` e mídias (`img/` e `video/`).
+4. É o conteúdo dessa pasta `dist/` que é enviado diretamente para a Hostinger.
 
 ---
 
 ## 🤖 3. Workflow do GitHub Actions (`.github/workflows/deploy.yml`)
 
-O workflow é disparado automaticamente a cada `push` nos branches `master` ou `main`.
+O workflow é disparado automaticamente a cada `push` nos branches `master` ou `main`:
 
 ```yaml
-name: Deploy Next.js to Hostinger
+name: Deploy Vite Portfolio to Hostinger
 
 on:
   push:
@@ -66,7 +53,7 @@ jobs:
         run: npm ci
         working-directory: ./next-portfolio
 
-      - name: Build Next.js Static Export
+      - name: Build Vite Production
         run: npm run build
         working-directory: ./next-portfolio
 
@@ -77,7 +64,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
-          local-dir: ./next-portfolio/out/
+          local-dir: ./next-portfolio/dist/
           server-dir: ./
           dangerous-clean-slate: true
 ```
@@ -88,20 +75,15 @@ jobs:
 
 Para que a Action se conecte à Hostinger, os seguintes **Repository Secrets** devem estar configurados no GitHub (`Settings > Secrets and variables > Actions`):
 
-1. **`FTP_SERVER`**: Endereço Host/IP do FTP fornecido pela Hostinger (ex: `ftp.seu-dominio.com` ou `185.x.x.x`).
+1. **`FTP_SERVER`**: Endereço Host/IP do FTP fornecido pela Hostinger (ex: `ftp.tostesdev.com` ou o IP do servidor hPanel).
 2. **`FTP_USERNAME`**: Usuário da conta FTP criada no painel hPanel da Hostinger.
 3. **`FTP_PASSWORD`**: Senha do usuário FTP.
 
 ---
 
-## 🧹 5. Detalhes Importantes & Boas Práticas
+## 🛡️ 5. Suporte a SPA & Cache (`.htaccess`)
 
-* **`server-dir: ./`**: Aponta para o diretório raiz do FTP configurado. Na Hostinger, se o usuário FTP já for criado apontando diretamente para `public_html/`, a raiz `./` colocará os arquivos diretamente em `public_html`.
-* **`dangerous-clean-slate: true`**: Remove arquivos antigos no servidor que não existem mais na build atual, prevenindo acúmulo de assets velhos/cacheados ou arquivos obsoletos.
-* **`images.unoptimized: true`**: Necessário para exportação estática do Next.js sem um servidor de otimização de imagem Node.js no runtime.
-
----
-
-## 🛠️ 6. Como Fazer Manutenção / Debugging
-* Se a pipeline falhar na etapa de build: Verifique os logs no GitHub Actions para identificar erros de sintaxe ou TypeScript no `next-portfolio`.
-* Se o site ficar em branco ou com erro 404: Verifique se o caminho base (`basePath`) no `next.config.ts` está configurado corretamente e se as secrets FTP apontam para o diretório público correto (`public_html`).
+Para garantir rotas limpas e carregamento rápido na Hostinger, o projeto inclui um arquivo `public/.htaccess` pré-configurado com:
+* **Gzip Compression**: Reduz o tamanho das transferências no navegador.
+* **Browser Caching**: Faz cache de imagens, vídeos e arquivos CSS/JS por até 1 ano.
+* **Fallback para SPA**: Redireciona rotas internas para `index.html` sem erros 404.
