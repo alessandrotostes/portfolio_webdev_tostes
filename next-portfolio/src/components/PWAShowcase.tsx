@@ -43,9 +43,14 @@ export const PWAShowcase: React.FC = () => {
               {/* iPhone Titanium Frame */}
               <div className="relative aspect-[9/19] w-full bg-slate-900 rounded-[3rem] p-2 border-[5px] border-slate-800 shadow-2xl shadow-cyan-500/10 ring-1 ring-slate-700/50 overflow-hidden">
                 
-                {/* Dynamic Island Notch */}
-                <div className="absolute top-3 left-1/2 -translate-x-1/2 w-28 h-6 bg-slate-950 rounded-full z-30 flex items-center justify-end px-2 border border-slate-800">
-                  <div className="w-2.5 h-2.5 rounded-full bg-slate-800" />
+                {/* Dynamic Island Notch (iPhone 15 Pro Design) */}
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-full z-30 flex items-center justify-between px-3 shadow-md shadow-black ring-1 ring-white/10">
+                  {/* Camera Lens with reflection */}
+                  <div className="w-3 h-3 rounded-full bg-zinc-900 ring-1 ring-zinc-800/80 flex items-center justify-center">
+                    <div className="w-1 h-1 rounded-full bg-indigo-950/80 ring-1 ring-cyan-500/20" />
+                  </div>
+                  {/* Proximity / Face ID Sensor Dot */}
+                  <div className="w-2.5 h-2.5 rounded-full bg-zinc-900 border border-zinc-800/60" />
                 </div>
 
                 {/* Video Container */}
