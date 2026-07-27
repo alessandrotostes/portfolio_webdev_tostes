@@ -1,5 +1,6 @@
 import React from 'react';
 import { SERVICES, PERSONAL_INFO } from '../data/portfolioData';
+import { useLanguage } from '../i18n/LanguageContext';
 import { Layers, Rocket, Smartphone, Cpu, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
 
 const iconMap = {
@@ -10,6 +11,8 @@ const iconMap = {
 };
 
 export const Services: React.FC = () => {
+  const { t, language } = useLanguage();
+
   return (
     <section id="services" className="py-12 sm:py-20 lg:py-24 scroll-mt-20 relative bg-slate-950/80 border-t border-slate-800/50 overflow-hidden w-full max-w-full">
       
@@ -23,13 +26,14 @@ export const Services: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-semibold text-cyan-300 mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>Soluções Sob Medida</span>
+            <span>{t.services.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-100 tracking-tight mb-4">
-            Serviços desenhados para <span className="gradient-text-cyan">gerar resultados reais</span>
+            {t.services.titlePrefix}
+            <span className="gradient-text-cyan">{t.services.titleHighlight}</span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
-            Do planejamento de arquitetura até a entrega final com código limpo, suporte a PWA e velocidade máxima no celular.
+            {t.services.description}
           </p>
         </div>
 
@@ -37,6 +41,19 @@ export const Services: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {SERVICES.map((service) => {
             const Icon = iconMap[service.iconName];
+            const itemTranslation = t.services.items[service.id as keyof typeof t.services.items];
+
+            const serviceTitle = itemTranslation?.title || service.title;
+            const serviceSubtitle = itemTranslation?.subtitle || service.subtitle;
+            const serviceBadge = itemTranslation?.badge || service.badge;
+            const serviceDesc = itemTranslation?.description || service.description;
+            const serviceBenefits = itemTranslation?.benefits || service.benefits;
+            const serviceDeliverables = itemTranslation?.deliverables || service.deliverables;
+
+            const ctaHref = language === 'en'
+              ? `mailto:${PERSONAL_INFO.email}?subject=${encodeURIComponent(`Inquiry for ${serviceTitle}`)}`
+              : `${PERSONAL_INFO.whatsapp}&text=${encodeURIComponent(`Olá, gostaria de saber mais sobre o serviço de ${serviceTitle}`)}`;
+
             return (
               <div
                 key={service.id}
@@ -49,27 +66,27 @@ export const Services: React.FC = () => {
                       <Icon className="w-7 h-7 stroke-[2.2]" />
                     </div>
                     <span className="px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs font-mono font-medium text-slate-300">
-                      {service.badge}
+                      {serviceBadge}
                     </span>
                   </div>
 
                   {/* Title & Subtitle */}
                   <h3 className="text-2xl font-bold text-slate-100 mb-2 group-hover:text-cyan-300 transition-colors">
-                    {service.title}
+                    {serviceTitle}
                   </h3>
                   <p className="text-xs font-semibold text-cyan-400 mb-4">
-                    {service.subtitle}
+                    {serviceSubtitle}
                   </p>
                   
                   {/* Detailed Description */}
                   <p className="text-slate-300 text-sm leading-relaxed mb-6">
-                    {service.description}
+                    {serviceDesc}
                   </p>
 
                   {/* Key Benefits */}
                   <div className="space-y-2.5 mb-6 pt-4 border-t border-slate-800/60">
-                    <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">Principais Benefícios:</span>
-                    {service.benefits.map((benefit, idx) => (
+                    <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">{t.services.benefitsLabel}</span>
+                    {serviceBenefits.map((benefit, idx) => (
                       <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-300">
                         <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                         <span>{benefit}</span>
@@ -81,7 +98,7 @@ export const Services: React.FC = () => {
                 {/* Deliverable Tags & CTA */}
                 <div className="pt-6 border-t border-slate-800/60">
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {service.deliverables.map((deliv, idx) => (
+                    {serviceDeliverables.map((deliv, idx) => (
                       <span key={idx} className="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-medium text-slate-400">
                         {deliv}
                       </span>
@@ -89,12 +106,12 @@ export const Services: React.FC = () => {
                   </div>
 
                   <a
-                    href={`${PERSONAL_INFO.whatsapp}&text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20o%20servi%C3%A7o%20de%20${encodeURIComponent(service.title)}`}
-                    target="_blank"
+                    href={ctaHref}
+                    target={language === 'en' ? '_self' : '_blank'}
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-xs font-bold text-cyan-400 group-hover:text-cyan-300 transition-colors"
                   >
-                    <span>Solicitar Proposta para este Serviço</span>
+                    <span>{t.services.cta}</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>

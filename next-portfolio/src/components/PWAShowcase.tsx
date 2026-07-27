@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { PWA_VIDEOS, PERSONAL_INFO } from '../data/portfolioData';
-import { Smartphone, Check, Play, User, Store, Briefcase, ExternalLink, ShieldCheck } from 'lucide-react';
+import { PWA_VIDEOS } from '../data/portfolioData';
+import { useLanguage } from '../i18n/LanguageContext';
+import { Smartphone, User, Store, Briefcase, ShieldCheck } from 'lucide-react';
 
 const iconMap = {
   cliente: User,
@@ -9,7 +10,11 @@ const iconMap = {
 };
 
 export const PWAShowcase: React.FC = () => {
-  const [activeTab, setActiveTab] = useState(PWA_VIDEOS[0]);
+  const { t } = useLanguage();
+  const [activeTabId, setActiveTabId] = useState(PWA_VIDEOS[0].id);
+
+  const activeVideo = PWA_VIDEOS.find(v => v.id === activeTabId) || PWA_VIDEOS[0];
+  const activeTranslation = t.pwaShowcase.videos[activeTabId as keyof typeof t.pwaShowcase.videos];
 
   return (
     <section id="pwa" className="py-12 sm:py-20 lg:py-24 scroll-mt-20 relative bg-slate-950 overflow-hidden w-full max-w-full">
@@ -24,13 +29,14 @@ export const PWAShowcase: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-xs font-semibold text-indigo-300 mb-4">
             <Smartphone className="w-3.5 h-3.5" />
-            <span>Produto SaaS PWA em Destaque</span>
+            <span>{t.pwaShowcase.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-100 tracking-tight mb-4">
-            A&N Agendamentos <span className="gradient-text-cyan">(SaaS Multi-tenant)</span>
+            {t.pwaShowcase.titlePrefix}
+            <span className="gradient-text-cyan">{t.pwaShowcase.titleHighlight}</span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
-            Uma plataforma de alta tecnologia PWA que elimina a necessidade de publicar em lojas de aplicativos, oferecendo instalação instantânea e navegação em tela cheia.
+            {t.pwaShowcase.description}
           </p>
         </div>
 
@@ -44,21 +50,19 @@ export const PWAShowcase: React.FC = () => {
               {/* iPhone Titanium Frame */}
               <div className="relative aspect-[9/19] w-full bg-slate-900 rounded-[3rem] p-2 border-[5px] border-slate-800 shadow-2xl shadow-cyan-500/10 ring-1 ring-slate-700/50 overflow-hidden">
                 
-                {/* Dynamic Island Notch (iPhone 15 Pro Design) */}
+                {/* Dynamic Island Notch */}
                 <div className="absolute top-4 left-1/2 -translate-x-1/2 w-32 h-6 bg-black rounded-full z-30 flex items-center justify-between px-3 shadow-md shadow-black ring-1 ring-white/10">
-                  {/* Camera Lens with reflection */}
                   <div className="w-3 h-3 rounded-full bg-zinc-900 ring-1 ring-zinc-800/80 flex items-center justify-center">
                     <div className="w-1 h-1 rounded-full bg-indigo-950/80 ring-1 ring-cyan-500/20" />
                   </div>
-                  {/* Proximity / Face ID Sensor Dot */}
                   <div className="w-2.5 h-2.5 rounded-full bg-zinc-900 border border-zinc-800/60" />
                 </div>
 
                 {/* Video Container */}
                 <div className="relative w-full h-full bg-black rounded-[2.4rem] overflow-hidden">
                   <video
-                    key={activeTab.id}
-                    src={activeTab.video}
+                    key={activeVideo.id}
+                    src={activeVideo.video}
                     autoPlay
                     loop
                     muted
@@ -69,8 +73,8 @@ export const PWAShowcase: React.FC = () => {
                   
                   {/* Subtle Video Overlay Tag */}
                   <div className="absolute bottom-3 left-3 right-3 p-2.5 rounded-xl bg-slate-950/80 backdrop-blur-md border border-slate-800/80 text-left">
-                    <p className="text-xs font-bold text-slate-100">{activeTab.title}</p>
-                    <p className="text-[10px] text-cyan-400">{activeTab.subtitle}</p>
+                    <p className="text-xs font-bold text-slate-100">{activeTranslation.title}</p>
+                    <p className="text-[10px] text-cyan-400">{activeTranslation.subtitle}</p>
                   </div>
                 </div>
 
@@ -84,10 +88,10 @@ export const PWAShowcase: React.FC = () => {
             
             <div className="space-y-4">
               <h3 className="text-2xl font-bold text-slate-100">
-                Explore as 3 visões do sistema:
+                {t.pwaShowcase.tabsHeader}
               </h3>
               <p className="text-sm text-slate-300">
-                Alterne entre as abas abaixo para visualizar os vídeos de cada módulo em funcionamento real:
+                {t.pwaShowcase.tabsSubheader}
               </p>
             </div>
 
@@ -95,11 +99,13 @@ export const PWAShowcase: React.FC = () => {
             <div className="flex flex-col gap-3">
               {PWA_VIDEOS.map((tab) => {
                 const Icon = iconMap[tab.id as keyof typeof iconMap];
-                const isActive = activeTab.id === tab.id;
+                const isActive = activeTabId === tab.id;
+                const tabTrans = t.pwaShowcase.videos[tab.id as keyof typeof t.pwaShowcase.videos];
+
                 return (
                   <button
                     key={tab.id}
-                    onClick={() => setActiveTab(tab)}
+                    onClick={() => setActiveTabId(tab.id)}
                     className={`flex items-start gap-4 p-4 rounded-xl border text-left transition-all duration-200 cursor-pointer ${
                       isActive
                         ? 'bg-slate-900/90 border-cyan-500/50 shadow-lg shadow-cyan-500/10'
@@ -114,16 +120,16 @@ export const PWAShowcase: React.FC = () => {
                     <div>
                       <div className="flex items-center gap-2">
                         <span className={`font-bold text-base ${isActive ? 'text-cyan-300' : 'text-slate-200'}`}>
-                          {tab.title}
+                          {tabTrans.title}
                         </span>
                         {isActive && (
                           <span className="px-2 py-0.5 rounded-full bg-cyan-500/20 text-[10px] font-mono text-cyan-300">
-                            REPRODUZINDO
+                            {t.pwaShowcase.playing}
                           </span>
                         )}
                       </div>
-                      <p className="text-xs font-semibold text-slate-400 mt-0.5">{tab.subtitle}</p>
-                      <p className="text-xs text-slate-300 leading-relaxed mt-1.5">{tab.description}</p>
+                      <p className="text-xs font-semibold text-slate-400 mt-0.5">{tabTrans.subtitle}</p>
+                      <p className="text-xs text-slate-300 leading-relaxed mt-1.5">{tabTrans.description}</p>
                     </div>
                   </button>
                 );
@@ -135,16 +141,16 @@ export const PWAShowcase: React.FC = () => {
               <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
                 <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-bold text-xs text-slate-100">Zero Comissões de Loja</h4>
-                  <p className="text-xs text-slate-400">Instalação direta via Safari ou Chrome sem depender de Apple Store ou Google Play.</p>
+                  <h4 className="font-bold text-xs text-slate-100">{t.pwaShowcase.adv1Title}</h4>
+                  <p className="text-xs text-slate-400">{t.pwaShowcase.adv1Desc}</p>
                 </div>
               </div>
 
               <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
                 <Smartphone className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-bold text-xs text-slate-100">Velocidade Nativa</h4>
-                  <p className="text-xs text-slate-400">Carregamento instantâneo, atalho na tela inicial e resposta fluida em qualquer aparelho.</p>
+                  <h4 className="font-bold text-xs text-slate-100">{t.pwaShowcase.adv2Title}</h4>
+                  <p className="text-xs text-slate-400">{t.pwaShowcase.adv2Desc}</p>
                 </div>
               </div>
             </div>

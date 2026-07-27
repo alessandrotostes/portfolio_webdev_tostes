@@ -1,14 +1,17 @@
 import React from 'react';
 import { TECH_ARSENAL } from '../data/portfolioData';
+import { useLanguage } from '../i18n/LanguageContext';
 import { Code2, Server, ShieldCheck, Cpu, Layers } from 'lucide-react';
 
 export const TechArsenal: React.FC = () => {
+  const { t } = useLanguage();
+
   const categories = [
-    { title: "Front-End & UI", icon: Code2, items: TECH_ARSENAL.frontend, gradient: "from-cyan-500 to-blue-600" },
-    { title: "Back-End & Cloud", icon: Server, items: TECH_ARSENAL.backend, gradient: "from-emerald-400 to-teal-600" },
-    { title: "Qualidade & DevOps", icon: ShieldCheck, items: TECH_ARSENAL.quality, gradient: "from-indigo-500 to-purple-600" },
-    { title: "Arquitetura & Padrões", icon: Layers, items: TECH_ARSENAL.architecture, gradient: "from-amber-400 to-orange-600" },
-    { title: "Engenharia de IA", icon: Cpu, items: TECH_ARSENAL.ai, gradient: "from-violet-500 to-fuchsia-600" },
+    { title: t.techArsenal.categories.frontend, icon: Code2, items: TECH_ARSENAL.frontend, gradient: "from-cyan-500 to-blue-600" },
+    { title: t.techArsenal.categories.backend, icon: Server, items: TECH_ARSENAL.backend, gradient: "from-emerald-400 to-teal-600" },
+    { title: t.techArsenal.categories.quality, icon: ShieldCheck, items: TECH_ARSENAL.quality, gradient: "from-indigo-500 to-purple-600" },
+    { title: t.techArsenal.categories.architecture, icon: Layers, items: TECH_ARSENAL.architecture, gradient: "from-amber-400 to-orange-600" },
+    { title: t.techArsenal.categories.ai, icon: Cpu, items: TECH_ARSENAL.ai, gradient: "from-violet-500 to-fuchsia-600" },
   ];
 
   return (
@@ -19,13 +22,14 @@ export const TechArsenal: React.FC = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-semibold text-cyan-300 mb-4">
             <Cpu className="w-3.5 h-3.5" />
-            <span>Ecossistema Técnico</span>
+            <span>{t.techArsenal.badge}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-100 tracking-tight mb-4">
-            Arsenal <span className="gradient-text-cyan">Tecnológico</span>
+            {t.techArsenal.titlePrefix}
+            <span className="gradient-text-cyan">{t.techArsenal.titleHighlight}</span>
           </h2>
           <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
-            Ferramentas e frameworks selecionados para máxima velocidade de desenvolvimento, escalabilidade e manutenibilidade.
+            {t.techArsenal.description}
           </p>
         </div>
 
