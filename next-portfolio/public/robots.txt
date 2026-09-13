@@ -2,6 +2,38 @@
 User-agent: *
 Allow: /
 
-# Host & Sitemap Location for Google Search Console
+# Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI Search & Answer Engine Crawlers (Generative Engine Optimization / GEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Host & Sitemap Location for Search Engines
 Host: https://www.tostesdev.com
 Sitemap: https://www.tostesdev.com/sitemap.xml
+
+# LLM Context Files for AI Agents & Answer Engines (llmstxt.org)
+# https://www.tostesdev.com/llms.txt
+# https://www.tostesdev.com/llms-en.txt
+# https://www.tostesdev.com/llms-pt.txt
+# https://www.tostesdev.com/llms-full.txt

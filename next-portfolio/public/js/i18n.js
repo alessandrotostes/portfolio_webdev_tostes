@@ -5,16 +5,16 @@
 
 const translations = {
   pt: {
-    title: "Alessandro Tostes | Desenvolvedor Web Full-Stack & Especialista em SaaS",
-    description: "Desenvolvedor Web Full-Stack em Ribeirão Preto (SP). Soluções web de alta performance: Web Apps SaaS, Landing Pages de alta conversão, PWA e IA.",
+    title: "Alessandro Tostes | Desenvolvedor Web & Programador Full-Stack | Ribeirão Preto & Remoto",
+    description: "Desenvolvedor Web e Programador Full-Stack em Ribeirão Preto (SP) com atendimento remoto para todo o Brasil e exterior. Soluções de alta performance: Web Apps SaaS, Landing Pages de alta conversão, PWA e IA.",
     status: "Disponível para Projetos",
-    location: "Ribeirão Preto - SP"
+    location: "Ribeirão Preto - SP • Remoto Brasil & Global"
   },
   en: {
-    title: "Alessandro Tostes | Full-Stack Web Developer & SaaS Specialist",
-    description: "Full-Stack Web Developer providing high-performance web solutions: SaaS Web Apps, High-converting Landing Pages, PWA, and AI Integration.",
+    title: "Alessandro Tostes | Full-Stack Web Developer & Software Engineer | Remote & Worldwide",
+    description: "Full-Stack Web Developer and Software Engineer based in Ribeirão Preto (SP, Brazil), serving clients worldwide remotely. High-performance SaaS Web Apps, Landing Pages, PWA, and AI solutions.",
     status: "Available for Projects",
-    location: "Global Remote Service"
+    location: "Ribeirão Preto, Brazil • Worldwide Remote"
   }
 };
 
