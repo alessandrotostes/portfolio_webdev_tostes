@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { useLanguage } from '../i18n/LanguageContext';
 import { LanguageSwitcher } from './LanguageSwitcher';
-import { Menu, X, ArrowUpRight, MessageCircle, Mail, Code2 } from 'lucide-react';
+import { Menu, X, ArrowUpRight, MessageCircle, Mail } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -29,12 +29,16 @@ export const Navbar: React.FC = () => {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
-    const element = document.getElementById(targetId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      history.replaceState(null, '', window.location.pathname + window.location.search);
-    }
     setMobileMenuOpen(false);
+    if (targetId === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      const el = document.getElementById(targetId);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    history.replaceState(null, '', window.location.pathname + window.location.search);
   };
 
   return (
@@ -47,8 +51,8 @@ export const Navbar: React.FC = () => {
           onClick={(e) => handleNavClick(e, 'home')}
           className="flex items-center gap-2.5 group cursor-pointer shrink-0"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-cyan-500/20 group-hover:scale-105 transition-transform">
-            <Code2 className="w-5 h-5" />
+          <div className="w-10 h-10 rounded-xl overflow-hidden bg-slate-900 border border-slate-800 flex items-center justify-center shadow-md shadow-cyan-500/10 group-hover:scale-105 group-hover:border-cyan-500/40 transition-all">
+            <img src="/img/logo.webp" alt="Alessandro Tostes" className="w-full h-full object-cover" />
           </div>
           <div className="flex flex-col">
             <span className="font-bold text-lg text-slate-100 tracking-tight leading-none group-hover:text-cyan-400 transition-colors">

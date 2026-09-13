@@ -2,7 +2,7 @@ import React from 'react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 import { useLanguage } from '../i18n/LanguageContext';
 import { LanguageSwitcher } from './LanguageSwitcher';
-import { Code2, ArrowUp } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const { t } = useLanguage();
@@ -24,8 +24,8 @@ export const Footer: React.FC = () => {
         
         {/* Brand & Rights */}
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-indigo-600 flex items-center justify-center text-slate-950 font-bold">
-            <Code2 className="w-4 h-4" />
+          <div className="w-8 h-8 rounded-lg overflow-hidden bg-slate-900 border border-slate-800 flex items-center justify-center">
+            <img src="/img/logo.webp" alt="Alessandro Tostes" className="w-full h-full object-cover" />
           </div>
           <div>
             <p className="font-bold text-slate-200">{PERSONAL_INFO.name}</p>
