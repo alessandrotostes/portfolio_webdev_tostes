@@ -34,6 +34,7 @@ export interface TranslationSchema {
     metricExpTitle: string;
     metricExpDesc: string;
     stackTitle: string;
+    stackItems: string[];
   };
   services: {
     badge: string;
@@ -268,7 +269,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
       pills: [
         "Google Tag Manager & Meta Pixel",
         "Mobile-First & PWA",
-        "Bancos de Dados Relacionais & NoSQL",
+        "Bancos de Dados SQL & NoSQL",
         "Engenharia de IA"
       ],
       ctaPrimaryWhatsapp: "Iniciar Projeto no WhatsApp",
@@ -280,8 +281,19 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
       metricTrackingTitle: "GTM & Pixel",
       metricTrackingDesc: "Tracking & Analytics",
       metricExpTitle: "+2 Anos",
-      metricExpDesc: "Experiência em Dev Web",
-      stackTitle: "Stack Principal & Ferramentas"
+      metricExpDesc: "Dev Full-Stack",
+      stackTitle: "Stack Principal & Ferramentas",
+      stackItems: [
+        "React 19",
+        "Vite",
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "SQL",
+        "NoSQL",
+        "PWA",
+        "IA Integrada"
+      ]
     },
     services: {
       badge: "Soluções Sob Medida",
@@ -295,13 +307,13 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
           badge: "Escala & Produto",
           title: "Web Apps SaaS, SPAs & CRMs",
           subtitle: "Sistemas completos para rentabilizar seu negócio digital",
-          description: "Desenvolvimento de plataformas web robustas com autenticação segura, gateways de pagamento (Mercado Pago, Stripe), dashboards em tempo real e segregação de permissões de usuário (RBAC).",
+          description: "Desenvolvimento de plataformas web robustas com autenticação segura, gateways de pagamento (Mercado Pago, Stripe), dashboards em tempo real, segregação de permissões (RBAC) e arquitetura de dados em SQL e NoSQL.",
           benefits: [
             "Arquitetura escalável pronta para milhares de usuários simultâneos",
             "Segurança de dados e conformidade com LGPD",
             "Painéis gerenciais inteligentes com gráficos e relatórios exportáveis"
           ],
-          deliverables: ["Node.js & NestJS", "PostgreSQL & Supabase", "AWS & Google Cloud (GCP)", "Firebase & Gateways"]
+          deliverables: ["Node.js & NestJS", "Bancos de Dados SQL", "Bancos de Dados NoSQL", "AWS & GCP / Gateways"]
         },
         landing: {
           badge: "Conversão Imediata",
@@ -397,7 +409,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
           title: "A&N Agendamentos",
           categoryLabel: "SaaS Multi-tenant & PWA",
           description: "Ecossistema completo de agendamentos e gestão comercial conectando clientes, estabelecimentos e profissionais.",
-          fullDescription: "Desenvolvido do zero para ser uma solução leve e completa para salões, barbearias e clínicas. Possui 3 visões segregadas via RBAC: Painel do Cliente (para reserva em segundos), Painel do Estabelecimento (gestão financeira e de equipe) e Painel do Profissional (agenda individual). Suporta PWA e cobranças via Mercado Pago.",
+          fullDescription: "Desenvolvido do zero para ser uma solução leve e completa para salões, barbearias e clínicas. Possui 3 visões segregadas via RBAC: Painel do Cliente (para reserva em segundos), Painel do Estabelecimento (gestão financeira e de equipe) e Painel do Profissional (agenda individual). Suporta PWA e cobranças via gateway de pagamento do Mercado Pago.",
           features: [
             "Três níveis de acesso segregados por função (RBAC)",
             "Checkout integrado com pagamentos via PIX e cartão",
@@ -435,7 +447,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
           description: "Sistema para profissionais autônomos gerenciarem agendas, pacientes/alunos e finanças de forma unificada.",
           fullDescription: "Solução desenhada para psicólogos, personal trainers e consultores. Oferece controle de prontuários/fichas, confirmação de presença e acompanhamento de receita mensal.",
           features: [
-            "Banco de dados relacional seguro com Supabase (RLS)",
+            "Banco de dados SQL com regras avançadas de segurança (RLS)",
             "Agenda dinâmica com suporte a remarcação rápida",
             "Controle financeiro de recebimentos pendentes"
           ]
@@ -446,9 +458,9 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
           description: "Presença online humanizada desenvolvida para transmitir acolhimento, serenidade e agendamento simples.",
           fullDescription: "Website focado na experiência do paciente, com paleta de cores terapêutica, tipografia de alta legibilidade e botão de contato direto via WhatsApp.",
           features: [
-            "Carregamento em menos de 1 segundo",
-            "Integrado com WhatsApp para agendamento direto",
-            "Otimização completa para buscadores (SEO)"
+            "Carregamento ultra-rápido abaixo de 1 segundo",
+            "Botão de agendamento direto para o WhatsApp sem atrito",
+            "Otimização completa para motores de busca (SEO)"
           ]
         },
         cervejariaFratelli: {
@@ -479,17 +491,17 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
       badge: "Trajetória Profissional",
       titlePrefix: "Experiência & ",
       titleHighlight: "Resultados",
-      description: "Conheça as empresas e projetos onde atuei como líder técnico e desenvolvedor Full-Stack.",
+      description: "Conheça as empresas e produtos onde atuei liderando tecnologia e desenvolvendo software de ponta a ponta.",
       deliveriesLabel: "Principais Entregas:",
       items: [
         {
           company: "GCB Investimentos",
-          role: "Full Stack Developer",
+          role: "Engenheiro de Software & Front-End",
           period: "2026 - Atual",
-          description: "Desenvolvimento e evolução de sistemas financeiros de alta disponibilidade e microserviços.",
+          description: "Desenvolvimento e evolução de plataformas financeiras de alta disponibilidade e microsserviços.",
           achievements: [
             "Arquitetura de microsserviços com NestJS, Prisma e PostgreSQL",
-            "Deploy e monitoramento de serviços em AWS (Amplify, ECS, S3, EventBridge)",
+            "Deploy e monitoramento de serviços na AWS (Amplify, ECS, S3, EventBridge)",
             "Criação de interfaces reativas em React e Vite para investidores"
           ]
         },
@@ -499,7 +511,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
           period: "2025 - Atual",
           description: "Liderança técnica e desenvolvimento 100% autônomo do produto SaaS multi-tenant.",
           achievements: [
-            "Modelagem de dados NoSQL e regras avançadas de segurança RBAC no Firebase",
+            "Modelagem e arquitetura de dados em SQL e NoSQL, com regras avançadas de segurança RBAC",
             "Integração de pagamentos com webhook automatizado do Mercado Pago",
             "Implementação da camada PWA aumentando a retenção móvel dos usuários"
           ]
@@ -511,7 +523,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
           description: "Concepção e construção de dashboard industrial para controle operacional corporativo.",
           achievements: [
             "Processamento otimizado de relatórios em tempo real com PapaParse e Recharts",
-            "Automação de rotinas com Cron Jobs em Firebase Functions",
+            "Automação de rotinas com Cron Jobs e Cloud Functions",
             "Redução de 40% no tempo de emissão de relatórios de inventário"
           ]
         },
@@ -617,7 +629,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
       pills: [
         "Google Tag Manager & Meta Pixel",
         "Mobile-First & PWA",
-        "Relational & NoSQL Databases",
+        "SQL & NoSQL Databases",
         "AI Engineering"
       ],
       ctaPrimaryWhatsapp: "Start Project on WhatsApp",
@@ -629,8 +641,19 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
       metricTrackingTitle: "GTM & Pixel",
       metricTrackingDesc: "Tracking & Analytics",
       metricExpTitle: "+2 Years",
-      metricExpDesc: "Web Dev Experience",
-      stackTitle: "Core Stack & Tools"
+      metricExpDesc: "Full-Stack Dev",
+      stackTitle: "Core Stack & Tools",
+      stackItems: [
+        "React 19",
+        "Vite",
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "SQL",
+        "NoSQL",
+        "PWA",
+        "Integrated AI"
+      ]
     },
     services: {
       badge: "Custom Solutions",
@@ -644,13 +667,13 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
           badge: "Scale & Product",
           title: "Web Apps SaaS, SPAs & CRMs",
           subtitle: "Complete platforms to monetize your digital business",
-          description: "Development of robust web platforms with secure authentication, payment gateways (Mercado Pago, Stripe), real-time dashboards, and Role-Based Access Control (RBAC).",
+          description: "Development of robust web platforms with secure authentication, payment gateways (Mercado Pago, Stripe), real-time dashboards, RBAC, and robust SQL & NoSQL data architecture.",
           benefits: [
             "Scalable architecture ready for thousands of concurrent users",
             "Data security and GDPR/LGPD compliance",
             "Intelligent management dashboards with charts and exportable reports"
           ],
-          deliverables: ["Node.js & NestJS", "PostgreSQL & Supabase", "AWS & Google Cloud (GCP)", "Firebase & Gateways"]
+          deliverables: ["Node.js & NestJS", "SQL Databases", "NoSQL Databases", "AWS & GCP / Gateways"]
         },
         landing: {
           badge: "Instant Conversion",
@@ -746,7 +769,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
           title: "A&N Agendamentos",
           categoryLabel: "Multi-tenant SaaS & PWA",
           description: "Complete scheduling and commercial management ecosystem connecting customers, establishments, and staff.",
-          fullDescription: "Built from scratch as a lightweight, complete solution for salons, barbershops, and clinics. Features 3 RBAC-segregated views: Client Panel (instant bookings), Business Dashboard (financials & staff management), and Specialist Workspace (individual calendar). Full PWA and Mercado Pago payment support.",
+          fullDescription: "Built from scratch as a lightweight, complete solution for salons, barbershops, and clinics. Features 3 RBAC-segregated views: Client Panel (instant bookings), Business Dashboard (financials & staff management), and Specialist Workspace (individual calendar). Full PWA and Mercado Pago payment gateway support.",
           features: [
             "Three role-segregated access levels (RBAC)",
             "Integrated checkout with instant PIX and credit card payments",
@@ -784,7 +807,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
           description: "Unified scheduling, patient/student records, and financial management for independent professionals.",
           fullDescription: "Tailored for psychologists, personal trainers, and consultants. Provides medical/session record management, attendance tracking, and monthly revenue monitoring.",
           features: [
-            "Secure relational database with Supabase (RLS)",
+            "Secure SQL database architecture with Row Level Security (RLS)",
             "Dynamic calendar with quick rescheduling capabilities",
             "Financial tracking for pending payments"
           ]
@@ -848,7 +871,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
           period: "2025 - Present",
           description: "Technical leadership and 100% autonomous development of a multi-tenant SaaS product.",
           achievements: [
-            "NoSQL data modeling and advanced RBAC security rules in Firebase",
+            "SQL and NoSQL data modeling and architecture with advanced RBAC security rules",
             "Payment gateway integration with Mercado Pago automated webhooks",
             "Implementation of PWA layer boosting user mobile retention"
           ]
@@ -860,7 +883,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
           description: "Architecting and building an industrial corporate dashboard for operational management.",
           achievements: [
             "Optimized real-time report processing with PapaParse and Recharts",
-            "Routine automation using Cron Jobs in Firebase Functions",
+            "Routine automation using Cron Jobs and Cloud Functions",
             "40% reduction in inventory report generation time"
           ]
         },

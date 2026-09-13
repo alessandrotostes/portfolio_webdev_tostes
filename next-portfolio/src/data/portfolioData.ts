@@ -56,13 +56,13 @@ export const SERVICES: Service[] = [
     badge: "Escala & Produto",
     title: "Web Apps SaaS, SPAs & CRMs",
     subtitle: "Sistemas completos para rentabilizar seu negócio digital",
-    description: "Desenvolvimento de plataformas web robustas com autenticação segura, gateways de pagamento (Mercado Pago, Stripe), dashboards em tempo real e segregação de permissões de usuário (RBAC).",
+    description: "Desenvolvimento de plataformas web robustas com autenticação segura, gateways de pagamento (Mercado Pago, Stripe), dashboards em tempo real, segregação de permissões (RBAC) e arquitetura de dados em SQL e NoSQL.",
     benefits: [
       "Arquitetura escalável pronta para milhares de usuários simultâneos",
       "Segurança de dados e conformidade com LGPD",
       "Painéis gerenciais inteligentes com gráficos e relatórios exportáveis"
     ],
-    deliverables: ["Node.js & NestJS", "PostgreSQL & Supabase", "AWS & Google Cloud (GCP)", "Firebase & Gateways"],
+    deliverables: ["Node.js & NestJS", "Bancos de Dados SQL", "Bancos de Dados NoSQL", "AWS & GCP / Gateways"],
     gradient: "from-sky-500 to-indigo-600"
   },
   {
@@ -119,9 +119,9 @@ export const PROJECTS: Project[] = [
     category: "saas",
     categoryLabel: "SaaS Multi-tenant & PWA",
     description: "Ecossistema completo de agendamentos e gestão comercial conectando clientes, estabelecimentos e profissionais.",
-    fullDescription: "Desenvolvido do zero para ser uma solução leve e completa para salões, barbearias e clínicas. Possui 3 visões segregadas via RBAC: Painel do Cliente (para reserva em segundos), Painel do Estabelecimento (gestão financeira e de equipe) e Painel do Profissional (agenda individual). Suporta PWA e cobranças via Mercado Pago.",
-    image: "/img/gestaowebapp.webp",
-    tags: ["Next.js", "Firebase", "Node.js", "PWA", "Mercado Pago"],
+    fullDescription: "Desenvolvido do zero para ser uma solução leve e completa para salões, barbearias e clínicas. Possui 3 visões segregadas via RBAC: Painel do Cliente (para reserva em segundos), Painel do Estabelecimento (gestão financeira e de equipe) e Painel do Profissional (agenda individual). Suporta PWA e cobranças via gateway de pagamento do Mercado Pago.",
+    image: "/img/aenagendamentos.png",
+    tags: ["Next.js", "NoSQL", "Node.js", "PWA", "Mercado Pago"],
     features: [
       "Três níveis de acesso segregados por função (RBAC)",
       "Checkout integrado com pagamentos via PIX e cartão",
@@ -139,7 +139,7 @@ export const PROJECTS: Project[] = [
     description: "Sistema de gestão industrial para controle de produção, manutenção e inventário com dados em tempo real.",
     fullDescription: "Desenvolvido para gerenciar a operação complexa do setor de óleo e gás. Oferece visualização clara do inventário de tanques, agendas de manutenção preventiva e relatórios estatísticos com gráficos interativos.",
     image: "/img/petroleowebapp.webp",
-    tags: ["React", "Firebase Functions", "Node.js", "Recharts", "PapaParse"],
+    tags: ["React", "Cloud Functions", "Node.js", "Recharts", "PapaParse"],
     features: [
       "Módulos de Produção, Manutenção e Inventário",
       "Gráficos estatísticos interativos em tempo real",
@@ -156,7 +156,7 @@ export const PROJECTS: Project[] = [
     description: "Plataforma para gestão financeira diária, controle de despesas e metas de economia com gráficos interativos.",
     fullDescription: "Aplicação PWA responsiva projetada para acompanhamento financeiro instantâneo. Conta com categorização inteligente de gastos, suporte a metas mensais e dados criptografados por usuário.",
     image: "/img/gestaomensal.webp",
-    tags: ["React", "Firebase Auth", "Firestore", "Chart.js", "PWA"],
+    tags: ["React", "NoSQL", "Chart.js", "PWA", "Tailwind CSS"],
     features: [
       "Autenticação individual segura",
       "Gráficos de pizza e barras para evolução mensal",
@@ -174,9 +174,9 @@ export const PROJECTS: Project[] = [
     description: "Sistema para profissionais autônomos gerenciarem agendas, pacientes/alunos e finanças de forma unificada.",
     fullDescription: "Solução desenhada para psicólogos, personal trainers e consultores. Oferece controle de prontuários/fichas, confirmação de presença e acompanhamento de receita mensal.",
     image: "/img/gestaowebapp.webp",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Radix UI"],
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "SQL", "Radix UI"],
     features: [
-      "Banco de dados relacional seguro com Supabase (RLS)",
+      "Banco de dados SQL com regras avançadas de segurança (RLS)",
       "Agenda dinâmica com suporte a remarcação rápida",
       "Controle financeiro de recebimentos pendentes"
     ],
@@ -254,11 +254,11 @@ export const EXPERIENCES: Experience[] = [
     period: "2025 - Atual",
     description: "Liderança técnica e desenvolvimento 100% autônomo do produto SaaS multi-tenant.",
     achievements: [
-      "Modelagem de dados NoSQL e regras avançadas de segurança RBAC no Firebase",
+      "Modelagem e arquitetura de dados em SQL e NoSQL, com regras avançadas de segurança RBAC",
       "Integração de pagamentos com webhook automatizado do Mercado Pago",
       "Implementação da camada PWA aumentando a retenção móvel dos usuários"
     ],
-    techs: ["Next.js/React", "Node.js", "Firebase Auth/Firestore", "GCP", "Mercado Pago API"]
+    techs: ["Next.js/React", "Node.js", "SQL & NoSQL", "GCP", "Mercado Pago API"]
   },
   {
     company: "ERP Petróleo & Gás",
@@ -267,10 +267,10 @@ export const EXPERIENCES: Experience[] = [
     description: "Concepção e construção de dashboard industrial para controle operacional corporativo.",
     achievements: [
       "Processamento otimizado de relatórios em tempo real com PapaParse e Recharts",
-      "Automação de rotinas com Cron Jobs em Firebase Functions",
+      "Automação de rotinas com Cron Jobs e Cloud Functions",
       "Redução de 40% no tempo de emissão de relatórios de inventário"
     ],
-    techs: ["React", "Firebase Functions", "Node.js", "Cron Jobs", "Recharts"]
+    techs: ["React", "Cloud Functions", "Node.js", "Cron Jobs", "Recharts"]
   },
   {
     company: "Consultor Front-End & Otimização",
@@ -288,7 +288,7 @@ export const EXPERIENCES: Experience[] = [
 
 export const TECH_ARSENAL = {
   frontend: ["React 19", "Vite", "Next.js", "TypeScript 5", "HTML5/CSS3", "Tailwind CSS", "Lucide Icons", "TanStack Query", "Redux Toolkit"],
-  backend: ["Node.js", "NestJS", "PostgreSQL", "Google Cloud (GCP)", "AWS (S3/ECS/Amplify)", "Firebase", "Supabase", "Prisma ORM", "Redis"],
+  backend: ["Node.js", "NestJS", "Bancos SQL", "Bancos NoSQL", "PostgreSQL", "AWS (S3/ECS/Amplify)", "Google Cloud (GCP)", "Prisma ORM", "Redis"],
   quality: ["Jest", "Vitest", "Playwright", "Docker", "GitHub Actions", "ESLint", "GTM / Meta Pixel / GA4"],
   architecture: ["Clean Architecture", "SOLID", "Princípios DRY & KISS", "Design Patterns (GoF)", "RBAC", "OAuth 2.0 / JWT", "Zod", "Webhooks", "Microservices"],
   ai: ["Claude Code", "AGY CLI", "Context Engineering", "Antigravity", "Gemini API", "Prompt Engineering", "RAG"]

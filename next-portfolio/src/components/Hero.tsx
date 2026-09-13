@@ -148,7 +148,7 @@ export const Hero: React.FC = () => {
               <div className="space-y-3">
                 <span className="text-xs font-mono text-slate-400 uppercase tracking-wider block">{t.hero.stackTitle}</span>
                 <div className="flex flex-wrap gap-2">
-                  {["React 19", "Vite", "Next.js", "TypeScript", "Node.js", "Firebase", "Supabase", "PWA", "IA Integrada"].map((tech) => (
+                  {t.hero.stackItems.map((tech) => (
                     <span key={tech} className="px-2.5 py-1 rounded-md bg-slate-800/60 border border-slate-700/50 text-xs font-medium text-slate-300">
                       {tech}
                     </span>
