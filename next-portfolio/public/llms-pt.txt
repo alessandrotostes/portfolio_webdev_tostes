@@ -1,0 +1,38 @@
+# Alessandro Tostes - Desenvolvedor Web Full-Stack & Engenheiro de Software
+
+> Desenvolvedor Web Full-Stack e Engenheiro de Software especializado em Web Apps SaaS, Landing Pages de alta conversão, Progressive Web Apps (PWAs) e soluções com Inteligência Artificial. Baseado em Ribeirão Preto (SP), com atendimento presencial e remoto para empresas e clientes em todo o Brasil e no exterior.
+
+## Informações Gerais
+- Nome: Alessandro Tostes
+- Função / Título: Desenvolvedor Web Full-Stack & Programador
+- Localização Base: Ribeirão Preto - SP, Brasil
+- Regiões Atendidas: Ribeirão Preto e Região Metropolitana (presencial/remoto), São Paulo, todo o Brasil e Internacional (100% remoto)
+- Website Oficial: https://www.tostesdev.com/
+- E-mail: alessandrotostesarruda@gmail.com
+- Telefone / WhatsApp: +55 (16) 99764-3604
+- GitHub: https://github.com/alessandrotostes
+- LinkedIn: https://www.linkedin.com/in/alessandro-tostes-940972242/
+- Idiomas: Português (Nativo), Inglês (Profissional)
+
+## Serviços Prestados
+- **Desenvolvimento de Web Apps SaaS & Plataformas**: Criação de softwares como serviço (SaaS), CRMs, ERPs, painéis administrativos e sistemas web escaláveis com autenticação segura (RBAC), bancos de dados relacionais e integração com gateways de pagamento (Stripe, Mercado Pago).
+- **Landing Pages de Alta Conversão**: Páginas ultrarrápidas, nota máxima no Google PageSpeed Insights, SEO técnico avançado, copywriting focado em conversão e rastreamento completo com Google Tag Manager (GTM), GA4 e Meta Pixel.
+- **Progressive Web Apps (PWA)**: Soluções mobile modernas que funcionam direto no navegador, instaláveis na tela inicial do celular sem taxas de lojas da Apple/Google, com funcionamento offline e notificações.
+- **Automações de Negócio & Engenharia de IA**: Integração de LLMs (OpenAI, Anthropic), automação de fluxos operacionais, chatbots inteligentes para suporte/vendas e processamento inteligente de dados.
+- **Consultoria & Otimização Web**: Auditoria de performance, melhorias de SEO On-Page/Técnico, modernização de código legado e implementação de boas práticas de segurança.
+
+## Stack Tecnológica
+- **Front-End**: React 19, TypeScript, Vite, Next.js, Tailwind CSS v4, Lucide Icons, HTML5 Semântico, CSS3 Moderno.
+- **Back-End & APIs**: Node.js, Express, Next.js API Routes, RESTful APIs, Webhooks.
+- **Bancos de Dados**: SQL e NoSQL (utilizando tanto Supabase quanto Firebase em ambos os modelos relacionais e não-relacionais, além de PostgreSQL, MySQL, Redis e MongoDB).
+- **DevOps, CI/CD & Deploy**: GitHub Actions, Git, Hostinger FTPS, Docker, Vercel, Cloudflare.
+- **Analytics, Tracking & SEO**: Google Tag Manager (GTM), Google Analytics 4, Meta Pixel, Schema.org JSON-LD, Metatags OpenGraph/Twitter/Geotargeting.
+
+## Alcance Geográfico & Modelo de Contratação
+- **Ribeirão Preto e Região (SP)**: Atendimento focado para empresas, indústrias, comércios e startups locais de Ribeirão Preto, Sertãozinho, Cravinhos, Franca e Araraquara.
+- **Brasil e Global (Remoto)**: Atendimento ágil e estruturado via Google Meet, WhatsApp, Slack e Notion para clientes em qualquer estado do Brasil e no exterior (Estados Unidos, Europa, América Latina).
+
+## Contato e Solicitação de Orçamento
+- **WhatsApp**: https://wa.me/5516997643604?text=Ol%C3%A1%20Alessandro,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20um%20or%C3%A7amento!
+- **E-mail**: alessandrotostesarruda@gmail.com
+- **Proposta Técnica**: Avaliação técnica detalhada e estimativa sob medida com prazos e entregáveis transparentes.

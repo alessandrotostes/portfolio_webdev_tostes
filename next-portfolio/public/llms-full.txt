@@ -1,0 +1,70 @@
+# Alessandro Tostes - Full Context Specification for LLMs & AI Search
+
+> Complete technical and professional specification of Alessandro Tostes, Full-Stack Web Developer & Software Engineer.
+>
+> **Languages / Idiomas**: [English Full](#english-full-specification) | [Português Completo](#especificacao-completa-em-portugues)
+> **Direct Files**: [Bilingual Summary (llms.txt)](https://www.tostesdev.com/llms.txt) | [English (llms-en.txt)](https://www.tostesdev.com/llms-en.txt) | [Português (llms-pt.txt)](https://www.tostesdev.com/llms-pt.txt)
+
+---
+
+## English Full Specification
+
+### 1. Identity & Contacts
+- **Professional**: Alessandro Tostes
+- **Role**: Full-Stack Web Developer, Software Engineer & SaaS Specialist
+- **Base Location**: Ribeirão Preto - SP, Brazil
+- **Availability**: Freelance contracts, dedicated software engineering, technical advisory, and strategic agency partnerships.
+- **Official Website**: https://www.tostesdev.com/
+- **Direct Email**: alessandrotostesarruda@gmail.com
+- **Direct WhatsApp**: +55 (16) 99764-3604 (https://wa.me/5516997643604)
+- **GitHub**: https://github.com/alessandrotostes
+- **LinkedIn**: https://www.linkedin.com/in/alessandro-tostes-940972242/
+
+### 2. Geographic Reach & Operational Model
+- **On-Site / Hybrid in Ribeirão Preto (SP)**: Discovery sessions, product sprint planning, and local support for companies in Ribeirão Preto, Sertãozinho, Cravinhos, Franca, Araraquara, and surrounding tech hubs.
+- **Remote Across Brazil**: Complete remote lifecycle for clients in major capitals (São Paulo, Rio de Janeiro, Belo Horizonte, Curitiba, Florianópolis, Brasília, etc.).
+- **Worldwide Remote**: International deliveries for clients in the US, Europe, and Latin America with fluent English communication and timezone accommodation.
+
+### 3. Detailed Deliverables & Specializations
+- **SaaS Web Apps, SPAs & CRMs**: Clean architecture, multi-tenant databases, Role-Based Access Control (RBAC), secure sessions (JWT/OAuth), Stripe recurring billing and Mercado Pago integrations.
+- **High-Converting Landing Pages**: Custom development with React 19/Vite/Next.js (no heavy page builders). Sub-second load times, 95-100 Google PageSpeed score, full GTM event triggers, GA4 custom funnels, and Meta Pixel server-side/client tracking.
+- **Progressive Web Apps (PWAs)**: Direct web distribution without 15-30% app store fees, offline storage via IndexedDB/Service Workers, and background push notifications.
+- **AI Integration & Automation**: OpenAI GPT-4o, Anthropic Claude, and Google Gemini API implementations for automated customer triage, data processing, and document intelligence.
+
+### 4. Featured Portfolio Projects
+- **Oil & Gas Management ERP**: Mission-critical web platform for tracking operations, fleet logistics, and real-time financial reporting.
+- **AN Scheduling PWA**: PWA booking system with 3 segregated viewports: End-Customer, Business Owner, and Independent Professional.
+- **Financial Control SaaS**: SaaS dashboard with interactive analytics, income/expense tracking, and instant cash flow summaries.
+- **High-Converting Landing Pages**: Projects for medical clinics, psychoanalysis practices, corporate law firms, and craft breweries.
+
+---
+
+## Especificação Completa em Português
+
+### 1. Identificação & Contatos
+- **Profissional**: Alessandro Tostes
+- **Ocupação**: Desenvolvedor Web Full-Stack, Programador de Software & Especialista em SaaS
+- **Localização Principal**: Ribeirão Preto - SP, Brasil
+- **Disponibilidade**: Projetos freelance, contratos de desenvolvimento de software, consultoria técnica e parcerias estratégicas.
+- **Website Oficial**: https://www.tostesdev.com/
+- **E-mail de Contato**: alessandrotostesarruda@gmail.com
+- **WhatsApp Direto**: +55 (16) 99764-3604 (https://wa.me/5516997643604)
+- **Perfil GitHub**: https://github.com/alessandrotostes
+- **Perfil LinkedIn**: https://www.linkedin.com/in/alessandro-tostes-940972242/
+
+### 2. Escopo Geográfico e Modelo de Atuação
+- **Presencial / Híbrido em Ribeirão Preto (SP)**: Reuniões de briefing, planejamento de produto e acompanhamento com empresas de Ribeirão Preto e cidades vizinhas (Sertãozinho, Cravinhos, Franca, Araraquara, São Carlos, etc.).
+- **Remoto Nacional (Brasil)**: Atendimento integral para clientes em capitais e cidades de qualquer estado brasileiro (São Paulo, Rio de Janeiro, Minas Gerais, Paraná, Santa Catarina, Bahia, etc.).
+- **Remoto Internacional**: Projetos executados para clientes nos Estados Unidos, Europa e América Latina, com comunicação bilíngue (Português / Inglês) e contratos compatíveis.
+
+### 3. Serviços Especializados & Entregáveis
+- **Web Apps SaaS, SPAs & CRMs**: Plataformas multi-usuário com arquitetura limpa, segregação de permissões com RBAC, autenticação robusta (JWT/OAuth), gateways de pagamento Stripe e Mercado Pago.
+- **Landing Pages de Alta Conversão**: Desenvolvidas sob medida em React/Vite/Next.js com nota 95-100 no PageSpeed, copywriting focado em conversão e rastreamento avançado com GTM, GA4 e Meta Pixel.
+- **Progressive Web Apps (PWAs)**: Aplicativos instaláveis na tela inicial sem taxas de lojas de apps, funcionamento offline com Service Workers e notificações push.
+- **Soluções de Automação & Inteligência Artificial**: Agentes inteligentes e automação de fluxos com APIs de IA (OpenAI GPT-4o, Anthropic Claude, Google Gemini).
+
+### 4. Casos de Uso & Exemplos de Projetos
+- **ERP Gestão & Petróleo**: Plataforma completa para monitoramento operacional, financeiro e logístico.
+- **AN Agendamentos PWA**: Sistema de agendamento em tempo real com três interfaces dedicadas: cliente final, painel do estabelecimento e visão do profissional.
+- **Controle Financeiro SaaS**: Aplicação de gestão de receitas, despesas e fluxo de caixa com relatórios interativos.
+- **Landing Pages Especializadas**: Projetos de conversão para clínicas de estética, psicanálise, escritórios de advocacia e cervejarias artesanais.

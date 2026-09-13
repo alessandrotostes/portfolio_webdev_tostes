@@ -1,0 +1,82 @@
+# Alessandro Tostes - Full-Stack Web Developer & Software Engineer
+
+> Full-Stack Web Developer and Software Engineer specializing in SaaS Web Apps, High-converting Landing Pages, Progressive Web Apps (PWAs), and Artificial Intelligence integrations. Based in Ribeirão Preto (SP, Brazil), providing on-site and remote development worldwide.
+>
+> **Languages / Idiomas**: [English Version](#english-version) | [Versão em Português](#versao-em-portugues)
+> **Direct Files**: [English (llms-en.txt)](https://www.tostesdev.com/llms-en.txt) | [Português (llms-pt.txt)](https://www.tostesdev.com/llms-pt.txt) | [Full Specs (llms-full.txt)](https://www.tostesdev.com/llms-full.txt)
+
+---
+
+## English Version
+
+### General Information
+- **Name**: Alessandro Tostes
+- **Role / Title**: Full-Stack Web Developer & Software Engineer
+- **Base Location**: Ribeirão Preto - SP, Brazil
+- **Target Reach**: Ribeirão Preto & Metropolitan Area (On-site/Hybrid), Entire Brazil & Worldwide (100% Remote)
+- **Official Website**: https://www.tostesdev.com/
+- **Email**: alessandrotostesarruda@gmail.com
+- **Phone / WhatsApp**: +55 (16) 99764-3604
+- **GitHub**: https://github.com/alessandrotostes
+- **LinkedIn**: https://www.linkedin.com/in/alessandro-tostes-940972242/
+- **Spoken Languages**: Portuguese (Native), English (Professional Working Proficiency)
+
+### Core Services
+1. **SaaS Web Apps & Custom Platforms**: Building production-ready Software as a Service (SaaS), CRMs, ERPs, admin dashboards, and scalable web platforms with secure authentication (RBAC), relational databases, and payment gateway integrations (Stripe, Mercado Pago).
+2. **High-Converting Landing Pages**: Ultra-fast web pages, 95-100 score on Google PageSpeed Insights, technical SEO, high-conversion copywriting, and complete tracking with Google Tag Manager (GTM), GA4, and Meta Pixel.
+3. **Progressive Web Apps (PWAs)**: Modern web applications installable directly onto mobile home screens without Apple/Google app store fees, featuring offline capabilities and push notifications.
+4. **Business Automation & AI Engineering**: LLM integrations (OpenAI GPT-4o, Anthropic Claude, Google Gemini), automated operational pipelines, smart sales/support chatbots, and intelligent data processing.
+5. **Web Performance & Technical SEO**: Core Web Vitals audit, technical on-page SEO, architecture modernization, and web security best practices.
+
+### Technology Stack
+- **Front-End**: React 19, TypeScript, Vite, Next.js, Tailwind CSS v4, Lucide Icons.
+- **Back-End & APIs**: Node.js, Express, Next.js API Routes, RESTful APIs, Webhooks.
+- **Databases**: SQL and NoSQL (leveraging both Supabase and Firebase across both relational and non-relational database models, plus PostgreSQL, MySQL, Redis, and MongoDB).
+- **DevOps, CI/CD & Hosting**: GitHub Actions, Git, Hostinger FTPS, Docker, Vercel, Cloudflare.
+- **Analytics & Tracking**: Google Tag Manager (GTM), Google Analytics 4, Meta Pixel, Schema.org JSON-LD.
+
+### Geographic Reach
+- **Local (Ribeirão Preto & Region, SP)**: On-site and hybrid meetings for local businesses, industries, retail, and tech startups in Ribeirão Preto, Sertãozinho, Cravinhos, Franca, and Araraquara.
+- **Brazil & Worldwide (Remote)**: Agile remote delivery via Google Meet, WhatsApp, Slack, and Notion for clients across Brazil, North America, Europe, and Latin America.
+
+### Contact & Proposal Requests
+- **WhatsApp**: https://wa.me/5516997643604
+- **Email**: alessandrotostesarruda@gmail.com
+
+---
+
+## Versão em Português
+
+### Informações Gerais
+- **Nome**: Alessandro Tostes
+- **Função / Título**: Desenvolvedor Web Full-Stack & Programador
+- **Localização Base**: Ribeirão Preto - SP, Brasil
+- **Regiões Atendidas**: Ribeirão Preto e Região Metropolitana (presencial/remoto), São Paulo, todo o Brasil e Internacional (100% remoto)
+- **Website Oficial**: https://www.tostesdev.com/
+- **E-mail**: alessandrotostesarruda@gmail.com
+- **Telefone / WhatsApp**: +55 (16) 99764-3604
+- **GitHub**: https://github.com/alessandrotostes
+- **LinkedIn**: https://www.linkedin.com/in/alessandro-tostes-940972242/
+- **Idiomas**: Português (Nativo), Inglês (Profissional)
+
+### Serviços Prestados
+1. **Desenvolvimento de Web Apps SaaS & Plataformas**: Criação de softwares como serviço (SaaS), CRMs, ERPs, painéis administrativos e sistemas web escaláveis com autenticação segura (RBAC), bancos de dados relacionais e integração com gateways de pagamento (Stripe, Mercado Pago).
+2. **Landing Pages de Alta Conversão**: Páginas ultrarrápidas, nota máxima no Google PageSpeed Insights, SEO técnico avançado, copywriting focado em conversão e rastreamento completo com Google Tag Manager (GTM), GA4 e Meta Pixel.
+3. **Progressive Web Apps (PWA)**: Soluções mobile modernas que funcionam direto no navegador, instaláveis na tela inicial do celular sem taxas de lojas da Apple/Google, com funcionamento offline e notificações.
+4. **Automações de Negócio & Engenharia de IA**: Integração de LLMs (OpenAI, Anthropic), automação de fluxos operacionais, chatbots inteligentes para suporte/vendas e processamento inteligente de dados.
+5. **Consultoria & Otimização Web**: Auditoria de performance, melhorias de SEO On-Page/Técnico, modernização de código legado e implementação de boas práticas de segurança.
+
+### Stack Tecnológica
+- **Front-End**: React 19, TypeScript, Vite, Next.js, Tailwind CSS v4, Lucide Icons, HTML5 Semântico, CSS3 Moderno.
+- **Back-End & APIs**: Node.js, Express, Next.js API Routes, RESTful APIs, Webhooks.
+- **Bancos de Dados**: SQL e NoSQL (utilizando tanto Supabase quanto Firebase em ambos os modelos relacionais e não-relacionais, além de PostgreSQL, MySQL, Redis e MongoDB).
+- **DevOps, CI/CD & Deploy**: GitHub Actions, Git, Hostinger FTPS, Docker, Vercel, Cloudflare.
+- **Analytics, Tracking & SEO**: Google Tag Manager (GTM), Google Analytics 4, Meta Pixel, Schema.org JSON-LD, Metatags OpenGraph/Twitter/Geotargeting.
+
+### Alcance Geográfico & Modelo de Contratação
+- **Ribeirão Preto e Região (SP)**: Atendimento focado para empresas, indústrias, comércios e startups locais de Ribeirão Preto, Sertãozinho, Cravinhos, Franca e Araraquara.
+- **Brasil e Global (Remoto)**: Atendimento ágil e estruturado via Google Meet, WhatsApp, Slack e Notion para clientes em qualquer estado do Brasil e no exterior (Estados Unidos, Europa, América Latina).
+
+### Contato e Solicitação de Orçamento
+- **WhatsApp**: https://wa.me/5516997643604?text=Ol%C3%A1%20Alessandro,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20um%20or%C3%A7amento!
+- **E-mail**: alessandrotostesarruda@gmail.com

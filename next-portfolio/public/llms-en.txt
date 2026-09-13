@@ -1,0 +1,38 @@
+# Alessandro Tostes - Full-Stack Web Developer & Software Engineer
+
+> Full-Stack Web Developer and Software Engineer specializing in SaaS Web Apps, High-converting Landing Pages, Progressive Web Apps (PWAs), and Artificial Intelligence integrations. Based in Ribeirão Preto (SP, Brazil), providing on-site and remote development for clients across Brazil and worldwide.
+
+## General Information
+- Name: Alessandro Tostes
+- Role / Title: Full-Stack Web Developer & Software Engineer
+- Base Location: Ribeirão Preto - SP, Brazil
+- Target Regions: Ribeirão Preto & Metropolitan Area (On-site/Hybrid), São Paulo, Entire Brazil & Worldwide (100% Remote)
+- Official Website: https://www.tostesdev.com/
+- Email: alessandrotostesarruda@gmail.com
+- Phone / WhatsApp: +55 (16) 99764-3604
+- GitHub: https://github.com/alessandrotostes
+- LinkedIn: https://www.linkedin.com/in/alessandro-tostes-940972242/
+- Spoken Languages: Portuguese (Native), English (Professional Working Proficiency)
+
+## Provided Services
+- **SaaS Web Apps & Platform Development**: Building production-ready Software as a Service (SaaS), CRMs, ERPs, admin dashboards, and scalable web platforms with secure authentication (RBAC), relational databases, and payment gateway integration (Stripe, Mercado Pago).
+- **High-Converting Landing Pages**: Ultra-fast web pages, 95-100 score on Google PageSpeed Insights, technical SEO, high-conversion copywriting, and complete tracking with Google Tag Manager (GTM), GA4, and Meta Pixel.
+- **Progressive Web Apps (PWAs)**: Modern web applications installable directly onto mobile home screens without Apple/Google app store fees, with offline capabilities and push notifications.
+- **Business Automation & AI Engineering**: LLM integrations (OpenAI GPT-4o, Anthropic Claude, Google Gemini), automated operational pipelines, smart sales/support chatbots, and intelligent data processing.
+- **Web Consulting & Performance Optimization**: Core Web Vitals audit, technical on-page SEO, legacy codebase refactoring, and web security best practices.
+
+## Technology Stack
+- **Front-End**: React 19, TypeScript, Vite, Next.js, Tailwind CSS v4, Lucide Icons, Semantic HTML5, Modern CSS3.
+- **Back-End & APIs**: Node.js, Express, Next.js API Routes, RESTful APIs, Webhooks.
+- **Databases**: SQL and NoSQL (leveraging both Supabase and Firebase across both relational and non-relational database models, plus PostgreSQL, MySQL, Redis, and MongoDB).
+- **DevOps, CI/CD & Hosting**: GitHub Actions, Git, Hostinger FTPS, Docker, Vercel, Cloudflare.
+- **Analytics, Tracking & SEO**: Google Tag Manager (GTM), Google Analytics 4, Meta Pixel, Schema.org JSON-LD, OpenGraph/Twitter/Geotargeting metatags.
+
+## Geographic Coverage & Engagement Model
+- **Ribeirão Preto & Region (SP)**: In-person and hybrid meetings for local businesses, industries, retail, and tech startups in Ribeirão Preto, Sertãozinho, Cravinhos, Franca, and Araraquara.
+- **Brazil & Worldwide (Remote)**: Agile remote delivery via Google Meet, WhatsApp, Slack, and Notion for clients across Brazil, the United States, Europe, and Latin America.
+
+## Contact & Proposal Requests
+- **WhatsApp**: https://wa.me/5516997643604
+- **Email**: alessandrotostesarruda@gmail.com
+- **Technical Proposal**: Comprehensive technical assessment and custom estimation with clear timelines and deliverables.
