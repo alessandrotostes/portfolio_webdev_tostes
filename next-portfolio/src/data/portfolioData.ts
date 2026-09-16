@@ -240,17 +240,17 @@ export const EXPERIENCES: Experience[] = [
     company: "GCB Investimentos",
     role: "Full Stack Developer",
     period: "2026 - Atual",
-    description: "Desenvolvimento e evolução de sistemas financeiros de alta disponibilidade e microserviços.",
+    description: "Desenvolvimento e evolução de plataformas internas de alta disponibilidade, arquitetura modular e processamento analítico.",
     achievements: [
-      "Arquitetura de microsserviços com NestJS, Prisma e PostgreSQL",
-      "Deploy e monitoramento de serviços em AWS (Amplify, ECS, S3, EventBridge)",
-      "Criação de interfaces reativas em React e Vite para investidores"
+      "Arquitetura modular em NestJS e Prisma com PostgreSQL (OLTP) e Redshift (OLAP), modelo dimensional e tipagem estrita",
+      "Orquestração de rotinas programadas com schedulers externos (AWS EventBridge), background jobs com Redis/BullMQ (lock distribuído, retry) e deploy na AWS (ECS Fargate, S3)",
+      "Interfaces analíticas reativas em React e TanStack Query, com suíte de testes em Vitest, Testcontainers e Playwright"
     ],
-    techs: ["React", "Vite", "PostgreSQL", "NestJS", "Prisma", "AWS S3/ECS", "EventBridge"]
+    techs: ["NestJS", "React", "TypeScript", "PostgreSQL / Redshift", "Prisma", "AWS (ECS/EventBridge)", "Redis / BullMQ", "Vitest"]
   },
   {
     company: "A&N Agendamentos",
-    role: "Founder & Full Stack Lead",
+    role: "Full Stack Developer",
     period: "2025 - Atual",
     description: "Liderança técnica e desenvolvimento 100% autônomo do produto SaaS multi-tenant.",
     achievements: [
@@ -262,7 +262,7 @@ export const EXPERIENCES: Experience[] = [
   },
   {
     company: "ERP Petróleo & Gás",
-    role: "Lead Developer",
+    role: "Full Stack Developer",
     period: "2024",
     description: "Concepção e construção de dashboard industrial para controle operacional corporativo.",
     achievements: [
@@ -274,7 +274,7 @@ export const EXPERIENCES: Experience[] = [
   },
   {
     company: "Consultor Front-End & Otimização",
-    role: "Autônomo / Freelancer",
+    role: "Consultoria",
     period: "2023 - Atual",
     description: "Consultoria em modernização de código, performance de sites e SEO técnico.",
     achievements: [
@@ -290,7 +290,7 @@ export const TECH_ARSENAL = {
   frontend: ["React 19", "Vite", "Next.js", "TypeScript 5", "HTML5/CSS3", "Tailwind CSS", "Lucide Icons", "TanStack Query", "Redux Toolkit"],
   backend: ["Node.js", "NestJS", "Bancos SQL", "Bancos NoSQL", "PostgreSQL", "AWS (S3/ECS/Amplify)", "Google Cloud (GCP)", "Prisma ORM", "Redis"],
   quality: ["Jest", "Vitest", "Playwright", "Docker", "GitHub Actions", "ESLint", "GTM / Meta Pixel / GA4"],
-  architecture: ["Clean Architecture", "SOLID", "Princípios DRY & KISS", "Design Patterns (GoF)", "RBAC", "OAuth 2.0 / JWT", "Zod", "Webhooks", "Microservices"],
+  architecture: ["Clean Architecture", "SOLID", "Princípios DRY & KISS", "Design Patterns (GoF)", "RBAC", "OAuth 2.0 / JWT", "Zod", "Webhooks", "Arquitetura Modular"],
   ai: ["Claude Code", "AGY CLI", "Context Engineering", "Antigravity", "Gemini API", "Prompt Engineering", "RAG"]
 };
 

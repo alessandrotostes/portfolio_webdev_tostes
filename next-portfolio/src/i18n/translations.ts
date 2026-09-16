@@ -496,18 +496,18 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
       items: [
         {
           company: "GCB Investimentos",
-          role: "Desenvolvedor Full-Stack & Front-End",
+          role: "Desenvolvedor Full-Stack",
           period: "2026 - Atual",
-          description: "Desenvolvimento e evolução de plataformas financeiras de alta disponibilidade e microsserviços.",
+          description: "Desenvolvimento e evolução de plataformas financeiras de alta disponibilidade, arquitetura modular e processamento analítico.",
           achievements: [
-            "Arquitetura de microsserviços com NestJS, Prisma e PostgreSQL",
-            "Deploy e monitoramento de serviços na AWS (Amplify, ECS, S3, EventBridge)",
-            "Criação de interfaces reativas em React e Vite para investidores"
+            "Arquitetura modular em NestJS e Prisma com PostgreSQL (OLTP) e Redshift (OLAP), modelo dimensional e tipagem estrita",
+            "Orquestração de rotinas programadas com schedulers externos (AWS EventBridge), background jobs com Redis/BullMQ (lock distribuído, retry) e deploy na AWS (ECS Fargate, S3)",
+            "Interfaces analíticas reativas em React e TanStack Query, com suíte de testes em Vitest, Testcontainers e Playwright"
           ]
         },
         {
           company: "A&N Agendamentos",
-          role: "Founder & Full Stack Lead",
+          role: "Desenvolvedor Full-Stack",
           period: "2025 - Atual",
           description: "Liderança técnica e desenvolvimento 100% autônomo do produto SaaS multi-tenant.",
           achievements: [
@@ -518,7 +518,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
         },
         {
           company: "ERP Petróleo & Gás",
-          role: "Lead Developer",
+          role: "Desenvolvedor Full-Stack",
           period: "2024",
           description: "Concepção e construção de dashboard industrial para controle operacional corporativo.",
           achievements: [
@@ -529,7 +529,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
         },
         {
           company: "Consultor Front-End & Otimização",
-          role: "Autônomo / Freelancer",
+          role: "Consultoria",
           period: "2023 - Atual",
           description: "Consultoria em modernização de código, performance de sites e SEO técnico.",
           achievements: [
@@ -858,16 +858,16 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
           company: "GCB Investimentos",
           role: "Full Stack Developer",
           period: "2026 - Present",
-          description: "Development and evolution of high-availability financial platforms and microservices.",
+          description: "Development and evolution of high-availability financial platforms, robust modular architecture, and analytical processing.",
           achievements: [
-            "Microservices architecture with NestJS, Prisma, and PostgreSQL",
-            "Service deployment & monitoring on AWS (Amplify, ECS, S3, EventBridge)",
-            "Building reactive investor web applications with React and Vite"
+            "Modular architecture in NestJS and Prisma with PostgreSQL (OLTP) and Redshift (OLAP), dimensional modeling and strict typing",
+            "Orchestration of scheduled tasks with external schedulers (AWS EventBridge), background jobs with Redis/BullMQ (distributed lock, retry), and AWS deployment (ECS Fargate, S3)",
+            "Reactive analytical interfaces in React and TanStack Query, backed by test suites in Vitest, Testcontainers, and Playwright"
           ]
         },
         {
           company: "A&N Agendamentos",
-          role: "Founder & Full Stack Lead",
+          role: "Full Stack Developer",
           period: "2025 - Present",
           description: "Technical leadership and 100% autonomous development of a multi-tenant SaaS product.",
           achievements: [
@@ -878,7 +878,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
         },
         {
           company: "ERP Petróleo & Gás",
-          role: "Lead Developer",
+          role: "Full Stack Developer",
           period: "2024",
           description: "Architecting and building an industrial corporate dashboard for operational management.",
           achievements: [
@@ -889,7 +889,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
         },
         {
           company: "Front-End & Optimization Consultant",
-          role: "Freelance Consultant",
+          role: "Consulting",
           period: "2023 - Present",
           description: "Consulting on code modernization, web performance, and technical SEO.",
           achievements: [
