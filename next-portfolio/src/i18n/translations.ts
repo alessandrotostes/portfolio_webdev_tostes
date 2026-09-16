@@ -355,7 +355,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
     },
     pwaShowcase: {
       badge: "Produto SaaS PWA em Destaque",
-      titlePrefix: "A&N Agendamentos ",
+      titlePrefix: "A&N Agendamentos",
       titleHighlight: "(SaaS Multi-tenant)",
       description: "Uma plataforma de alta tecnologia PWA que elimina a necessidade de publicar em lojas de aplicativos, oferecendo instalação instantânea e navegação em tela cheia.",
       tabsHeader: "Explore as 3 visões do sistema:",
@@ -496,7 +496,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
       items: [
         {
           company: "GCB Investimentos",
-          role: "Engenheiro de Software & Front-End",
+          role: "Desenvolvedor Full-Stack & Front-End",
           period: "2026 - Atual",
           description: "Desenvolvimento e evolução de plataformas financeiras de alta disponibilidade e microsserviços.",
           achievements: [
@@ -556,7 +556,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
     methodology: {
       badge: "Padrões Técnicos Rígidos",
       titlePrefix: "Metodologia de ",
-      titleHighlight: "Engenharia Web",
+      titleHighlight: "Desenvolvimento Web",
       description: "Não é só escrever código: é entregar um produto digital rápido, seguro e estrategicamente desenhado para conversão.",
       qualityGuarantee: "Garantia de Qualidade",
       pillars: [
@@ -715,7 +715,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
     },
     pwaShowcase: {
       badge: "Featured PWA SaaS Product",
-      titlePrefix: "A&N Agendamentos ",
+      titlePrefix: "A&N Agendamentos",
       titleHighlight: "(Multi-tenant SaaS)",
       description: "A high-tech PWA platform that eliminates the need for app store submissions, providing instant installation and immersive full-screen navigation.",
       tabsHeader: "Explore the 3 system views:",
@@ -915,7 +915,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
     },
     methodology: {
       badge: "Strict Technical Standards",
-      titlePrefix: "Web Engineering ",
+      titlePrefix: "Web Development ",
       titleHighlight: "Methodology",
       description: "It's not just writing code: it's delivering a fast, secure digital product strategically engineered for conversion.",
       qualityGuarantee: "Quality Assurance",

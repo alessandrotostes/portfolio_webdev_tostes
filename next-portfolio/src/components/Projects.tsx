@@ -32,24 +32,20 @@ export const Projects: React.FC = () => {
     : PROJECTS.filter(p => p.category === filter);
 
   return (
-    <section id="projects" className="py-12 sm:py-20 lg:py-24 scroll-mt-20 relative bg-slate-950/90 border-t border-slate-800/50 overflow-hidden w-full max-w-full">
-      
-      {/* Decorative Glow (Desktop Only) */}
-      <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] max-w-full bg-indigo-500/5 rounded-full blur-[150px] pointer-events-none" />
-
+    <section id="projects" className="py-12 sm:py-20 lg:py-24 scroll-mt-20 relative bg-white border-t border-slate-200/80 overflow-hidden w-full max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-semibold text-cyan-300 mb-4">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-800 mb-4 shadow-xs">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
             <span>{t.projects.badge}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-100 tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
             {t.projects.titlePrefix}
             <span className="gradient-text-cyan">{t.projects.titleHighlight}</span>
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
+          <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
             {t.projects.description}
           </p>
         </div>
@@ -62,8 +58,8 @@ export const Projects: React.FC = () => {
               onClick={() => setFilter(btn.value as any)}
               className={`px-4 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                 filter === btn.value
-                  ? 'bg-gradient-to-r from-cyan-500 to-indigo-600 text-slate-950 shadow-md shadow-cyan-500/20'
-                  : 'bg-slate-900 text-slate-400 border border-slate-800 hover:text-slate-200 hover:border-slate-700'
+                  ? 'bg-emerald-600 text-white shadow-xs'
+                  : 'bg-slate-50 text-slate-700 border border-slate-200 hover:text-slate-900 hover:border-slate-300 shadow-2xs'
               }`}
             >
               {btn.label}
@@ -84,24 +80,24 @@ export const Projects: React.FC = () => {
             return (
               <div
                 key={project.id}
-                className="glass-card glass-card-hover rounded-2xl border border-slate-800/90 overflow-hidden flex flex-col justify-between group"
+                className="glass-card glass-card-hover rounded-2xl border border-slate-200/90 overflow-hidden flex flex-col justify-between group bg-white shadow-xs"
               >
                 <div>
                   {/* Image Banner */}
-                  <div className="relative aspect-video w-full overflow-hidden bg-slate-900 border-b border-slate-800">
+                  <div className="relative aspect-video w-full overflow-hidden bg-slate-100 border-b border-slate-100">
                     <img
                       src={project.image}
                       alt={title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute top-3 left-3">
-                      <span className="px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-md border border-slate-800 text-[11px] font-mono text-cyan-300">
+                      <span className="px-2.5 py-1 rounded-md bg-white/95 backdrop-blur-md border border-slate-200 text-[11px] font-mono font-semibold text-slate-800 shadow-2xs">
                         {categoryLabel}
                       </span>
                     </div>
                     {project.isFeatured && (
                       <div className="absolute top-3 right-3">
-                        <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-[10px] font-bold text-emerald-300">
+                        <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 border border-emerald-200 text-[10px] font-bold text-emerald-800">
                           {t.projects.featuredBadge}
                         </span>
                       </div>
@@ -110,17 +106,17 @@ export const Projects: React.FC = () => {
 
                   {/* Card Body */}
                   <div className="p-6">
-                    <h3 className="text-xl font-bold text-slate-100 mb-2 group-hover:text-cyan-300 transition-colors">
+                    <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-emerald-600 transition-colors">
                       {title}
                     </h3>
-                    <p className="text-slate-300 text-xs leading-relaxed mb-4 line-clamp-3">
+                    <p className="text-slate-600 text-xs leading-relaxed mb-4 line-clamp-3">
                       {description}
                     </p>
 
                     {/* Tech Tags */}
                     <div className="flex flex-wrap gap-1.5 mb-4">
                       {project.tags.map((tag) => (
-                        <span key={tag} className="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-[10px] font-mono text-slate-400">
+                        <span key={tag} className="px-2 py-0.5 rounded bg-slate-100 border border-slate-200/80 text-[10px] font-mono font-medium text-slate-600">
                           {tag}
                         </span>
                       ))}
@@ -129,10 +125,10 @@ export const Projects: React.FC = () => {
                 </div>
 
                 {/* Card Footer Actions */}
-                <div className="p-6 pt-0 flex items-center justify-between gap-2 border-t border-slate-800/40 mt-auto">
+                <div className="p-6 pt-0 flex items-center justify-between gap-2 border-t border-slate-100 mt-auto">
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors cursor-pointer"
+                    className="flex items-center gap-1.5 text-xs font-bold text-emerald-600 hover:text-emerald-700 transition-colors cursor-pointer"
                   >
                     <Eye className="w-4 h-4" />
                     <span>{t.projects.viewDetails}</span>
@@ -144,7 +140,7 @@ export const Projects: React.FC = () => {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 text-slate-400 hover:text-slate-100 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 transition-colors"
+                        className="p-2 text-slate-600 hover:text-slate-900 rounded-lg bg-slate-50 border border-slate-200 hover:bg-slate-100 transition-colors"
                         title="Repositório GitHub"
                       >
                         <Github className="w-4 h-4" />
@@ -155,7 +151,7 @@ export const Projects: React.FC = () => {
                         href={project.demoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 text-cyan-400 hover:text-cyan-300 rounded-lg bg-slate-900 border border-slate-800 hover:border-slate-700 transition-colors"
+                        className="p-2 text-emerald-600 hover:text-emerald-700 rounded-lg bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 transition-colors"
                         title="Acessar Projeto"
                       >
                         <ExternalLink className="w-4 h-4" />

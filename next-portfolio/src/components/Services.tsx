@@ -10,29 +10,31 @@ const iconMap = {
   Cpu: Cpu
 };
 
+const pastelColorMap: Record<string, { bg: string; text: string; border: string }> = {
+  saas: { bg: 'bg-emerald-100', text: 'text-emerald-800', border: 'border-emerald-200' },
+  landing: { bg: 'bg-rose-100', text: 'text-rose-800', border: 'border-rose-200' },
+  pwa: { bg: 'bg-sky-100', text: 'text-sky-800', border: 'border-sky-200' },
+  ai: { bg: 'bg-indigo-100', text: 'text-indigo-800', border: 'border-indigo-200' },
+};
+
 export const Services: React.FC = () => {
   const { t, language } = useLanguage();
 
   return (
-    <section id="services" className="py-12 sm:py-20 lg:py-24 scroll-mt-20 relative bg-slate-950/80 border-t border-slate-800/50 overflow-hidden w-full max-w-full">
-      
-      {/* Background Decorative Blur (Desktop Only) */}
-      <div className="hidden md:block absolute top-1/2 left-0 w-80 h-80 max-w-full bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="hidden md:block absolute bottom-0 right-0 w-96 h-96 max-w-full bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none" />
-
+    <section id="services" className="py-12 sm:py-20 lg:py-24 scroll-mt-20 relative bg-white border-t border-slate-200/80 overflow-hidden w-full max-w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-semibold text-cyan-300 mb-4">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-800 mb-4 shadow-xs">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
             <span>{t.services.badge}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-100 tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
             {t.services.titlePrefix}
             <span className="gradient-text-cyan">{t.services.titleHighlight}</span>
           </h2>
-          <p className="text-slate-400 text-base sm:text-lg leading-relaxed">
+          <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
             {t.services.description}
           </p>
         </div>
@@ -42,6 +44,7 @@ export const Services: React.FC = () => {
           {SERVICES.map((service) => {
             const Icon = iconMap[service.iconName];
             const itemTranslation = t.services.items[service.id as keyof typeof t.services.items];
+            const colors = pastelColorMap[service.id] || pastelColorMap.saas;
 
             const serviceTitle = itemTranslation?.title || service.title;
             const serviceSubtitle = itemTranslation?.subtitle || service.subtitle;
@@ -57,38 +60,38 @@ export const Services: React.FC = () => {
             return (
               <div
                 key={service.id}
-                className="glass-card glass-card-hover rounded-2xl p-8 flex flex-col justify-between border border-slate-800/80 group"
+                className="glass-card glass-card-hover rounded-2xl p-8 flex flex-col justify-between border border-slate-200/90 group bg-white shadow-xs"
               >
                 <div>
                   {/* Card Badge & Icon */}
                   <div className="flex items-center justify-between mb-6">
-                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-tr ${service.gradient} flex items-center justify-center text-slate-950 shadow-lg shadow-cyan-500/10 group-hover:scale-110 transition-transform`}>
+                    <div className={`w-14 h-14 rounded-2xl ${colors.bg} ${colors.text} border ${colors.border} flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform`}>
                       <Icon className="w-7 h-7 stroke-[2.2]" />
                     </div>
-                    <span className="px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-xs font-mono font-medium text-slate-300">
+                    <span className="px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-mono font-semibold text-slate-700">
                       {serviceBadge}
                     </span>
                   </div>
 
                   {/* Title & Subtitle */}
-                  <h3 className="text-2xl font-bold text-slate-100 mb-2 group-hover:text-cyan-300 transition-colors">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-2 group-hover:text-emerald-600 transition-colors">
                     {serviceTitle}
                   </h3>
-                  <p className="text-xs font-semibold text-cyan-400 mb-4">
+                  <p className="text-xs font-bold text-emerald-700 mb-4">
                     {serviceSubtitle}
                   </p>
                   
                   {/* Detailed Description */}
-                  <p className="text-slate-300 text-sm leading-relaxed mb-6">
+                  <p className="text-slate-600 text-sm leading-relaxed mb-6">
                     {serviceDesc}
                   </p>
 
                   {/* Key Benefits */}
-                  <div className="space-y-2.5 mb-6 pt-4 border-t border-slate-800/60">
-                    <span className="text-[11px] font-mono text-slate-400 uppercase tracking-wider block">{t.services.benefitsLabel}</span>
+                  <div className="space-y-2.5 mb-6 pt-4 border-t border-slate-100">
+                    <span className="text-[11px] font-mono font-semibold text-slate-400 uppercase tracking-wider block">{t.services.benefitsLabel}</span>
                     {serviceBenefits.map((benefit, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-300">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                      <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-700">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                         <span>{benefit}</span>
                       </div>
                     ))}
@@ -96,10 +99,10 @@ export const Services: React.FC = () => {
                 </div>
 
                 {/* Deliverable Tags & CTA */}
-                <div className="pt-6 border-t border-slate-800/60">
+                <div className="pt-6 border-t border-slate-100">
                   <div className="flex flex-wrap gap-2 mb-6">
                     {serviceDeliverables.map((deliv, idx) => (
-                      <span key={idx} className="px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-[11px] font-medium text-slate-400">
+                      <span key={idx} className="px-2.5 py-1 rounded-md bg-slate-100 border border-slate-200/80 text-[11px] font-medium text-slate-600">
                         {deliv}
                       </span>
                     ))}
@@ -109,7 +112,7 @@ export const Services: React.FC = () => {
                     href={ctaHref}
                     target={language === 'en' ? '_self' : '_blank'}
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-xs font-bold text-cyan-400 group-hover:text-cyan-300 transition-colors"
+                    className="inline-flex items-center gap-2 text-xs font-bold text-emerald-600 hover:text-emerald-700 group-hover:translate-x-0.5 transition-all cursor-pointer"
                   >
                     <span>{t.services.cta}</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
