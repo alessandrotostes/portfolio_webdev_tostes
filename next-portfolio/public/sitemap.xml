@@ -52,6 +52,16 @@
       <image:title>Website &amp; Catálogo Digital - Cervejaria Fratelli</image:title>
       <image:caption>Website moderno e responsivo com catálogo interativo de produtos</image:caption>
     </image:image>
+    <image:image>
+      <image:loc>https://www.tostesdev.com/img/gestaowebapp.webp</image:loc>
+      <image:title>Gestão de Consultas &amp; Aulas - Dashboard Web App</image:title>
+      <image:caption>Dashboard para profissionais autônomos gerenciarem agendas, pacientes e receita mensal</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tostesdev.com/img/gestaomensal.webp</image:loc>
+      <image:title>Controle Financeiro Pessoal - Web App PWA</image:title>
+      <image:caption>Aplicação PWA para gestão financeira diária, orçamento e distribuição de gastos</image:caption>
+    </image:image>
 
     <!-- Videos for Google Search Video Indexer -->
     <video:video>
@@ -73,7 +83,7 @@
     </video:video>
 
     <video:video>
-      <video:thumbnail_loc>https://www.tostesdev.com/img/ia-automation.jpg</video:thumbnail_loc>
+      <video:thumbnail_loc>https://www.tostesdev.com/img/pwa-profissional.jpg</video:thumbnail_loc>
       <video:title>Demonstração PWA - Visão do Profissional</video:title>
       <video:description>Interface do profissional para gestão de agenda, atendimentos e serviços com notificações PWA.</video:description>
       <video:content_loc>https://www.tostesdev.com/video/profissional.mp4</video:content_loc>
