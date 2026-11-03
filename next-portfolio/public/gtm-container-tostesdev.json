@@ -106,11 +106,6 @@
               }
             ]
           }
-        ],
-        "autoEventFilter": [
-          {
-            "type": "ALWAYS_EVALUATE"
-          }
         ]
       },
       {
@@ -134,11 +129,6 @@
                 "value": "mailto:"
               }
             ]
-          }
-        ],
-        "autoEventFilter": [
-          {
-            "type": "ALWAYS_EVALUATE"
           }
         ]
       },
@@ -187,11 +177,6 @@
                 "value": ".*(github\\.com|linkedin\\.com).*"
               }
             ]
-          }
-        ],
-        "autoEventFilter": [
-          {
-            "type": "ALWAYS_EVALUATE"
           }
         ]
       },
@@ -252,7 +237,7 @@
           },
           {
             "type": "TEMPLATE",
-            "key": "measurementId",
+            "key": "measurementIdOverride",
             "value": "{{Const - GA4 ID}}"
           },
           {
@@ -310,7 +295,7 @@
           },
           {
             "type": "TEMPLATE",
-            "key": "measurementId",
+            "key": "measurementIdOverride",
             "value": "{{Const - GA4 ID}}"
           },
           {
@@ -353,7 +338,7 @@
           },
           {
             "type": "TEMPLATE",
-            "key": "measurementId",
+            "key": "measurementIdOverride",
             "value": "{{Const - GA4 ID}}"
           },
           {
@@ -396,7 +381,7 @@
           },
           {
             "type": "TEMPLATE",
-            "key": "measurementId",
+            "key": "measurementIdOverride",
             "value": "{{Const - GA4 ID}}"
           },
           {
@@ -439,7 +424,7 @@
           },
           {
             "type": "TEMPLATE",
-            "key": "measurementId",
+            "key": "measurementIdOverride",
             "value": "{{Const - GA4 ID}}"
           },
           {
@@ -482,7 +467,7 @@
           }
         ],
         "firingTriggerId": [
-          "2147479554"
+          "2147479553"
         ]
       }
     ]
