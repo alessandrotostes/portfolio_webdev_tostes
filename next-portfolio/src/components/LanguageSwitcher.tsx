@@ -18,8 +18,8 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = 
           onClick={() => setLanguage('pt')}
           className={`px-2.5 py-1 text-[11px] font-bold rounded-full transition-all cursor-pointer ${
             language === 'pt'
-              ? 'bg-emerald-600 text-white shadow-xs'
-              : 'text-slate-500 hover:text-slate-900'
+              ? 'bg-emerald-700 text-white shadow-xs'
+              : 'text-slate-600 hover:text-slate-900'
           }`}
           aria-label="Mudar para Português"
         >
@@ -29,8 +29,8 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ className = 
           onClick={() => setLanguage('en')}
           className={`px-2.5 py-1 text-[11px] font-bold rounded-full transition-all cursor-pointer ${
             language === 'en'
-              ? 'bg-emerald-600 text-white shadow-xs'
-              : 'text-slate-500 hover:text-slate-900'
+              ? 'bg-emerald-700 text-white shadow-xs'
+              : 'text-slate-600 hover:text-slate-900'
           }`}
           aria-label="Switch to English"
         >

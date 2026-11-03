@@ -43,7 +43,7 @@ export const Experience: React.FC = () => {
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 pb-4 border-b border-slate-100">
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900">{role}</h3>
+                    <h3 className="text-xl font-bold text-slate-900">{role} <span className="sr-only">? {company}</span></h3>
                     <span className="text-sm font-bold text-emerald-700">{company}</span>
                   </div>
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-mono font-medium text-slate-700 self-start sm:self-center">
@@ -58,7 +58,7 @@ export const Experience: React.FC = () => {
 
                 {/* Achievements */}
                 <div className="space-y-2 mb-6">
-                  <span className="text-[11px] font-mono font-semibold text-slate-400 uppercase tracking-wider block">{t.experience.deliveriesLabel}</span>
+                  <span className="text-[11px] font-mono font-semibold text-slate-600 uppercase tracking-wider block">{t.experience.deliveriesLabel}</span>
                   {achievements.map((achieve, i) => (
                     <div key={i} className="flex items-start gap-2.5 text-xs text-slate-700">
                       <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />

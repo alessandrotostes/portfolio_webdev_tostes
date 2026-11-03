@@ -10,6 +10,7 @@ import { TechArsenal } from './components/TechArsenal';
 import { Methodology } from './components/Methodology';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { ThumbZoneCTA } from './components/ThumbZoneCTA';
 
 export const App: React.FC = () => {
   return (
@@ -27,6 +28,7 @@ export const App: React.FC = () => {
           <Contact />
         </main>
         <Footer />
+        <ThumbZoneCTA />
       </div>
     </LanguageProvider>
   );

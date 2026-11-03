@@ -3,38 +3,54 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-  
-  <!-- Main Page with Alternate Languages, Image & Video Indexing Extensions -->
+
+  <!-- Main Page (Portuguese - Default) with Alternate Languages, Image & Video Indexing Extensions -->
   <url>
     <loc>https://www.tostesdev.com/</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
 
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.tostesdev.com/" />
     <xhtml:link rel="alternate" hreflang="pt" href="https://www.tostesdev.com/" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.tostesdev.com/?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tostesdev.com/" />
 
     <!-- Images for Google Images Indexer -->
     <image:image>
-      <image:loc>https://www.tostesdev.com/img/saas-dashboard.jpg</image:loc>
-      <image:title>Plataforma SaaS ERP & CRM - Alessandro Tostes</image:title>
-      <image:caption>Dashboard em tempo real para gestão de vendas e relatórios em Web App SaaS</image:caption>
+      <image:loc>https://www.tostesdev.com/og-image.jpg</image:loc>
+      <image:title>Alessandro Tostes - Desenvolvedor Web Full-Stack &amp; Especialista em SaaS</image:title>
+      <image:caption>Portfólio de Alessandro Tostes: Desenvolvimento de Web Apps SaaS, Landing Pages de alta conversão, PWA e Inteligência Artificial em Ribeirão Preto (SP) e Remoto</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://www.tostesdev.com/img/landing-page.jpg</image:loc>
-      <image:title>Landing Page Ultra Rápida - Alessandro Tostes</image:title>
-      <image:caption>Landing Page de alta conversão para serviços premium e produtos digitais</image:caption>
+      <image:loc>https://www.tostesdev.com/img/aenagendamentos.png</image:loc>
+      <image:title>A&amp;N Agendamentos - Plataforma SaaS Multi-tenant &amp; PWA</image:title>
+      <image:caption>Sistema SaaS e PWA completo de agendamentos e gestão comercial para salões, barbearias e clínicas</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://www.tostesdev.com/img/pwa-app.jpg</image:loc>
-      <image:title>Aplicação PWA Nativa - Alessandro Tostes</image:title>
-      <image:caption>Web App PWA instalável no celular sem loja de aplicativos</image:caption>
+      <image:loc>https://www.tostesdev.com/img/cemporcentobatera.png</image:loc>
+      <image:title>100% Batera - E-commerce, UI &amp; Rastreamento GTM e Meta CAPI</image:title>
+      <image:caption>Melhorias visuais e infraestrutura de rastreamento GTM, GA4 e Meta Conversions API para e-commerce</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://www.tostesdev.com/img/ia-automation.jpg</image:loc>
-      <image:title>Plataforma de Automação com IA - Alessandro Tostes</image:title>
-      <image:caption>Sistema inteligente de agendamentos e IA integrada para empresas</image:caption>
+      <image:loc>https://www.tostesdev.com/img/petroleowebapp.webp</image:loc>
+      <image:title>Plataforma SaaS ERP &amp; CRM Industrial - Alessandro Tostes</image:title>
+      <image:caption>Dashboard em tempo real para gestão operacional, inventário e relatórios em Web App Corporativo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tostesdev.com/img/sitenovasolucoes.webp</image:loc>
+      <image:title>Landing Page Ultra Rápida - Nova Soluções ACM</image:title>
+      <image:caption>Landing Page de alta conversão para serviços corporativos e engenharia de fachadas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tostesdev.com/img/sitepsicanalista.webp</image:loc>
+      <image:title>Website Institucional - Psicanalista Tauana Pavanelli</image:title>
+      <image:caption>Website institucional otimizado para SEO e conversão direta no WhatsApp</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.tostesdev.com/img/sitecervejariafratelli.webp</image:loc>
+      <image:title>Website &amp; Catálogo Digital - Cervejaria Fratelli</image:title>
+      <image:caption>Website moderno e responsivo com catálogo interativo de produtos</image:caption>
     </image:image>
 
     <!-- Videos for Google Search Video Indexer -->
@@ -65,4 +81,18 @@
       <video:family_friendly>yes</video:family_friendly>
     </video:video>
   </url>
+
+  <!-- English Version with Reciprocal Hreflang Tags -->
+  <url>
+    <loc>https://www.tostesdev.com/?lang=en</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.tostesdev.com/" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.tostesdev.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.tostesdev.com/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.tostesdev.com/" />
+  </url>
+
 </urlset>

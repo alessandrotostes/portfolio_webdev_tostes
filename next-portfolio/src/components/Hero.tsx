@@ -31,6 +31,7 @@ export const Hero: React.FC = () => {
 
             {/* Main Heading */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
+              <span className="sr-only">{language === 'en' ? 'Alessandro Tostes ? Full-Stack Web Developer & SaaS Specialist: ' : 'Alessandro Tostes ? Desenvolvedor Web Full-Stack & Especialista em SaaS em Ribeir?o Preto: '}</span>
               {t.hero.headingPrefix}
               <span className="gradient-text-cyan">{t.hero.headingHighlight}</span>
               {t.hero.headingSuffix}
@@ -57,7 +58,7 @@ export const Hero: React.FC = () => {
                 <>
                   <a
                     href={`mailto:${PERSONAL_INFO.email}?subject=Project%20Inquiry%20from%20Portfolio`}
-                    className="flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-200 active:scale-95 cursor-pointer"
+                    className="flex items-center justify-center gap-3 h-12 px-7 rounded-xl text-sm font-bold text-white bg-emerald-700 hover:bg-emerald-800 shadow-lg shadow-emerald-600/25 hover:shadow-xl hover:shadow-emerald-600/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer haptic-press"
                   >
                     <Mail className="w-5 h-5 text-white" />
                     <span>{t.hero.ctaPrimaryEmail}</span>
@@ -68,7 +69,7 @@ export const Hero: React.FC = () => {
                     href={PERSONAL_INFO.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl text-sm font-semibold text-slate-800 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 shadow-xs transition-all duration-200 cursor-pointer"
+                    className="flex items-center justify-center gap-2.5 h-12 px-6 rounded-xl text-sm font-semibold text-slate-700 bg-white/90 border border-slate-200 hover:bg-slate-50 hover:border-slate-300 hover:text-slate-900 shadow-xs active:scale-[0.98] transition-all duration-200 cursor-pointer haptic-press"
                   >
                     <MessageCircle className="w-4 h-4 fill-emerald-600 text-emerald-600" />
                     <span>{t.hero.ctaPrimaryWhatsapp}</span>
@@ -80,9 +81,9 @@ export const Hero: React.FC = () => {
                     href={PERSONAL_INFO.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-3 px-8 py-4 rounded-xl text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 shadow-sm hover:shadow-md hover:scale-[1.02] transition-all duration-200 active:scale-95 cursor-pointer"
+                    className="flex items-center justify-center gap-3 h-12 px-7 rounded-xl text-sm font-bold text-white bg-emerald-700 hover:bg-emerald-800 shadow-lg shadow-emerald-600/25 hover:shadow-xl hover:shadow-emerald-600/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer haptic-press"
                   >
-                    <MessageCircle className="w-5 h-5 fill-white" />
+                    <MessageCircle className="w-5 h-5 fill-white text-white" />
                     <span>{t.hero.ctaPrimaryWhatsapp}</span>
                     <ArrowRight className="w-4 h-4" />
                   </a>
@@ -94,7 +95,7 @@ export const Hero: React.FC = () => {
                       document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
                       history.replaceState(null, '', window.location.pathname + window.location.search);
                     }}
-                    className="flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl text-sm font-semibold text-slate-800 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 shadow-xs transition-all duration-200 cursor-pointer"
+                    className="flex items-center justify-center gap-2.5 h-12 px-6 rounded-xl text-sm font-semibold text-slate-700 bg-white/90 border border-slate-200 hover:bg-slate-50 hover:border-slate-300 hover:text-slate-900 shadow-xs active:scale-[0.98] transition-all duration-200 cursor-pointer haptic-press"
                   >
                     <Code2 className="w-4 h-4 text-emerald-600" />
                     <span>{t.hero.ctaSecondaryProjects}</span>
@@ -146,7 +147,7 @@ export const Hero: React.FC = () => {
 
               {/* Core Stack Highlights */}
               <div className="space-y-3">
-                <span className="text-xs font-mono font-semibold text-slate-400 uppercase tracking-wider block">{t.hero.stackTitle}</span>
+                <span className="text-xs font-mono font-semibold text-slate-600 uppercase tracking-wider block">{t.hero.stackTitle}</span>
                 <div className="flex flex-wrap gap-2">
                   {t.hero.stackItems.map((tech) => (
                     <span key={tech} className="px-2.5 py-1 rounded-md bg-slate-100 border border-slate-200/80 text-xs font-semibold text-slate-700 hover:border-emerald-300 hover:text-emerald-700 transition-colors">

@@ -1,0 +1,490 @@
+{
+  "exportFormatVersion": 2,
+  "exportTime": "2026-09-22 22:35:00",
+  "containerVersion": {
+    "path": "accounts/6000000000/containers/70000000/versions/0",
+    "accountId": "6000000000",
+    "containerId": "70000000",
+    "container": {
+      "path": "accounts/6000000000/containers/70000000",
+      "accountId": "6000000000",
+      "containerId": "70000000",
+      "name": "TostesDev - Portfolio Web",
+      "publicId": "GTM-PXTSJXQV",
+      "usageContext": [
+        "WEB"
+      ]
+    },
+    "builtInVariable": [
+      {
+        "accountId": "6000000000",
+        "containerId": "70000000",
+        "type": "PAGE_URL",
+        "name": "Page URL"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "70000000",
+        "type": "PAGE_PATH",
+        "name": "Page Path"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "70000000",
+        "type": "CLICK_URL",
+        "name": "Click URL"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "70000000",
+        "type": "CLICK_TEXT",
+        "name": "Click Text"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "70000000",
+        "type": "CLICK_CLASSES",
+        "name": "Click Classes"
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "70000000",
+        "type": "SCROLL_DEPTH_THRESHOLD",
+        "name": "Scroll Depth Threshold"
+      }
+    ],
+    "variable": [
+      {
+        "accountId": "6000000000",
+        "containerId": "70000000",
+        "variableId": "1",
+        "name": "Const - GA4 ID",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "value",
+            "value": "G-FE776TDHFR"
+          }
+        ]
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "70000000",
+        "variableId": "2",
+        "name": "Const - Meta Pixel ID",
+        "type": "c",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "value",
+            "value": "SEU_PIXEL_ID_AQUI"
+          }
+        ]
+      }
+    ],
+    "trigger": [
+      {
+        "accountId": "6000000000",
+        "containerId": "70000000",
+        "triggerId": "101",
+        "name": "Clique - WhatsApp (Lead)",
+        "type": "LINK_CLICK",
+        "filter": [
+          {
+            "type": "CONTAINS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{Click URL}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "wa.me"
+              }
+            ]
+          }
+        ],
+        "autoEventFilter": [
+          {
+            "type": "ALWAYS_EVALUATE"
+          }
+        ]
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "70000000",
+        "triggerId": "102",
+        "name": "Clique - E-mail (Proposta)",
+        "type": "LINK_CLICK",
+        "filter": [
+          {
+            "type": "STARTS_WITH",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{Click URL}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "mailto:"
+              }
+            ]
+          }
+        ],
+        "autoEventFilter": [
+          {
+            "type": "ALWAYS_EVALUATE"
+          }
+        ]
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "70000000",
+        "triggerId": "103",
+        "name": "Clique - Ver Detalhes do Projeto",
+        "type": "CLICK",
+        "filter": [
+          {
+            "type": "CONTAINS",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{Click Text}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": "Detalhes"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "70000000",
+        "triggerId": "104",
+        "name": "Clique - Social (GitHub e LinkedIn)",
+        "type": "LINK_CLICK",
+        "filter": [
+          {
+            "type": "MATCH_REGEX",
+            "parameter": [
+              {
+                "type": "TEMPLATE",
+                "key": "arg0",
+                "value": "{{Click URL}}"
+              },
+              {
+                "type": "TEMPLATE",
+                "key": "arg1",
+                "value": ".*(github\\.com|linkedin\\.com).*"
+              }
+            ]
+          }
+        ],
+        "autoEventFilter": [
+          {
+            "type": "ALWAYS_EVALUATE"
+          }
+        ]
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "70000000",
+        "triggerId": "105",
+        "name": "Engajamento - Scroll 50 e 90",
+        "type": "SCROLL_DEPTH",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "verticalScrollPercentageThresholdsEnabled",
+            "value": "true"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "verticalScrollPercentageThresholds",
+            "value": "50,90"
+          }
+        ]
+      }
+    ],
+    "tag": [
+      {
+        "accountId": "6000000000",
+        "containerId": "70000000",
+        "tagId": "1",
+        "name": "Google Tag - GA4 Base",
+        "type": "googtag",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "tagId",
+            "value": "{{Const - GA4 ID}}"
+          },
+          {
+            "type": "BOOLEAN",
+            "key": "enableSendPageView",
+            "value": "true"
+          }
+        ],
+        "firingTriggerId": [
+          "2147479553"
+        ]
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "70000000",
+        "tagId": "2",
+        "name": "GA4 - Evento WhatsApp (Lead)",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "generate_lead"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "measurementId",
+            "value": "{{Const - GA4 ID}}"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "canal_contato"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "whatsapp"
+                  }
+                ]
+              },
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "url_clique"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{Click URL}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": [
+          "101"
+        ]
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "70000000",
+        "tagId": "3",
+        "name": "GA4 - Evento Email (Proposta)",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "contact_email"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "measurementId",
+            "value": "{{Const - GA4 ID}}"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "canal_contato"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "email"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": [
+          "102"
+        ]
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "70000000",
+        "tagId": "4",
+        "name": "GA4 - Evento Ver Detalhes Projeto",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "select_content"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "measurementId",
+            "value": "{{Const - GA4 ID}}"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "content_type"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "portfolio_project"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": [
+          "103"
+        ]
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "70000000",
+        "tagId": "5",
+        "name": "GA4 - Evento Social (GitHub e LinkedIn)",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "click_social"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "measurementId",
+            "value": "{{Const - GA4 ID}}"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "link_url"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{Click URL}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": [
+          "104"
+        ]
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "70000000",
+        "tagId": "6",
+        "name": "GA4 - Evento Scroll 50 e 90",
+        "type": "gaawe",
+        "parameter": [
+          {
+            "type": "TEMPLATE",
+            "key": "eventName",
+            "value": "scroll_depth"
+          },
+          {
+            "type": "TEMPLATE",
+            "key": "measurementId",
+            "value": "{{Const - GA4 ID}}"
+          },
+          {
+            "type": "LIST",
+            "key": "eventParameters",
+            "list": [
+              {
+                "type": "MAP",
+                "map": [
+                  {
+                    "type": "TEMPLATE",
+                    "key": "name",
+                    "value": "percent_scrolled"
+                  },
+                  {
+                    "type": "TEMPLATE",
+                    "key": "value",
+                    "value": "{{Scroll Depth Threshold}}"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "firingTriggerId": [
+          "105"
+        ]
+      },
+      {
+        "accountId": "6000000000",
+        "containerId": "70000000",
+        "tagId": "7",
+        "name": "Vinculador de Conversões (Conversion Linker)",
+        "type": "gclidw",
+        "parameter": [
+          {
+            "type": "BOOLEAN",
+            "key": "enableCrossDomainLinking",
+            "value": "false"
+          }
+        ],
+        "firingTriggerId": [
+          "2147479554"
+        ]
+      }
+    ]
+  }
+}

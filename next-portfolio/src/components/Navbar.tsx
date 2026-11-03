@@ -83,7 +83,7 @@ export const Navbar: React.FC = () => {
           {language === 'en' ? (
             <a
               href={`mailto:${PERSONAL_INFO.email}?subject=Project%20Inquiry`}
-              className="flex items-center gap-2 px-4 py-2 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-full shadow-sm hover:shadow-md hover:scale-105 transition-all active:scale-95"
+              className="flex items-center gap-2 px-4 py-2 text-xs font-bold text-white bg-emerald-700 hover:bg-emerald-800 rounded-full shadow-md shadow-emerald-600/20 hover:scale-105 active:scale-95 transition-all haptic-press cursor-pointer"
             >
               <Mail className="w-3.5 h-3.5 text-white" />
               <span>{t.nav.ctaEmail}</span>
@@ -93,9 +93,9 @@ export const Navbar: React.FC = () => {
               href={PERSONAL_INFO.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 text-xs font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-full shadow-sm hover:shadow-md hover:scale-105 transition-all active:scale-95"
+              className="flex items-center gap-2 px-4 py-2 text-xs font-bold text-white bg-emerald-700 hover:bg-emerald-800 rounded-full shadow-md shadow-emerald-600/20 hover:scale-105 active:scale-95 transition-all haptic-press cursor-pointer"
             >
-              <MessageCircle className="w-3.5 h-3.5 fill-white" />
+              <MessageCircle className="w-3.5 h-3.5 fill-white text-white" />
               <span>{t.nav.ctaWhatsApp}</span>
             </a>
           )}
@@ -140,7 +140,7 @@ export const Navbar: React.FC = () => {
               <a
                 href={`mailto:${PERSONAL_INFO.email}?subject=Project%20Inquiry`}
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-3 flex items-center justify-center gap-2 py-3 text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl"
+                className="mt-3 flex items-center justify-center gap-2 py-3 text-sm font-bold text-white bg-emerald-700 hover:bg-emerald-800 shadow-md shadow-emerald-600/25 rounded-xl active:scale-[0.98] transition-all haptic-press"
               >
                 <Mail className="w-4 h-4 text-white" />
                 <span>{t.nav.ctaEmail}</span>
@@ -151,9 +151,9 @@ export const Navbar: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-3 flex items-center justify-center gap-2 py-3 text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl"
+                className="mt-3 flex items-center justify-center gap-2 py-3 text-sm font-bold text-white bg-emerald-700 hover:bg-emerald-800 shadow-md shadow-emerald-600/25 rounded-xl active:scale-[0.98] transition-all haptic-press"
               >
-                <MessageCircle className="w-4 h-4 fill-white" />
+                <MessageCircle className="w-4 h-4 fill-white text-white" />
                 <span>{t.nav.ctaWhatsApp}</span>
               </a>
             )}

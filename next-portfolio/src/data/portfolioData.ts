@@ -3,9 +3,11 @@ export interface Project {
   title: string;
   category: 'saas' | 'landing' | 'pwa' | 'institucional';
   categoryLabel: string;
+  statusBadge?: string;
   description: string;
   fullDescription: string;
   image: string;
+  screenshots?: string[];
   tags: string[];
   features: string[];
   demoUrl?: string;
@@ -37,16 +39,18 @@ export interface Service {
 export const PERSONAL_INFO = {
   name: "Alessandro Tostes",
   role: "Desenvolvedor Web Full-Stack",
-  subtitle: "Sistemas Web SaaS, Landing Pages de Alta Conversão, PWA & IA",
+  subtitle: "Sistemas Web SaaS, Páginas de Alta Conversão, PWA & Tracking de Vendas",
   location: "Ribeirão Preto - SP",
   status: "Disponível para Projetos",
-  bio: "Desenvolvedor especializado em transformar ideias complexas em produtos digitais rápidos, elegantes e lucrativos. Foco em arquitetura limpa, alta velocidade e rastreamento avançado (GTM & Meta Pixel).",
+  bio: "Desenvolvedor Full-Stack focado em produtos que geram retorno: arquiteturas limpas, velocidade real e infraestrutura de rastreamento avançado (GTM, Meta CAPI & GA4).",
   whatsapp: "https://wa.me/5516997643604?text=Ol%C3%A1%20Alessandro,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20um%20or%C3%A7amento!",
   whatsappNumber: "+55 (16) 99764-3604",
   email: "alessandrotostesarruda@gmail.com",
   github: "https://github.com/alessandrotostes",
   linkedin: "https://www.linkedin.com/in/alessandro-tostes-940972242/",
   website: "https://www.tostesdev.com",
+  legalName: "ALESSANDRO TOSTES ARRUDA JUNIOR CONSULTORIA EM TECNOLOGIA DA INFORMACAO LTDA - ME",
+  cnpj: "65.214.246/0001-01",
 };
 
 export const SERVICES: Service[] = [
@@ -56,7 +60,7 @@ export const SERVICES: Service[] = [
     badge: "Escala & Produto",
     title: "Web Apps SaaS, SPAs & CRMs",
     subtitle: "Sistemas completos para rentabilizar seu negócio digital",
-    description: "Desenvolvimento de plataformas web robustas com autenticação segura, gateways de pagamento (Mercado Pago, Stripe), dashboards em tempo real, segregação de permissões (RBAC) e arquitetura de dados em SQL e NoSQL.",
+    description: "Desenvolvimento de plataformas web sob medida com autenticação segura, gateways de pagamento (Mercado Pago, Stripe), dashboards em tempo real, segregação de permissões (RBAC) e arquitetura de dados em SQL e NoSQL.",
     benefits: [
       "Arquitetura escalável pronta para milhares de usuários simultâneos",
       "Segurança de dados e conformidade com LGPD",
@@ -114,10 +118,35 @@ export const SERVICES: Service[] = [
 
 export const PROJECTS: Project[] = [
   {
+    id: "cemporcento-batera",
+    title: "100% Batera",
+    category: "saas",
+    categoryLabel: "E-commerce, UI & Tracking",
+    statusBadge: "Loja Ativa • CAPI",
+    description: "Melhorias visuais e estilização CSS no e-commerce, somados a rastreamento avançado (GTM, Meta CAPI) e catálogo de 1.000 produtos.",
+    fullDescription: "Desenvolvimento de melhorias visuais no layout em CSS e estruturação técnica avançada de dados para a maior loja de bateria do Brasil (cemporcentobatera.com.br) na plataforma Bagy. Implementação de ajustes finos de design e responsividade na página de produtos, Google Tag Manager (GTM) com eventos de e-commerce GA4 (ViewContent, AddToCart, InitiateCheckout, Purchase), Meta Conversions API (CAPI) nativa sem custo de servidor em nuvem com deduplicação via Event IDs, Google Ads com Enhanced Conversions e sincronização automática de catálogo com 1.000 produtos qualificados no Meta Commerce Manager para Instagram e Facebook Shopping.",
+    image: "/img/cemporcentobatera.png",
+    screenshots: [
+      "/img/cemporcentobatera-site.png",
+      "/img/cemporcentobatera-insta.png",
+      "/img/cemporcentobatera-catalogo.png"
+    ],
+    tags: ["CSS Customizado", "UI/UX E-commerce", "Google Tag Manager", "DataLayer GA4", "Meta CAPI", "Google Ads Enhanced"],
+    features: [
+      "Melhorias visuais e estilização de layout CSS para otimizar a experiência de compra",
+      "Meta Conversions API (CAPI) nativa com deduplicação perfeita via Event ID",
+      "Google Tag Manager com Enhanced Conversions e Remarketing Dinâmico",
+      "Catálogo XML com 1.000 produtos sincronizados e loja ativa no Instagram/Facebook"
+    ],
+    demoUrl: "https://www.cemporcentobatera.com.br",
+    isFeatured: true
+  },
+  {
     id: "an-agendamentos",
     title: "A&N Agendamentos",
     category: "saas",
     categoryLabel: "SaaS Multi-tenant & PWA",
+    statusBadge: "Online • Produção",
     description: "Ecossistema completo de agendamentos e gestão comercial conectando clientes, estabelecimentos e profissionais.",
     fullDescription: "Desenvolvido do zero para ser uma solução leve e completa para salões, barbearias e clínicas. Possui 3 visões segregadas via RBAC: Painel do Cliente (para reserva em segundos), Painel do Estabelecimento (gestão financeira e de equipe) e Painel do Profissional (agenda individual). Suporta PWA e cobranças via gateway de pagamento do Mercado Pago.",
     image: "/img/aenagendamentos.png",
@@ -128,7 +157,7 @@ export const PROJECTS: Project[] = [
       "Suporte PWA completo para instalação nativa no celular",
       "Notificações de confirmação e dashboards em tempo real"
     ],
-    demoUrl: "https://anagendamentos.com.br",
+    demoUrl: "https://www.aenagendamentos.com.br",
     isFeatured: true
   },
   {
@@ -136,6 +165,7 @@ export const PROJECTS: Project[] = [
     title: "ERP Indústria Petrolífera",
     category: "saas",
     categoryLabel: "Web App Corporativo",
+    statusBadge: "Case Corporativo",
     description: "Sistema de gestão industrial para controle de produção, manutenção e inventário com dados em tempo real.",
     fullDescription: "Desenvolvido para gerenciar a operação complexa do setor de óleo e gás. Oferece visualização clara do inventário de tanques, agendas de manutenção preventiva e relatórios estatísticos com gráficos interativos.",
     image: "/img/petroleowebapp.webp",
@@ -153,6 +183,7 @@ export const PROJECTS: Project[] = [
     title: "Controle Financeiro Pessoal",
     category: "pwa",
     categoryLabel: "Web App / PWA",
+    statusBadge: "PWA Instalável",
     description: "Plataforma para gestão financeira diária, controle de despesas e metas de economia com gráficos interativos.",
     fullDescription: "Aplicação PWA responsiva projetada para acompanhamento financeiro instantâneo. Conta com categorização inteligente de gastos, suporte a metas mensais e dados criptografados por usuário.",
     image: "/img/gestaomensal.webp",
@@ -171,6 +202,7 @@ export const PROJECTS: Project[] = [
     title: "Gestão de Consultas & Aulas",
     category: "saas",
     categoryLabel: "Web App Full-Stack",
+    statusBadge: "Web App Ativo",
     description: "Sistema para profissionais autônomos gerenciarem agendas, pacientes/alunos e finanças de forma unificada.",
     fullDescription: "Solução desenhada para psicólogos, personal trainers e consultores. Oferece controle de prontuários/fichas, confirmação de presença e acompanhamento de receita mensal.",
     image: "/img/gestaowebapp.webp",
@@ -188,6 +220,7 @@ export const PROJECTS: Project[] = [
     title: "Website Psicanalista Tauana Pavanelli",
     category: "landing",
     categoryLabel: "Website Institucional",
+    statusBadge: "Online • Produção",
     description: "Presença online humanizada desenvolvida para transmitir acolhimento, serenidade e agendamento simples.",
     fullDescription: "Website focado na experiência do paciente, com paleta de cores terapêutica, tipografia de alta legibilidade e botão de contato direto via WhatsApp.",
     image: "/img/sitepsicanalista.webp",
@@ -205,6 +238,7 @@ export const PROJECTS: Project[] = [
     title: "Cervejaria Fratelli",
     category: "institucional",
     categoryLabel: "Website Institucional",
+    statusBadge: "Catálogo Online",
     description: "Website moderno e artesanal para a cervejaria referência em Vitória-ES com catálogo interativo.",
     fullDescription: "Projeto que une a essência artesanal da cervejaria com tecnologia web moderna. Oferece catálogo interativo de rótulos, história da marca e direcionamento para pedidos.",
     image: "/img/sitecervejariafratelli.webp",
@@ -222,6 +256,7 @@ export const PROJECTS: Project[] = [
     title: "Nova Soluções ACM",
     category: "landing",
     categoryLabel: "Landing Page Corporativa",
+    statusBadge: "Landing Page Ativa",
     description: "Landing page institucional para empresa de engenharia de fachadas e revestimentos em alumínio.",
     fullDescription: "Página criada para destacar a imponência dos projetos em ACM, apresentando galeria de obras executadas, depoimentos de clientes e formulário direto de orçamento.",
     image: "/img/sitenovasolucoes.webp",
@@ -289,7 +324,7 @@ export const EXPERIENCES: Experience[] = [
 export const TECH_ARSENAL = {
   frontend: ["React 19", "Vite", "Next.js", "TypeScript 5", "HTML5/CSS3", "Tailwind CSS", "Lucide Icons", "TanStack Query", "Redux Toolkit"],
   backend: ["Node.js", "NestJS", "Bancos SQL", "Bancos NoSQL", "PostgreSQL", "AWS (S3/ECS/Amplify)", "Google Cloud (GCP)", "Prisma ORM", "Redis"],
-  quality: ["Jest", "Vitest", "Playwright", "Docker", "GitHub Actions", "ESLint", "GTM / Meta Pixel / GA4"],
+  quality: ["Jest", "Vitest", "Playwright", "Docker", "GitHub Actions", "GTM (Web & Server)", "Meta CAPI", "GA4", "Enhanced Conversions", "ESLint"],
   architecture: ["Clean Architecture", "SOLID", "Princípios DRY & KISS", "Design Patterns (GoF)", "RBAC", "OAuth 2.0 / JWT", "Zod", "Webhooks", "Arquitetura Modular"],
   ai: ["Claude Code", "AGY CLI", "Context Engineering", "Antigravity", "Gemini API", "Prompt Engineering", "RAG"]
 };

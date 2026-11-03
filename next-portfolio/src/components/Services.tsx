@@ -88,7 +88,7 @@ export const Services: React.FC = () => {
 
                   {/* Key Benefits */}
                   <div className="space-y-2.5 mb-6 pt-4 border-t border-slate-100">
-                    <span className="text-[11px] font-mono font-semibold text-slate-400 uppercase tracking-wider block">{t.services.benefitsLabel}</span>
+                    <span className="text-[11px] font-mono font-semibold text-slate-600 uppercase tracking-wider block">{t.services.benefitsLabel}</span>
                     {serviceBenefits.map((benefit, idx) => (
                       <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-700">
                         <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -112,10 +112,10 @@ export const Services: React.FC = () => {
                     href={ctaHref}
                     target={language === 'en' ? '_self' : '_blank'}
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-xs font-bold text-emerald-600 hover:text-emerald-700 group-hover:translate-x-0.5 transition-all cursor-pointer"
+                    className="inline-flex items-center justify-between sm:justify-start gap-2.5 px-4 py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100/90 border border-emerald-200/90 text-xs font-bold text-emerald-800 group-hover:border-emerald-300 transition-all cursor-pointer haptic-press"
                   >
                     <span>{t.services.cta}</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-4 h-4 text-emerald-600 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>
 

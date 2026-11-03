@@ -5,6 +5,7 @@ import { useLanguage } from '../i18n/LanguageContext';
 import { ExternalLink, Github, Eye, Sparkles } from 'lucide-react';
 
 const projectTranslationKeyMap: Record<string, keyof ReturnType<typeof useLanguage>['t']['projects']['items']> = {
+  'cemporcento-batera': 'cemporcentoBatera',
   'an-agendamentos': 'anAgendamentos',
   'erp-petroleo': 'erpPetroleo',
   'controle-financeiro': 'controleFinanceiro',
@@ -58,7 +59,7 @@ export const Projects: React.FC = () => {
               onClick={() => setFilter(btn.value as any)}
               className={`px-4 py-2 rounded-full text-xs font-semibold transition-all cursor-pointer ${
                 filter === btn.value
-                  ? 'bg-emerald-600 text-white shadow-xs'
+                  ? 'bg-emerald-700 text-white shadow-xs'
                   : 'bg-slate-50 text-slate-700 border border-slate-200 hover:text-slate-900 hover:border-slate-300 shadow-2xs'
               }`}
             >
@@ -75,6 +76,7 @@ export const Projects: React.FC = () => {
 
             const title = pTrans?.title || project.title;
             const categoryLabel = pTrans?.categoryLabel || project.categoryLabel;
+            const statusBadge = pTrans?.statusBadge || project.statusBadge;
             const description = pTrans?.description || project.description;
 
             return (
@@ -95,10 +97,14 @@ export const Projects: React.FC = () => {
                         {categoryLabel}
                       </span>
                     </div>
-                    {project.isFeatured && (
+                    {statusBadge && (
                       <div className="absolute top-3 right-3">
-                        <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 border border-emerald-200 text-[10px] font-bold text-emerald-800">
-                          {t.projects.featuredBadge}
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/95 backdrop-blur-md border border-emerald-200 text-[10px] font-mono font-bold text-emerald-800 shadow-2xs">
+                          <span className="relative flex h-2 w-2">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                          </span>
+                          {statusBadge}
                         </span>
                       </div>
                     )}
@@ -128,7 +134,7 @@ export const Projects: React.FC = () => {
                 <div className="p-6 pt-0 flex items-center justify-between gap-2 border-t border-slate-100 mt-auto">
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="flex items-center gap-1.5 text-xs font-bold text-emerald-600 hover:text-emerald-700 transition-colors cursor-pointer"
+                    className="flex items-center gap-1.5 text-xs font-bold text-emerald-600 hover:text-emerald-700 transition-colors cursor-pointer haptic-press py-1"
                   >
                     <Eye className="w-4 h-4" />
                     <span>{t.projects.viewDetails}</span>
@@ -140,7 +146,7 @@ export const Projects: React.FC = () => {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 text-slate-600 hover:text-slate-900 rounded-lg bg-slate-50 border border-slate-200 hover:bg-slate-100 transition-colors"
+                        className="p-2 text-slate-600 hover:text-slate-900 rounded-lg bg-slate-50 border border-slate-200 hover:bg-slate-100 transition-all haptic-press"
                         title="Repositório GitHub"
                       >
                         <Github className="w-4 h-4" />
@@ -151,7 +157,7 @@ export const Projects: React.FC = () => {
                         href={project.demoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 text-emerald-600 hover:text-emerald-700 rounded-lg bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 transition-colors"
+                        className="p-2 text-emerald-700 hover:text-emerald-800 rounded-lg bg-emerald-50 border border-emerald-200 hover:bg-emerald-100 transition-all haptic-press shadow-2xs"
                         title="Acessar Projeto"
                       >
                         <ExternalLink className="w-4 h-4" />

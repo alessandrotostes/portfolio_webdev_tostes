@@ -95,6 +95,23 @@
   animation: floatSlow 6s ease-in-out infinite;
 }
 
+/* Thumb Zone & Mobile Ergonomics */
+.pb-safe {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom, 1rem));
+}
+
+.bottom-safe {
+  bottom: max(1.25rem, calc(1.25rem + env(safe-area-inset-bottom, 0px)));
+}
+
+/* Haptic tactile button feedback */
+.haptic-press {
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease;
+}
+.haptic-press:active {
+  transform: scale(0.97);
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -112,4 +129,5 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
 

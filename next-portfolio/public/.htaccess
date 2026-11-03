@@ -1,10 +1,33 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
+
+  # 1. Force HTTPS and canonical www.tostesdev.com (301 Permanent Redirect)
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} !^www\.tostesdev\.com$ [NC]
+  RewriteCond %{HTTP_HOST} ^(?:www\.)?tostesdev\.com$ [NC]
+  RewriteRule ^(.*)$ https://www.tostesdev.com/$1 [L,R=301]
+
+  # 2. Redirect /index.html to canonical root / (eliminates duplicate index.html in Google Search Console)
+  RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+  RewriteRule ^index\.html$ https://www.tostesdev.com/ [L,R=301]
+
+  # 3. Return proper 404 for missing static assets instead of rewriting to index.html (prevents CDN HTTP 422 / Soft 404s)
+  RewriteCond %{REQUEST_URI} \.(jpg|jpeg|png|webp|gif|svg|ico|mp4|webm|xml|txt|json|webmanifest|css|js|woff2?|ttf)$ [NC]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^ - [L,R=404]
+
+  # 4. SPA Fallback for application routes
   RewriteRule ^index\.html$ - [L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
+</IfModule>
+
+# Security & SEO Headers
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
 
 # Compress HTML, CSS, JavaScript, Text, XML and fonts

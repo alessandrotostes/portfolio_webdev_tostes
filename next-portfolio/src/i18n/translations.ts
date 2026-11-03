@@ -128,11 +128,21 @@ export interface TranslationSchema {
       techs: string;
       viewCode: string;
       demoUrl: string;
+      galleryTip: string;
     };
     items: {
+      cemporcentoBatera: {
+        title: string;
+        categoryLabel: string;
+        statusBadge?: string;
+        description: string;
+        fullDescription: string;
+        features: string[];
+      };
       anAgendamentos: {
         title: string;
         categoryLabel: string;
+        statusBadge?: string;
         description: string;
         fullDescription: string;
         features: string[];
@@ -140,6 +150,7 @@ export interface TranslationSchema {
       erpPetroleo: {
         title: string;
         categoryLabel: string;
+        statusBadge?: string;
         description: string;
         fullDescription: string;
         features: string[];
@@ -147,6 +158,7 @@ export interface TranslationSchema {
       controleFinanceiro: {
         title: string;
         categoryLabel: string;
+        statusBadge?: string;
         description: string;
         fullDescription: string;
         features: string[];
@@ -154,6 +166,7 @@ export interface TranslationSchema {
       gestaoConsultas: {
         title: string;
         categoryLabel: string;
+        statusBadge?: string;
         description: string;
         fullDescription: string;
         features: string[];
@@ -161,6 +174,7 @@ export interface TranslationSchema {
       sitePsicanalista: {
         title: string;
         categoryLabel: string;
+        statusBadge?: string;
         description: string;
         fullDescription: string;
         features: string[];
@@ -168,6 +182,7 @@ export interface TranslationSchema {
       cervejariaFratelli: {
         title: string;
         categoryLabel: string;
+        statusBadge?: string;
         description: string;
         fullDescription: string;
         features: string[];
@@ -175,6 +190,7 @@ export interface TranslationSchema {
       novaSolucoes: {
         title: string;
         categoryLabel: string;
+        statusBadge?: string;
         description: string;
         fullDescription: string;
         features: string[];
@@ -239,12 +255,16 @@ export interface TranslationSchema {
     rights: string;
     scrollTop: string;
   };
+  floatingCta: {
+    tooltip: string;
+    ariaLabel: string;
+  };
 }
 
 export const translations: Record<'pt' | 'en', TranslationSchema> = {
   pt: {
     meta: {
-      title: "Alessandro Tostes | Desenvolvedor Web Full-Stack & Especialista em SaaS",
+      title: "Alessandro Tostes | Desenvolvedor Web Full-Stack & SaaS | Ribeir?o Preto",
       description: "Desenvolvedor Web Full-Stack em Ribeirão Preto (SP). Soluções web de alta performance: Web Apps SaaS, Landing Pages de alta conversão, PWA e IA.",
       keywords: "Desenvolvedor Web Full-Stack, Web Apps SaaS, Landing Pages, PWA, Ribeirão Preto, React, Node.js, TypeScript, Next.js, Automação IA"
     },
@@ -262,12 +282,12 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
     hero: {
       status: "Disponível para Projetos",
       location: "Ribeirão Preto - SP",
-      headingPrefix: "Transformo ideias complexas em ",
-      headingHighlight: "Sistemas Web & SaaS",
-      headingSuffix: " de alta performance.",
-      subheading: "Desenvolvedor Web Full-Stack especialista em Web Apps SaaS, Landing Pages de alta conversão, soluções PWA nativas e inteligência artificial.",
+      headingPrefix: "Desenvolvo ",
+      headingHighlight: "Sistemas Web, SaaS & Páginas",
+      headingSuffix: " que geram vendas e escalam sua operação.",
+      subheading: "Desenvolvedor Full-Stack em Ribeirão Preto (SP). Crio plataformas digitais rápidas, arquiteturas limpas e estruturas completas de rastreamento — do banco de dados ao clique que gera receita.",
       pills: [
-        "Google Tag Manager & Meta Pixel",
+        "Google Tag Manager & Meta CAPI",
         "Mobile-First & PWA",
         "Bancos de Dados SQL & NoSQL",
         "Engenharia de IA"
@@ -278,7 +298,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
       badgeTitle: "Alessandro Tostes",
       badgeRole: "Full Stack Developer",
       badgeTopCode: "TOP CODE",
-      metricTrackingTitle: "GTM & Pixel",
+      metricTrackingTitle: "GTM & CAPI",
       metricTrackingDesc: "Tracking & Analytics",
       metricExpTitle: "+2 Anos",
       metricExpDesc: "Dev Full-Stack",
@@ -289,8 +309,8 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
         "Next.js",
         "TypeScript",
         "Node.js",
-        "SQL",
-        "NoSQL",
+        "SQL & NoSQL",
+        "GTM & CAPI",
         "PWA",
         "IA Integrada"
       ]
@@ -299,7 +319,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
       badge: "Soluções Sob Medida",
       titlePrefix: "Serviços desenhados para ",
       titleHighlight: "gerar resultados reais",
-      description: "Do planejamento de arquitetura até a entrega final com código limpo, suporte a PWA e velocidade máxima no celular.",
+      description: "Do planejamento de arquitetura até a entrega final com código limpo, suporte a PWA, rastreamento de vendas e velocidade máxima no celular.",
       benefitsLabel: "Principais Benefícios:",
       cta: "Solicitar Proposta para este Serviço",
       items: {
@@ -307,31 +327,31 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
           badge: "Escala & Produto",
           title: "Web Apps SaaS, SPAs & CRMs",
           subtitle: "Sistemas completos para rentabilizar seu negócio digital",
-          description: "Desenvolvimento de plataformas web robustas com autenticação segura, gateways de pagamento (Mercado Pago, Stripe), dashboards em tempo real, segregação de permissões (RBAC) e arquitetura de dados em SQL e NoSQL.",
+          description: "Plataformas web sob medida que automatizam processos e aumentam sua receita: autenticação segura, gateways de pagamento (Mercado Pago, Stripe), dashboards analíticos e permissões por perfil (RBAC).",
           benefits: [
             "Arquitetura escalável pronta para milhares de usuários simultâneos",
-            "Segurança de dados e conformidade com LGPD",
+            "Segurança de dados e conformidade total com LGPD",
             "Painéis gerenciais inteligentes com gráficos e relatórios exportáveis"
           ],
-          deliverables: ["Node.js & NestJS", "Bancos de Dados SQL", "Bancos de Dados NoSQL", "AWS & GCP / Gateways"]
+          deliverables: ["Node.js & NestJS", "Bancos de Dados SQL/NoSQL", "Gateways de Pagamento", "AWS & Nuvem"]
         },
         landing: {
           badge: "Conversão Imediata",
-          title: "Landing Pages Premium",
-          subtitle: "Design visual impactante com velocidade imbatível",
-          description: "Páginas estratégicas desenhadas sob medida para transformar visitantes em clientes compradores. Layout Mobile-First extremamente fluido com pontuação máxima no Google Lighthouse.",
+          title: "Landing Pages de Alta Conversão",
+          subtitle: "Design visual impactante com velocidade e mensuração de vendas",
+          description: "Páginas estratégicas desenhadas sob medida para transformar visitantes em clientes compradores. Layout Mobile-First extremamente fluido com pontuação máxima no Google Lighthouse e estrutura pronta para tráfego pago.",
           benefits: [
-            "Taxa de conversão elevada com copy e chamadas de ação direcionadas",
+            "Copywriting e chamadas de ação estratégicas focadas em gerar vendas",
             "Carregamento ultra-rápido (Core Web Vitals zerados em latência)",
-            "SEO Avançado com marcação de dados Schema.org para topo do Google"
+            "Rastreamento avançado incluso: GTM, Meta CAPI e Google Ads configurados"
           ],
-          deliverables: ["Design Exclusivo", "SEO Técnico Avançado", "Micro-animações Leves", "Integração Analytics & Pixel"]
+          deliverables: ["Design Exclusivo", "SEO Técnico Avançado", "Micro-animações Leves", "GTM, Meta CAPI & GA4"]
         },
         pwa: {
           badge: "Experiência Mobile",
           title: "Soluções PWA (Progressive Web Apps)",
           subtitle: "Seu aplicativo direto no celular do cliente sem intermediários",
-          description: "Entregue a experiência de um aplicativo nativo diretamente através do navegador móvel (iOS e Android), economizando tempo e evitando as taxas e restrições das lojas de aplicativos.",
+          description: "Entregue a experiência de um aplicativo nativo diretamente através do navegador móvel (iOS e Android), economizando tempo de aprovação e evitando as taxas das lojas de aplicativos.",
           benefits: [
             "Instalação instantânea com ícone na tela inicial sem ocupar espaço extra",
             "Navegação fluida sem barras do navegador e suporte a modo offline",
@@ -341,13 +361,13 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
         },
         ia: {
           badge: "Automação & Futuro",
-          title: "Engenharia de IA & Código Assistido",
+          title: "Engenharia de IA & Automações",
           subtitle: "Acelere processos e integre Inteligência Artificial",
-          description: "Criação de soluções inteligentes integradas a LLMs (OpenAI, Gemini, Claude), automação de rotinas operacionais e aplicação de engenharia de contexto para produtos digitais.",
+          description: "Criação de soluções inteligentes integradas a LLMs (OpenAI, Gemini, Claude), automação de processos operacionais e assistentes virtuais conectados aos dados da sua empresa.",
           benefits: [
             "Redução drástica de tempo em tarefas manuais e repetitivas",
             "Atendimento inteligente e assistentes virtuais de alta precisão",
-            "Integração contínua de IA em pipelines corporativos"
+            "Integração contínua de IA em fluxos corporativos"
           ],
           deliverables: ["Engenharia de Prompt & Contexto", "Integração LLMs/APIs", "Agentes & Workflows n8n", "Assistentes Virtuais"]
         }
@@ -402,12 +422,27 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
         features: "Recursos Destacados",
         techs: "Tecnologias Utilizadas",
         viewCode: "Ver Código",
-        demoUrl: "Acessar Projeto Online"
+        demoUrl: "Acessar Projeto Online",
+        galleryTip: "Clique nas miniaturas acima para alternar entre a versão Desktop da loja e a integração mobile no Instagram Shopping."
       },
       items: {
+        cemporcentoBatera: {
+          title: "100% Batera – Melhorias Visuais & Rastreamento",
+          categoryLabel: "E-commerce, UI & Rastreamento",
+          statusBadge: "Loja Ativa • CAPI",
+          description: "Refinamento visual de layout em CSS, infraestrutura de dados com GTM, Meta CAPI nativa e catálogo de 1.000 produtos integrado ao Instagram Shopping.",
+          fullDescription: "Desenvolvimento de melhorias visuais no layout em CSS e estruturação técnica avançada de dados para a maior loja de bateria do Brasil (cemporcentobatera.com.br) na plataforma Bagy. Implementação de ajustes finos de design e responsividade na página de produtos, Google Tag Manager (GTM) com eventos de e-commerce GA4 (ViewContent, AddToCart, InitiateCheckout, Purchase), Meta Conversions API (CAPI) nativa sem custo de servidor em nuvem com deduplicação via Event IDs, Google Ads com Enhanced Conversions e Remarketing Dinâmico, além de catálogo XML com 1.000 produtos qualificados no Meta Commerce Manager para Instagram e Facebook Shopping.",
+          features: [
+            "Melhorias visuais e estilização de layout CSS para otimizar a experiência de compra",
+            "Meta Conversions API (CAPI) nativa com deduplicação perfeita via Event ID",
+            "Google Tag Manager com Enhanced Conversions e Remarketing Dinâmico",
+            "Catálogo XML com 1.000 produtos sincronizados e loja ativa no Instagram/Facebook"
+          ]
+        },
         anAgendamentos: {
           title: "A&N Agendamentos",
           categoryLabel: "SaaS Multi-tenant & PWA",
+          statusBadge: "Online • Produção",
           description: "Ecossistema completo de agendamentos e gestão comercial conectando clientes, estabelecimentos e profissionais.",
           fullDescription: "Desenvolvido do zero para ser uma solução leve e completa para salões, barbearias e clínicas. Possui 3 visões segregadas via RBAC: Painel do Cliente (para reserva em segundos), Painel do Estabelecimento (gestão financeira e de equipe) e Painel do Profissional (agenda individual). Suporta PWA e cobranças via gateway de pagamento do Mercado Pago.",
           features: [
@@ -420,6 +455,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
         erpPetroleo: {
           title: "ERP Indústria Petrolífera",
           categoryLabel: "Web App Corporativo",
+          statusBadge: "Case Corporativo",
           description: "Sistema de gestão industrial para controle de produção, manutenção e inventário com dados em tempo real.",
           fullDescription: "Desenvolvido para gerenciar a operação complexa do setor de óleo e gás. Oferece visualização clara do inventário de tanques, agendas de manutenção preventiva e relatórios estatísticos com gráficos interativos.",
           features: [
@@ -432,6 +468,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
         controleFinanceiro: {
           title: "Controle Financeiro Pessoal",
           categoryLabel: "Web App / PWA",
+          statusBadge: "PWA Instalável",
           description: "Plataforma para gestão financeira diária, controle de despesas e metas de economia com gráficos interativos.",
           fullDescription: "Aplicação PWA responsiva projetada para acompanhamento financeiro instantâneo. Conta com categorização inteligente de gastos, suporte a metas mensais e dados criptografados por usuário.",
           features: [
@@ -444,6 +481,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
         gestaoConsultas: {
           title: "Gestão de Consultas & Aulas",
           categoryLabel: "Web App Full-Stack",
+          statusBadge: "Web App Ativo",
           description: "Sistema para profissionais autônomos gerenciarem agendas, pacientes/alunos e finanças de forma unificada.",
           fullDescription: "Solução desenhada para psicólogos, personal trainers e consultores. Oferece controle de prontuários/fichas, confirmação de presença e acompanhamento de receita mensal.",
           features: [
@@ -455,6 +493,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
         sitePsicanalista: {
           title: "Website Psicanalista Tauana Pavanelli",
           categoryLabel: "Website Institucional",
+          statusBadge: "Online • Produção",
           description: "Presença online humanizada desenvolvida para transmitir acolhimento, serenidade e agendamento simples.",
           fullDescription: "Website focado na experiência do paciente, com paleta de cores terapêutica, tipografia de alta legibilidade e botão de contato direto via WhatsApp.",
           features: [
@@ -466,6 +505,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
         cervejariaFratelli: {
           title: "Cervejaria Fratelli",
           categoryLabel: "Website Institucional",
+          statusBadge: "Catálogo Online",
           description: "Website moderno e artesanal para a cervejaria referência em Vitória-ES com catálogo interativo.",
           fullDescription: "Projeto que une a essência artesanal da cervejaria com tecnologia web moderna. Oferece catálogo interativo de rótulos, história da marca e direcionamento para pedidos.",
           features: [
@@ -477,6 +517,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
         novaSolucoes: {
           title: "Nova Soluções ACM",
           categoryLabel: "Landing Page Corporativa",
+          statusBadge: "Landing Page Ativa",
           description: "Landing page institucional para empresa de engenharia de fachadas e revestimentos em alumínio.",
           fullDescription: "Página criada para destacar a imponência dos projetos em ACM, apresentando galeria de obras executadas, depoimentos de clientes e formulário direto de orçamento.",
           features: [
@@ -498,7 +539,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
           company: "GCB Investimentos",
           role: "Desenvolvedor Full-Stack",
           period: "2026 - Atual",
-          description: "Desenvolvimento e evolução de plataformas financeiras de alta disponibilidade, arquitetura modular e processamento analítico.",
+          description: "Desenvolvimento e evolução de plataformas internas de alta disponibilidade, arquitetura modular e processamento analítico.",
           achievements: [
             "Arquitetura modular em NestJS e Prisma com PostgreSQL (OLTP) e Redshift (OLAP), modelo dimensional e tipagem estrita",
             "Orquestração de rotinas programadas com schedulers externos (AWS EventBridge), background jobs com Redis/BullMQ (lock distribuído, retry) e deploy na AWS (ECS Fargate, S3)",
@@ -600,6 +641,10 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
     footer: {
       rights: "Todos os direitos reservados.",
       scrollTop: "Voltar ao Topo"
+    },
+    floatingCta: {
+      tooltip: "Conversar no WhatsApp",
+      ariaLabel: "Abrir conversa com Alessandro no WhatsApp"
     }
   },
   en: {
@@ -621,24 +666,24 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
     },
     hero: {
       status: "Available for Projects",
-      location: "Global Remote Service",
-      headingPrefix: "I transform complex ideas into ",
-      headingHighlight: "Web Systems & SaaS",
-      headingSuffix: " of high performance.",
-      subheading: "Full-Stack Web Developer specializing in SaaS Web Apps, high-converting Landing Pages, native PWA solutions, and Artificial Intelligence.",
+      location: "Ribeirão Preto - SP (Brazil & Remote)",
+      headingPrefix: "I build ",
+      headingHighlight: "Web Systems, SaaS & Digital Products",
+      headingSuffix: " engineered to convert and scale your business.",
+      subheading: "Full-Stack Web Developer. I build high-performance web platforms, clean architectures, and advanced conversion tracking — from database design to the click that generates revenue.",
       pills: [
-        "Google Tag Manager & Meta Pixel",
+        "Google Tag Manager & Meta CAPI",
         "Mobile-First & PWA",
         "SQL & NoSQL Databases",
         "AI Engineering"
       ],
       ctaPrimaryWhatsapp: "Start Project on WhatsApp",
-      ctaPrimaryEmail: "Request Email Proposal",
+      ctaPrimaryEmail: "Request Proposal via Email",
       ctaSecondaryProjects: "View Portfolio Projects",
       badgeTitle: "Alessandro Tostes",
       badgeRole: "Full Stack Developer",
       badgeTopCode: "TOP CODE",
-      metricTrackingTitle: "GTM & Pixel",
+      metricTrackingTitle: "GTM & CAPI",
       metricTrackingDesc: "Tracking & Analytics",
       metricExpTitle: "+2 Years",
       metricExpDesc: "Full-Stack Dev",
@@ -649,67 +694,67 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
         "Next.js",
         "TypeScript",
         "Node.js",
-        "SQL",
-        "NoSQL",
+        "SQL & NoSQL",
+        "GTM & CAPI",
         "PWA",
         "Integrated AI"
       ]
     },
     services: {
-      badge: "Custom Solutions",
+      badge: "Tailored Solutions",
       titlePrefix: "Services engineered to ",
       titleHighlight: "deliver real impact",
-      description: "From architecture planning to final deployment with clean code, PWA support, and ultra-fast mobile loading.",
+      description: "From architecture planning to final delivery with clean code, PWA capabilities, sales tracking, and maximum mobile speed.",
       benefitsLabel: "Key Benefits:",
       cta: "Request Proposal for this Service",
       items: {
         saas: {
           badge: "Scale & Product",
           title: "Web Apps SaaS, SPAs & CRMs",
-          subtitle: "Complete platforms to monetize your digital business",
-          description: "Development of robust web platforms with secure authentication, payment gateways (Mercado Pago, Stripe), real-time dashboards, RBAC, and robust SQL & NoSQL data architecture.",
+          subtitle: "Complete platforms to monetize and streamline your digital business",
+          description: "Custom web platforms that automate operations and grow revenue: secure authentication, payment gateways (Stripe, Mercado Pago), analytics dashboards, and role-based access control (RBAC).",
           benefits: [
             "Scalable architecture ready for thousands of concurrent users",
-            "Data security and GDPR/LGPD compliance",
-            "Intelligent management dashboards with charts and exportable reports"
+            "Robust data security and full GDPR/LGPD compliance",
+            "Intuitive management dashboards with interactive charts and exportable reports"
           ],
-          deliverables: ["Node.js & NestJS", "SQL Databases", "NoSQL Databases", "AWS & GCP / Gateways"]
+          deliverables: ["Node.js & NestJS", "SQL & NoSQL Databases", "Payment Gateways", "AWS & Cloud"]
         },
         landing: {
-          badge: "Instant Conversion",
-          title: "Premium Landing Pages",
-          subtitle: "Impactful visual design with unmatched performance",
-          description: "Strategic pages custom-designed to convert visitors into buying clients. Fluid Mobile-First layout with top Google Lighthouse scores.",
+          badge: "Direct Conversion",
+          title: "High-Converting Landing Pages",
+          subtitle: "Striking visual design engineered for speed and measured revenue",
+          description: "Strategic pages crafted to turn visitors into buyers. Ultra-fluid Mobile-First layout with top Google Lighthouse scores, built ready for paid advertising campaigns.",
           benefits: [
-            "High conversion rates with targeted copy and clear call-to-actions",
-            "Ultra-fast loading (zero latency Core Web Vitals)",
-            "Advanced SEO with Schema.org structured data to rank top on Google"
+            "Strategic copywriting and conversion-focused calls to action",
+            "Ultra-fast loading with zero Core Web Vitals latency",
+            "Advanced tracking included: GTM, Meta CAPI, and Google Ads configured"
           ],
-          deliverables: ["Exclusive Design", "Advanced Technical SEO", "Lightweight Micro-animations", "Analytics & Pixel Integration"]
+          deliverables: ["Bespoke Design", "Advanced Technical SEO", "Fluid Micro-interactions", "GTM, Meta CAPI & GA4"]
         },
         pwa: {
           badge: "Mobile Experience",
           title: "PWA Solutions (Progressive Web Apps)",
-          subtitle: "Your app directly on the client's phone without app stores",
-          description: "Deliver a native app experience directly through mobile browsers (iOS & Android), saving time and bypassing store fees and restrictions.",
+          subtitle: "Your web app directly on your customer's home screen without intermediaries",
+          description: "Deliver an app-like experience directly through mobile browsers (iOS & Android), bypassing app store approval delays and marketplace commission fees.",
           benefits: [
-            "Instant home-screen installation without extra storage footprint",
-            "Browserless fluid navigation and offline mode support",
-            "Push notifications to re-engage customers with news and offers"
+            "Instant home screen installation with zero app store downloads",
+            "Fluid browserless navigation and offline mode support",
+            "Web Push notifications to re-engage customers with timely updates"
           ],
           deliverables: ["PWA Manifest", "Optimized Service Workers", "Offline Caching", "Home Screen Shortcut"]
         },
         ia: {
           badge: "Automation & Future",
-          title: "AI Engineering & Assistive Code",
+          title: "AI Engineering & Automations",
           subtitle: "Accelerate workflows and integrate Artificial Intelligence",
-          description: "Building intelligent solutions connected to LLMs (OpenAI, Gemini, Claude), operational routine automations, and prompt/context engineering for digital products.",
+          description: "Building intelligent solutions connected to state-of-the-art LLMs (OpenAI, Gemini, Claude), business process automation, and virtual agents hooked into your business data.",
           benefits: [
             "Drastic reduction of time spent on repetitive manual tasks",
-            "Smart customer service and high-precision virtual assistants",
-            "Continuous AI integration into enterprise pipelines"
+            "Intelligent customer support and high-precision virtual assistants",
+            "Seamless AI integration into enterprise workflows"
           ],
-          deliverables: ["Prompt & Context Engineering", "LLMs/APIs Integration", "n8n Agents & Workflows", "Virtual Assistants"]
+          deliverables: ["Prompt & Context Engineering", "LLM & API Integrations", "n8n Agents & Workflows", "Virtual Assistants"]
         }
       }
     },
@@ -762,12 +807,27 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
         features: "Featured Highlights",
         techs: "Technologies Used",
         viewCode: "View Code",
-        demoUrl: "Access Project Live"
+        demoUrl: "Access Project Live",
+        galleryTip: "Click the thumbnails above to switch between the Desktop store view and mobile Instagram Shopping integration."
       },
       items: {
+        cemporcentoBatera: {
+          title: "100% Batera – UI Enhancements & Tracking",
+          categoryLabel: "E-commerce, UI & Advanced Tracking",
+          statusBadge: "Active Store • CAPI",
+          description: "Visual layout refinements with custom CSS, full tracking infrastructure with GTM, native Meta CAPI, and a 1,000-product catalog for Instagram Shopping.",
+          fullDescription: "Frontend visual layout refinements in CSS and enterprise-grade analytics infrastructure for Brazil's premier drum shop (cemporcentobatera.com.br) on the Bagy platform. Delivered custom design adjustments on product pages and catalog responsiveness, Google Tag Manager (GTM) with full GA4 e-commerce events (ViewContent, AddToCart, InitiateCheckout, Purchase), native Meta Conversions API (CAPI) with zero cloud server costs and Event ID deduplication, Google Ads with Enhanced Conversions and Dynamic Remarketing, plus an automated XML catalog feed syncing 1,000 products to Meta Commerce Manager for Instagram & Facebook Shopping.",
+          features: [
+            "Frontend visual improvements and custom CSS styling for high-converting product pages",
+            "Native Meta Conversions API (CAPI) with seamless Event ID deduplication",
+            "Google Tag Manager with Enhanced Conversions and Dynamic Remarketing",
+            "Automated XML catalog feed with 1,000 products and active Instagram/Facebook store"
+          ]
+        },
         anAgendamentos: {
           title: "A&N Agendamentos",
           categoryLabel: "Multi-tenant SaaS & PWA",
+          statusBadge: "Live in Production",
           description: "Complete scheduling and commercial management ecosystem connecting customers, establishments, and staff.",
           fullDescription: "Built from scratch as a lightweight, complete solution for salons, barbershops, and clinics. Features 3 RBAC-segregated views: Client Panel (instant bookings), Business Dashboard (financials & staff management), and Specialist Workspace (individual calendar). Full PWA and Mercado Pago payment gateway support.",
           features: [
@@ -780,6 +840,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
         erpPetroleo: {
           title: "Oil Industry ERP",
           categoryLabel: "Corporate Web App",
+          statusBadge: "Corporate Case",
           description: "Industrial management platform for production monitoring, maintenance logs, and inventory with real-time data.",
           fullDescription: "Engineered to streamline complex operations in the oil & gas sector. Offers real-time tank inventory tracking, preventive maintenance schedules, and interactive analytical reporting.",
           features: [
@@ -792,6 +853,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
         controleFinanceiro: {
           title: "Personal Finance Tracker",
           categoryLabel: "Web App / PWA",
+          statusBadge: "Installable PWA",
           description: "Daily personal finance platform with expense tracking, savings goals, and interactive charts.",
           fullDescription: "Responsive PWA designed for instant money management. Features smart expense categorization, monthly savings goal tracking, and user-encrypted data.",
           features: [
@@ -804,6 +866,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
         gestaoConsultas: {
           title: "Consultation & Class Manager",
           categoryLabel: "Full-Stack Web App",
+          statusBadge: "Active Web App",
           description: "Unified scheduling, patient/student records, and financial management for independent professionals.",
           fullDescription: "Tailored for psychologists, personal trainers, and consultants. Provides medical/session record management, attendance tracking, and monthly revenue monitoring.",
           features: [
@@ -815,6 +878,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
         sitePsicanalista: {
           title: "Psychoanalyst Tauana Pavanelli Website",
           categoryLabel: "Institutional Website",
+          statusBadge: "Live Website",
           description: "Humanized online presence built to convey tranquility, serenity, and seamless appointment booking.",
           fullDescription: "Website focused on patient experience, featuring a soothing color palette, high-legibility typography, and direct WhatsApp booking.",
           features: [
@@ -826,6 +890,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
         cervejariaFratelli: {
           title: "Fratelli Brewery",
           categoryLabel: "Institutional Website",
+          statusBadge: "Online Catalog",
           description: "Modern craft brewery website featuring an interactive product catalog and brand story.",
           fullDescription: "Project uniting craft beer identity with cutting-edge web performance. Offers interactive beer label showcases, brand heritage stories, and direct ordering links.",
           features: [
@@ -837,6 +902,7 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
         novaSolucoes: {
           title: "Nova Soluções ACM",
           categoryLabel: "Corporate Landing Page",
+          statusBadge: "Live Landing Page",
           description: "High-converting corporate landing page for facade engineering and aluminum cladding solutions.",
           fullDescription: "Designed to showcase large-scale architectural ACM cladding projects, featuring high-res project galleries, client testimonials, and quick quote forms.",
           features: [
@@ -960,6 +1026,10 @@ export const translations: Record<'pt' | 'en', TranslationSchema> = {
     footer: {
       rights: "All rights reserved.",
       scrollTop: "Back to Top"
+    },
+    floatingCta: {
+      tooltip: "Chat on WhatsApp",
+      ariaLabel: "Open chat with Alessandro on WhatsApp"
     }
   }
 };
